@@ -1,0 +1,353 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Custom Add to Cart Button Label and Link 1.2.1\n"
+"POT-Creation-Date: 2020-07-11 12:18+0530\n"
+"PO-Revision-Date: 2020-07-11 12:19+0530\n"
+"Last-Translator: \n"
+"Language-Team: hwxteam\n"
+"Language: fr_FR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.3.1\n"
+"X-Poedit-Basepath: ..\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Poedit-KeywordsList: __\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: catcbll.php:163
+msgid "Poor"
+msgstr "Pauvres"
+
+#: catcbll.php:163
+msgid "Works"
+msgstr "Travaux"
+
+#: catcbll.php:163
+msgid "Good"
+msgstr "Bien"
+
+#: catcbll.php:163
+msgid "Great"
+msgstr "Génial"
+
+#: catcbll.php:163
+msgid "Fantastic!"
+msgstr "Fantastique!"
+
+#: catcbll.php:175
+msgid "Live demo"
+msgstr "Démo en direct"
+
+#: catcbll.php:193
+msgid "Settings"
+msgstr "Réglages"
+
+#: include/wcatcbll_general_settings.php:13
+#: include/wcatcbll_general_settings.php:15
+msgid "Add to Cart"
+msgstr "Ajouter au chariot"
+
+#: include/wcatcbll_general_settings.php:25
+msgid "Cart Button's Settings"
+msgstr "Paramètres du bouton du panier"
+
+#: include/wcatcbll_general_settings.php:30
+msgid "Both"
+msgstr "Tous les deux"
+
+#: include/wcatcbll_general_settings.php:41
+msgid "Default Add to cart per Product"
+msgstr "Ajouter au panier par produit par défaut"
+
+#: include/wcatcbll_general_settings.php:52
+msgid "Custom Button per Product"
+msgstr "Bouton personnalisé par produit"
+
+#: include/wcatcbll_general_settings.php:63
+msgid "Custom button position"
+msgstr "Position du bouton personnalisé"
+
+#: include/wcatcbll_general_settings.php:64
+msgid "custom button position"
+msgstr "position du bouton personnalisé"
+
+#: include/wcatcbll_general_settings.php:78
+msgid "Custom Button Display"
+msgstr "Affichage des boutons personnalisés"
+
+#: include/wcatcbll_general_settings.php:83
+msgid "Global"
+msgstr "Global"
+
+#: include/wcatcbll_general_settings.php:94
+msgid "Shop"
+msgstr "Magasin"
+
+#: include/wcatcbll_general_settings.php:105
+msgid "Single Product"
+msgstr "Produit unique"
+
+#: include/wcatcbll_general_settings.php:116 include/wcatcbll_inscrpt.php:48
+msgid "Open link in new tab"
+msgstr "Ouvrir un lien dans un nouvel onglet"
+
+#: include/wcatcbll_general_settings.php:117 include/wcatcbll_inscrpt.php:49
+msgid "If checkbox is check then button link open in new tab"
+msgstr "Si la case est cochée, le lien du bouton s'ouvre dans un nouvel onglet"
+
+#: include/wcatcbll_general_settings.php:131
+msgid "Custom Button Style"
+msgstr "Style de bouton personnalisé"
+
+#: include/wcatcbll_general_settings.php:136
+msgid "Text Font Size"
+msgstr "Taille de police du texte"
+
+#: include/wcatcbll_general_settings.php:147
+msgid "Border Size"
+msgstr "Taille de bordure"
+
+#: include/wcatcbll_general_settings.php:158
+msgid "Border Radius"
+msgstr "Rayon de bordure"
+
+#: include/wcatcbll_general_settings.php:169
+msgid "Button Background"
+msgstr "Arrière-plan du bouton"
+
+#: include/wcatcbll_general_settings.php:177
+msgid "Text Font Color"
+msgstr "Couleur de police du texte"
+
+#: include/wcatcbll_general_settings.php:185
+msgid "Border color"
+msgstr "Couleur de la bordure"
+
+#: include/wcatcbll_general_settings.php:193
+msgid "Hover Color"
+msgstr "Couleur du survol"
+
+#: include/wcatcbll_general_settings.php:201
+msgid "Button Padding"
+msgstr "Rembourrage des boutons"
+
+#: include/wcatcbll_general_settings.php:202
+msgid "Button padding"
+msgstr "Rembourrage des boutons"
+
+#: include/wcatcbll_general_settings.php:209
+msgid "Vertically"
+msgstr "Verticalement"
+
+#: include/wcatcbll_general_settings.php:213
+msgid "Horizontally"
+msgstr "Horizontalement"
+
+#: include/wcatcbll_general_settings.php:220
+msgid "Button Margin"
+msgstr "Marge du bouton"
+
+#: include/wcatcbll_general_settings.php:221
+msgid "Button margin"
+msgstr "Marge du bouton"
+
+#: include/wcatcbll_general_settings.php:228
+msgid "Top"
+msgstr "Haut"
+
+#: include/wcatcbll_general_settings.php:232
+msgid "Right"
+msgstr "Droit"
+
+#: include/wcatcbll_general_settings.php:236
+msgid "Bottom"
+msgstr "Bas"
+
+#: include/wcatcbll_general_settings.php:240
+msgid "Left"
+msgstr "La gauche"
+
+#: include/wcatcbll_general_settings.php:247
+msgid "Button icon"
+msgstr "Icône de bouton"
+
+#: include/wcatcbll_general_settings.php:261
+msgid "Button icon Position"
+msgstr "Icône du bouton Position"
+
+#: include/wcatcbll_general_settings.php:272
+msgid "2D Transitions"
+msgstr "Transitions 2D"
+
+#: include/wcatcbll_general_settings.php:272
+msgid "2D Transitions hover on Add to Cart Button"
+msgstr "Transitions 2D planer sur le bouton Ajouter au panier"
+
+#: include/wcatcbll_general_settings.php:286
+msgid "Background Transitions"
+msgstr "Transitions en arrière-plan"
+
+#: include/wcatcbll_general_settings.php:286
+msgid "Add to Cart Button Background Transitions on hover"
+msgstr "Ajouter au panier Transitions d'arrière-plan du bouton en survol"
+
+#: include/wcatcbll_inscrpt.php:25
+msgid "There are no exporting data in your selection fields"
+msgstr "Il n'y a pas de données d'exportation dans vos champs de sélection"
+
+#: include/wcatcbll_inscrpt.php:43 include/wcatcbll_metabox.php:34
+#: include/wcatcbll_metabox.php:53
+msgid "Label"
+msgstr "Étiquette"
+
+#: include/wcatcbll_inscrpt.php:44 include/wcatcbll_metabox.php:38
+#: include/wcatcbll_metabox.php:57
+msgid "Url"
+msgstr "URL"
+
+#: include/wcatcbll_inscrpt.php:45 include/wcatcbll_metabox.php:36
+#: include/wcatcbll_metabox.php:55
+msgid "Add To Basket or Shop Now or Shop on Amazon"
+msgstr "Ajouter au panier ou acheter maintenant ou acheter sur Amazon"
+
+#: include/wcatcbll_inscrpt.php:46 include/wcatcbll_metabox.php:36
+#: include/wcatcbll_metabox.php:55
+msgid "This text will be shown on the button linking to the external product"
+msgstr "Ce texte sera affiché sur le bouton reliant au produit externe"
+
+#: include/wcatcbll_inscrpt.php:47 include/wcatcbll_metabox.php:39
+#: include/wcatcbll_metabox.php:59
+msgid "Enter the external URL to the product"
+msgstr "Entrez l'URL externe du produit"
+
+#: include/wcatcbll_metabox.php:4
+msgid "Product Custom Button Settings"
+msgstr "Paramètres des boutons personnalisés du produit"
+
+#: include/wcatcbll_metabox.php:25 include/wcatcbll_metabox.php:46
+msgid "Add New"
+msgstr "Ajouter un nouveau"
+
+#: include/wcatcbll_metabox.php:30 include/wcatcbll_metabox.php:50
+msgid "Remove"
+msgstr "Retirer"
+
+#: include/wcatcbll_setting_shortcode.php:6 include/wcatcbll_settings.php:51
+msgid "Shortcode"
+msgstr "Petit code"
+
+#: include/wcatcbll_setting_shortcode.php:8
+msgid "Anywhere you can show product using this shortcode"
+msgstr "Partout où vous pouvez montrer un produit en utilisant ce shortcode"
+
+#: include/wcatcbll_setting_support.php:5 include/wcatcbll_settings.php:52
+msgid "Support"
+msgstr "Soutien"
+
+#: include/wcatcbll_setting_support.php:13
+msgid "I would like to review this plugin"
+msgstr "Je voudrais revoir ce plugin"
+
+#: include/wcatcbll_setting_support.php:20
+msgid "I have ideas to improve this plugin"
+msgstr "J'ai des idées pour améliorer ce plugin"
+
+#: include/wcatcbll_setting_support.php:27
+msgid "I need help with this plugin"
+msgstr "J'ai besoin d'aide avec ce plugin"
+
+#: include/wcatcbll_setting_support.php:33
+msgid "Enter your email address.."
+msgstr "Entrez votre adresse email.."
+
+#: include/wcatcbll_setting_support.php:36
+msgid "Leave plugin developers any feedback here.."
+msgstr "Laissez les développeurs de plugins tout commentaire ici .."
+
+#: include/wcatcbll_setting_support.php:40
+msgid ""
+"I agree that by clicking the send button below my email address and comments "
+"will be send to a ServMask server"
+msgstr ""
+"J'accepte qu'en cliquant sur le bouton Envoyer ci-dessous mon adresse e-mail "
+"et mes commentaires soient envoyés à un serveur ServMask"
+
+#: include/wcatcbll_setting_support.php:45
+msgid "Send"
+msgstr "Envoyer"
+
+#: include/wcatcbll_setting_support.php:49
+msgid "Cancel"
+msgstr "Annuler"
+
+#: include/wcatcbll_settings.php:12 include/wcatcbll_widget.php:16
+msgid "Custom Cart Button"
+msgstr "Bouton de chariot personnalisé"
+
+#: include/wcatcbll_settings.php:41
+msgid "You do not have sufficient permissions to access this page"
+msgstr ""
+"Vous ne disposez pas des autorisations suffisantes pour accéder à cette page"
+
+#: include/wcatcbll_settings.php:50
+msgid "General"
+msgstr "Général"
+
+#: include/wcatcbll_widget.php:20
+msgid "Wcatcbll Product show"
+msgstr "Exposition de produits Wcatcbll"
+
+#: include/wcatcbll_widget.php:182
+msgid "New title"
+msgstr "Nouveau titre"
+
+#: include/wcatcbll_widget.php:190
+msgid "Number of products to show"
+msgstr "Nombre de produits à montrer"
+
+#~ msgid "Button Shape"
+#~ msgstr "Forme de bouton"
+
+#~ msgid "Border radius for add to cart button"
+#~ msgstr "Rayon de bordure pour le bouton Ajouter au panier"
+
+#~ msgid "Add to Cart Button Icon"
+#~ msgstr "Icône de bouton Ajouter au panier"
+
+#~ msgid "Icon Position in the Add to Cart Button's"
+#~ msgstr "Position de l'icône dans le bouton Ajouter au panier"
+
+#~ msgid "Add To Cart Button Custom Settings"
+#~ msgstr "Bouton Ajouter au panier Paramètres personnalisés"
+
+#~ msgid "Save Changes"
+#~ msgstr "Sauvegarder les modifications"
+
+#~ msgid "custom buttom position"
+#~ msgstr "position de bouton personnalisé"
+
+#~ msgid "Quick Links"
+#~ msgstr "Liens rapides"
+
+#~ msgid "Wordpress Maintenance Tips"
+#~ msgstr "Conseils de maintenance Wordpress"
+
+#~ msgid "Try our Password Manager Plugin"
+#~ msgstr "Essayez notre plugin Password Manager"
+
+#~ msgid "Get Wordpress Hosting with Free migration service"
+#~ msgstr ""
+#~ "Obtenez l'hébergement Wordpress avec un service de migration gratuit"
+
+#~ msgid " Add to Cart"
+#~ msgstr "Ajouter au chariot"
+
+#~ msgid "Add to Cart Button Border Radius"
+#~ msgstr "Ajouter au panier Rayon de bordure de bouton"
+
+#~ msgid "Add to Cart Button's Icon Position"
+#~ msgstr "Ajouter au panier Position de l'icône du bouton"
+
+#~ msgid "Add to Cart Button 2D Transitions on hover"
+#~ msgstr "Ajouter au panier Transitions 2D en survol"

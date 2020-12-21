@@ -1,0 +1,25 @@
+2020-12-17T21:09:15+00:00 CRITICAL Uncaught Error: Call to a member function get_queried_object() on null in C:\xampp\htdocs\eshop\wp-content\themes\leto-customized\functions.php:19
+Stack trace:
+#0 C:\xampp\htdocs\eshop\wp-includes\class-wp-hook.php(287): category_slider_shortcode2('')
+#1 C:\xampp\htdocs\eshop\wp-includes\class-wp-hook.php(311): WP_Hook->apply_filters('', Array)
+#2 C:\xampp\htdocs\eshop\wp-includes\plugin.php(478): WP_Hook->do_action(Array)
+#3 C:\xampp\htdocs\eshop\wp-content\plugins\woocommerce\templates\archive-product.php(57): do_action('woocommerce_bef...')
+#4 C:\xampp\htdocs\eshop\wp-content\plugins\woocommerce\includes\wc-core-functions.php(345): include('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\eshop\wp-content\plugins\woocommerce\templates\taxonomy-product-cat.php(22): wc_get_template('archive-product...')
+#6 C:\xampp\htdocs\eshop\wp-includes\template-loader.php(106): include('C:\\xampp\\htdocs...')
+#7 C:\xampp\htdocs\eshop\wp-blog-header.php(19): require_once('C:\\xampp\\htdocs...')
+#8 C:\xampp\htdocs\eshop\index.php in C:\xampp\htdocs\eshop\wp-content\themes\leto-customized\functions.php on line 19
+
+2020-12-17T21:35:57+00:00 CRITICAL Uncaught Error: Cannot use object of type WP_Error as array in C:\xampp\htdocs\eshop\wp-content\plugins\color-filters\Functions\Update_Admin_Databases.php:14
+Stack trace:
+#0 C:\xampp\htdocs\eshop\wp-content\plugins\color-filters\Functions\Update_Content.php(9): EWD_UWCF_Add_Color()
+#1 C:\xampp\htdocs\eshop\wp-includes\class-wp-hook.php(287): EWD_UWCF_Update_Content('')
+#2 C:\xampp\htdocs\eshop\wp-includes\class-wp-hook.php(311): WP_Hook->apply_filters(NULL, Array)
+#3 C:\xampp\htdocs\eshop\wp-includes\plugin.php(478): WP_Hook->do_action(Array)
+#4 C:\xampp\htdocs\eshop\wp-settings.php(546): do_action('init')
+#5 C:\xampp\htdocs\eshop\wp-config.php(90): require_once('C:\\xampp\\htdocs...')
+#6 C:\xampp\htdocs\eshop\wp-load.php(37): require_once('C:\\xampp\\htdocs...')
+#7 C:\xampp\htdocs\eshop\wp-admin\admin.php(34): require_once('C:\\xampp\\htdocs...')
+#8 {main}
+  thrown in C:\xampp\htdocs\eshop\wp-content\plugins\color-filters\Functions\Update_Admin_Databases.php on line 14
+

@@ -1,0 +1,308 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Custom Add to Cart Button Label and Link 1.2.1\n"
+"POT-Creation-Date: 2020-07-11 12:17+0530\n"
+"PO-Revision-Date: 2020-07-11 12:18+0530\n"
+"Last-Translator: \n"
+"Language-Team: hwxteam\n"
+"Language: es_ES\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.3.1\n"
+"X-Poedit-Basepath: ..\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-KeywordsList: __\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: catcbll.php:163
+msgid "Poor"
+msgstr "Pobre"
+
+#: catcbll.php:163
+msgid "Works"
+msgstr "Trabajos"
+
+#: catcbll.php:163
+msgid "Good"
+msgstr "Buena"
+
+#: catcbll.php:163
+msgid "Great"
+msgstr "Excelente"
+
+#: catcbll.php:163
+msgid "Fantastic!"
+msgstr "¡Fantástica!"
+
+#: catcbll.php:175
+msgid "Live demo"
+msgstr "Demo en vivo"
+
+#: catcbll.php:193
+msgid "Settings"
+msgstr "Configuraciones"
+
+#: include/wcatcbll_general_settings.php:13
+#: include/wcatcbll_general_settings.php:15
+msgid "Add to Cart"
+msgstr "Añadir al carrito"
+
+#: include/wcatcbll_general_settings.php:25
+msgid "Cart Button's Settings"
+msgstr "Configuración del botón de carrito"
+
+#: include/wcatcbll_general_settings.php:30
+msgid "Both"
+msgstr "Ambos"
+
+#: include/wcatcbll_general_settings.php:41
+msgid "Default Add to cart per Product"
+msgstr "Predeterminado Añadir al carrito por producto"
+
+#: include/wcatcbll_general_settings.php:52
+msgid "Custom Button per Product"
+msgstr "Botón personalizado por producto"
+
+#: include/wcatcbll_general_settings.php:63
+msgid "Custom button position"
+msgstr "Posición del botón personalizado"
+
+#: include/wcatcbll_general_settings.php:64
+msgid "custom button position"
+msgstr "posición del botón personalizado"
+
+#: include/wcatcbll_general_settings.php:78
+msgid "Custom Button Display"
+msgstr "Visualización de botones personalizados"
+
+#: include/wcatcbll_general_settings.php:83
+msgid "Global"
+msgstr "Global"
+
+#: include/wcatcbll_general_settings.php:94
+msgid "Shop"
+msgstr "Tienda"
+
+#: include/wcatcbll_general_settings.php:105
+msgid "Single Product"
+msgstr "Producto único"
+
+#: include/wcatcbll_general_settings.php:116 include/wcatcbll_inscrpt.php:48
+msgid "Open link in new tab"
+msgstr "Abrir enlace en una nueva pestaña"
+
+#: include/wcatcbll_general_settings.php:117 include/wcatcbll_inscrpt.php:49
+msgid "If checkbox is check then button link open in new tab"
+msgstr ""
+"Si la casilla de verificación está marcada, el enlace del botón se abre en "
+"una pestaña nueva"
+
+#: include/wcatcbll_general_settings.php:131
+msgid "Custom Button Style"
+msgstr "Estilo de botón personalizado"
+
+#: include/wcatcbll_general_settings.php:136
+msgid "Text Font Size"
+msgstr "Tamaño de fuente de texto"
+
+#: include/wcatcbll_general_settings.php:147
+msgid "Border Size"
+msgstr "Tamaño de borde"
+
+#: include/wcatcbll_general_settings.php:158
+msgid "Border Radius"
+msgstr "Radio de frontera"
+
+#: include/wcatcbll_general_settings.php:169
+msgid "Button Background"
+msgstr "Fondo de botón"
+
+#: include/wcatcbll_general_settings.php:177
+msgid "Text Font Color"
+msgstr "Color de fuente de texto"
+
+#: include/wcatcbll_general_settings.php:185
+msgid "Border color"
+msgstr "Color del borde"
+
+#: include/wcatcbll_general_settings.php:193
+msgid "Hover Color"
+msgstr "Color de desplazamiento"
+
+#: include/wcatcbll_general_settings.php:201
+msgid "Button Padding"
+msgstr "Relleno de botones"
+
+#: include/wcatcbll_general_settings.php:202
+msgid "Button padding"
+msgstr "Relleno de botones"
+
+#: include/wcatcbll_general_settings.php:209
+msgid "Vertically"
+msgstr "Verticalmente"
+
+#: include/wcatcbll_general_settings.php:213
+msgid "Horizontally"
+msgstr "Horizontalmente"
+
+#: include/wcatcbll_general_settings.php:220
+msgid "Button Margin"
+msgstr "Margen de botón"
+
+#: include/wcatcbll_general_settings.php:221
+msgid "Button margin"
+msgstr "Margen del botón"
+
+#: include/wcatcbll_general_settings.php:228
+msgid "Top"
+msgstr "Parte superior"
+
+#: include/wcatcbll_general_settings.php:232
+msgid "Right"
+msgstr "Derecho"
+
+#: include/wcatcbll_general_settings.php:236
+msgid "Bottom"
+msgstr "Fondo"
+
+#: include/wcatcbll_general_settings.php:240
+msgid "Left"
+msgstr "Izquierdo"
+
+#: include/wcatcbll_general_settings.php:247
+msgid "Button icon"
+msgstr "Icono de botón"
+
+#: include/wcatcbll_general_settings.php:261
+msgid "Button icon Position"
+msgstr "Posición del icono del botón"
+
+#: include/wcatcbll_general_settings.php:272
+msgid "2D Transitions"
+msgstr "Transiciones 2D"
+
+#: include/wcatcbll_general_settings.php:272
+msgid "2D Transitions hover on Add to Cart Button"
+msgstr "Las transiciones 2D pasan por encima del botón Agregar al carrito"
+
+#: include/wcatcbll_general_settings.php:286
+msgid "Background Transitions"
+msgstr "Transiciones de fondo"
+
+#: include/wcatcbll_general_settings.php:286
+msgid "Add to Cart Button Background Transitions on hover"
+msgstr "Agregar al carrito Transiciones de fondo del botón al pasar el mouse"
+
+#: include/wcatcbll_inscrpt.php:25
+msgid "There are no exporting data in your selection fields"
+msgstr "No hay datos de exportación en sus campos de selección"
+
+#: include/wcatcbll_inscrpt.php:43 include/wcatcbll_metabox.php:34
+#: include/wcatcbll_metabox.php:53
+msgid "Label"
+msgstr "Etiqueta"
+
+#: include/wcatcbll_inscrpt.php:44 include/wcatcbll_metabox.php:38
+#: include/wcatcbll_metabox.php:57
+msgid "Url"
+msgstr "Url"
+
+#: include/wcatcbll_inscrpt.php:45 include/wcatcbll_metabox.php:36
+#: include/wcatcbll_metabox.php:55
+msgid "Add To Basket or Shop Now or Shop on Amazon"
+msgstr "Agregar al carrito o comprar ahora o comprar en Amazon"
+
+#: include/wcatcbll_inscrpt.php:46 include/wcatcbll_metabox.php:36
+#: include/wcatcbll_metabox.php:55
+msgid "This text will be shown on the button linking to the external product"
+msgstr "Este texto se mostrará en el botón que vincula al producto externo"
+
+#: include/wcatcbll_inscrpt.php:47 include/wcatcbll_metabox.php:39
+#: include/wcatcbll_metabox.php:59
+msgid "Enter the external URL to the product"
+msgstr "Ingrese la URL externa del producto"
+
+#: include/wcatcbll_metabox.php:4
+msgid "Product Custom Button Settings"
+msgstr "Configuración de botones personalizados del producto"
+
+#: include/wcatcbll_metabox.php:25 include/wcatcbll_metabox.php:46
+msgid "Add New"
+msgstr "Añadir nuevo"
+
+#: include/wcatcbll_metabox.php:30 include/wcatcbll_metabox.php:50
+msgid "Remove"
+msgstr "Eliminar"
+
+#: include/wcatcbll_setting_shortcode.php:6 include/wcatcbll_settings.php:51
+msgid "Shortcode"
+msgstr "Código corto"
+
+#: include/wcatcbll_setting_shortcode.php:8
+msgid "Anywhere you can show product using this shortcode"
+msgstr "En cualquier lugar puede mostrar el producto usando este shortcode"
+
+#: include/wcatcbll_setting_support.php:5 include/wcatcbll_settings.php:52
+msgid "Support"
+msgstr "Apoyo"
+
+#: include/wcatcbll_setting_support.php:13
+msgid "I would like to review this plugin"
+msgstr "Me gustaría revisar este complemento"
+
+#: include/wcatcbll_setting_support.php:20
+msgid "I have ideas to improve this plugin"
+msgstr "Tengo ideas para mejorar este complemento"
+
+#: include/wcatcbll_setting_support.php:27
+msgid "I need help with this plugin"
+msgstr "Necesito ayuda con este complemento"
+
+#: include/wcatcbll_setting_support.php:33
+msgid "Enter your email address.."
+msgstr "Ingrese su dirección de correo electrónico."
+
+#: include/wcatcbll_setting_support.php:36
+msgid "Leave plugin developers any feedback here.."
+msgstr "Deje a los desarrolladores de plugins cualquier comentario aquí ..."
+
+#: include/wcatcbll_setting_support.php:40
+msgid ""
+"I agree that by clicking the send button below my email address and comments "
+"will be send to a ServMask server"
+msgstr ""
+"Acepto que al hacer clic en el botón Enviar debajo de mi dirección de correo "
+"electrónico, los comentarios se enviarán a un servidor ServMask"
+
+#: include/wcatcbll_setting_support.php:45
+msgid "Send"
+msgstr "Enviar"
+
+#: include/wcatcbll_setting_support.php:49
+msgid "Cancel"
+msgstr "Cancelar"
+
+#: include/wcatcbll_settings.php:12 include/wcatcbll_widget.php:16
+msgid "Custom Cart Button"
+msgstr "Botón de carro personalizado"
+
+#: include/wcatcbll_settings.php:41
+msgid "You do not have sufficient permissions to access this page"
+msgstr "No tiene suficientes permisos para acceder a esta página"
+
+#: include/wcatcbll_settings.php:50
+msgid "General"
+msgstr "General"
+
+#: include/wcatcbll_widget.php:20
+msgid "Wcatcbll Product show"
+msgstr "Wcatcbll demostración del producto"
+
+#: include/wcatcbll_widget.php:182
+msgid "New title"
+msgstr "Nuevo título"
+
+#: include/wcatcbll_widget.php:190
+msgid "Number of products to show"
+msgstr "Número de productos para mostrar"

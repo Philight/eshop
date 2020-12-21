@@ -1,0 +1,308 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Custom Add to Cart Button Label and Link 1.2.1\n"
+"POT-Creation-Date: 2020-07-11 12:20+0530\n"
+"PO-Revision-Date: 2020-07-11 12:21+0530\n"
+"Last-Translator: \n"
+"Language-Team: hwxteam\n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.3.1\n"
+"X-Poedit-Basepath: ..\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Poedit-KeywordsList: __\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: catcbll.php:163
+msgid "Poor"
+msgstr "悪い"
+
+#: catcbll.php:163
+msgid "Works"
+msgstr "作品"
+
+#: catcbll.php:163
+msgid "Good"
+msgstr "良い"
+
+#: catcbll.php:163
+msgid "Great"
+msgstr "すごい"
+
+#: catcbll.php:163
+msgid "Fantastic!"
+msgstr "素晴らしい！"
+
+#: catcbll.php:175
+msgid "Live demo"
+msgstr "ライブデモ"
+
+#: catcbll.php:193
+msgid "Settings"
+msgstr "設定"
+
+#: include/wcatcbll_general_settings.php:13
+#: include/wcatcbll_general_settings.php:15
+msgid "Add to Cart"
+msgstr "カートに追加"
+
+#: include/wcatcbll_general_settings.php:25
+msgid "Cart Button's Settings"
+msgstr "カートボタンの設定"
+
+#: include/wcatcbll_general_settings.php:30
+msgid "Both"
+msgstr "両方とも"
+
+#: include/wcatcbll_general_settings.php:41
+msgid "Default Add to cart per Product"
+msgstr "デフォルトで製品ごとにカートに追加"
+
+#: include/wcatcbll_general_settings.php:52
+msgid "Custom Button per Product"
+msgstr "デフォルトで製品ごとにカートに追加"
+
+#: include/wcatcbll_general_settings.php:63
+msgid "Custom button position"
+msgstr "カートボタンの設定"
+
+#: include/wcatcbll_general_settings.php:64
+msgid "custom button position"
+msgstr "カートボタンの設定"
+
+#: include/wcatcbll_general_settings.php:78
+msgid "Custom Button Display"
+msgstr "カートボタンの設定"
+
+#: include/wcatcbll_general_settings.php:83
+msgid "Global"
+msgstr "グローバル"
+
+#: include/wcatcbll_general_settings.php:94
+msgid "Shop"
+msgstr "ショップ"
+
+#: include/wcatcbll_general_settings.php:105
+msgid "Single Product"
+msgstr "単一の製品"
+
+#: include/wcatcbll_general_settings.php:116 include/wcatcbll_inscrpt.php:48
+msgid "Open link in new tab"
+msgstr "新しいタブでリンクを開く"
+
+#: include/wcatcbll_general_settings.php:117 include/wcatcbll_inscrpt.php:49
+msgid "If checkbox is check then button link open in new tab"
+msgstr "チェックボックスがオンの場合、ボタンのリンクが新しいタブで開きます"
+
+#: include/wcatcbll_general_settings.php:131
+msgid "Custom Button Style"
+msgstr "カートボタンの設定"
+
+#: include/wcatcbll_general_settings.php:136
+msgid "Text Font Size"
+msgstr "テキストのフォントサイズ"
+
+#: include/wcatcbll_general_settings.php:147
+msgid "Border Size"
+msgstr "テキストのフォントサイズ"
+
+#: include/wcatcbll_general_settings.php:158
+msgid "Border Radius"
+msgstr "ボーダー半径"
+
+#: include/wcatcbll_general_settings.php:169
+msgid "Button Background"
+msgstr "カートボタンの設定"
+
+#: include/wcatcbll_general_settings.php:177
+msgid "Text Font Color"
+msgstr "テキストのフォントサイズ"
+
+#: include/wcatcbll_general_settings.php:185
+msgid "Border color"
+msgstr "ボーダの色"
+
+#: include/wcatcbll_general_settings.php:193
+msgid "Hover Color"
+msgstr "ホバーカラー"
+
+#: include/wcatcbll_general_settings.php:201
+msgid "Button Padding"
+msgstr "カートボタンの設定"
+
+#: include/wcatcbll_general_settings.php:202
+msgid "Button padding"
+msgstr "カートボタンの設定"
+
+#: include/wcatcbll_general_settings.php:209
+msgid "Vertically"
+msgstr "垂直に"
+
+#: include/wcatcbll_general_settings.php:213
+msgid "Horizontally"
+msgstr "横に"
+
+#: include/wcatcbll_general_settings.php:220
+msgid "Button Margin"
+msgstr "カートボタンの設定"
+
+#: include/wcatcbll_general_settings.php:221
+msgid "Button margin"
+msgstr "カートボタンの設定"
+
+#: include/wcatcbll_general_settings.php:228
+msgid "Top"
+msgstr "上"
+
+#: include/wcatcbll_general_settings.php:232
+msgid "Right"
+msgstr "正しい"
+
+#: include/wcatcbll_general_settings.php:236
+msgid "Bottom"
+msgstr "下"
+
+#: include/wcatcbll_general_settings.php:240
+msgid "Left"
+msgstr "左"
+
+#: include/wcatcbll_general_settings.php:247
+msgid "Button icon"
+msgstr "カートボタンの設定"
+
+#: include/wcatcbll_general_settings.php:261
+msgid "Button icon Position"
+msgstr "カートボタンの設定"
+
+#: include/wcatcbll_general_settings.php:272
+msgid "2D Transitions"
+msgstr "2Dトランジション"
+
+#: include/wcatcbll_general_settings.php:272
+msgid "2D Transitions hover on Add to Cart Button"
+msgstr "2Dトランジションが[カートに追加]ボタンにホバー"
+
+#: include/wcatcbll_general_settings.php:286
+msgid "Background Transitions"
+msgstr "2Dトランジション"
+
+#: include/wcatcbll_general_settings.php:286
+msgid "Add to Cart Button Background Transitions on hover"
+msgstr "2Dトランジションが[カートに追加]ボタンにホバー"
+
+#: include/wcatcbll_inscrpt.php:25
+msgid "There are no exporting data in your selection fields"
+msgstr "選択フィールドにデータをエクスポートしていません"
+
+#: include/wcatcbll_inscrpt.php:43 include/wcatcbll_metabox.php:34
+#: include/wcatcbll_metabox.php:53
+msgid "Label"
+msgstr "ラベル"
+
+#: include/wcatcbll_inscrpt.php:44 include/wcatcbll_metabox.php:38
+#: include/wcatcbll_metabox.php:57
+msgid "Url"
+msgstr "URL"
+
+#: include/wcatcbll_inscrpt.php:45 include/wcatcbll_metabox.php:36
+#: include/wcatcbll_metabox.php:55
+msgid "Add To Basket or Shop Now or Shop on Amazon"
+msgstr "バスケットに追加するか、今すぐ購入するか、Amazonで購入してください"
+
+#: include/wcatcbll_inscrpt.php:46 include/wcatcbll_metabox.php:36
+#: include/wcatcbll_metabox.php:55
+msgid "This text will be shown on the button linking to the external product"
+msgstr "このテキストは、外部製品にリンクするボタンに表示されます"
+
+#: include/wcatcbll_inscrpt.php:47 include/wcatcbll_metabox.php:39
+#: include/wcatcbll_metabox.php:59
+msgid "Enter the external URL to the product"
+msgstr "このテキストは、外部製品にリンクするボタンに表示されます"
+
+#: include/wcatcbll_metabox.php:4
+msgid "Product Custom Button Settings"
+msgstr "このテキストは、外部製品にリンクするボタンに表示されます"
+
+#: include/wcatcbll_metabox.php:25 include/wcatcbll_metabox.php:46
+msgid "Add New"
+msgstr "カートに追加"
+
+#: include/wcatcbll_metabox.php:30 include/wcatcbll_metabox.php:50
+msgid "Remove"
+msgstr "削除する"
+
+#: include/wcatcbll_setting_shortcode.php:6 include/wcatcbll_settings.php:51
+msgid "Shortcode"
+msgstr "ショートコード"
+
+#: include/wcatcbll_setting_shortcode.php:8
+msgid "Anywhere you can show product using this shortcode"
+msgstr "このショートコードを使用して製品を表示できる場所ならどこでも"
+
+#: include/wcatcbll_setting_support.php:5 include/wcatcbll_settings.php:52
+msgid "Support"
+msgstr "サポート"
+
+#: include/wcatcbll_setting_support.php:13
+msgid "I would like to review this plugin"
+msgstr "このプラグインを確認したい"
+
+#: include/wcatcbll_setting_support.php:20
+msgid "I have ideas to improve this plugin"
+msgstr "このプラグインを改善するためのアイデアがあります"
+
+#: include/wcatcbll_setting_support.php:27
+msgid "I need help with this plugin"
+msgstr "このプラグインを確認したい"
+
+#: include/wcatcbll_setting_support.php:33
+msgid "Enter your email address.."
+msgstr "メールアドレスを入力してください.."
+
+#: include/wcatcbll_setting_support.php:36
+msgid "Leave plugin developers any feedback here.."
+msgstr "プラグイン開発者にフィードバックをお寄せください。"
+
+#: include/wcatcbll_setting_support.php:40
+msgid ""
+"I agree that by clicking the send button below my email address and comments "
+"will be send to a ServMask server"
+msgstr ""
+"メールアドレスの下にある送信ボタンをクリックすると、コメントがServMaskサー"
+"バーに送信されることに同意します"
+
+#: include/wcatcbll_setting_support.php:45
+msgid "Send"
+msgstr ""
+"メールアドレスの下にある送信ボタンをクリックすると、コメントがServMaskサー"
+"バーに送信されることに同意します"
+
+#: include/wcatcbll_setting_support.php:49
+msgid "Cancel"
+msgstr "キャンセル"
+
+#: include/wcatcbll_settings.php:12 include/wcatcbll_widget.php:16
+msgid "Custom Cart Button"
+msgstr "カートボタンの設定"
+
+#: include/wcatcbll_settings.php:41
+msgid "You do not have sufficient permissions to access this page"
+msgstr "このページにアクセスするための十分な権限がありません"
+
+#: include/wcatcbll_settings.php:50
+msgid "General"
+msgstr "一般的な"
+
+#: include/wcatcbll_widget.php:20
+msgid "Wcatcbll Product show"
+msgstr "単一の製品"
+
+#: include/wcatcbll_widget.php:182
+msgid "New title"
+msgstr "新しいタブでリンクを開く"
+
+#: include/wcatcbll_widget.php:190
+msgid "Number of products to show"
+msgstr "表示する製品の数"

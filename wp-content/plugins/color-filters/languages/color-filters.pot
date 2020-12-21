@@ -1,0 +1,909 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Ultimate WooCommerce Filters\n"
+"POT-Creation-Date: 2018-11-30 10:56-0500\n"
+"PO-Revision-Date: 2018-11-30 10:57-0500\n"
+"Last-Translator: \n"
+"Language-Team: Etoile Web Design\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.1.1\n"
+"X-Poedit-Basepath: ..\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: Functions/EWD_UWCF_Deactivation_Survey.php:41
+msgid "Quick Feedback"
+msgstr ""
+
+#: Functions/EWD_UWCF_Deactivation_Survey.php:42
+msgid ""
+"If you have a moment, please share why you are deactivating Ultimate "
+"WooCommerce Filters:"
+msgstr ""
+
+#: Functions/EWD_UWCF_Deactivation_Survey.php:57
+msgid "Submit and Deactivate"
+msgstr ""
+
+#: Functions/EWD_UWCF_Deactivation_Survey.php:58
+msgid "Skip and Deactivate"
+msgstr ""
+
+#: Functions/EWD_UWCF_Register_Taxonomies.php:13
+msgid "Search Colors"
+msgstr ""
+
+#: Functions/EWD_UWCF_Register_Taxonomies.php:14
+#: Shortcodes/Display_Filters.php:140
+msgid "All Colors"
+msgstr ""
+
+#: Functions/EWD_UWCF_Register_Taxonomies.php:15
+msgid "Parent Color"
+msgstr ""
+
+#: Functions/EWD_UWCF_Register_Taxonomies.php:16
+msgid "Parent Color:"
+msgstr ""
+
+#: Functions/EWD_UWCF_Register_Taxonomies.php:17 html/ColorDetails.php:114
+msgid "Edit Color"
+msgstr ""
+
+#: Functions/EWD_UWCF_Register_Taxonomies.php:18
+msgid "Update Color"
+msgstr ""
+
+#: Functions/EWD_UWCF_Register_Taxonomies.php:19 html/ColorsPage.php:174
+msgid "Add New Color"
+msgstr ""
+
+#: Functions/EWD_UWCF_Register_Taxonomies.php:20
+msgid "New Color Name"
+msgstr ""
+
+#: Functions/EWD_UWCF_Register_Taxonomies.php:21
+#: Functions/EWD_UWCF_WC_Filters_Actions.php:18
+#: Shortcodes/Display_Filters.php:412 html/MainScreen.php:5
+#: html/OptionsPage.php:1002 html/OptionsPage.php:1039
+#: html/OptionsPage.php:1143 html/OptionsPage.php:1175
+msgid "Colors"
+msgstr ""
+
+#: Functions/EWD_UWCF_Register_Taxonomies.php:38
+msgid "Search Sizes"
+msgstr ""
+
+#: Functions/EWD_UWCF_Register_Taxonomies.php:39
+#: Shortcodes/Display_Filters.php:204
+msgid "All Sizes"
+msgstr ""
+
+#: Functions/EWD_UWCF_Register_Taxonomies.php:40
+msgid "Parent Size"
+msgstr ""
+
+#: Functions/EWD_UWCF_Register_Taxonomies.php:41
+msgid "Parent Size:"
+msgstr ""
+
+#: Functions/EWD_UWCF_Register_Taxonomies.php:42 html/SizeDetails.php:99
+msgid "Edit Size"
+msgstr ""
+
+#: Functions/EWD_UWCF_Register_Taxonomies.php:43
+msgid "Update Size"
+msgstr ""
+
+#: Functions/EWD_UWCF_Register_Taxonomies.php:44 html/SizesPage.php:152
+msgid "Add New Size"
+msgstr ""
+
+#: Functions/EWD_UWCF_Register_Taxonomies.php:45
+msgid "New Size Name"
+msgstr ""
+
+#: Functions/EWD_UWCF_Register_Taxonomies.php:46
+#: Functions/EWD_UWCF_WC_Filters_Actions.php:20
+#: Shortcodes/Display_Filters.php:414 html/MainScreen.php:6
+#: html/OptionsPage.php:1006 html/OptionsPage.php:1043
+msgid "Sizes"
+msgstr ""
+
+#: Functions/EWD_UWCF_WC_Filters_Actions.php:22 html/OptionsPage.php:1010
+msgid "Categories"
+msgstr ""
+
+#: Functions/EWD_UWCF_WC_Filters_Actions.php:24 html/OptionsPage.php:1014
+msgid "Tags"
+msgstr ""
+
+#: Functions/EWD_UWCF_Widgets.php:15
+msgid "WooCommerce Filters"
+msgstr ""
+
+#: Functions/EWD_UWCF_Widgets.php:16 includes/widgets.php:16
+msgid "WooCommerce product color filters."
+msgstr ""
+
+#: Functions/EWD_UWCF_Widgets.php:54
+msgid "Filters"
+msgstr ""
+
+#: Functions/EWD_UWCF_Widgets.php:59 includes/widgets.php:133
+msgid "Title:"
+msgstr ""
+
+#: Functions/Full_Upgrade.php:8
+msgid "Trial successfully started!"
+msgstr ""
+
+#: Functions/Update_Admin_Databases.php:23
+msgid "Color has been successfully created."
+msgstr ""
+
+#: Functions/Update_Admin_Databases.php:56
+msgid "Color has been successfully edited."
+msgstr ""
+
+#: Functions/Update_Admin_Databases.php:66
+msgid "Color has been successfully deleted."
+msgstr ""
+
+#: Functions/Update_Admin_Databases.php:78
+msgid "Colors have been successfully deleted."
+msgstr ""
+
+#: Functions/Update_Admin_Databases.php:101
+msgid "Size has been successfully created."
+msgstr ""
+
+#: Functions/Update_Admin_Databases.php:132
+msgid "Size has been successfully edited."
+msgstr ""
+
+#: Functions/Update_Admin_Databases.php:142
+msgid "Size has been successfully deleted."
+msgstr ""
+
+#: Functions/Update_Admin_Databases.php:154
+msgid "Sizes have been successfully deleted."
+msgstr ""
+
+#: Functions/Update_Admin_Databases.php:286
+msgid "Options have been successfully updated."
+msgstr ""
+
+#: Functions/Update_Content.php:36
+msgid "The form has not worked correctly. Please contact the plugin developer."
+msgstr ""
+
+#: Shortcodes/Display_Filters.php:62 html/OptionsPage.php:957
+msgid "Show All Colors"
+msgstr ""
+
+#: Shortcodes/Display_Filters.php:64 html/OptionsPage.php:961
+msgid "Show All Sizes"
+msgstr ""
+
+#: Shortcodes/Display_Filters.php:66 html/OptionsPage.php:965
+msgid "Show All Categories"
+msgstr ""
+
+#: Shortcodes/Display_Filters.php:68 html/OptionsPage.php:969
+msgid "Show All Tags"
+msgstr ""
+
+#: Shortcodes/Display_Filters.php:70
+msgid "Show All "
+msgstr ""
+
+#: Shortcodes/Display_Filters.php:72 html/OptionsPage.php:977
+msgid "Rating"
+msgstr ""
+
+#: Shortcodes/Display_Filters.php:88
+msgid "Reset All Filters"
+msgstr ""
+
+#: Shortcodes/Display_Filters.php:94
+msgid "Search Products..."
+msgstr ""
+
+#: Shortcodes/Display_Filters.php:95
+msgid "Search"
+msgstr ""
+
+#: Shortcodes/Display_Filters.php:109
+msgid "In-Stock Items Only"
+msgstr ""
+
+#: Shortcodes/Display_Filters.php:116
+msgid "Sale Items Only"
+msgstr ""
+
+#: Shortcodes/Display_Filters.php:254
+msgid "All Categories"
+msgstr ""
+
+#: Shortcodes/Display_Filters.php:304
+msgid "All Tags"
+msgstr ""
+
+#: Shortcodes/Display_Filters.php:368
+msgid "All "
+msgstr ""
+
+#: color-filters.php:11
+#, php-format
+msgid ""
+"Color Filters by <a href=\"%s\" target=\"_blank\">Etoile Web Design</a> is "
+"enabled but not effective. It requires <a href=\"%s\" target=\"_blank"
+"\">WooCommerce</a> in order to work."
+msgstr ""
+
+#: html/AdminHeader.php:2
+msgid "Ultimate WooCommerce Filters Settings"
+msgstr ""
+
+#: html/ColorDetails.php:10 html/SizeDetails.php:7
+msgid "Products With "
+msgstr ""
+
+#: html/ColorDetails.php:17 html/ColorDetails.php:46 html/SizeDetails.php:14
+#: html/SizeDetails.php:43
+msgid "Product Name"
+msgstr ""
+
+#: html/ColorDetails.php:61 html/SizeDetails.php:58
+msgid "Edit"
+msgstr ""
+
+#: html/ColorDetails.php:68 html/ColorsPage.php:36 html/ColorsPage.php:54
+#: html/ColorsPage.php:130 html/SizeDetails.php:65 html/SizesPage.php:36
+#: html/SizesPage.php:51 html/SizesPage.php:120
+msgid "Name"
+msgstr ""
+
+#: html/ColorDetails.php:70 html/ColorsPage.php:132 html/SizeDetails.php:67
+#: html/SizesPage.php:122
+msgid "The name is how it appears on your site."
+msgstr ""
+
+#: html/ColorDetails.php:73 html/ColorsPage.php:135 html/SizeDetails.php:70
+#: html/SizesPage.php:125
+msgid "Slug"
+msgstr ""
+
+#: html/ColorDetails.php:75 html/ColorsPage.php:137 html/SizeDetails.php:72
+#: html/SizesPage.php:127
+msgid ""
+"The &#8220;slug&#8221; is the URL-friendly version of the name. It is "
+"usually all lowercase and contains only letters, numbers, and hyphens."
+msgstr ""
+
+#: html/ColorDetails.php:89 html/ColorsPage.php:149 html/SizeDetails.php:86
+#: html/SizesPage.php:139
+msgid "None"
+msgstr ""
+
+#: html/ColorDetails.php:94 html/ColorsPage.php:154
+msgid ""
+"Assign a parent term to create a hierarchy. For example, if you have many "
+"shades of blue, they could be assigned to a parent color blue."
+msgstr ""
+
+#: html/ColorDetails.php:97 html/ColorsPage.php:42 html/ColorsPage.php:60
+#: html/ColorsPage.php:157 html/SizeDetails.php:94 html/SizesPage.php:39
+#: html/SizesPage.php:54 html/SizesPage.php:147
+msgid "Description"
+msgstr ""
+
+#: html/ColorDetails.php:99 html/ColorsPage.php:159 html/SizeDetails.php:96
+#: html/SizesPage.php:149
+msgid "The description of the category. What will it be used to display?"
+msgstr ""
+
+#: html/ColorDetails.php:108 html/ColorsPage.php:168
+msgid "Or upload an image the color pattern below:"
+msgstr ""
+
+#: html/ColorsPage.php:24 html/ColorsPage.php:108 html/SizesPage.php:24
+#: html/SizesPage.php:98
+msgid "Bulk Actions"
+msgstr ""
+
+#: html/ColorsPage.php:27 html/SizesPage.php:27
+msgid "Apply"
+msgstr ""
+
+#: html/ColorsPage.php:39 html/ColorsPage.php:57 html/OptionsPage.php:1123
+#: html/OptionsPage.php:1228 includes/widgets.php:141
+msgid "Color"
+msgstr ""
+
+#: html/ColorsPage.php:45 html/ColorsPage.php:63 html/SizesPage.php:42
+#: html/SizesPage.php:57
+msgid "Products"
+msgstr ""
+
+#: html/ColorsPage.php:87 html/ColorsPage.php:109 html/SizesPage.php:79
+#: html/SizesPage.php:99
+msgid "Delete"
+msgstr ""
+
+#: html/ColorsPage.php:124
+msgid "Add a New Color"
+msgstr ""
+
+#: html/DashboardPage.php:18
+msgid "Enter Product Key Here"
+msgstr ""
+
+#: html/DashboardPage.php:19
+msgid "UNLOCK PREMIUM"
+msgstr ""
+
+#: html/MainScreen.php:3
+msgid "MENU"
+msgstr ""
+
+#: html/MainScreen.php:4
+msgid "Dashboard"
+msgstr ""
+
+#: html/MainScreen.php:7
+msgid "Options"
+msgstr ""
+
+#: html/OptionsPage.php:125
+msgid ""
+"To display the filters, either add the widget to the appropriate sidebar or "
+"use the <strong>[ultimate-woocommerce-filters]</strong> shortcode"
+msgstr ""
+
+#: html/OptionsPage.php:130
+msgid "Color Filtering"
+msgstr ""
+
+#: html/OptionsPage.php:135 html/OptionsPage.php:137
+msgid "Enable Color Filtering"
+msgstr ""
+
+#: html/OptionsPage.php:139 html/OptionsPage.php:155 html/OptionsPage.php:171
+#: html/OptionsPage.php:187 html/OptionsPage.php:203 html/OptionsPage.php:235
+#: html/OptionsPage.php:251 html/OptionsPage.php:266 html/OptionsPage.php:302
+#: html/OptionsPage.php:318 html/OptionsPage.php:334 html/OptionsPage.php:350
+#: html/OptionsPage.php:380 html/OptionsPage.php:395 html/OptionsPage.php:410
+#: html/OptionsPage.php:446 html/OptionsPage.php:462 html/OptionsPage.php:478
+#: html/OptionsPage.php:494 html/OptionsPage.php:524 html/OptionsPage.php:561
+#: html/OptionsPage.php:577 html/OptionsPage.php:593 html/OptionsPage.php:609
+#: html/OptionsPage.php:639 html/OptionsPage.php:675 html/OptionsPage.php:691
+#: html/OptionsPage.php:714 html/OptionsPage.php:743 html/OptionsPage.php:762
+#: html/OptionsPage.php:797 html/OptionsPage.php:813 html/OptionsPage.php:829
+#: html/OptionsPage.php:845 html/OptionsPage.php:875 html/OptionsPage.php:931
+msgid "Yes"
+msgstr ""
+
+#: html/OptionsPage.php:140 html/OptionsPage.php:156 html/OptionsPage.php:172
+#: html/OptionsPage.php:188 html/OptionsPage.php:204 html/OptionsPage.php:236
+#: html/OptionsPage.php:252 html/OptionsPage.php:267 html/OptionsPage.php:303
+#: html/OptionsPage.php:319 html/OptionsPage.php:335 html/OptionsPage.php:351
+#: html/OptionsPage.php:381 html/OptionsPage.php:396 html/OptionsPage.php:411
+#: html/OptionsPage.php:447 html/OptionsPage.php:463 html/OptionsPage.php:479
+#: html/OptionsPage.php:495 html/OptionsPage.php:525 html/OptionsPage.php:562
+#: html/OptionsPage.php:578 html/OptionsPage.php:594 html/OptionsPage.php:610
+#: html/OptionsPage.php:640 html/OptionsPage.php:676 html/OptionsPage.php:692
+#: html/OptionsPage.php:715 html/OptionsPage.php:744 html/OptionsPage.php:763
+#: html/OptionsPage.php:798 html/OptionsPage.php:814 html/OptionsPage.php:830
+#: html/OptionsPage.php:846 html/OptionsPage.php:876 html/OptionsPage.php:932
+msgid "No"
+msgstr ""
+
+#: html/OptionsPage.php:146
+msgid ""
+"Should the color filters be displayed when the plugin's widget or shortcode "
+"is used?"
+msgstr ""
+
+#: html/OptionsPage.php:151 html/OptionsPage.php:314 html/OptionsPage.php:458
+#: html/OptionsPage.php:573 html/OptionsPage.php:809
+msgid "Show Text"
+msgstr ""
+
+#: html/OptionsPage.php:153 html/OptionsPage.php:169 html/OptionsPage.php:185
+#: html/OptionsPage.php:218 html/OptionsPage.php:220 html/OptionsPage.php:233
+msgid "Color Filter Layout"
+msgstr ""
+
+#: html/OptionsPage.php:162
+msgid "Should a color's name be displayed in the filtering box?"
+msgstr ""
+
+#: html/OptionsPage.php:167
+msgid "Show Color"
+msgstr ""
+
+#: html/OptionsPage.php:178
+msgid "Should a color's color swatch be displayed in the filtering box?"
+msgstr ""
+
+#: html/OptionsPage.php:183 html/OptionsPage.php:330 html/OptionsPage.php:474
+#: html/OptionsPage.php:589 html/OptionsPage.php:825
+msgid "Hide Empty"
+msgstr ""
+
+#: html/OptionsPage.php:194
+msgid "Which colors with no associated products be hidden?"
+msgstr ""
+
+#: html/OptionsPage.php:199 html/OptionsPage.php:201 html/OptionsPage.php:346
+#: html/OptionsPage.php:348 html/OptionsPage.php:490 html/OptionsPage.php:492
+#: html/OptionsPage.php:605 html/OptionsPage.php:607 html/OptionsPage.php:841
+#: html/OptionsPage.php:843
+msgid "Show Product Count"
+msgstr ""
+
+#: html/OptionsPage.php:210
+msgid "Should the number of products for each color be displayed?"
+msgstr ""
+
+#: html/OptionsPage.php:221 html/OptionsPage.php:368 html/OptionsPage.php:512
+#: html/OptionsPage.php:627 html/OptionsPage.php:863
+msgid "List"
+msgstr ""
+
+#: html/OptionsPage.php:222
+msgid "Tiles"
+msgstr ""
+
+#: html/OptionsPage.php:223
+msgid "Swatch"
+msgstr ""
+
+#: html/OptionsPage.php:224 html/OptionsPage.php:369 html/OptionsPage.php:513
+#: html/OptionsPage.php:628 html/OptionsPage.php:864
+msgid "Checklist"
+msgstr ""
+
+#: html/OptionsPage.php:225 html/OptionsPage.php:370 html/OptionsPage.php:514
+#: html/OptionsPage.php:629 html/OptionsPage.php:865
+msgid "Dropdown"
+msgstr ""
+
+#: html/OptionsPage.php:226
+msgid "Which type of display should be used for filter colors?"
+msgstr ""
+
+#: html/OptionsPage.php:231
+msgid "Display Thumbnail Colors"
+msgstr ""
+
+#: html/OptionsPage.php:242
+msgid ""
+"Should a list of available colors be shown under each product thumbnail on "
+"the shop page?"
+msgstr ""
+
+#: html/OptionsPage.php:247 html/OptionsPage.php:249 html/OptionsPage.php:391
+#: html/OptionsPage.php:393
+msgid "Display on Product Page"
+msgstr ""
+
+#: html/OptionsPage.php:258
+msgid "Should a product's color, if any, be displayed on the product page?"
+msgstr ""
+
+#: html/OptionsPage.php:262 html/OptionsPage.php:264
+msgid "Use Color for Variations"
+msgstr ""
+
+#: html/OptionsPage.php:273
+msgid ""
+"Should it be possible to use colors for variations? Save the product for new "
+"colors to be shown as options for variations."
+msgstr ""
+
+#: html/OptionsPage.php:293
+msgid "Size Filtering"
+msgstr ""
+
+#: html/OptionsPage.php:298 html/OptionsPage.php:300
+msgid "Enable Size Filtering"
+msgstr ""
+
+#: html/OptionsPage.php:309
+msgid ""
+"Should the size filters be displayed when the plugin's widget or shortcode "
+"is used?"
+msgstr ""
+
+#: html/OptionsPage.php:316 html/OptionsPage.php:332 html/OptionsPage.php:365
+#: html/OptionsPage.php:367 html/OptionsPage.php:378
+msgid "Size Filter Layout"
+msgstr ""
+
+#: html/OptionsPage.php:325
+msgid "Should a size's name be displayed in the filtering box?"
+msgstr ""
+
+#: html/OptionsPage.php:341
+msgid "Which sizes with no associated products be hidden?"
+msgstr ""
+
+#: html/OptionsPage.php:357
+msgid "Should the number of products for each size be displayed?"
+msgstr ""
+
+#: html/OptionsPage.php:371
+msgid "Which type of display should be used for size filters?"
+msgstr ""
+
+#: html/OptionsPage.php:376
+msgid "Display Thumbnail Sizes"
+msgstr ""
+
+#: html/OptionsPage.php:387
+msgid ""
+"Should a list of available sizes be shown under each product thumbnail on "
+"the shop page?"
+msgstr ""
+
+#: html/OptionsPage.php:402
+msgid "Should a product's size, if any, be displayed on the product page?"
+msgstr ""
+
+#: html/OptionsPage.php:406 html/OptionsPage.php:408
+msgid "Use Sizes for Variations"
+msgstr ""
+
+#: html/OptionsPage.php:417
+msgid ""
+"Should it be possible to use sizes for variations? Save the product for new "
+"sizes to be shown as options for variations."
+msgstr ""
+
+#: html/OptionsPage.php:437
+msgid "Category Filtering"
+msgstr ""
+
+#: html/OptionsPage.php:442 html/OptionsPage.php:444
+msgid "Enable Category Filtering"
+msgstr ""
+
+#: html/OptionsPage.php:453
+msgid ""
+"Should the category filters be displayed when the plugin's widget or "
+"shortcode is used?"
+msgstr ""
+
+#: html/OptionsPage.php:460 html/OptionsPage.php:476 html/OptionsPage.php:509
+#: html/OptionsPage.php:511 html/OptionsPage.php:522
+msgid "Category Filter Layout"
+msgstr ""
+
+#: html/OptionsPage.php:469
+msgid "Should a category's name be displayed in the filtering box?"
+msgstr ""
+
+#: html/OptionsPage.php:485
+msgid "Which categories with no associated products be hidden?"
+msgstr ""
+
+#: html/OptionsPage.php:501
+msgid "Should the number of products for each category be displayed?"
+msgstr ""
+
+#: html/OptionsPage.php:515
+msgid "Which type of display should be used for filter categories?"
+msgstr ""
+
+#: html/OptionsPage.php:520
+msgid "Display Thumbnail Categories"
+msgstr ""
+
+#: html/OptionsPage.php:531
+msgid ""
+"Should a list of available categories be shown under each product thumbnail "
+"on the shop page?"
+msgstr ""
+
+#: html/OptionsPage.php:552
+msgid "Tag Filtering"
+msgstr ""
+
+#: html/OptionsPage.php:557 html/OptionsPage.php:559 html/OptionsPage.php:795
+msgid "Enable Tag Filtering"
+msgstr ""
+
+#: html/OptionsPage.php:568
+msgid ""
+"Should the tag filters be displayed when the plugin's widget or shortcode is "
+"used?"
+msgstr ""
+
+#: html/OptionsPage.php:575 html/OptionsPage.php:591 html/OptionsPage.php:624
+#: html/OptionsPage.php:626 html/OptionsPage.php:637 html/OptionsPage.php:811
+#: html/OptionsPage.php:827 html/OptionsPage.php:862 html/OptionsPage.php:873
+msgid "Tag Filter Layout"
+msgstr ""
+
+#: html/OptionsPage.php:584
+msgid "Should a tag's name be displayed in the filtering box?"
+msgstr ""
+
+#: html/OptionsPage.php:600
+msgid "Which tags with no associated products be hidden?"
+msgstr ""
+
+#: html/OptionsPage.php:616
+msgid "Should the number of products for each tag be displayed?"
+msgstr ""
+
+#: html/OptionsPage.php:630
+msgid "Which type of display should be used for filter tags?"
+msgstr ""
+
+#: html/OptionsPage.php:635
+msgid "Display Thumbnail Tags"
+msgstr ""
+
+#: html/OptionsPage.php:646
+msgid ""
+"Should a list of available tags be shown under each product thumbnail on the "
+"shop page?"
+msgstr ""
+
+#: html/OptionsPage.php:667
+msgid "Text Search Options"
+msgstr ""
+
+#: html/OptionsPage.php:671 html/OptionsPage.php:673
+msgid "Enable Text Search"
+msgstr ""
+
+#: html/OptionsPage.php:682
+msgid ""
+"Should a text search box be displayed when the plugin's widget or shortcode "
+"is used?"
+msgstr ""
+
+#: html/OptionsPage.php:687 html/OptionsPage.php:689
+msgid "Enable Product Title Autocomplete"
+msgstr ""
+
+#: html/OptionsPage.php:698
+msgid ""
+"If text search is enabled, should a list of matching products be displayed "
+"when a user starts typing?"
+msgstr ""
+
+#: html/OptionsPage.php:706
+msgid "Ratings Filtering"
+msgstr ""
+
+#: html/OptionsPage.php:710 html/OptionsPage.php:712
+msgid "Enable Ratings Filtering"
+msgstr ""
+
+#: html/OptionsPage.php:721
+msgid "Should a slider be added to filter products by rating?"
+msgstr ""
+
+#: html/OptionsPage.php:726 html/OptionsPage.php:728
+msgid "Reviews to Use"
+msgstr ""
+
+#: html/OptionsPage.php:729
+msgid "WooCommerce"
+msgstr ""
+
+#: html/OptionsPage.php:730
+msgid "Ultimate Reviews"
+msgstr ""
+
+#: html/OptionsPage.php:731
+msgid ""
+"If reviews filtering is enabled, which type of reviews should products be "
+"filtered by?"
+msgstr ""
+
+#: html/OptionsPage.php:736
+msgid "In-Stock Filtering"
+msgstr ""
+
+#: html/OptionsPage.php:739 html/OptionsPage.php:741
+msgid "Enable In-Stock Filtering"
+msgstr ""
+
+#: html/OptionsPage.php:750
+msgid "Should an in-stock toggle be added to the filtering widget?"
+msgstr ""
+
+#: html/OptionsPage.php:755
+msgid "On-Sale Filtering"
+msgstr ""
+
+#: html/OptionsPage.php:758 html/OptionsPage.php:760
+msgid "Enable On-Sale Filtering"
+msgstr ""
+
+#: html/OptionsPage.php:769
+msgid "Should an on-sale toggle be added to the filtering widget?"
+msgstr ""
+
+#: html/OptionsPage.php:788
+msgid " Attribute Filtering"
+msgstr ""
+
+#: html/OptionsPage.php:793
+#, php-format
+msgid "Enable %s Filtering"
+msgstr ""
+
+#: html/OptionsPage.php:820
+msgid "Should the attribute's name be displayed in the filtering box?"
+msgstr ""
+
+#: html/OptionsPage.php:836
+msgid "Should attributes with no associated products be hidden?"
+msgstr ""
+
+#: html/OptionsPage.php:852
+msgid "Should the number of products for each attribute be displayed?"
+msgstr ""
+
+#: html/OptionsPage.php:860
+msgid " Filter Layout"
+msgstr ""
+
+#: html/OptionsPage.php:866
+msgid "Which type of display should be used for filter attributes?"
+msgstr ""
+
+#: html/OptionsPage.php:871
+msgid "Display Thumbnail "
+msgstr ""
+
+#: html/OptionsPage.php:882
+msgid ""
+"Should a list of available attributes be shown under each product thumbnail "
+"on the shop page?"
+msgstr ""
+
+#: html/OptionsPage.php:907
+msgid "General Options"
+msgstr ""
+
+#: html/OptionsPage.php:927 html/OptionsPage.php:929
+msgid "Add 'Reset All' Button"
+msgstr ""
+
+#: html/OptionsPage.php:938
+msgid "Should a 'Reset All' button be added to the filters section?"
+msgstr ""
+
+#: html/OptionsPage.php:950 html/OptionsPage.php:1094
+msgid "Widget &amp; Shortcode"
+msgstr ""
+
+#: html/OptionsPage.php:973
+msgid "'Show All' for attributes"
+msgstr ""
+
+#: html/OptionsPage.php:995
+msgid "Product Thumbnail"
+msgstr ""
+
+#: html/OptionsPage.php:1032
+msgid "Product Page"
+msgstr ""
+
+#: html/OptionsPage.php:1066 html/OptionsPage.php:1070
+msgid "Custom CSS"
+msgstr ""
+
+#: html/OptionsPage.php:1098
+msgid "Color Shape"
+msgstr ""
+
+#: html/OptionsPage.php:1102
+msgid "Circle"
+msgstr ""
+
+#: html/OptionsPage.php:1103
+msgid "Square"
+msgstr ""
+
+#: html/OptionsPage.php:1109 html/OptionsPage.php:1245
+msgid ""
+"Color Icons<br><span style=\"font-weight:400\">(Squares or Circles)</span>"
+msgstr ""
+
+#: html/OptionsPage.php:1112 html/OptionsPage.php:1248
+msgid "Width"
+msgstr ""
+
+#: html/OptionsPage.php:1120 html/OptionsPage.php:1225
+msgid "Font Options"
+msgstr ""
+
+#: html/OptionsPage.php:1132 html/OptionsPage.php:1164
+#: html/OptionsPage.php:1201 html/OptionsPage.php:1237
+msgid "Font Size"
+msgstr ""
+
+#: html/OptionsPage.php:1140
+msgid "Ratings Bar"
+msgstr ""
+
+#: html/OptionsPage.php:1146
+msgid "Fill"
+msgstr ""
+
+#: html/OptionsPage.php:1150
+msgid "Empty"
+msgstr ""
+
+#: html/OptionsPage.php:1154
+msgid "Handles"
+msgstr ""
+
+#: html/OptionsPage.php:1158 html/OptionsPage.php:1182
+#: html/OptionsPage.php:1195 includes/widgets.php:141
+msgid "Text"
+msgstr ""
+
+#: html/OptionsPage.php:1172
+msgid "Reset All Button"
+msgstr ""
+
+#: html/OptionsPage.php:1178 html/OptionsPage.php:1191
+msgid "Background"
+msgstr ""
+
+#: html/OptionsPage.php:1188
+msgid "Hover Colors"
+msgstr ""
+
+#: html/OptionsPage.php:1221
+msgid "Shop Thumbnails"
+msgstr ""
+
+#: html/SizeDetails.php:91 html/SizesPage.php:144
+msgid ""
+"Assign a parent term to create a hierarchy. For example, a parent could be "
+"\"Pant Sizes\" with children being \"24\", \"26\", etc."
+msgstr ""
+
+#: html/SizesPage.php:114
+msgid "Add a New Size"
+msgstr ""
+
+#: includes/widgets.php:15
+msgid "WooCommerce Color Filters"
+msgstr ""
+
+#: includes/widgets.php:128
+msgid "Color Filters"
+msgstr ""
+
+#: includes/widgets.php:138
+msgid "Layout:"
+msgstr ""
+
+#: includes/widgets.php:141
+msgid "Color and text"
+msgstr ""
+
+#: includes/widgets.php:154
+msgid "Hide empty"
+msgstr ""
+
+#: includes/widgets.php:159
+msgid "Include the number of assigned products"
+msgstr ""

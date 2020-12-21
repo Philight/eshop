@@ -1,0 +1,305 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Custom Add to Cart Button Label and Link 1.2.1\n"
+"POT-Creation-Date: 2020-07-11 12:19+0530\n"
+"PO-Revision-Date: 2020-07-11 12:20+0530\n"
+"Last-Translator: \n"
+"Language-Team: hwxteam\n"
+"Language: hi_IN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.3.1\n"
+"X-Poedit-Basepath: ..\n"
+"Plural-Forms: nplurals=2; plural=(n==0 || n==1);\n"
+"X-Poedit-KeywordsList: __\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: catcbll.php:163
+msgid "Poor"
+msgstr "गरीब"
+
+#: catcbll.php:163
+msgid "Works"
+msgstr "कार्य"
+
+#: catcbll.php:163
+msgid "Good"
+msgstr "अच्छा"
+
+#: catcbll.php:163
+msgid "Great"
+msgstr "शानदार"
+
+#: catcbll.php:163
+msgid "Fantastic!"
+msgstr "शानदार!"
+
+#: catcbll.php:175
+msgid "Live demo"
+msgstr "लाइव डेमो"
+
+#: catcbll.php:193
+msgid "Settings"
+msgstr "सेटिंग्स"
+
+#: include/wcatcbll_general_settings.php:13 include/wcatcbll_general_settings.php:15
+msgid "Add to Cart"
+msgstr "कार्ट में डालें"
+
+#: include/wcatcbll_general_settings.php:25
+msgid "Cart Button's Settings"
+msgstr "कार्ट बटन की सेटिंग्स"
+
+#: include/wcatcbll_general_settings.php:30
+msgid "Both"
+msgstr "दोनों"
+
+#: include/wcatcbll_general_settings.php:41
+msgid "Default Add to cart per Product"
+msgstr "डिफ़ॉल्ट उत्पाद प्रति कार्ट में जोड़ें"
+
+#: include/wcatcbll_general_settings.php:52
+msgid "Custom Button per Product"
+msgstr "प्रति उत्पाद कस्टम बटन"
+
+#: include/wcatcbll_general_settings.php:63
+msgid "Custom button position"
+msgstr "कस्टम बटन की स्थिति"
+
+#: include/wcatcbll_general_settings.php:64
+msgid "custom button position"
+msgstr "कस्टम बटन की स्थिति"
+
+#: include/wcatcbll_general_settings.php:78
+msgid "Custom Button Display"
+msgstr "कस्टम बटन प्रदर्शन"
+
+#: include/wcatcbll_general_settings.php:83
+msgid "Global"
+msgstr "वैश्विक"
+
+#: include/wcatcbll_general_settings.php:94
+msgid "Shop"
+msgstr "दुकान"
+
+#: include/wcatcbll_general_settings.php:105
+msgid "Single Product"
+msgstr "एकल उत्पाद"
+
+#: include/wcatcbll_general_settings.php:116 include/wcatcbll_inscrpt.php:48
+msgid "Open link in new tab"
+msgstr "नए टैब में लिंक खोलें"
+
+#: include/wcatcbll_general_settings.php:117 include/wcatcbll_inscrpt.php:49
+msgid "If checkbox is check then button link open in new tab"
+msgstr "यदि चेकबॉक्स की जांच की जाती है तो नए टैब में बटन लिंक खुला"
+
+#: include/wcatcbll_general_settings.php:131
+msgid "Custom Button Style"
+msgstr "कस्टम बटन शैली"
+
+#: include/wcatcbll_general_settings.php:136
+msgid "Text Font Size"
+msgstr "पाठ फ़ॉन्ट आकार"
+
+#: include/wcatcbll_general_settings.php:147
+msgid "Border Size"
+msgstr "सीमा का आकार"
+
+#: include/wcatcbll_general_settings.php:158
+msgid "Border Radius"
+msgstr "सीमा त्रिज्या"
+
+#: include/wcatcbll_general_settings.php:169
+msgid "Button Background"
+msgstr "बटन पृष्ठभूमि"
+
+#: include/wcatcbll_general_settings.php:177
+msgid "Text Font Color"
+msgstr "पाठ फ़ॉन्ट रंग"
+
+#: include/wcatcbll_general_settings.php:185
+msgid "Border color"
+msgstr "किनारे का रंग"
+
+#: include/wcatcbll_general_settings.php:193
+msgid "Hover Color"
+msgstr "होवर रंग"
+
+#: include/wcatcbll_general_settings.php:201
+msgid "Button Padding"
+msgstr "बटन पैडिंग"
+
+#: include/wcatcbll_general_settings.php:202
+msgid "Button padding"
+msgstr "बटन पैडिंग"
+
+#: include/wcatcbll_general_settings.php:209
+msgid "Vertically"
+msgstr "लंबवत"
+
+#: include/wcatcbll_general_settings.php:213
+msgid "Horizontally"
+msgstr "क्षैतिज"
+
+#: include/wcatcbll_general_settings.php:220
+msgid "Button Margin"
+msgstr "बटन मार्जिन"
+
+#: include/wcatcbll_general_settings.php:221
+msgid "Button margin"
+msgstr "बटन मार्जिन"
+
+#: include/wcatcbll_general_settings.php:228
+msgid "Top"
+msgstr "ऊपर"
+
+#: include/wcatcbll_general_settings.php:232
+msgid "Right"
+msgstr "सही"
+
+#: include/wcatcbll_general_settings.php:236
+msgid "Bottom"
+msgstr "तल"
+
+#: include/wcatcbll_general_settings.php:240
+msgid "Left"
+msgstr "बाएं"
+
+#: include/wcatcbll_general_settings.php:247
+msgid "Button icon"
+msgstr "बटन आइकन"
+
+#: include/wcatcbll_general_settings.php:261
+msgid "Button icon Position"
+msgstr "बटन आइकन स्थिति"
+
+#: include/wcatcbll_general_settings.php:272
+msgid "2D Transitions"
+msgstr "2डी संक्रमण"
+
+#: include/wcatcbll_general_settings.php:272
+msgid "2D Transitions hover on Add to Cart Button"
+msgstr "Add to Cart बटन पर 2D संक्रमण"
+
+#: include/wcatcbll_general_settings.php:286
+msgid "Background Transitions"
+msgstr "पृष्ठभूमि परिवर्तन"
+
+#: include/wcatcbll_general_settings.php:286
+msgid "Add to Cart Button Background Transitions on hover"
+msgstr "Add to Cart बटन पर पृष्ठभूमि संक्रमण"
+
+#: include/wcatcbll_inscrpt.php:25
+msgid "There are no exporting data in your selection fields"
+msgstr "आपके चयन क्षेत्रों में कोई निर्यात डेटा नहीं है"
+
+#: include/wcatcbll_inscrpt.php:43 include/wcatcbll_metabox.php:34
+#: include/wcatcbll_metabox.php:53
+msgid "Label"
+msgstr "लेबल"
+
+#: include/wcatcbll_inscrpt.php:44 include/wcatcbll_metabox.php:38
+#: include/wcatcbll_metabox.php:57
+msgid "Url"
+msgstr "यूआरएल"
+
+#: include/wcatcbll_inscrpt.php:45 include/wcatcbll_metabox.php:36
+#: include/wcatcbll_metabox.php:55
+msgid "Add To Basket or Shop Now or Shop on Amazon"
+msgstr "टोकरी या दुकान में जोड़ें या अमेज़न पर खरीदारी करें"
+
+#: include/wcatcbll_inscrpt.php:46 include/wcatcbll_metabox.php:36
+#: include/wcatcbll_metabox.php:55
+msgid "This text will be shown on the button linking to the external product"
+msgstr "यह पाठ बाहरी उत्पाद से लिंक करने वाले बटन पर दिखाया जाएगा"
+
+#: include/wcatcbll_inscrpt.php:47 include/wcatcbll_metabox.php:39
+#: include/wcatcbll_metabox.php:59
+msgid "Enter the external URL to the product"
+msgstr "उत्पाद के लिए बाहरी यूआरएल दर्ज करें"
+
+#: include/wcatcbll_metabox.php:4
+msgid "Product Custom Button Settings"
+msgstr "उत्पाद कस्टम बटन सेटिंग्स"
+
+#: include/wcatcbll_metabox.php:25 include/wcatcbll_metabox.php:46
+msgid "Add New"
+msgstr "नया जोड़ें"
+
+#: include/wcatcbll_metabox.php:30 include/wcatcbll_metabox.php:50
+msgid "Remove"
+msgstr "हटाएँ"
+
+#: include/wcatcbll_setting_shortcode.php:6 include/wcatcbll_settings.php:51
+msgid "Shortcode"
+msgstr "छोटे संकेत"
+
+#: include/wcatcbll_setting_shortcode.php:8
+msgid "Anywhere you can show product using this shortcode"
+msgstr "कहीं भी आप इस शोर्ट का उपयोग करके उत्पाद दिखा सकते हैं"
+
+#: include/wcatcbll_setting_support.php:5 include/wcatcbll_settings.php:52
+msgid "Support"
+msgstr "सहयोग"
+
+#: include/wcatcbll_setting_support.php:13
+msgid "I would like to review this plugin"
+msgstr "मैं इस प्लगइन की समीक्षा करना चाहता हूं"
+
+#: include/wcatcbll_setting_support.php:20
+msgid "I have ideas to improve this plugin"
+msgstr "इस प्लगइन को बेहतर बनाने के लिए मेरे पास विचार हैं"
+
+#: include/wcatcbll_setting_support.php:27
+msgid "I need help with this plugin"
+msgstr "मुझे इस प्लगइन की मदद चाहिए"
+
+#: include/wcatcbll_setting_support.php:33
+msgid "Enter your email address.."
+msgstr "अपना ईमेल पता दर्ज करें.."
+
+#: include/wcatcbll_setting_support.php:36
+msgid "Leave plugin developers any feedback here.."
+msgstr "प्लगइन डेवलपर्स के लिए यहां कोई प्रतिक्रिया छोड़ दें.."
+
+#: include/wcatcbll_setting_support.php:40
+msgid ""
+"I agree that by clicking the send button below my email address and comments will be "
+"send to a ServMask server"
+msgstr ""
+"मैं इस बात से सहमत हूं कि मेरे ईमेल पते के नीचे भेजे गए बटन पर क्लिक करके और टिप्पणियां ServMask सर्वर पर "
+"भेज दी जाएंगी"
+
+#: include/wcatcbll_setting_support.php:45
+msgid "Send"
+msgstr "संदेश"
+
+#: include/wcatcbll_setting_support.php:49
+msgid "Cancel"
+msgstr "रद्द करना"
+
+#: include/wcatcbll_settings.php:12 include/wcatcbll_widget.php:16
+msgid "Custom Cart Button"
+msgstr "उत्पाद कस्टम बटन"
+
+#: include/wcatcbll_settings.php:41
+msgid "You do not have sufficient permissions to access this page"
+msgstr "इस पृष्ठ तक पहुँचने के लिए आपके पास पर्याप्त अनुमति नहीं है"
+
+#: include/wcatcbll_settings.php:50
+msgid "General"
+msgstr "सामान्य"
+
+#: include/wcatcbll_widget.php:20
+msgid "Wcatcbll Product show"
+msgstr "Wcatcbll उत्पाद दिखाना"
+
+#: include/wcatcbll_widget.php:182
+msgid "New title"
+msgstr "नया शीर्षक"
+
+#: include/wcatcbll_widget.php:190
+msgid "Number of products to show"
+msgstr "दिखाने के लिए उत्पादों की संख्या"

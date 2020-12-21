@@ -1,0 +1,144 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Product Categories Designs for WooCommerce\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-07-14 06:56+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: \n"
+"Language: \n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Loco https://localise.biz/\n"
+"X-Loco-Version: 2.4.0; wp-5.4.2"
+
+#: product-categories-designs-for-woocommerce.php:68
+#, php-format
+msgid "<p><strong>%s</strong> recommends the following plugin to use.</p>"
+msgstr ""
+
+#: product-categories-designs-for-woocommerce.php:69
+#, php-format
+msgid "<p><strong><a href=\"%s\" target=\"_blank\">%s</a> </strong></p>"
+msgstr ""
+
+#: includes/admin/pcdfwoo-how-it-work.php:188
+msgid "All Shortcodes"
+msgstr ""
+
+#: includes/admin/pcdfwoo-how-it-work.php:23
+msgid "Category Designs - How It Works"
+msgstr ""
+
+#: includes/admin/pcdfwoo-how-it-work.php:201
+msgid "Check plugin document for shortcode parameters and demo for designs."
+msgstr ""
+
+#: includes/admin/pcdfwoo-how-it-work.php:203
+msgid "Demo for Designs"
+msgstr ""
+
+#: includes/admin/pcdfwoo-how-it-work.php:169
+msgid "Display Product with Categories in Grid View and Slider View."
+msgstr ""
+
+#. Description of the plugin
+msgid ""
+"Display WooCommerce product categories designs with grid and silder view. "
+"Also work with Gutenberg shortcode block."
+msgstr ""
+
+#: includes/admin/pcdfwoo-how-it-work.php:202
+msgid "Documentation"
+msgstr ""
+
+#: includes/admin/pcdfwoo-how-it-work.php:164
+msgid "Getting Started"
+msgstr ""
+
+#: includes/admin/pcdfwoo-how-it-work.php:246
+msgid "Go Premium"
+msgstr ""
+
+#: includes/admin/pcdfwoo-how-it-work.php:253
+msgid "Help to improve this plugin!"
+msgstr ""
+
+#: includes/admin/pcdfwoo-how-it-work.php:117
+msgid "How It Works"
+msgstr ""
+
+#: includes/admin/pcdfwoo-how-it-work.php:156
+msgid "How It Works - Display and Shortcode"
+msgstr ""
+
+#: includes/admin/pcdfwoo-how-it-work.php:23
+msgid "How it works, our plugins and offers"
+msgstr ""
+
+#: includes/admin/pcdfwoo-how-it-work.php:176
+msgid "How Shortcode Works"
+msgstr ""
+
+#. Author URI of the plugin
+msgid "http://www.wponlinesupport.com/"
+msgstr ""
+
+#. URI of the plugin
+msgid "https://www.wponlinesupport.com/plugins/"
+msgstr ""
+
+#: includes/admin/pcdfwoo-how-it-work.php:198
+msgid "Need Support?"
+msgstr ""
+
+#: includes/admin/pcdfwoo-how-it-work.php:120
+msgid "Our Plugins"
+msgstr ""
+
+#. Name of the plugin
+msgid "Product Categories Designs for WooCommerce"
+msgstr ""
+
+#: includes/admin/pcdfwoo-how-it-work.php:191
+msgid "Product categories in grid Shortcode"
+msgstr ""
+
+#: includes/admin/pcdfwoo-how-it-work.php:192
+msgid "Product categories in slider / carousel Shortcode"
+msgstr ""
+
+#: includes/admin/pcdfwoo-how-it-work.php:180
+msgid ""
+"Step-1. Create a page like product categories OR add the shortcode on any "
+"page."
+msgstr ""
+
+#: includes/admin/pcdfwoo-how-it-work.php:181
+msgid "Step-2. Put below shortcode as per your need."
+msgstr ""
+
+#: includes/admin/pcdfwoo-how-it-work.php:102
+msgid ""
+"There was an error retrieving the data from the server. Please try again "
+"later."
+msgstr ""
+
+#: includes/admin/pcdfwoo-how-it-work.php:168
+msgid "This plugin get all the categories from \"Products--> Category\""
+msgstr ""
+
+#: includes/admin/pcdfwoo-how-it-work.php:220
+msgid "Upgrate to Pro"
+msgstr ""
+
+#: includes/admin/pcdfwoo-how-it-work.php:247
+msgid "View PRO Demo"
+msgstr ""
+
+#. Author of the plugin
+msgid "WP OnlineSupport"
+msgstr ""

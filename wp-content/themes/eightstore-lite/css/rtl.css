@@ -1,0 +1,214 @@
+.item-prod-wrap .item-img:before,
+.feature-cat-image::before {
+	left: 0;
+}
+#section-category2 .feature-cat-image::before {
+	right: 0;
+	left: inherit;
+}
+.right-links {
+	text-align: left;
+}
+.header-search {
+	margin-right: 10px;
+	margin-left: 0;
+}
+.main-header .right-links .cart-box .widget_shopping_cart,
+.welcome-user {
+	left: 0;
+	right: unset;
+}
+.main-header .right-links .cart-box .widget_shopping_cart::before,
+.welcome-user::before {
+	right: unset;
+	left: 15px;
+}
+.search-box {
+	right: 50%;
+	-webkit-transform: translateX(50%);
+	-moz-transform: translateX(50%);
+	-ms-transform: translateX(50%);
+	-o-transform: translateX(50%);
+	transform: translateX(50%);
+}
+.search-box .close {
+	right: 30px;
+	left: unset;
+}
+.search-box .search-field {
+	margin-right: -40%;
+	right: 50%;
+	margin-left: 0;
+	left: unset;
+}
+.search-in-select {
+	left: 17%;
+	right: unset;
+}
+.search-box .searchform .searchsubmit, .page-content .searchform .searchsubmit {
+	left: 8%;
+}
+.search-in-select span.search-in {
+	margin-left: 10px;
+	margin-right: 0;
+}
+
+.main-navigation ul {
+	padding-right: 0;
+}
+.main-navigation ul.menu li::before {
+	left: -2px;
+	right: unset;
+	border-right: none;
+	border-left: 1px solid #099896;
+}
+.main-navigation ul.menu li:last-child::before {
+	border-left: none;
+}
+.main-navigation ul ul {
+	right: 0;
+	left: unset;
+}
+.main-navigation ul ul.sub-menu li:hover ul {
+	right: 100%;
+	left: unset;
+}
+.main-navigation ul ul li:hover > ul, .main-navigation ul ul li.focus > ul {
+	left: unset;
+	right: 100%;
+}
+.main-navigation ul ul.sub-menu li ul {
+	right: 110%;
+	left: unset;
+	-webkit-border-top-right-radius: 0;
+	border-top-right-radius: 0;
+	-webkit-border-bottom-left-radius: 5px;
+	border-bottom-left-radius: 5px;
+}
+.banner-caption {
+	left: 10%;
+	right: unset;
+}
+#section-below-slider .block-large, #section-below-slider .small-wrap {
+	float: right;
+	margin-left: 30px;
+	margin-right: 0;
+}
+#section-below-slider .block-large:last-child {
+	margin-left: 0;
+}
+#section-product1 .new-prod-slide.slick-slider,
+#section-product2 .new-prod-slide.slick-slider {
+	direction: ltr;
+}
+.video-cta .cta-desc {
+	text-align: right;
+	padding-right: 30px;
+	padding-left: 0;
+}
+.new-prod-slide .title-cart .cart, .woocommerce ul.products li.product .title-cart .cart, .feature-cat-product .title-cart .cart {
+	left: 0;
+}
+.title-cart > a {
+	padding-right: 0;
+	padding-left: 30px;
+}
+#section-promo2 .promo-image,
+#section-promo3 .promo-image {
+	float: right;
+}
+#section-product2 .prod-title::after {
+	left: 0;
+	right: unset;
+}
+#blog-testimonial-section.blog-only.testimonial-only .blogs {
+	float: right;
+	margin-left: 30px;
+	margin-right: 0;
+}
+.widget_eightstore_lite_cta_simple a.btn {
+	text-align: right;
+}
+.widget_eightstore_lite_cta_simple a.btn i.fa {
+	margin-right: 0;
+	margin-left: 15px;
+}
+#section-footer .fa.fa-mobile,
+#section-footer .fa.fa-credit-card, #section-footer .fa.fa-truck {
+	margin-right: 0;
+	margin-left: 10px;
+}
+.woocommerce .cart .button, .woocommerce .cart input.button {
+	float: left;
+}
+.title-cart a.button:before {
+	left: 0;
+	right: unset;
+}
+.item-wishlist span {
+	right: 0;
+	left: unset;
+}
+.item-wishlist .fa:hover span {
+	right: 100%;
+	padding-right: 5px;
+	padding-left: 0;
+	left: unset;
+}
+.woocommerce .widget-title {
+	position: relative;
+	padding-right: 30px;
+}
+.woocommerce.widget_price_filter .widget-title::before,
+.woocommerce.widget_product_categories .widget-title::before {
+	margin-right: 0;
+	margin-left: 10px;
+	right: 0;
+	position: absolute;
+}
+#primary h1.entry-title:after, #secondary h1.widget-title:after, .page-title:after {
+	left: 0;
+	border-right: 20px solid transparent;
+	border-left: none;
+	right: unset;
+}
+.single-product #primary {
+	float: right;
+	margin-right: 0;
+	margin-left: 40px;
+}
+.single-product #secondary {
+	float: left;
+}
+.woocommerce #content div.product div.images, .woocommerce div.product div.images, .woocommerce-page #content div.product div.images, .woocommerce-page div.product div.images {
+	margin-left: 25px;
+	margin-right: 0;
+}
+.woocommerce .product_meta .sku_wrapper .sku, .woocommerce .product_meta .posted_in a, .woocommerce .product_meta .tagged_as a {
+	margin-left: 0;
+	margin-right: 10px;
+}
+.woocommerce ul.products li.product .onsale {
+	right: 0;
+	left: auto;
+}
+#secondary ul li {
+	padding-left: 0;
+	padding-right: 15px;
+}
+#secondary ul li:before {
+	margin-right: 0;
+	margin-left: 10px;
+	right: 0;
+	left: unset;
+	-webkit-transform: rotateY(180deg);
+	-moz-transform: rotateY(180deg);
+	-ms-transform: rotateY(180deg);
+	-o-transform: rotateY(180deg);
+	transform: rotateY(180deg);
+}
+.archive .post-thumbnail {
+	float: right;
+	margin-right: 0;
+	margin-left: 30px;
+}

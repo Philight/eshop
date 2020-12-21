@@ -1,0 +1,12 @@
+<wpml-config>
+    <admin-texts>
+        <key name="theme_mods_eightstore-lite">
+            <key name="footer_copyright_text" />
+            <key name="eightstore_ticker_title" />
+            <key name="callto_text" />
+            <key name="eightstore_form_shortcode" />
+            <key name="eightstore_blog_title" />
+            <key name="eightstore_testimonial_title" />
+        </key>
+    </admin-texts>
+</wpml-config>
