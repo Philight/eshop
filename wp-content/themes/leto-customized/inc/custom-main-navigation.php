@@ -1,6 +1,7 @@
 <?php
 /*
-	Added icons to Account area (login/register)	
+	Added icons to Account area (login/register)
+	rework structure maybe	
 */
 
 add_action( 'init', 'remove_actions_leto_navigation');

@@ -62,19 +62,23 @@ Underscores is distributed under the terms of the GNU GPL v2 or later.
 	align-items: center;
 }
 
-/* remove default button and view cart */
-.woocommerce.single-product form.cart > .button, .woocommerce a.added_to_cart {
+/* remove default button and view cart for single product */
+.woocommerce.single-product form.cart > button,
+.woocommerce.single-product form.variations_form.cart div.woocommerce-variation-add-to-cart > button,
+.woocommerce a.added_to_cart {
 	display: none;
 }
 
 .woocommerce.single-product form.cart .button-wrapper {
 	display: flex;
+	background-color: red;
 }
 
 .woocommerce.single-product form.cart .button-container {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+
 }
 
 .viewcart {

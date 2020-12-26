@@ -13,7 +13,10 @@
 ( function ( ) {
 	document.addEventListener('DOMContentLoaded', function () {
 		//document.querySelector(".viewcart").style.visibility = 'hidden'; 
-		document.querySelector(".woocommerce.single-product .cart div button").onclick = function() {
+		document.querySelector(".woocommerce.single-product form.cart div button").onclick = function() {
+			document.querySelector(".viewcart").style.visibility = 'visible'; 
+		}
+		document.querySelector(".woocommerce.single-product form.cart .button-wrapper button").onclick = function() {
 			document.querySelector(".viewcart").style.visibility = 'visible'; 
 		}
 	});
