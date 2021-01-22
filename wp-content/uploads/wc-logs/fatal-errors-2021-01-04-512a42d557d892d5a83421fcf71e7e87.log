@@ -1,0 +1,91 @@
+2021-01-04T15:28:09+00:00 CRITICAL Uncaught Error: Cannot use object of type WC_Product_Variation as array in C:\xampp\htdocs\eshop\wp-content\themes\leto-customized\custom\custom-sidecart-variations-form.php:8
+Stack trace:
+#0 C:\xampp\htdocs\eshop\wp-includes\class-wp-hook.php(287): custom_function(Object(WC_Product_Variation))
+#1 C:\xampp\htdocs\eshop\wp-includes\class-wp-hook.php(311): WP_Hook->apply_filters('', Array)
+#2 C:\xampp\htdocs\eshop\wp-includes\plugin.php(484): WP_Hook->do_action(Array)
+#3 C:\xampp\htdocs\eshop\wp-content\themes\leto-customized\woocommerce\cart\cart.php(99): do_action('custom_sidecart...', Object(WC_Product_Variation))
+#4 C:\xampp\htdocs\eshop\wp-content\plugins\woocommerce\includes\wc-core-functions.php(345): include('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\eshop\wp-content\plugins\woocommerce\includes\shortcodes\class-wc-shortcode-cart.php(99): wc_get_template('cart/cart.php')
+#6 C:\xampp\htdocs\eshop\wp-content\plugins\woocommerce\includes\class-wc-shortcodes.php(72): WC_Shortcode_Cart::output(Array)
+#7 C:\x in C:\xampp\htdocs\eshop\wp-content\themes\leto-customized\custom\custom-sidecart-variations-form.php on line 8
+
+2021-01-04T15:38:22+00:00 CRITICAL Uncaught Error: Call to a member function get_cart_item() on null in C:\xampp\htdocs\eshop\wp-content\themes\leto-customized\custom\custom-sidecart-variations-form.php:16
+Stack trace:
+#0 C:\xampp\htdocs\eshop\wp-includes\class-wp-hook.php(287): custom_function('c0795989eebaacc...')
+#1 C:\xampp\htdocs\eshop\wp-includes\class-wp-hook.php(311): WP_Hook->apply_filters('', Array)
+#2 C:\xampp\htdocs\eshop\wp-includes\plugin.php(484): WP_Hook->do_action(Array)
+#3 C:\xampp\htdocs\eshop\wp-content\themes\leto-customized\woocommerce\cart\cart.php(99): do_action('custom_sidecart...', 'c0795989eebaacc...')
+#4 C:\xampp\htdocs\eshop\wp-content\plugins\woocommerce\includes\wc-core-functions.php(345): include('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\eshop\wp-content\plugins\woocommerce\includes\shortcodes\class-wc-shortcode-cart.php(99): wc_get_template('cart/cart.php')
+#6 C:\xampp\htdocs\eshop\wp-content\plugins\woocommerce\includes\class-wc-shortcodes.php(72): WC_Shortcode_Cart::output(Array)
+#7 C:\xampp\htdocs\eshop\wp- in C:\xampp\htdocs\eshop\wp-content\themes\leto-customized\custom\custom-sidecart-variations-form.php on line 16
+
+2021-01-04T15:42:57+00:00 CRITICAL Uncaught Error: Call to a member function get_available_variations() on bool in C:\xampp\htdocs\eshop\wp-content\themes\leto-customized\custom\custom-sidecart-variations-form.php:23
+Stack trace:
+#0 C:\xampp\htdocs\eshop\wp-includes\class-wp-hook.php(287): custom_function(Object(WC_Product_Variable))
+#1 C:\xampp\htdocs\eshop\wp-includes\class-wp-hook.php(311): WP_Hook->apply_filters('', Array)
+#2 C:\xampp\htdocs\eshop\wp-includes\plugin.php(484): WP_Hook->do_action(Array)
+#3 C:\xampp\htdocs\eshop\wp-content\themes\leto-customized\templates\side-cart-woocommerce\global\body\product.php(58): do_action('custom_sidecart...', Object(WC_Product_Variable))
+#4 C:\xampp\htdocs\eshop\wp-content\plugins\side-cart-woocommerce\includes\xoo-framework\class-xoo-helper.php(57): include('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\eshop\wp-content\plugins\side-cart-woocommerce\templates\xoo-wsc-body.php(112): Xoo_Helper->get_template('global/body/pro...', Array)
+#6 C:\xampp\htdocs\eshop\wp-content\plugins\side-cart-woocommerce\i in C:\xampp\htdocs\eshop\wp-content\themes\leto-customized\custom\custom-sidecart-variations-form.php on line 23
+
+2021-01-04T15:43:07+00:00 CRITICAL Uncaught Error: Call to a member function get_available_variations() on bool in C:\xampp\htdocs\eshop\wp-content\themes\leto-customized\custom\custom-sidecart-variations-form.php:23
+Stack trace:
+#0 C:\xampp\htdocs\eshop\wp-includes\class-wp-hook.php(287): custom_function(Object(WC_Product_Variable))
+#1 C:\xampp\htdocs\eshop\wp-includes\class-wp-hook.php(311): WP_Hook->apply_filters('', Array)
+#2 C:\xampp\htdocs\eshop\wp-includes\plugin.php(484): WP_Hook->do_action(Array)
+#3 C:\xampp\htdocs\eshop\wp-content\themes\leto-customized\templates\side-cart-woocommerce\global\body\product.php(58): do_action('custom_sidecart...', Object(WC_Product_Variable))
+#4 C:\xampp\htdocs\eshop\wp-content\plugins\side-cart-woocommerce\includes\xoo-framework\class-xoo-helper.php(57): include('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\eshop\wp-content\plugins\side-cart-woocommerce\templates\xoo-wsc-body.php(112): Xoo_Helper->get_template('global/body/pro...', Array)
+#6 C:\xampp\htdocs\eshop\wp-content\plugins\side-cart-woocommerce\i in C:\xampp\htdocs\eshop\wp-content\themes\leto-customized\custom\custom-sidecart-variations-form.php on line 23
+
+2021-01-04T20:37:00+00:00 CRITICAL Uncaught Error: Undefined class constant 'glSettings' in C:\xampp\htdocs\eshop\wp-content\themes\leto-customized\inc\enqueue-xoo-wsc-sidecart.php:8
+Stack trace:
+#0 C:\xampp\htdocs\eshop\wp-content\themes\leto-customized\functions.php(43): include_once()
+#1 C:\xampp\htdocs\eshop\wp-includes\class-wp-hook.php(287): enqueue_register_scripts('')
+#2 C:\xampp\htdocs\eshop\wp-includes\class-wp-hook.php(311): WP_Hook->apply_filters(NULL, Array)
+#3 C:\xampp\htdocs\eshop\wp-includes\plugin.php(484): WP_Hook->do_action(Array)
+#4 C:\xampp\htdocs\eshop\wp-includes\script-loader.php(2004): do_action('wp_enqueue_scri...')
+#5 C:\xampp\htdocs\eshop\wp-includes\class-wp-hook.php(287): wp_enqueue_scripts('')
+#6 C:\xampp\htdocs\eshop\wp-includes\class-wp-hook.php(311): WP_Hook->apply_filters(NULL, Array)
+#7 C:\xampp\htdocs\eshop\wp-includes\plugin.php(484): WP_Hook->do_action(Array)
+#8 C:\xampp\htdocs\eshop\wp-includes\general-template.php(3005): do_action('wp_head')
+#9 C:\xampp\htdocs\eshop\wp-content\themes\leto\header.php(20) in C:\xampp\htdocs\eshop\wp-content\themes\leto-customized\inc\enqueue-xoo-wsc-sidecart.php on line 8
+
+2021-01-04T20:38:39+00:00 CRITICAL syntax error, unexpected '->' (T_OBJECT_OPERATOR) in C:\xampp\htdocs\eshop\wp-content\themes\leto-customized\inc\enqueue-xoo-wsc-sidecart.php on line 8
+
+2021-01-04T20:38:57+00:00 CRITICAL Uncaught Error: Access to undeclared static property: Xoo_Wsc_Frontend::$glSettings in C:\xampp\htdocs\eshop\wp-content\themes\leto-customized\inc\enqueue-xoo-wsc-sidecart.php:8
+Stack trace:
+#0 C:\xampp\htdocs\eshop\wp-content\themes\leto-customized\functions.php(43): include_once()
+#1 C:\xampp\htdocs\eshop\wp-includes\class-wp-hook.php(287): enqueue_register_scripts('')
+#2 C:\xampp\htdocs\eshop\wp-includes\class-wp-hook.php(311): WP_Hook->apply_filters(NULL, Array)
+#3 C:\xampp\htdocs\eshop\wp-includes\plugin.php(484): WP_Hook->do_action(Array)
+#4 C:\xampp\htdocs\eshop\wp-includes\script-loader.php(2004): do_action('wp_enqueue_scri...')
+#5 C:\xampp\htdocs\eshop\wp-includes\class-wp-hook.php(287): wp_enqueue_scripts('')
+#6 C:\xampp\htdocs\eshop\wp-includes\class-wp-hook.php(311): WP_Hook->apply_filters(NULL, Array)
+#7 C:\xampp\htdocs\eshop\wp-includes\plugin.php(484): WP_Hook->do_action(Array)
+#8 C:\xampp\htdocs\eshop\wp-includes\general-template.php(3005): do_action('wp_head')
+#9 C:\xampp\htdocs\eshop\wp-cont in C:\xampp\htdocs\eshop\wp-content\themes\leto-customized\inc\enqueue-xoo-wsc-sidecart.php on line 8
+
+2021-01-04T20:40:43+00:00 CRITICAL syntax error, unexpected '->' (T_OBJECT_OPERATOR) in C:\xampp\htdocs\eshop\wp-content\themes\leto-customized\inc\enqueue-xoo-wsc-sidecart.php on line 8
+
+2021-01-04T20:40:56+00:00 CRITICAL Uncaught Error: Access to undeclared static property: Xoo_Wsc_Frontend::$glSettings in C:\xampp\htdocs\eshop\wp-content\themes\leto-customized\inc\enqueue-xoo-wsc-sidecart.php:8
+Stack trace:
+#0 C:\xampp\htdocs\eshop\wp-content\themes\leto-customized\functions.php(43): include_once()
+#1 C:\xampp\htdocs\eshop\wp-includes\class-wp-hook.php(287): enqueue_register_scripts('')
+#2 C:\xampp\htdocs\eshop\wp-includes\class-wp-hook.php(311): WP_Hook->apply_filters(NULL, Array)
+#3 C:\xampp\htdocs\eshop\wp-includes\plugin.php(484): WP_Hook->do_action(Array)
+#4 C:\xampp\htdocs\eshop\wp-includes\script-loader.php(2004): do_action('wp_enqueue_scri...')
+#5 C:\xampp\htdocs\eshop\wp-includes\class-wp-hook.php(287): wp_enqueue_scripts('')
+#6 C:\xampp\htdocs\eshop\wp-includes\class-wp-hook.php(311): WP_Hook->apply_filters(NULL, Array)
+#7 C:\xampp\htdocs\eshop\wp-includes\plugin.php(484): WP_Hook->do_action(Array)
+#8 C:\xampp\htdocs\eshop\wp-includes\general-template.php(3005): do_action('wp_head')
+#9 C:\xampp\htdocs\eshop\wp-cont in C:\xampp\htdocs\eshop\wp-content\themes\leto-customized\inc\enqueue-xoo-wsc-sidecart.php on line 8
+
+2021-01-04T20:44:20+00:00 CRITICAL syntax error, unexpected '->' (T_OBJECT_OPERATOR) in C:\xampp\htdocs\eshop\wp-content\themes\leto-customized\inc\enqueue-xoo-wsc-sidecart.php on line 8
+
+2021-01-04T20:44:27+00:00 CRITICAL syntax error, unexpected '->' (T_OBJECT_OPERATOR) in C:\xampp\htdocs\eshop\wp-content\themes\leto-customized\inc\enqueue-xoo-wsc-sidecart.php on line 8
+
+2021-01-04T21:26:55+00:00 CRITICAL syntax error, unexpected '?>' in C:\xampp\htdocs\eshop\wp-content\themes\leto-customized\custom\custom-sidecart-variations-form.php on line 29
+

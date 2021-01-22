@@ -1,5 +1,6 @@
 jQuery( function ( $ ) {
-/* Original add_to_cart script in woocommerce/assets/js/frontend/add-to-cart.js */	
+/* OVERRIDEN
+ * add_to_cart script in woocommerce/assets/js/frontend/add-to-cart.js */	
 /* global wc_add_to_cart_params */
 
 	if ( typeof wc_add_to_cart_params === 'undefined' ) {

@@ -1,8 +1,0 @@
-2020-12-12T18:11:21+00:00 CRITICAL require(): Failed opening required 'C:\xampp\htdocs\eshop/wp-content/themes/leto/woocommerce.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\eshop\wp-content\themes\leto-customized\functions.php on line 12
-
-2020-12-12T18:12:47+00:00 CRITICAL require(): Failed opening required 'https://localhost/eshop/wp-content/themes/leto/woocommerce.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\eshop\wp-content\themes\leto-customized\functions.php on line 12
-
-2020-12-12T18:13:19+00:00 CRITICAL require(): Failed opening required 'https://localhost/eshop/wp-content/themes/leto/woocommerce.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\eshop\wp-content\themes\leto-customized\functions.php on line 12
-
-2020-12-12T18:39:26+00:00 CRITICAL syntax error, unexpected ''" target="_blank">Buy on Kind' (T_CONSTANT_ENCAPSED_STRING), expecting ';' or ',' in C:\xampp\htdocs\eshop\wp-content\themes\leto-customized\functions.php on line 17
-

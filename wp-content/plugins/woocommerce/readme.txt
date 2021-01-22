@@ -1,10 +1,10 @@
 === WooCommerce ===
-Contributors: automattic, mikejolley, jameskoster, claudiosanches, rodrigosprimo, peterfabian1000, vedjain, jamosova, obliviousharmony, konamiman, sadowski, royho
+Contributors: automattic, mikejolley, jameskoster, claudiosanches, rodrigosprimo, peterfabian1000, vedjain, jamosova, obliviousharmony, konamiman, sadowski, wpmuguru, royho
 Tags: e-commerce, store, sales, sell, woo, shop, cart, checkout, downloadable, downloads, payments, paypal, storefront, stripe, woo commerce
 Requires at least: 5.3
-Tested up to: 5.5
+Tested up to: 5.6
 Requires PHP: 7.0
-Stable tag: 4.7.1
+Stable tag: 4.9.1
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -160,69 +160,122 @@ WooCommerce comes with some sample data you can use to see how products look; im
 
 == Changelog ==
 
-= 4.7.1 - 2020-11-24 =
+= 4.9.1 2021-01-19 =
+
+* Fix - Reverts #28204 to ensure compatibility with extensions using legacy do_action calls. #28835
+
+= 4.9.0 2021-01-12 =
 
 **WooCommerce**
+* Localization - Add 'Ladakh' to the list of Indian states. #28458
+* Localization - Revert change and make city and postcode required again for Serbia. #28415
+* Performance - Added cache and filter for wc-customer get operations. #27352
+* Performance - Hydrate caches for wc_get_order to improve performance. #27734
+* Performance - Fetch only required data from DB when possible in API calls. #27735
+* Enhancement - add product and variation before_set_stock action hooks to allow 3rd party plugins to snapshot a product’s stock quantity before it is updated. #27558
+* Enhancement - Add the ability to avoid unsupported updates based on the PHP version. #28151
+* Fix - Format tax class before insertion to prevent conflicts with default classes. #27451
+* Fix - Change href of premium support link. #27675
+* Fix - `get_next` will now return null if the same action is currently executing to help with missed webhooks issue. #27850
+* Fix - Return default date/time formats from wc_date_format and wc_time_format if WP core formats are empty. #28322
+* Fix - Use WC function to get low stock amount instead of accessing option directly. #28440
+* Fix - Use single quotes inside MySQL query to avoid issues when ANSI_QUOTES is enabled. #28468
+* Fix - Remove deprecated PayPal Standard "Page Style" setting. #28499
+* Fix - Remove GB and IM from EU VAT countries. #28538
+* Fix - Fix issue where customer could checkout although mandatory field "Country" was not given. #28543
+* Fix - Switch to general tab when enabling virtual on a product setting. #28414
+* Fix - Unwanted HTML is showing up on the product search fields when searching for a product variation. #28416
+* Fix - Add `postbox` class to `woocommerce_attribute wc-metabox` for proper targeting. #28351
+* Fix - Error tooltip misaligned on tax country field. #28565
+* Fix - Prevent meta_data from overwriting column data in customer's read. #28102
+* Fix - Also count comment types with '' and 'comment' in the review count query. #28624
+* Fix - Better error messages when usage limit are reached. #28592
+* Fix - Adjust stock items only for statuses which reduces the stock. #28620
+* Fix - Named parameter to fix DB update routine on PHP8. #28537
+* Fix - Add protection around func_get_args_call for backwards compatibility. #28677
+* Fix - Restore stock_status in REST API V3 response. #28731
+* Fix - Revert some of the changes related to perf enhancements (27735) as it was breaking stock_status filter. #28745
+* Dev - Hook for intializing price slider in frontend. #28014
+* Dev - Add support for running a custom initialization script for tests. #28041
+* Dev - Use the coenjacobs/mozart package to renamespace vendor packages. #28147
+* Dev - Documentation for `wc_get_container`. #28269
+* Dev - Removed unused dockerfile. #28270
+* Dev - replaces deprecated jQuery.fn.click( handler ) with jQuery.fn.on( 'click', handler ). #28332
+* Dev - removed jQuery code that didn't work that was supposed to interact with the coupon page. #28287
+* Dev - Documentation return type fixes for WC_Payment_Gateway class. #28358
+* Dev - Remove function existence check for determine_locale. #28386
+* Dev - add a missing second parameter to our copy of the WP action lostpassword_post. #28467
+* Dev - Added argument on wc_get_template() to pass email object to email header and footer templates. #28204
+* Dev - Add is_numeric checks on sales reports by date to prevent notices with PHP 7.4. #28403
 
-* Fix - Prevent variable product to be added to cart until a valid variation is selected first. #28103
-* Fix - Restored support for custom `taxonomy-product_cat-<SLUG>.php` and `taxonomy-product_tag-<SLUG>.php` templates. #28377
-* Fix - Display overrides of `taxonomy-product_<cat|tag>.php` and `content-product_cat.php` templates in Status page. #28378
-* Dev - Apply `woocommerce_cart_needs_payment` filter in `WC_Checkout::process_checkout()` to make backwards compatible. #28281
+**WooCommerce - Admin 1.8.0 & 1.8.1**
+* Enhancement - Add “filter by variations in reports” inbox note. #5208
+* Enhancement - Tasks extensibility in Home Screen. #5794
+* Enhancement - Add page parameter to override default wc-admin page in Navigation API. #5821
+* Enhancement - Introduce the customer effort score (CES) feature.
+* Enhancement - Rework task extensibility in the homescreen. #5794
+* Enhancement - Migrate the reviews panel to the homescreen. #5706
+* Enhancement - Migrate reviews panel to home screen. #5706
+* Enhancement - Add Razorpay to payment task for stores in India – #5775
+* Enhancement - Migrate Stock Panel to Homescreen. #5729
+* Enhancement - Add enhanced placeholders for Marketing components. #5611
+* Enhancement - Allow switching on/off the navigation feature in plugin and core builds. #5697
+* Fix - Product exclusion filter on Orders Report.
+* Fix - Typo in Variation Stats DataStore context filter value. #5784
+* Fix - Move collapsible config to panels object, to allow for more control. #5855
+* Fix - Invalidate product count if the last product was updated in the list. #5790
+* Fix - Add Customer Type column to the Orders report table. #5820
+* Fix - Product exclusion filter on Orders Report. #5822
+* Fix - Show the customer type column in Orders report table. #5820
+* Fix - make sure ‘Customers’ page updates after order update. #5776
+* Fix - Fix fatal errors when child themes are installed in a subdirectory. #5783
+* Fix - Allow actionable statuses in orders endpoint(s) filters. #5733
+* Fix - snackbar dismissal bug. #5696
+* Fix - Only import the Gridicons we need, to reduce package size. #5668
+* Fix - Stop order panels flickering on load. #5655
+* Fix - Load wc-tracks to avoid fatal errors. #5645 #5638
+* Fix - Preventing desktop-sized navigation placeholder from appearing on mobile during load. #5616
+* Fix - Completed tasks tracking causing infinite loop #5941
+* Fix - Remove Navigation access #5940
+* Fix - Compile the debug module so it can be used in older browsers like IE11. #5968
+* Tweak - Fix inconsistent REST API parameter name for customer type filtering. #5823
+* Tweak - Improve styles of the tax task. #5709
+* Tweak - Do not show store setup link on the homescreen. #5801
+* Tweak - Revert the #5001 work to order tasks by completion. #5721
+* Tweak - Revert the smart tax defaults work. #5720
+* Tweak - Do not show store setup activity panel on the homescreen. #5801
+* Tweak - Don’t show the Orders panel on the homescreen with the Task List. #5552
+* Tweak - Continue showing tasklist even if list is complete, only hide if set to hidden. #5673
+* Tweak - Remove check for Jetpack and WCS from Stripe onboarding task. #4933
 
-= 4.7.0 - 2020-11-10 =
-
-**WooCommerce**
-
-* Tweak - Update `product_cat/tag` taxonomy template file names to `product-cat/tag`. #27736
-* Tweak - Exclude draft pages from the "Shop page" setting. #27890
-* Tweak - Styling to properly display product reviews within the dashboard activity widget. #27968
-* Fix - Fixes Photoswipe action buttons being obscured by admin bar. #27010
-* Fix - Allow variation image to be removed via REST API. #27299
-* Fix - Fixed WP CLI command to delete tax classes. #27310
-* Fix - Prevent regenerate image filter loop. #27483
-* Fix - Fixed some race conditions in `WC_Install`. #27696
-* Fix - Improved PHP 8 support for `Automattic\WooCommerce\RestApi\Utilities\SingletonTrait`. #27707
-* Fix - Adjust stock even if `reduce_stock` meta is not set in `wc_maybe_reduce_stock_levels`. #27763
-* Fix - Removed duplicated CSS code from jQuery UI. #27767
-* Fix - HTML syntax error in scheduled product message. #27842
-* Fix - Update logic to determine if an order requires payment to check the order instead of the cart. #27893
-* Fix - Use `Set password` title for lost password reset form when applicable. #27898
-* Fix - REST API - Fixed deprecated notices while querying orders and refunds through REST API v1 endpoints. #27934
-* Fix - Email address starting with `www` being displayed as a URL link in the admin order details page. #27983
-* Fix - Unexpected HTTP 401 "Sorry, you cannot list resources" REST API responses that occur when a plugin or custom code determines the current WordPress user before WooCommerce is fully initialized. #27587
-* Dev - Add `woocommerce_should_send_low_stock_notification` filter. #27819
-* Dev - Introduce (again) a dependency injection framework for the code in the src directory. #27733
-* Dev - Remove leftover code and data from the reverted improvement for variations filtering by attribute. #27748
-* Dev - Escaped labels in `woocommerce_form_field()`. #27800
-* Dev - Add a `NumberUtil::round` method to workaround a breaking change in the buil-in round function in PHP8. #27830
-* Dev - Remove default value from optional parameters that are followed by required parameters in functions/methods, since those are de-facto required and trigger a deprectation notice in PHP 8. #27840
-* Dev - REST API - Add user-friendly attribute names and values to order line items metadata.
-* Dev - REST API - Adds `parent_name` to `line_items` of the GET /orders endpoint.
-* Localization - Added Serbia districts. #27778
-* Localization - Make city, and postcode non-required fields. #27779
-* Localization - Add i18n locale information for Uganda, Kenya and Tanzania. #27164
-* Localization - Renamed "Postcode / ZIP" to "Pin code", and renamed "State / County" to "State" for India. #27516
-* Localization - Added postcode validation for addresses in India. #27546
-
-**WooCommerce Blocks - 3.5.0 & 3.6.0**
-
-* Make 'retry' property on errors from checkoutAfterProcessingWithSuccess/Error observers default to true if it's undefined. ([3261](https://github.com/woocommerce/woocommerce-gutenberg-products-block/pull/3261))
-* Ensure new payment methods are only displayed when no saved payment method is selected. ([3247](https://github.com/woocommerce/woocommerce-gutenberg-products-block/pull/3247))
-* Load WC Blocks CSS after editor CSS. ([3219](https://github.com/woocommerce/woocommerce-gutenberg-products-block/pull/3219))
-* Restore saved payment method data after closing an express payment method. ([3210](https://github.com/woocommerce/woocommerce-gutenberg-products-block/pull/3210))
-* Use light default background colour for country/state dropdowns. ([3189](https://github.com/woocommerce/woocommerce-gutenberg-products-block/pull/3189))
-* Fix broken Express Payment Method use in the Checkout block for logged out or incognito users. ([3165](https://github.com/woocommerce/woocommerce-gutenberg-products-block/pull/3165))
-* Fix State label for Spain. ([3147](https://github.com/woocommerce/woocommerce-gutenberg-products-block/pull/3147))
-* Don't throw an error when registering a payment method fails. ([3134](https://github.com/woocommerce/woocommerce-gutenberg-products-block/pull/3134))
-* Don't load contents of payment method hidden tabs. ([3227](https://github.com/woocommerce/woocommerce-gutenberg-products-block/pull/3227))
-* Use noticeContexts from useEmitResponse instead of hardcoded values. ([3161](https://github.com/woocommerce/woocommerce-gutenberg-products-block/pull/3161))
-
-**WooCommerce Admin - 1.6.3**
-
-* Tweak: Add BR and IN to list of stripe countries [#5377](https://github.com/woocommerce/woocommerce-admin/pull/5377)
-* Fix: Redirect instead of stalling on WCPay Inbox note action [#5413](https://github.com/woocommerce/woocommerce-admin/pull/5413)
-
-[See changelog for all versions](https://raw.githubusercontent.com/woocommerce/woocommerce/master/changelog.txt).
+**WooCommerce Blocks 3.9.0 & 4.0.0**
+* Enhancements - Expose `discount_type` in Store API coupon endpoints. ([3399](https://github.com/woocommerce/woocommerce-gutenberg-products-block/pull/3399))
+* Enhancements - Exclude checkout-draft orders from WC Admin reports and My Account > Orders. ([3379](https://github.com/woocommerce/woocommerce-gutenberg-products-block/pull/3379))
+* Fix - Hide spinner on cart block's "Proceed to Checkout" link when page unloads. ([3436](https://github.com/woocommerce/woocommerce-gutenberg-products-block/pull/3436))
+* Fix - Fixed express payment methods processing not completing when Stripe payment method active. ([3432](https://github.com/woocommerce/woocommerce-gutenberg-products-block/pull/3432))
+* Fix - Refresh PaymentRequest after cancelling payment to prevent addresses remaining populated on repeat attempts. ([3430](https://github.com/woocommerce/woocommerce-gutenberg-products-block/pull/3430))
+* Fix - Ensure "Add a note to your order" section is styled correctly when disabled. ([3427](https://github.com/woocommerce/woocommerce-gutenberg-products-block/pull/3427))
+* Fix - Prevent checkout step heading text overlapping actual heading on small viewports. ([3425](https://github.com/woocommerce/woocommerce-gutenberg-products-block/pull/3425))
+* Fix - Improve Stripe payment request API payment method availability. ([3424](https://github.com/woocommerce/woocommerce-gutenberg-products-block/pull/3424))
+* Fix - Stop hidden products from being linked in cart and checkout blocks. ([3415](https://github.com/woocommerce/woocommerce-gutenberg-products-block/pull/3415))
+* Fix - Show Express Payment Method Error Notices after Payment Failure. ([3410](https://github.com/woocommerce/woocommerce-gutenberg-products-block/pull/3410))
+* Fix - Fix cart block `isLarge` console error in the editor when running WordPress 5.6 beta. ([3408](https://github.com/woocommerce/woocommerce-gutenberg-products-block/pull/3408))
+* Fix - Orders not being placed when paying with an Express payment method from the Cart block. ([3403](https://github.com/woocommerce/woocommerce-gutenberg-products-block/pull/3403))
+* Fix - Fix incorrect usage of static method in Stripe payment method integration. ([3400](https://github.com/woocommerce/woocommerce-gutenberg-products-block/pull/3400))
+* Fix - Cart and checkout should respect the global "Hide shipping costs until an address is entered" setting. ([3383](https://github.com/woocommerce/woocommerce-gutenberg-products-block/pull/3383))
+* Fix - Sync shipping address with billing address when shipping address fields are disabled. This fixes a bug where taxes would not reflect changes in billing address when they are set to be calculated from billing address ([3358](https://github.com/woocommerce/woocommerce-gutenberg-products-block/pull/3358))
+* Fix - Checkout block: Prevent `Create an account` from creating up a user account if the order fails coupon validation. ([3423](https://github.com/woocommerce/woocommerce-gutenberg-products-block/pull/3423))
+* Fix - Make sure cart is initialized before the CartItems route is used in the Store API. ([3488](https://github.com/woocommerce/woocommerce-gutenberg-products-block/pull/3488))
+* Fix - Fix notice close button color in Twenty Twenty One dark mode. ([3472](https://github.com/woocommerce/woocommerce-gutenberg-products-block/pull/3472))
+* Fix - Remove held stock for a draft order if an item is removed from the cart. ([3468](https://github.com/woocommerce/woocommerce-gutenberg-products-block/pull/3468))
+* Fix - Ensure correct alignment of checkout notice's dismiss button. ([3455](https://github.com/woocommerce/woocommerce-gutenberg-products-block/pull/3455))
+* Fix - Fixed a bug in Checkout block (Store API) causing checkout to fail when using an invalid coupon and creating an account.
+* Fix - Checkout block: Correctly handle cases where the order fails with an error (e.g. invalid coupon) and a new user account is created. ([3429](https://github.com/woocommerce/woocommerce-gutenberg-products-block/pull/3429))
+* Dev - Refactored and reordered Store API checkout processing to handle various edge cases and better support future extensibility. ([3454](https://github.com/woocommerce/woocommerce-gutenberg-products-block/pull/3454))
+* Dev - Support a plain js configuration argument to payment method registration APIs. ([3404](https://github.com/woocommerce/woocommerce-gutenberg-products-block/pull/3404))
+* Dev - Change register_endpoint_data to use an array of params instead of individual params. ([3478](https://github.com/woocommerce/woocommerce-gutenberg-products-block/pull/3478))
+* Dev - Expose store/cart via ExtendRestApi to extensions. ([3445](https://github.com/woocommerce/woocommerce-gutenberg-products-block/pull/3445))
+* Dev - Added formatting classes to the Store API for extensions to consume.
 
 == Upgrade Notice ==
 

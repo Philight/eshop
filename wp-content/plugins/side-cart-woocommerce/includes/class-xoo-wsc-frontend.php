@@ -68,7 +68,7 @@ class Xoo_Wsc_Frontend{
 
 		$glSettings = $this->glSettings;
 
-		wp_enqueue_script( 'xoo-wsc-main-js', XOO_WSC_URL.'/assets/js/xoo-wsc-main.js', array('jquery'), 20, true ); // Main JS
+		wp_enqueue_script( 'xoo-wsc-main-js', XOO_WSC_URL.'/assets/js/xoo-wsc-main.js', array('jquery'), XOO_WSC_VERSION, true ); // Main JS
 
 		$noticeMarkup = '<ul class="xoo-wsc-notices">%s</ul>';
 

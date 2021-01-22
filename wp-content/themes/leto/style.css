@@ -6518,7 +6518,6 @@ object {
   width: 100%;
   height: 45px;
   margin-top: 1em;
-  color: red;
 }
 @media (max-width: 480px) {
   .woocommerce div.product .woocommerce-tabs ul.tabs {

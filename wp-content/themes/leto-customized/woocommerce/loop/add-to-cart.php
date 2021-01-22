@@ -2,7 +2,8 @@
 /**
  * Loop Add to Cart
  *
- * Overriden template for /woocommerce/loop/add-to-cart.php.
+ * OVERRIDEN 
+ * /woocommerce/loop/add-to-cart.php
  * Add variable product to cart
  *
  * @see         https://docs.woocommerce.com/document/template-structure/
@@ -56,7 +57,7 @@ echo apply_filters(
 		esc_attr( isset( $args['quantity'] ) ? $args['quantity'] : 1 ),
 		esc_attr( isset( $args['class'] ) ? $args['class'] : 'button' ),
 		isset( $args['attributes'] ) ? wc_implode_html_attributes( $args['attributes'] ) : '',
-// Use simple products' text for variable product 		
+// Replace with simple products' text for variable product 		
 		$isVariableProduct ? esc_html((new WC_Product)->single_add_to_cart_text()) : esc_html( $product->add_to_cart_text() )
 	),
 	$product,

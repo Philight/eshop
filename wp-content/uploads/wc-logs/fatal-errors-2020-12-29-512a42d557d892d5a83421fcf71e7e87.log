@@ -1,0 +1,24 @@
+2020-12-29T19:58:05+00:00 CRITICAL Uncaught Error: Call to undefined method WP_Post::ID() in C:\xampp\htdocs\eshop\wp-content\themes\leto\sidebar.php:16
+Stack trace:
+#0 C:\xampp\htdocs\eshop\wp-includes\template.php(730): require_once()
+#1 C:\xampp\htdocs\eshop\wp-includes\template.php(676): load_template('C:\\xampp\\htdocs...', true, Array)
+#2 C:\xampp\htdocs\eshop\wp-includes\general-template.php(136): locate_template(Array, true, true, Array)
+#3 C:\xampp\htdocs\eshop\wp-content\themes\leto\page.php(37): get_sidebar()
+#4 C:\xampp\htdocs\eshop\wp-includes\template-loader.php(106): include('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\eshop\wp-blog-header.php(19): require_once('C:\\xampp\\htdocs...')
+#6 C:\xampp\htdocs\eshop\index.php(17): require('C:\\xampp\\htdocs...')
+#7 {main}
+  thrown in C:\xampp\htdocs\eshop\wp-content\themes\leto\sidebar.php on line 16
+
+2020-12-29T19:59:15+00:00 CRITICAL Uncaught Error: Call to undefined method WP_Post::ID() in C:\xampp\htdocs\eshop\wp-content\themes\leto\sidebar.php:16
+Stack trace:
+#0 C:\xampp\htdocs\eshop\wp-includes\template.php(730): require_once()
+#1 C:\xampp\htdocs\eshop\wp-includes\template.php(676): load_template('C:\\xampp\\htdocs...', true, Array)
+#2 C:\xampp\htdocs\eshop\wp-includes\general-template.php(136): locate_template(Array, true, true, Array)
+#3 C:\xampp\htdocs\eshop\wp-content\plugins\woocommerce\templates\global\sidebar.php(22): get_sidebar('shop')
+#4 C:\xampp\htdocs\eshop\wp-content\plugins\woocommerce\includes\wc-core-functions.php(345): include('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\eshop\wp-content\plugins\woocommerce\includes\wc-template-functions.php(1033): wc_get_template('global/sidebar....')
+#6 C:\xampp\htdocs\eshop\wp-includes\class-wp-hook.php(287): woocommerce_get_sidebar('')
+#7 C:\xampp\htdocs\eshop\wp-includes\class-wp-hook.php(311): WP_Hook->apply_filters('', Array)
+#8 C:\xampp\htdocs\eshop\wp-includes\plugin.php(484):  in C:\xampp\htdocs\eshop\wp-content\themes\leto\sidebar.php on line 16
+

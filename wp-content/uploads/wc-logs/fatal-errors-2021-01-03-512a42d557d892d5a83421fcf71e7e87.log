@@ -1,0 +1,55 @@
+2021-01-03T22:00:37+00:00 CRITICAL Uncaught Error: Call to a member function get_min_purchase_quantity() on null in C:\xampp\htdocs\eshop\wp-content\plugins\woocommerce\templates\single-product\add-to-cart\variation-add-to-cart-button.php:22
+Stack trace:
+#0 C:\xampp\htdocs\eshop\wp-content\plugins\woocommerce\includes\wc-core-functions.php(345): include()
+#1 C:\xampp\htdocs\eshop\wp-content\plugins\woocommerce\includes\wc-template-functions.php(2976): wc_get_template('single-product/...')
+#2 C:\xampp\htdocs\eshop\wp-includes\class-wp-hook.php(287): woocommerce_single_variation_add_to_cart_button('')
+#3 C:\xampp\htdocs\eshop\wp-includes\class-wp-hook.php(311): WP_Hook->apply_filters(NULL, Array)
+#4 C:\xampp\htdocs\eshop\wp-includes\plugin.php(484): WP_Hook->do_action(Array)
+#5 C:\xampp\htdocs\eshop\wp-content\themes\leto-customized\custom\custom-sidecart-variations-form.php(55): do_action('woocommerce_sin...')
+#6 C:\xampp\htdocs\eshop\wp-includes\class-wp-hook.php(287): custom_function(Object(WC_Product_Variable))
+#7 C:\xampp\htdocs\eshop\wp-in in C:\xampp\htdocs\eshop\wp-content\plugins\woocommerce\templates\single-product\add-to-cart\variation-add-to-cart-button.php on line 22
+
+2021-01-03T22:01:13+00:00 CRITICAL Uncaught Error: Call to a member function get_min_purchase_quantity() on null in C:\xampp\htdocs\eshop\wp-content\plugins\woocommerce\templates\single-product\add-to-cart\variation-add-to-cart-button.php:22
+Stack trace:
+#0 C:\xampp\htdocs\eshop\wp-content\plugins\woocommerce\includes\wc-core-functions.php(345): include()
+#1 C:\xampp\htdocs\eshop\wp-content\plugins\woocommerce\includes\wc-template-functions.php(2976): wc_get_template('single-product/...')
+#2 C:\xampp\htdocs\eshop\wp-includes\class-wp-hook.php(287): woocommerce_single_variation_add_to_cart_button('')
+#3 C:\xampp\htdocs\eshop\wp-includes\class-wp-hook.php(311): WP_Hook->apply_filters(NULL, Array)
+#4 C:\xampp\htdocs\eshop\wp-includes\plugin.php(484): WP_Hook->do_action(Array)
+#5 C:\xampp\htdocs\eshop\wp-content\themes\leto-customized\custom\custom-sidecart-variations-form.php(55): do_action('woocommerce_sin...')
+#6 C:\xampp\htdocs\eshop\wp-includes\class-wp-hook.php(287): custom_function(Object(WC_Product_Variable))
+#7 C:\xampp\htdocs\eshop\wp-in in C:\xampp\htdocs\eshop\wp-content\plugins\woocommerce\templates\single-product\add-to-cart\variation-add-to-cart-button.php on line 22
+
+2021-01-03T22:02:16+00:00 CRITICAL Uncaught Error: Call to a member function get_min_purchase_quantity() on null in C:\xampp\htdocs\eshop\wp-content\plugins\woocommerce\templates\single-product\add-to-cart\variation-add-to-cart-button.php:22
+Stack trace:
+#0 C:\xampp\htdocs\eshop\wp-content\plugins\woocommerce\includes\wc-core-functions.php(345): include()
+#1 C:\xampp\htdocs\eshop\wp-content\plugins\woocommerce\includes\wc-template-functions.php(2976): wc_get_template('single-product/...')
+#2 C:\xampp\htdocs\eshop\wp-includes\class-wp-hook.php(287): woocommerce_single_variation_add_to_cart_button('')
+#3 C:\xampp\htdocs\eshop\wp-includes\class-wp-hook.php(311): WP_Hook->apply_filters(NULL, Array)
+#4 C:\xampp\htdocs\eshop\wp-includes\plugin.php(484): WP_Hook->do_action(Array)
+#5 C:\xampp\htdocs\eshop\wp-content\themes\leto-customized\custom\custom-sidecart-variations-form.php(55): do_action('woocommerce_sin...')
+#6 C:\xampp\htdocs\eshop\wp-includes\class-wp-hook.php(287): custom_function(Object(WC_Product_Variable))
+#7 C:\xampp\htdocs\eshop\wp-in in C:\xampp\htdocs\eshop\wp-content\plugins\woocommerce\templates\single-product\add-to-cart\variation-add-to-cart-button.php on line 22
+
+2021-01-03T22:03:19+00:00 CRITICAL Uncaught Error: Call to a member function get_min_purchase_quantity() on null in C:\xampp\htdocs\eshop\wp-content\plugins\woocommerce\templates\single-product\add-to-cart\variation-add-to-cart-button.php:22
+Stack trace:
+#0 C:\xampp\htdocs\eshop\wp-content\plugins\woocommerce\includes\wc-core-functions.php(345): include()
+#1 C:\xampp\htdocs\eshop\wp-content\plugins\woocommerce\includes\wc-template-functions.php(2976): wc_get_template('single-product/...')
+#2 C:\xampp\htdocs\eshop\wp-includes\class-wp-hook.php(287): woocommerce_single_variation_add_to_cart_button('')
+#3 C:\xampp\htdocs\eshop\wp-includes\class-wp-hook.php(311): WP_Hook->apply_filters(NULL, Array)
+#4 C:\xampp\htdocs\eshop\wp-includes\plugin.php(484): WP_Hook->do_action(Array)
+#5 C:\xampp\htdocs\eshop\wp-content\themes\leto-customized\custom\custom-sidecart-variations-form.php(55): do_action('woocommerce_sin...')
+#6 C:\xampp\htdocs\eshop\wp-includes\class-wp-hook.php(287): custom_function(Object(WC_Product_Variable))
+#7 C:\xampp\htdocs\eshop\wp-in in C:\xampp\htdocs\eshop\wp-content\plugins\woocommerce\templates\single-product\add-to-cart\variation-add-to-cart-button.php on line 22
+
+2021-01-03T22:04:58+00:00 CRITICAL Uncaught Error: Call to a member function get_min_purchase_quantity() on null in C:\xampp\htdocs\eshop\wp-content\plugins\woocommerce\templates\single-product\add-to-cart\variation-add-to-cart-button.php:22
+Stack trace:
+#0 C:\xampp\htdocs\eshop\wp-content\plugins\woocommerce\includes\wc-core-functions.php(345): include()
+#1 C:\xampp\htdocs\eshop\wp-content\plugins\woocommerce\includes\wc-template-functions.php(2976): wc_get_template('single-product/...')
+#2 C:\xampp\htdocs\eshop\wp-includes\class-wp-hook.php(287): woocommerce_single_variation_add_to_cart_button('')
+#3 C:\xampp\htdocs\eshop\wp-includes\class-wp-hook.php(311): WP_Hook->apply_filters(NULL, Array)
+#4 C:\xampp\htdocs\eshop\wp-includes\plugin.php(484): WP_Hook->do_action(Array)
+#5 C:\xampp\htdocs\eshop\wp-content\themes\leto-customized\custom\custom-sidecart-variations-form.php(55): do_action('woocommerce_sin...')
+#6 C:\xampp\htdocs\eshop\wp-includes\class-wp-hook.php(287): custom_function(Object(WC_Product_Variable))
+#7 C:\xampp\htdocs\eshop\wp-in in C:\xampp\htdocs\eshop\wp-content\plugins\woocommerce\templates\single-product\add-to-cart\variation-add-to-cart-button.php on line 22
+

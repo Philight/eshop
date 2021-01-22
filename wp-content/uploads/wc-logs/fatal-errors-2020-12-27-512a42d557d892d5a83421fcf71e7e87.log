@@ -1,0 +1,48 @@
+2020-12-27T01:21:16+00:00 CRITICAL Uncaught Error: Function name must be a string in C:\xampp\htdocs\eshop\wp-content\plugins\woo-update-variations-in-cart\front\class-wc_update-variation_in-cart_ck.php:131
+Stack trace:
+#0 C:\xampp\htdocs\eshop\wp-includes\class-wp-hook.php(287): Wc_updateVariationInCart->woo_ck_wuvic_itr_global_js_vars('')
+#1 C:\xampp\htdocs\eshop\wp-includes\class-wp-hook.php(311): WP_Hook->apply_filters(NULL, Array)
+#2 C:\xampp\htdocs\eshop\wp-includes\plugin.php(484): WP_Hook->do_action(Array)
+#3 C:\xampp\htdocs\eshop\wp-includes\general-template.php(3005): do_action('wp_head')
+#4 C:\xampp\htdocs\eshop\wp-content\themes\leto\header.php(20): wp_head()
+#5 C:\xampp\htdocs\eshop\wp-includes\template.php(730): require_once('C:\\xampp\\htdocs...')
+#6 C:\xampp\htdocs\eshop\wp-includes\template.php(676): load_template('C:\\xampp\\htdocs...', true, Array)
+#7 C:\xampp\htdocs\eshop\wp-includes\general-template.php(48): locate_template(Array, true, true, Array)
+#8 C:\xampp\htdocs\eshop\wp-content\themes\leto\page.php(15): get_header() in C:\xampp\htdocs\eshop\wp-content\plugins\woo-update-variations-in-cart\front\class-wc_update-variation_in-cart_ck.php on line 131
+
+2020-12-27T01:25:08+00:00 CRITICAL Uncaught Error: Function name must be a string in C:\xampp\htdocs\eshop\wp-content\plugins\woo-update-variations-in-cart\front\class-wc_update-variation_in-cart_ck.php:131
+Stack trace:
+#0 C:\xampp\htdocs\eshop\wp-includes\class-wp-hook.php(287): Wc_updateVariationInCart->woo_ck_wuvic_itr_global_js_vars('')
+#1 C:\xampp\htdocs\eshop\wp-includes\class-wp-hook.php(311): WP_Hook->apply_filters(NULL, Array)
+#2 C:\xampp\htdocs\eshop\wp-includes\plugin.php(484): WP_Hook->do_action(Array)
+#3 C:\xampp\htdocs\eshop\wp-includes\general-template.php(3005): do_action('wp_head')
+#4 C:\xampp\htdocs\eshop\wp-content\themes\leto\header.php(20): wp_head()
+#5 C:\xampp\htdocs\eshop\wp-includes\template.php(730): require_once('C:\\xampp\\htdocs...')
+#6 C:\xampp\htdocs\eshop\wp-includes\template.php(676): load_template('C:\\xampp\\htdocs...', true, Array)
+#7 C:\xampp\htdocs\eshop\wp-includes\general-template.php(48): locate_template(Array, true, true, Array)
+#8 C:\xampp\htdocs\eshop\wp-content\plugins\woocommerce\templates\single-p in C:\xampp\htdocs\eshop\wp-content\plugins\woo-update-variations-in-cart\front\class-wc_update-variation_in-cart_ck.php on line 131
+
+2020-12-27T01:28:48+00:00 CRITICAL Uncaught Error: Function name must be a string in C:\xampp\htdocs\eshop\wp-content\plugins\woo-update-variations-in-cart\front\class-wc_update-variation_in-cart_ck.php:132
+Stack trace:
+#0 C:\xampp\htdocs\eshop\wp-includes\class-wp-hook.php(287): Wc_updateVariationInCart->woo_ck_wuvic_itr_global_js_vars('')
+#1 C:\xampp\htdocs\eshop\wp-includes\class-wp-hook.php(311): WP_Hook->apply_filters(NULL, Array)
+#2 C:\xampp\htdocs\eshop\wp-includes\plugin.php(484): WP_Hook->do_action(Array)
+#3 C:\xampp\htdocs\eshop\wp-includes\general-template.php(3005): do_action('wp_head')
+#4 C:\xampp\htdocs\eshop\wp-content\themes\leto\header.php(20): wp_head()
+#5 C:\xampp\htdocs\eshop\wp-includes\template.php(730): require_once('C:\\xampp\\htdocs...')
+#6 C:\xampp\htdocs\eshop\wp-includes\template.php(676): load_template('C:\\xampp\\htdocs...', true, Array)
+#7 C:\xampp\htdocs\eshop\wp-includes\general-template.php(48): locate_template(Array, true, true, Array)
+#8 C:\xampp\htdocs\eshop\wp-content\themes\leto\page.php(15): get_header() in C:\xampp\htdocs\eshop\wp-content\plugins\woo-update-variations-in-cart\front\class-wc_update-variation_in-cart_ck.php on line 132
+
+2020-12-27T01:35:06+00:00 CRITICAL Uncaught Error: Function name must be a string in C:\xampp\htdocs\eshop\wp-content\plugins\woo-update-variations-in-cart\front\class-wc_update-variation_in-cart_ck.php:132
+Stack trace:
+#0 C:\xampp\htdocs\eshop\wp-includes\class-wp-hook.php(287): Wc_updateVariationInCart->woo_ck_wuvic_itr_global_js_vars('')
+#1 C:\xampp\htdocs\eshop\wp-includes\class-wp-hook.php(311): WP_Hook->apply_filters(NULL, Array)
+#2 C:\xampp\htdocs\eshop\wp-includes\plugin.php(484): WP_Hook->do_action(Array)
+#3 C:\xampp\htdocs\eshop\wp-includes\general-template.php(3005): do_action('wp_head')
+#4 C:\xampp\htdocs\eshop\wp-content\themes\leto\header.php(20): wp_head()
+#5 C:\xampp\htdocs\eshop\wp-includes\template.php(730): require_once('C:\\xampp\\htdocs...')
+#6 C:\xampp\htdocs\eshop\wp-includes\template.php(676): load_template('C:\\xampp\\htdocs...', true, Array)
+#7 C:\xampp\htdocs\eshop\wp-includes\general-template.php(48): locate_template(Array, true, true, Array)
+#8 C:\xampp\htdocs\eshop\wp-content\themes\leto\page.php(15): get_header() in C:\xampp\htdocs\eshop\wp-content\plugins\woo-update-variations-in-cart\front\class-wc_update-variation_in-cart_ck.php on line 132
+

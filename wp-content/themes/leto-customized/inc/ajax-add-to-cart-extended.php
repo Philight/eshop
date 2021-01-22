@@ -1,4 +1,9 @@
 <?php
+/*
+ * Extended ajax on product page loop, added ajax for variable products
+ * original method: woocommerce/includes/class-wc-ajax.php, public static function add_to_cart()
+ */
+
 add_action( 'wp_ajax_woocommerce_ajax_add_to_cart', 'ajax_add_to_cart_extended' );
 add_action( 'wp_ajax_nopriv_woocommerce_ajax_add_to_cart', 'ajax_add_to_cart_extended' );
 function ajax_add_to_cart_extended() {

@@ -59,7 +59,8 @@ jQuery( function( $ ) {
 	 */
 	AddToCartHandler.prototype.onAddToCart = function( e ) {
 		var $thisbutton = $( this );
-		if ( $thisbutton.is( '.ajax_add_to_cart_variable' ) ) {
+
+		if ( $thisbutton.is( '.ajax_add_to_cart' ) ) {
 			if ( ! $thisbutton.attr( 'data-product_id' ) ) {
 				return true;
 			}

@@ -1,4 +1,0 @@
-2020-12-16T17:36:14+00:00 CRITICAL syntax error, unexpected '92' (T_LNUMBER), expecting ')' in C:\xampp\htdocs\eshop\wp-content\themes\leto-customized\functions.php on line 18
-
-2020-12-16T17:36:38+00:00 CRITICAL syntax error, unexpected 'id' (T_STRING), expecting ']' in C:\xampp\htdocs\eshop\wp-content\themes\leto-customized\functions.php on line 18
-
