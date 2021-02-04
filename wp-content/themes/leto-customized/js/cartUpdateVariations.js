@@ -8,10 +8,13 @@ jQuery(document).ready(function($){
 
 			this.baseQty = 1;
 			this.qtyUpdateDelay = null;
+			this.screenSize = '';
 
 			this.disableUpdateButton();
 			this.eventHandlers();
+			this.getScreenSize();
 			this.checkVariations('onPageLoad');
+			this.validateAllOptions();
 		}
 
 		disableUpdateButton() {
@@ -25,7 +28,7 @@ jQuery(document).ready(function($){
 			this.$cartForm.on( 'change', '.qty', this.qtyInputChange.bind(this) );
 
 			$(document.body).on( 'wc_fragments_refreshed', this.validateAllOptions.bind(this) );
-
+			$(window).on( 'resize orientationchange', this.getScreenSize.bind(this) );
 		}
 
 		block() {
@@ -40,11 +43,28 @@ jQuery(document).ready(function($){
 			console.log(loader);
 		}
 
+		getScreenSize() {
+			if ( $(window).width() > 991 ) {
+				this.screenSize = 'large';
+			} else if ( 479 < $(window).width() && $(window).width() < 991 ) {
+				this.screenSize = 'medium';
+			} else {
+				this.screenSize = 'small';
+			}
+			console.log($(window).width());
+		}
+
 		checkVariations(variationsForm) {
 			console.log('VARIATIONSFORMS');
 
 			if ( variationsForm === 'onPageLoad' ) {
-				var $variationsForm = this.$cartForm.find('.woocommerce-cart-form .variations_form');
+				var $variationsForm = null;
+				if (this.screenSize === 'medium') {
+					$variationsForm = this.$cartForm.find('.woocommerce-cart-form td.medium-screen .variations_form');
+				} else {
+					$variationsForm = this.$cartForm.find('.woocommerce-cart-form td:not(.medium-screen) .variations_form');					
+				}
+
 				console.log('variationsForm === onPageLoad');
 				console.log($variationsForm);	
 
@@ -83,7 +103,7 @@ jQuery(document).ready(function($){
 
 				console.log('variationFormData');
 				console.log(_this.variationFormData);
-				_this.validateOptions($(this), cart_key);
+				//_this.validateOptions($(this), cart_key);
 			})
 
 			console.log('VARIATIONFORMDATA');
@@ -135,8 +155,11 @@ jQuery(document).ready(function($){
 		}
 
 		getCartKey($cart_item) {
+			console.log('getCartKey');
 			var $qtyInput = $cart_item.find('input.qty');
+			console.log($qtyInput);
 			var cart_key = $qtyInput.attr('name').split('cart[').pop().split(']')[0];
+			console.log(cart_key);
 			return cart_key;
 		}
 
@@ -169,7 +192,7 @@ jQuery(document).ready(function($){
 
 			var cartPosition = 0;
 			var _this = this;
-			this.$cartForm.find('tbody').children().each( function(index) {
+			this.$cartForm.find('tbody').children('.cart_item').each( function(index) {
 				cartPosition = index;
 				if ( _this.getCartKey($(this)) === cart_key ) {
 					return false;
@@ -200,9 +223,7 @@ jQuery(document).ready(function($){
 			console.log('Delete formdata: '+cart_key);
 			delete this.variationFormData[cart_key];
 
-
 			this.addVariationToCart(product_id, variation_id, quantity, cart_key, cartPosition);
-
 
 			console.log('optionSelect finish');		
 			console.log(this.variationFormData);
@@ -219,19 +240,6 @@ jQuery(document).ready(function($){
 				var attribute = selectedAttributes.shift();	
 				return this.getVariationId(selectedAttributes, variationsObj[attribute]);
 			}
-		}
-
-		validateAllOptions() {
-			console.log('validateAllOptions');
-			var _this = this;
-			this.$cartForm.find('.woocommerce-cart-form .variations_form').each( function() {
-				var $cart_item = $(this).closest('.cart_item');
-				var cart_key = _this.getCartKey($cart_item);
-				console.log('cart key');
-				console.log(cart_key);
-
-				_this.validateOptions($(this), cart_key);
-			})
 		}
 
 		addVariationToCart(product_id, variation_id, quantity, cart_key, cartPosition) {
@@ -271,19 +279,21 @@ jQuery(document).ready(function($){
 			})
 		}
 
-		isOptionAvailable(availableVariations, parentAttributes, attribute) {
-			var localAttributes = parentAttributes.slice();
+		validateAllOptions() {
+			console.log('validateAllOptions');
+			var _this = this;
 
-			if (localAttributes.length) {
-				var parentNode = localAttributes.shift();
-				
-				if (parentNode.split('-')[0] != attribute.split('-')[0]) {
-				// dont traverse if it is the selected element OR first attribute row after selected option
-					return this.isOptionAvailable(availableVariations[parentNode], localAttributes, attribute);
-				} 
-			} 
-			
-			return availableVariations[attribute] ? true : false;
+			var query = (this.screenSize === 'medium') ? '.woocommerce-cart-form td.medium-screen .variations_form'
+													   : '.woocommerce-cart-form td:not(.medium-screen) .variations_form';
+
+			this.$cartForm.find(query).each( function() {
+				var $cart_item = $(this).closest('.cart_item');
+				var cart_key = _this.getCartKey($cart_item);
+				console.log('cart key');
+				console.log(cart_key);
+
+				_this.validateOptions($(this), cart_key);
+			})
 		}
 
 		validateOptions($form, cart_key) {
@@ -345,6 +355,21 @@ jQuery(document).ready(function($){
 					}
 				});
 			})	
+		}
+
+		isOptionAvailable(availableVariations, parentAttributes, attribute) {
+			var localAttributes = parentAttributes.slice();
+
+			if (localAttributes.length) {
+				var parentNode = localAttributes.shift();
+				
+				if (parentNode.split('-')[0] != attribute.split('-')[0]) {
+				// dont traverse if it is the selected element OR first attribute row after selected option
+					return this.isOptionAvailable(availableVariations[parentNode], localAttributes, attribute);
+				} 
+			} 
+			
+			return availableVariations[attribute] ? true : false;
 		}
 
 		updateFragments( response, addFormData ){

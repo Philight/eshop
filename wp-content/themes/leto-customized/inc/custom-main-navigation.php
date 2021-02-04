@@ -47,13 +47,13 @@ function override_leto_main_navigation() {
 				<?php if ( class_exists( 'WooCommerce' ) ) : ?>
 					<?php if ( is_user_logged_in() ) { ?>
 						<a href="<?php echo esc_url( get_permalink( get_option('woocommerce_myaccount_page_id') ) ); ?>" title="Account">
-							<i class="icon icon-user-circle-o"></i> 
+							<i class="icon icon-user"></i> 
 						</a>
 					<?php } 
 					else { ?>
 						<a href="<?php echo esc_url( get_permalink( get_option('woocommerce_myaccount_page_id') ) ); ?>" title="Login">
 							<span class="login-register">
-								<i class="icon icon-person-o"></i> 
+								<i class="icon icon-user-o"></i> 
 								<?php esc_html_e( 'Login/Register', 'leto' ); ?>
 							</span> 
 						</a>
@@ -61,7 +61,7 @@ function override_leto_main_navigation() {
 				<?php else : ?>
 					<a href="<?php echo esc_url( wp_login_url() ); ?>" title="Login">
 						<span class="login-register">
-							<i class="icon icon-person-o"></i> 
+							<i class="icon icon-user-o"></i> 
 							<?php esc_html_e( 'Login/Register', 'leto' ); ?>
 						</span> 
 					</a>
@@ -71,6 +71,16 @@ function override_leto_main_navigation() {
 			<?php if ( class_exists( 'Woocommerce' ) ) : ?>
 
 			<?php $cart_content = WC()->cart->cart_contents_count; ?>
+
+			<li class="nav-link-wishlist">
+				<a href="<?php if ( is_user_logged_in() ) {echo esc_url( get_page_link(113) );}
+					 		   else { echo esc_url( wp_login_url() ); } ?>" 
+					class="header-wishlist-link"
+				>
+					<i class="icon icon-heart"></i>
+					<span class="screen-reader-text">Wishlist</span>
+				</a>
+			</li>
 
 			<li class="nav-link-cart">
 				<a href="<?php echo esc_url( wc_get_cart_url() ); ?>" class="header-cart-link">

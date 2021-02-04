@@ -78,3 +78,12 @@ function change_quantity_in_cart() {
 
 	WC_AJAX::get_refreshed_fragments();
 }
+
+add_action( 'wp_ajax_custom_get_cart_item_position', 'get_cart_item_position' );
+add_action( 'wp_ajax_nopriv_custom_get_cart_item_position', 'get_cart_item_position' );
+function get_cart_item_position() {
+
+	$cart_key = $_POST['cart_key'];
+
+	
+}

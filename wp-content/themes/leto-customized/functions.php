@@ -4,6 +4,12 @@
 	include_once( get_stylesheet_directory() .'/custom/custom-sidecart-variations-form.php');
 	include_once( get_stylesheet_directory() .'/inc/custom-ajax-update-cart.php');
 	include_once( get_stylesheet_directory() .'/custom/custom-quantity-buttons.php');
+	include_once( get_stylesheet_directory() .'/custom/woocommerce-ajax-filters-styles.php');
+
+	add_action( 'yith_wcwl_init', 'yith_custom' );
+	function yith_custom() {
+		include_once( get_stylesheet_directory() .'/inc/class.yith-wcwl-shortcode-custom.php');
+	}
 
 	add_action( 'wp_enqueue_scripts', 'enqueue_parent_styles' );
 	function enqueue_parent_styles() {
@@ -52,6 +58,9 @@
 	function enqueue_custom_scripts() {
 		wp_enqueue_script( 'testScript.js', get_stylesheet_directory_uri().'/js/testScript.js', array( 'jquery' ), filemtime(get_stylesheet_directory().'/js/testScript.js'), true );
 
+		if ( is_archive() ) {
+			wp_enqueue_script( 'toggleFilters.js', get_stylesheet_directory_uri().'/js/toggleFilters.js', array( 'jquery' ), filemtime(get_stylesheet_directory().'/js/toggleFilters.js'), true );	
+		}
 		if ( is_single() ) {
 	    	wp_enqueue_script( 'showYourCart.js', get_stylesheet_directory_uri().'/js/showYourCart.js', array( 'jquery' ), filemtime(get_stylesheet_directory().'/js/showYourCart.js'), true );	
 		}
@@ -69,12 +78,7 @@
 			
 			wp_enqueue_script( 'cartUpdateVariations.js', get_stylesheet_directory_uri().'/js/cartUpdateVariations.js', array( 'jquery' ), filemtime(get_stylesheet_directory().'/js/cartUpdateVariations.js'), true );
 			
-			wp_localize_script( 'cartUpdateVariations.js', 'custom_cart_update_params', $vars );  
-
-			wp_enqueue_script( 'cartUpdate.js', get_stylesheet_directory_uri().'/js/cartUpdate.js', array( 'jquery' ), filemtime(get_stylesheet_directory().'/js/cartUpdate.js'), true );
-
-			wp_localize_script( 'cartUpdate.js', 'custom_cart_update_params', $vars );  
-		
+			wp_localize_script( 'cartUpdateVariations.js', 'custom_cart_update_params', $vars );
 		}  
 
 		if( !is_checkout() ) {
@@ -98,14 +102,32 @@
 	}
 
 
-	add_action( 'wp_head', 'remove_actions_leto_wc_wrapper_start' );
-	function remove_actions_leto_wc_wrapper_start() {
+	add_action( 'wp_head', 'remove_actions_leto_actions' );
+	function remove_actions_leto_actions() {
 		remove_action('woocommerce_before_main_content', 'leto_wc_wrapper_start', 10);
+
+		remove_action( 'woocommerce_before_single_product_summary', 'leto_wrap_single_product_gallery_after', 999 );
 	}
 
 		
 	add_action( 'wp', 'custom_woocommerce_actions' );
 	function custom_woocommerce_actions() {
+
+		add_action( 'woocommerce_before_single_product_summary', 'override_leto_wrap_single_product_gallery_after', 999 );
+		function override_leto_wrap_single_product_gallery_after() {
+			echo '</div>';
+			//Spacer
+			echo '<div class="col-xs-12 col-sm-12 col-md-1"></div>';
+			//Open product details wrapper
+			$product_layout = get_theme_mod( 'leto_product_layout', 'product-layout-1');
+
+			if ( $product_layout == 'product-layout-2' ) {
+				echo '<div class="col-xs-12 col-sm-12 col-md-6 product-detail-summary sticky-element">';	
+			} else {
+				echo '<div class="col-xs-12 col-sm-12 col-md-5 product-detail-summary">';		
+			}
+
+		}
 
 		add_action('woocommerce_before_main_content', 'override_leto_wc_wrapper_start', 11);
 		function override_leto_wc_wrapper_start() {
@@ -139,12 +161,28 @@
 
 		    echo do_shortcode('[woocatslider id="92"]');
 
-		    echo do_shortcode('[woof sid="auto_shortcode" autohide=1 taxonomies=product_cat:9]');
+		    $prefix = '
+		    <div class="berocket_single_filter_widget " style="">
+		    	<div class="filters-modal collapsed"></div>
+   				<div class="bapf_sfilter bapf_ccolaps filters-container collapsed">
+      				<div class="bapf_head bapf_colaps_togl filters-toggle">
+         				<h3 class="bapf_hascolarr filters-title">FILTERS</h3>
+      				</div>
+      				<div class="bapf_body filters-body" style="display: none;">
+      		';
 
-		    echo do_shortcode('[br_filters_group group_id=101]');
-		   // echo do_shortcode('[br_filter_single filter_id=100]');
-		   // echo do_shortcode('[br_filter_single filter_id=98]');
-		    //echo do_shortcode('[woof_products per_page=8 columns=4 is_ajax=0 taxonomies=product_cat:4]');
+      		$all_filters = do_shortcode('[br_filters_group group_id=101]');
+      		$apply_filter = do_shortcode('[br_filter_single filter_id=108]');
+      		$search = array('bapf_sfilter', 'bapf_body');
+      		$replace = array('bapf_sfilter filter-apply-container', 'bapf_body filter-apply-body');
+			$apply_filter = str_replace($search, $replace, $apply_filter);
+      		$suffix = '</div></div></div>';
+
+		    $filters_wrapper = $prefix.$all_filters.$apply_filter.$suffix;
+		    echo $filters_wrapper;
+		    
+		    echo do_shortcode('[br_filter_single filter_id=104]');
+		    echo do_shortcode('[br_filter_single filter_id=103]');
 		}
 
 		add_action( 'woocommerce_after_shop_loop_item', 'custom_loop_add_to_cart', 0 );
@@ -199,6 +237,7 @@
 				echo '<button type="submit" name="add-to-cart" value="'.esc_attr( $product->get_id() ).'" class="single_add_to_cart_button button alt">'.esc_html( $product->single_add_to_cart_text() ).'</button>';
 			    echo '<a class="viewcart" href="'.wc_get_cart_url().'">View cart</a>';    
 		    echo '</div>';
+		    echo do_shortcode('[ti_wishlists_addtowishlist]');
 		    //echo '</div>';
 		}
 
@@ -219,24 +258,36 @@
 		include_once( get_stylesheet_directory() .'/woocommerce/cart/cart.php');
 
 		$cart_template = ob_get_clean();
-		$fragments['form.woocommerce-cart-form'] = extract_form_html($cart_template, '<form', '</form>');
+		$fragments['form.woocommerce-cart-form'] = extract_html_element($cart_template, '<form', '</form>');
 	  
 		return $fragments; 
 	}// end ajax cart update
 
 
-	function extract_form_html($content, $start, $end){
+	function extract_html_element($content, $start, $end){
 	    $r = explode($start, $content);
-
+/*	    error_log('first part');
+	    error_log($r[0]);
+	    error_log('2nd part');
+	    error_log($r[1]);
+*/
 	    if ( isset($r[1]) ){
 	    	$r[1] = $start . $r[1];
 
 	        $r = explode($end, $r[1]);
+/*
+	        error_log('2nd half first part');
+	    	error_log($r[0]);
+	    	error_log('2nd half 2nd part');
+	    	error_log($r[1]);
+*/
 	        $r[0] .= $end;
 	        return $r[0];
 	    }
 	    return '';
 	}
+
+
 
 
 	
