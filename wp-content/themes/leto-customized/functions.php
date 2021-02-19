@@ -5,6 +5,9 @@
 	include_once( get_stylesheet_directory() .'/inc/custom-ajax-update-cart.php');
 	include_once( get_stylesheet_directory() .'/custom/custom-quantity-buttons.php');
 	include_once( get_stylesheet_directory() .'/custom/woocommerce-ajax-filters-styles.php');
+	include_once( get_stylesheet_directory() .'/custom/custom-page-links.php');
+	include_once( get_stylesheet_directory() .'/custom/custom-save-registration-form.php');
+
 
 	add_action( 'yith_wcwl_init', 'yith_custom' );
 	function yith_custom() {
@@ -28,13 +31,6 @@
 			wp_deregister_script('xoo-wsc-main-js');
     }
 
-/*    add_filter('wp_enqueue_scripts', 'remove_or_override_scripts', 999);
-    function remove_or_override_scripts()
-    {
-    	wp_dequeue_script('xoo-wsc-main-js');
-			wp_deregister_script('xoo-wsc-main-js');
-    }
-*/
     add_action('wp_enqueue_scripts', 'enqueue_register_scripts', 20);
     function enqueue_register_scripts() {
 		
@@ -52,12 +48,30 @@
     /* Sidecart plugin / xoo-wsc */
 		include_once( get_stylesheet_directory() .'/inc/enqueue-xoo-wsc-sidecart.php');
 
+	/* jQuery UI Datepicker */
+		wp_enqueue_style( 'jquery-ui-datepicker-style' , '//ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css');
+		wp_enqueue_script( 'jquery-ui-datepicker' );
     }
 
 	add_action('wp_enqueue_scripts', 'enqueue_custom_scripts');
 	function enqueue_custom_scripts() {
 		wp_enqueue_script( 'testScript.js', get_stylesheet_directory_uri().'/js/testScript.js', array( 'jquery' ), filemtime(get_stylesheet_directory().'/js/testScript.js'), true );
 
+		if ( custom_is_page('registrationuser') ) {
+			wp_enqueue_script( 'registrationPage.js', get_stylesheet_directory_uri().'/js/registrationPage.js', array( 'jquery' ), filemtime(get_stylesheet_directory().'/js/registrationPage.js'), true );	
+
+			$ajax_vars = array( 
+				'ajax_url' => admin_url( 'admin-ajax.php' ),
+				
+			);
+			wp_localize_script( 'registrationPage.js', 'custom_registration_params', $ajax_vars );
+		}
+
+/*
+		if ( custom_is_page('registrationentry') ) {
+			wp_enqueue_script( 'registrationEntryPage.js', get_stylesheet_directory_uri().'/js/registrationEntryPage.js', array( 'jquery' ), filemtime(get_stylesheet_directory().'/js/registrationEntryPage.js'), true );	
+		}
+*/
 		if ( is_archive() ) {
 			wp_enqueue_script( 'toggleFilters.js', get_stylesheet_directory_uri().'/js/toggleFilters.js', array( 'jquery' ), filemtime(get_stylesheet_directory().'/js/toggleFilters.js'), true );	
 		}

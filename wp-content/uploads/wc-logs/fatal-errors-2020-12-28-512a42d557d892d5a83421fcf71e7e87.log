@@ -1,2 +1,0 @@
-2020-12-28T18:28:58+00:00 CRITICAL Cannot redeclare custom_single_add_to_cart_button() (previously declared in C:\xampp\htdocs\eshop\wp-content\themes\leto-customized\functions.php:87) in C:\xampp\htdocs\eshop\wp-content\themes\leto-customized\functions.php on line 96
-

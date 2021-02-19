@@ -10,8 +10,33 @@ Use it to make something cool, have fun, and share what you've learned with othe
 
 Leto is based on Underscores http://underscores.me/, (C) 2012-2016 Automattic, Inc.
 Underscores is distributed under the terms of the GNU GPL v2 or later.
-*/
 
+Breakpoints: 
+	max-width 991px
+	max-width 479px
+*/
+:root {
+	/* TAN COLORS */
+	--pinkorange: #ffd9b0;
+	--darkpinkorange: #edb77d;
+	--warmivory: #f2c591;
+	--ivory: #efcfa9;
+
+	--greensuccess: #c1ffb0;
+
+	/* OFFICIAL HTML COLORS */
+	--Moccasin: #FFE4B5;
+	--NavajoWhite: #FFDEAD;
+	--LemonChiffon: #FFFACD;
+
+	--PeachPuff: #FFDAB9; /* too pinkish */
+	--Wheat: #F5DEB3;
+	--Bisque: #FFE4C4;
+	--BlanchedAlmond: #FFEBCD;
+
+	--primarycolor: var(--pinkorange);
+	--secondarycolor: var(--darkpinkorange);
+}
 .header-floating-trigger {
 	z-index: 999;
 }
@@ -46,7 +71,7 @@ Underscores is distributed under the terms of the GNU GPL v2 or later.
 }
 
 .nav-link-right .nav-link-wishlist .header-wishlist-link {
-	font-size: 24px;
+	font-size: 28px;
 	display: -webkit-box;
   	display: -ms-flexbox;
   	display: flex;
@@ -295,7 +320,7 @@ Underscores is distributed under the terms of the GNU GPL v2 or later.
 /** Plugins CSS **/
 
 .xoo-wsc-basket {
-	padding: 0px 10px;
+	padding: 10px 10px;
 }
 
 .custom-quantity {
@@ -551,5 +576,580 @@ th.product-quantity {
 
 .woocommerce-cart table.cart td.actions .button[name=update_cart] {
 	display: none;
+}
+
+/*** REGISTRATION ENTRY PAGE ***/
+
+body.fullscreen {
+	background-color: red;
+}
+
+/*** REGISTRATION PAGE ***/
+
+.register-page {
+	border: 1px solid #d6d6d6;
+	padding: 20px;
+}
+
+.register-page .notice-container {
+	width: 100%;
+	height: auto;
+	background-color: var(--primarycolor);
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.register-page .notice-container li.success {
+	background-color: #ccffb0;
+	color: #00b516;
+}
+
+.register-page .notice-container i,
+.register-page .notice-container span {
+	vertical-align: middle;
+}
+
+.register-page .notice-container i {
+	font-size: 24px;
+	margin: 0 8px;
+	color: #b50000;
+	line-height: normal;
+}
+.register-page .notice-container li.success i {
+	color: #00b516;
+}
+
+.register-page .register-form input:not([type='checkbox']):focus {
+	box-shadow: 2px 2px 14px var(--pinkorange);
+}
+.register-page .register-form input.invalid {
+	box-shadow: 2px 2px 10px rgba(200, 0, 0, 0.85);
+}
+
+.register-page .register-form {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: auto;
+	grid-template-areas: 
+		"profile profile"
+		"fullname fullname"
+		"username displayname"
+		"password confirmpassword"
+		"email phonenumber"
+		"company website"
+		"shipping shipping"
+		"shipaddressline1 shipcity"
+		"shipaddressline2 shipstateregionprovince"
+		"shipcountry shippostalcode"
+		"billing billing"
+		"billingoption billingoption"
+		"billaddressline1 billcity"
+		"billaddressline2 billstateregionprovince"
+		"billcountry billpostalcode"		
+		"optional optional"
+		"dateofbirth gender"
+		"hearaboutus hearaboutus"
+		"submit submit";
+	column-gap: 20px;
+	row-gap: 30px;
+}
+
+.register-page .register-form .register-profile,
+.register-page .register-form .register-shipping,
+.register-page .register-form .register-billing,
+.register-page .register-form .register-optional {
+	display: contents;
+	/*
+	grid-template-columns: auto; 
+  	grid-template-rows: auto;
+	grid-template-areas: 
+		"profile profile"
+		"username displayname"
+		"firstname lastname";*/
+}
+
+.register-page .register-profile .profile-title {
+	grid-area: profile;
+}
+
+.register-page .register-profile .full-name-field {
+	grid-area: fullname;
+}
+
+.register-page .register-profile .user-name-field {
+	grid-area: username;
+}
+.register-page .register-profile .display-name-field {
+	grid-area: displayname;
+}
+
+.register-page .register-profile .first-name-field {
+	grid-area: firstname;
+}
+.register-page .register-profile .last-name-field {
+	grid-area: lastname;
+}
+
+.register-page .register-profile .password-field {
+	grid-area: password;
+}
+.register-page .register-profile .confirm-password-field {
+	grid-area: confirmpassword;
+}
+
+.register-page .register-profile .email-field {
+	grid-area: email;
+}
+.register-page .register-profile .phone-number-field {
+	grid-area: phonenumber;
+}
+
+.register-page .register-profile .company-field {
+	grid-area: company;
+}
+.register-page .register-profile .website-field {
+	grid-area: website;
+}
+
+.register-page .register-shipping .shipping-title {
+	grid-area: shipping;
+}
+
+.register-page .register-shipping .address-line-1-field {
+	grid-area: shipaddressline1;
+}
+
+.register-page .register-shipping .address-line-2-field {
+	grid-area: shipaddressline2;
+}
+
+.register-page .register-shipping .city-field {
+	grid-area: shipcity;
+}
+.register-page .register-shipping .state-region-province-field {
+	grid-area: shipstateregionprovince;
+}
+
+.register-page .register-shipping .country-field {
+	grid-area: shipcountry;
+}
+.register-page .register-shipping .postal-code-field {
+	grid-area: shippostalcode;
+}
+/*  BILLING ADDRESS  */
+.register-page .register-billing .billing-title {
+	grid-area: billing;
+}
+
+.register-page .register-billing .billing-option {
+	grid-area: billingoption;
+}
+
+.register-page .register-billing .address-line-1-field {
+	grid-area: billaddressline1;
+}
+
+.register-page .register-billing .address-line-2-field {
+	grid-area: billaddressline2;
+}
+
+.register-page .register-billing .city-field {
+	grid-area: billcity;
+}
+.register-page .register-billing .state-region-province-field {
+	grid-area: billstateregionprovince;
+}
+
+.register-page .register-billing .country-field {
+	grid-area: billcountry;
+}
+.register-page .register-billing .postal-code-field {
+	grid-area: billpostalcode;
+}
+
+.register-page .register-optional .optional-title {
+	grid-area: optional;
+}
+
+.register-page .register-optional .date-of-birth-field {
+	grid-area: dateofbirth;
+}
+.register-page .register-optional .gender-field {
+	grid-area: gender;
+}
+.register-page .register-optional .hear-about-us-field {
+	grid-area: hearaboutus;
+}
+
+.register-page .register-form legend {
+	border: none;
+	margin-top: 20px;
+	margin-bottom: 10px;
+	font-weight: 1000;
+}
+
+.register-page .register-form abbr {
+	color: red;
+}
+
+.register-page .register-form label {
+	font-weight: 400;
+}
+
+.register-page .register-form label.required {
+	font-weight: 600;
+}
+
+.register-page .register-form span {
+    display: block; 
+    margin-bottom: 10px;
+}
+
+.register-page .register-form input,
+.register-page .register-form select {
+	width: 100%;
+	font-weight: 600;
+	height: 55px;
+	padding: 5px 20px;
+}
+
+.register-page .register-form input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+	font-weight: 300 ;
+}
+.register-page .register-form input::-moz-placeholder { /* Firefox 19+ */
+	font-weight: 300 ;
+}
+.register-page .register-form input:-ms-input-placeholder { /* IE 10+ */
+	font-weight: 300 ;
+}
+.register-page .register-form input:-moz-placeholder { /* Firefox 18- */
+	font-weight: 300 ;
+}
+
+
+
+.register-page .password-wrapper {
+	width: 100%;
+	position: relative;
+}
+
+.register-page .password-wrapper i {
+	font-size: 32px;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	right: 16px;
+}
+
+.register-page .register-profile .phone-number-field .flex-wrapper {
+	display: flex;
+}
+
+.register-page .country-code-wrapper {
+	border: 1px solid rgb(227,227,227);
+	display: flex;
+	align-items: center;
+}
+
+.register-page .country-code-wrapper input {
+	text-align: right;
+	border: none;
+	padding: 5px 6px;
+	width: 56px;
+	height: 53px;
+}
+
+.register-page .country-code-wrapper i {
+	font-size: 28px;
+}
+
+.register-page #PhoneNumber {
+	margin-left: 10px;
+}
+
+.register-page .country-code-dropdown {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+
+	position: absolute;
+	background-color: #FFF;
+}
+/*
+.register-page .country-code-dropdown.open::-webkit-scrollbar {
+	display: none;
+}
+*/
+.register-page .country-code-dropdown.open {
+ 	/* -ms-overflow-style: none; */ /* IE and Edge */
+	/* scrollbar-width: none; */ /* Firefox */
+}
+
+.register-page .register-form .phone-number-field .country-code-dropdown.collapsed {
+	height: 0px;
+	overflow-y: hidden;
+	transition: all 0.15s ease-out;
+}
+
+.register-page .country-code-dropdown.open {
+	height: 200px;
+	overflow-y: scroll;
+	transition: all 0.25s ease-in;
+}
+
+.register-page .country-code-dropdown .country-code-item {
+	vertical-align: middle;
+}
+
+.register-page .country-code-dropdown .country-flag {
+	width: 20px; 
+	height: 15px; 
+	background-size: cover;
+	display: inline-block;
+	border: 1px solid red;
+
+	vertical-align: middle;
+}
+.register-page .country-code-dropdown .country-name {
+	display: inline-block; 
+	vertical-align: middle; 
+	margin-bottom: 0;
+}
+
+.register-page .register-billing .billing-option {
+	display: flex;
+	align-items: center;
+	margin-top: -30px;
+}
+.register-page .register-billing #BillingOption {
+	width: auto;
+	margin: 0 10px;
+	margin-left: 20px;
+}
+
+.register-page .register-billing label:not(.billing-option) {
+	display: none;
+}
+
+.register-page .register-optional .optional-title.move-up {
+	margin-top: -60px;
+}
+
+.register-page .register-optional span.next-line {
+	display: block; 
+}
+
+.register-page .register-optional .gender-field.other {
+	display: flex;
+	flex-wrap: wrap;
+}
+.register-page .register-optional .gender-field span.other {
+	width: 100%;
+}
+.register-page .register-optional .gender-field select.other {
+	width: 100px;
+	padding-right: 0px;
+}
+.register-page .register-optional .gender-field input {
+	flex: 1 1;
+	margin-left: 10px;
+	display: none;
+}
+
+.register-page .register-optional .hear-about-us-field.other {
+	display: flex;
+	flex-wrap: wrap;
+}
+.register-page .register-optional .hear-about-us-field span.other {
+	width: 100%;
+}
+.register-page .register-optional .hear-about-us-field select.other {
+	width: 100px;
+	padding-right: 0px;
+}
+.register-page .register-optional .hear-about-us-field input {
+	flex: 1 1;
+	margin-left: 10px;
+	display: none;
+}
+
+.register-page .btn-wrapper {
+	grid-area: submit;
+	width: 100%;
+	text-align: center;
+}
+.register-page .submit-btn {
+	padding: 0.618em 1em;
+	background-color: #000;
+	color: #FFF;
+	width: 100%;
+	font-weight: 500;
+	margin: 0 auto;
+	margin-top: 20px;
+	max-width: 250px;
+	font-size: 16px;
+}
+
+
+/* jQuery UI Datepicker */
+#ui-datepicker-div {
+	padding: 0 4px;
+}
+
+#ui-datepicker-div .ui-datepicker-header {
+	background-color: var(--Moccasin);
+	background-image: none;
+	margin: 0 -4px;
+}
+
+#ui-datepicker-div .ui-datepicker-header a {
+	top: 50%;
+	-webkit-transform: translateY(-50%);
+  	-ms-transform: translateY(-50%);
+	transform: translateY(-50%);
+}
+
+#ui-datepicker-div select {
+	height: 30px;
+}
+
+/* user registration plugin */
+
+.ur-frontend-form {
+	margin: 0 15px;
+}
+
+.ur-frontend-form .ur-form-row .ur-form-grid legend {
+	font-size: 20px;
+	font-weight: 1000;
+	border: none;
+	margin: 20px 0;
+}
+
+.ur-frontend-form .ur-form-row .title.shipping,
+.ur-frontend-form .ur-form-row .title.billing {
+	margin-top: 30px;
+}
+
+.ur-frontend-form .ur-form-row label[for=billing_option] {
+	display: flex;
+	align-items: center;
+}
+.ur-frontend-form .ur-form-row input#billing_option {
+	margin: 0 10px;
+}
+
+.ur-frontend-form .ur-form-row .ur-form-grid select {
+	height: 55px;
+}
+
+.ur-frontend-form .ur-form-row .ur-form-grid select#country_code {
+	width: 100px;
+	margin-left: auto;
+}
+
+.ur-frontend-form .ur-form-row .phone-number-wrapper {
+	display: inline-flex;
+	gap: 14px;
+}
+
+.ur-frontend-form .ur-form-row .ur-form-grid .field-country_code {
+	white-space: nowrap;
+}
+
+.ur-frontend-form .ur-form-row .ur-form-grid .field-phone_number {
+	flex: 0 1 100%;
+	white-space: nowrap;
+}
+
+.ur-frontend-form .billing-wrapper {
+	display: none;
+}
+
+.ur-frontend-form button[type=submit] {
+	margin-right: auto;
+	padding: 10px 70px;
+	background-color: #000;
+	color: #FFF;  
+}
+
+@media screen and (max-width: 768px) {
+	.ur-frontend-form .ur-form-row {
+		flex-direction: row;
+	}
+
+	.ur-frontend-form .ur-form-row .ur-form-grid {
+		
+	}
+	.ur-frontend-form .ur-form-row .ur-form-grid .field-country_code {
+		position: relative;
+		top: -12px;
+	}
+	.ur-frontend-form .ur-form-row .ur-form-grid label[for=country_code] {
+		white-space: normal;
+		margin-top: 0;
+	}
+}
+
+@media screen and (max-width: 479px) {
+	.ur-frontend-form .ur-form-row {
+		flex-direction: column;
+	}
+	.ur-frontend-form .ur-form-row .ur-form-grid .field-country_code {
+		white-space: nowrap;
+	}
+
+	.ur-frontend-form .ur-form-row .ur-form-grid:last-child {
+		margin-bottom: 20px;
+	}
+}
+
+/*** LOGIN PAGE ***/
+
+.woocommerce .woocommerce-form-login {
+	display: flex;
+	flex-direction: column;
+	gap: 30px;
+}
+
+.woocommerce .woocommerce-form-login span {
+	display: block;
+}
+
+.woocommerce .woocommerce-form-login abbr {
+	color: red;
+}
+
+.woocommerce .woocommerce-form-login label {
+	width: 100%;
+}
+
+.woocommerce .woocommerce-form-login input#username,
+.woocommerce .woocommerce-form-login input#password {
+	height: 40px;
+	width: 100%;
+}
+
+.woocommerce form .woocommerce-form__label-for-checkbox input {
+	display: none;
+}
+
+.woocommerce .woocommerce-form-login .login-rememberme-wrapper {
+	display: flex;
+	align-items: center;
+}
+
+.woocommerce .woocommerce-form-login .lost_password {
+	white-space: nowrap;
+}
+
+.woocommerce .woocommerce-form-login .button {
+	background-color: #000;
+	color: #FFF;
+}
+
+.woocommerce .woocommerce-form-login .login-registerlink {
+	text-align: center;
 }
 

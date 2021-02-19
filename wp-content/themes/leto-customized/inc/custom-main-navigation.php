@@ -74,10 +74,14 @@ function override_leto_main_navigation() {
 
 			<li class="nav-link-wishlist">
 				<a href="<?php if ( is_user_logged_in() ) {echo esc_url( get_page_link(113) );}
-					 		   else { echo esc_url( wp_login_url() ); } ?>" 
+					 		   else { echo esc_url( get_permalink( get_option('woocommerce_myaccount_page_id') ) ); } ?>" 
 					class="header-wishlist-link"
 				>
-					<i class="icon icon-heart"></i>
+				<?php if ( is_user_logged_in() ) { ?>
+					<i class="ion-android-favorite"></i>
+				<?php } else { ?>
+					<i class="ion-android-favorite-outline"></i>
+				<?php } ?>
 					<span class="screen-reader-text">Wishlist</span>
 				</a>
 			</li>
