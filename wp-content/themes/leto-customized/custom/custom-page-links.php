@@ -1,8 +1,10 @@
 <?php
 
 class CustomGetPageId {
-	const REGISTRATIONENTRY = 118;
-	const REGISTRATIONUSER = 141;
+	const REGISTERENTRY = 118;
+	const REGISTERUSER = 141;
+	const REGISTERWHOLESALE = 131;
+	const MYACCOUNT = 11;
 }
 /*
 add_filter( 'custom_get_page_url', 'get_page_url_from_name' );
@@ -12,12 +14,20 @@ function custom_get_page_url( $pagename ) {
 
 	$page_id = 0;
 	switch ( $pagename ) {	
-		case 'registrationentry':
-			$page_id = CustomGetPageId::REGISTRATIONENTRY;
+		case 'REGISTERENTRY':
+			$page_id = CustomGetPageId::REGISTERENTRY;
 			break;
 
-		case 'registrationuser':
-			$page_id = CustomGetPageId::REGISTRATIONUSER;
+		case 'REGISTERUSER':
+			$page_id = CustomGetPageId::REGISTERUSER;
+			break;
+
+		case 'REGISTERWHOLESALE':
+			$page_id = CustomGetPageId::REGISTERWHOLESALE;
+			break;
+
+		case 'MYACCOUNT':
+			$page_id = CustomGetPageId::MYACCOUNT;
 			break;
 		
 		default:
@@ -49,12 +59,20 @@ function custom_is_page( $pagename ) {
 	$result = false;
 	
 	switch ($pagename) {
-		case 'registrationentry':
-			$result = $current_page_id === CustomGetPageId::REGISTRATIONENTRY ? true : false;
+		case 'REGISTERENTRY':
+			$result = $current_page_id === CustomGetPageId::REGISTERENTRY ? true : false;
 			break;
 
-		case 'registrationuser':
-			$result = $current_page_id === CustomGetPageId::REGISTRATIONUSER ? true : false;
+		case 'REGISTERUSER':
+			$result = $current_page_id === CustomGetPageId::REGISTERUSER ? true : false;
+			break;
+
+		case 'REGISTERWHOLESALE':
+			$result = $current_page_id === CustomGetPageId::REGISTERWHOLESALE ? true : false;
+			break;
+
+		case 'MYACCOUNT':
+			$result = $current_page_id === CustomGetPageId::MYACCOUNT ? true : false;
 			break;
 		
 		default:

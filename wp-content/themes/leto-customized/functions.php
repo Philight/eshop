@@ -6,7 +6,9 @@
 	include_once( get_stylesheet_directory() .'/custom/custom-quantity-buttons.php');
 	include_once( get_stylesheet_directory() .'/custom/woocommerce-ajax-filters-styles.php');
 	include_once( get_stylesheet_directory() .'/custom/custom-page-links.php');
-	include_once( get_stylesheet_directory() .'/custom/custom-save-registration-form.php');
+	include_once( get_stylesheet_directory() .'/custom/custom-ajax-save-registration-form.php');
+	include_once( get_stylesheet_directory() .'/custom/custom-ajax-update-myaccount-data.php');
+;
 
 
 	add_action( 'yith_wcwl_init', 'yith_custom' );
@@ -57,7 +59,7 @@
 	function enqueue_custom_scripts() {
 		wp_enqueue_script( 'testScript.js', get_stylesheet_directory_uri().'/js/testScript.js', array( 'jquery' ), filemtime(get_stylesheet_directory().'/js/testScript.js'), true );
 
-		if ( custom_is_page('registrationuser') ) {
+		if ( custom_is_page('REGISTERUSER') || custom_is_page('REGISTERWHOLESALE') ) {
 			wp_enqueue_script( 'registrationPage.js', get_stylesheet_directory_uri().'/js/registrationPage.js', array( 'jquery' ), filemtime(get_stylesheet_directory().'/js/registrationPage.js'), true );	
 
 			$ajax_vars = array( 
@@ -65,6 +67,15 @@
 				
 			);
 			wp_localize_script( 'registrationPage.js', 'custom_registration_params', $ajax_vars );
+		}
+
+		if ( custom_is_page('MYACCOUNT') ) {
+			wp_enqueue_script( 'myAccountPage.js', get_stylesheet_directory_uri().'/js/myAccountPage.js', array( 'jquery' ), filemtime(get_stylesheet_directory().'/js/myAccountPage.js'), true );	
+			
+			$ajax_vars = array( 
+				'ajax_url' => admin_url( 'admin-ajax.php' ),
+			);
+			wp_localize_script( 'myAccountPage.js', 'custom_myaccount_params', $ajax_vars );
 		}
 
 /*
@@ -161,7 +172,7 @@
 
 		add_action( 'woocommerce_before_shop_loop', 'category_slider_shortcode2', 0 );
 		function category_slider_shortcode2() {   
-			echo do_shortcode('[ultimate-woocommerce-filters]');
+			
 			global $wp_query;
 			switch ($wp_query->get_queried_object()->term_id) {
 				case 21: // Pani subcategories
@@ -264,7 +275,7 @@
 
 	}
 
-	add_filter('woocommerce_add_to_cart_fragments', 'woocommerce_header_add_to_cart_fragment'); 
+	add_filter('woocommerce_add_to_cart_fragments', 'woocommerce_header_add_to_cart_fragment');
 	function woocommerce_header_add_to_cart_fragment( $fragments ) {
 		global $woocommerce; 
 		ob_start(); 
@@ -301,8 +312,31 @@
 	    return '';
 	}
 
+add_action( 'init', 'custom_add_edit_roles' );
+function custom_add_edit_roles() {
+	add_role(
+		'wholesale_customer',
+		__( 'Wholesale Customer' ),
+		array(
+			'read'         => true,  // true allows this capability
+			'edit_posts'   => true,
+		)
+	);	
+	add_role(
+		'gold_customer',
+		__( 'Gold Customer' ),
+		array(
+			'read'         => true,  // true allows this capability
+			'edit_posts'   => true,
+		)
+	);	
 
-
+	// admin
+	$theUser = new WP_User( 1 );
+	$theUser->add_role( 'customer' );
+	//$theUser->add_role( 'wholesale_customer' );
+	//$theUser->add_role( 'gold_customer' );
+}
 
 	
 ?>

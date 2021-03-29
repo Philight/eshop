@@ -39,6 +39,7 @@ function override_leto_main_navigation() {
 			</div>
 		</div><!-- /.header-mobile-menu -->		
 
+		<button>WHOLESALE</button>
 
 		<?php $show_menu_additions = get_theme_mod( 'leto_show_menu_additions', 1 ); ?>
 		<?php if ( $show_menu_additions ) : ?>

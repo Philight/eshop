@@ -34,7 +34,7 @@ get_header(); ?>
 				</ul>
 
 				<?php echo html_builder(); ?>
-				<form class="register-form" method="post">
+				<form class="register-user-form" method="post">
 					<fieldset class="register-profile">
 						<legend class="profile-title">PROFILE</legend>
 
@@ -82,14 +82,12 @@ get_header(); ?>
 				    	</label>					    	
 				    	<label for="PhoneNumber" class="phone-number-field required">
 				    		<span>Phone <abbr title="<?php esc_attr_e('Required field', 'custom_registration_text');?>">*</abbr></span>
-
-				    		<div class="flex-wrapper">
-					    		<div class="country-code-wrapper">
-					    			<input type="text" name="phone_code" id="PhoneCode" value="+421" required>
-					    			<i class="ion-ios-arrow-down"></i>
-					    		</div>
-						    	<input id="PhoneNumber" name="phone_number" type="text" maxlength="15" required>
-							</div>
+				    		
+				    		<div class="country-code-wrapper">
+				    			<input type="text" name="phone_code" id="PhoneCode" value="+421" required>
+				    			<i class="ion-ios-arrow-down"></i>
+				    		</div>
+					    	<input id="PhoneNumber" name="phone_number" type="text" maxlength="15" required>
 
 				    		<ul class="country-code-dropdown collapsed">
 
@@ -221,7 +219,7 @@ get_header(); ?>
 				    	<label for="HearAboutUs" class="hear-about-us-field">
 				    		<span>How did you hear about us? <em>- <?php esc_html_e('Optional', 'custom_registration_text'); ?></em></span>
 
-				    		<select id="HearAboutUs">
+				    		<select id="HearAboutUs" name="hear_about_us">
 				    			<option disabled selected value style="display: none">-- select an option --</option>
 				    			<option value="internet">Internet</option>
 				    			<option value="leaflet">Leaflet</option>
@@ -233,7 +231,9 @@ get_header(); ?>
 				 	</fieldset>
 
 					<div class="btn-wrapper">
-						<button class="btn submit-btn" type="submit">REGISTER</button>  
+						<button class="btn submit-btn" type="submit">
+							REGISTER
+						</button>  
 					</div>
 				</form>
 			</div>

@@ -19,9 +19,16 @@ Breakpoints:
 	/* TAN COLORS */
 	--pinkorange: #ffd9b0;
 	--darkpinkorange: #edb77d;
+
 	--warmivory: #f2c591;
 	--ivory: #efcfa9;
 
+	/* BROWNS */
+	--brown01: #ecd484;
+	--brown02: #e4d191;
+
+	/* */
+	--navyblue: #313044;
 	--greensuccess: #c1ffb0;
 
 	/* OFFICIAL HTML COLORS */
@@ -35,7 +42,7 @@ Breakpoints:
 	--BlanchedAlmond: #FFEBCD;
 
 	--primarycolor: var(--pinkorange);
-	--secondarycolor: var(--darkpinkorange);
+	--secondarycolor: var(--navyblue);
 }
 .header-floating-trigger {
 	z-index: 999;
@@ -584,7 +591,8 @@ body.fullscreen {
 	background-color: red;
 }
 
-/*** REGISTRATION PAGE ***/
+/*** REGISTRATION / REGISTER PAGE ***/
+/* USER REGISTRATION */
 
 .register-page {
 	border: 1px solid #d6d6d6;
@@ -608,11 +616,13 @@ body.fullscreen {
 .register-page .notice-container i,
 .register-page .notice-container span {
 	vertical-align: middle;
+	display: inline-block;
+	margin: 0;
+	margin-left: 10px;
 }
 
 .register-page .notice-container i {
 	font-size: 24px;
-	margin: 0 8px;
 	color: #b50000;
 	line-height: normal;
 }
@@ -620,14 +630,15 @@ body.fullscreen {
 	color: #00b516;
 }
 
-.register-page .register-form input:not([type='checkbox']):focus {
+.register-form input:not([type='checkbox']):focus {
 	box-shadow: 2px 2px 14px var(--pinkorange);
 }
-.register-page .register-form input.invalid {
+
+input.invalid {
 	box-shadow: 2px 2px 10px rgba(200, 0, 0, 0.85);
 }
 
-.register-page .register-form {
+.register-page .register-user-form {
 	display: grid;
 	grid-template-columns: 1fr 1fr;
 	grid-template-rows: auto;
@@ -655,10 +666,10 @@ body.fullscreen {
 	row-gap: 30px;
 }
 
-.register-page .register-form .register-profile,
-.register-page .register-form .register-shipping,
-.register-page .register-form .register-billing,
-.register-page .register-form .register-optional {
+.register-page .register-user-form .register-profile,
+.register-page .register-user-form .register-shipping,
+.register-page .register-user-form .register-billing,
+.register-page .register-user-form .register-optional {
 	display: contents;
 	/*
 	grid-template-columns: auto; 
@@ -669,161 +680,161 @@ body.fullscreen {
 		"firstname lastname";*/
 }
 
-.register-page .register-profile .profile-title {
+.register-page .register-user-form .register-profile .profile-title {
 	grid-area: profile;
 }
 
-.register-page .register-profile .full-name-field {
+.register-page .register-user-form .register-profile .full-name-field {
 	grid-area: fullname;
 }
 
-.register-page .register-profile .user-name-field {
+.register-page .register-user-form .register-profile .user-name-field {
 	grid-area: username;
 }
-.register-page .register-profile .display-name-field {
+.register-page .register-user-form .register-profile .display-name-field {
 	grid-area: displayname;
 }
 
-.register-page .register-profile .first-name-field {
+.register-page .register-user-form .register-profile .first-name-field {
 	grid-area: firstname;
 }
-.register-page .register-profile .last-name-field {
+.register-page .register-user-form .register-profile .last-name-field {
 	grid-area: lastname;
 }
 
-.register-page .register-profile .password-field {
+.register-page .register-user-form .register-profile .password-field {
 	grid-area: password;
 }
-.register-page .register-profile .confirm-password-field {
+.register-page .register-user-form .register-profile .confirm-password-field {
 	grid-area: confirmpassword;
 }
 
-.register-page .register-profile .email-field {
+.register-page .register-user-form .register-profile .email-field {
 	grid-area: email;
 }
-.register-page .register-profile .phone-number-field {
+.register-page .register-user-form .register-profile .phone-number-field {
 	grid-area: phonenumber;
 }
 
-.register-page .register-profile .company-field {
+.register-page .register-user-form .register-profile .company-field {
 	grid-area: company;
 }
-.register-page .register-profile .website-field {
+.register-page .register-user-form .register-profile .website-field {
 	grid-area: website;
 }
 
-.register-page .register-shipping .shipping-title {
+.register-page .register-user-form .register-shipping .shipping-title {
 	grid-area: shipping;
 }
 
-.register-page .register-shipping .address-line-1-field {
+.register-page .register-user-form .register-shipping .address-line-1-field {
 	grid-area: shipaddressline1;
 }
 
-.register-page .register-shipping .address-line-2-field {
+.register-page .register-user-form .register-shipping .address-line-2-field {
 	grid-area: shipaddressline2;
 }
 
-.register-page .register-shipping .city-field {
+.register-page .register-user-form .register-shipping .city-field {
 	grid-area: shipcity;
 }
-.register-page .register-shipping .state-region-province-field {
+.register-page .register-user-form .register-shipping .state-region-province-field {
 	grid-area: shipstateregionprovince;
 }
 
-.register-page .register-shipping .country-field {
+.register-page .register-user-form .register-shipping .country-field {
 	grid-area: shipcountry;
 }
-.register-page .register-shipping .postal-code-field {
+.register-page .register-user-form .register-shipping .postal-code-field {
 	grid-area: shippostalcode;
 }
 /*  BILLING ADDRESS  */
-.register-page .register-billing .billing-title {
+.register-page .register-user-form .register-billing .billing-title {
 	grid-area: billing;
 }
 
-.register-page .register-billing .billing-option {
+.register-page .register-user-form .register-billing .billing-option {
 	grid-area: billingoption;
 }
 
-.register-page .register-billing .address-line-1-field {
+.register-page .register-user-form .register-billing .address-line-1-field {
 	grid-area: billaddressline1;
 }
 
-.register-page .register-billing .address-line-2-field {
+.register-page .register-user-form .register-billing .address-line-2-field {
 	grid-area: billaddressline2;
 }
 
-.register-page .register-billing .city-field {
+.register-page .register-user-form .register-billing .city-field {
 	grid-area: billcity;
 }
-.register-page .register-billing .state-region-province-field {
+.register-page .register-user-form .register-billing .state-region-province-field {
 	grid-area: billstateregionprovince;
 }
 
-.register-page .register-billing .country-field {
+.register-page .register-user-form .register-billing .country-field {
 	grid-area: billcountry;
 }
-.register-page .register-billing .postal-code-field {
+.register-page .register-user-form .register-billing .postal-code-field {
 	grid-area: billpostalcode;
 }
 
-.register-page .register-optional .optional-title {
+.register-page .register-user-form .register-optional .optional-title {
 	grid-area: optional;
 }
 
-.register-page .register-optional .date-of-birth-field {
+.register-page .register-user-form .register-optional .date-of-birth-field {
 	grid-area: dateofbirth;
 }
-.register-page .register-optional .gender-field {
+.register-page .register-user-form .register-optional .gender-field {
 	grid-area: gender;
 }
-.register-page .register-optional .hear-about-us-field {
+.register-page .register-user-form .register-optional .hear-about-us-field {
 	grid-area: hearaboutus;
 }
 
-.register-page .register-form legend {
+.register-page legend {
 	border: none;
 	margin-top: 20px;
 	margin-bottom: 10px;
 	font-weight: 1000;
 }
 
-.register-page .register-form abbr {
+.register-page abbr {
 	color: red;
 }
 
-.register-page .register-form label {
+.register-page label {
 	font-weight: 400;
 }
 
-.register-page .register-form label.required {
+.register-page label.required {
 	font-weight: 600;
 }
 
-.register-page .register-form span {
+.register-page span {
     display: block; 
     margin-bottom: 10px;
 }
 
-.register-page .register-form input,
-.register-page .register-form select {
+.register-page input,
+.register-page select {
 	width: 100%;
 	font-weight: 600;
 	height: 55px;
 	padding: 5px 20px;
 }
 
-.register-page .register-form input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+.register-page input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
 	font-weight: 300 ;
 }
-.register-page .register-form input::-moz-placeholder { /* Firefox 19+ */
+.register-page input::-moz-placeholder { /* Firefox 19+ */
 	font-weight: 300 ;
 }
-.register-page .register-form input:-ms-input-placeholder { /* IE 10+ */
+.register-page input:-ms-input-placeholder { /* IE 10+ */
 	font-weight: 300 ;
 }
-.register-page .register-form input:-moz-placeholder { /* Firefox 18- */
+.register-page input:-moz-placeholder { /* Firefox 18- */
 	font-weight: 300 ;
 }
 
@@ -886,7 +897,7 @@ body.fullscreen {
 	/* scrollbar-width: none; */ /* Firefox */
 }
 
-.register-page .register-form .phone-number-field .country-code-dropdown.collapsed {
+.register-page .phone-number-field .country-code-dropdown.collapsed {
 	height: 0px;
 	overflow-y: hidden;
 	transition: all 0.15s ease-out;
@@ -907,7 +918,6 @@ body.fullscreen {
 	height: 15px; 
 	background-size: cover;
 	display: inline-block;
-	border: 1px solid red;
 
 	vertical-align: middle;
 }
@@ -915,6 +925,7 @@ body.fullscreen {
 	display: inline-block; 
 	vertical-align: middle; 
 	margin-bottom: 0;
+	width: auto;
 }
 
 .register-page .register-billing .billing-option {
@@ -928,7 +939,7 @@ body.fullscreen {
 	margin-left: 20px;
 }
 
-.register-page .register-billing label:not(.billing-option) {
+.register-page .register-user-form .register-billing label:not(.billing-option) {
 	display: none;
 }
 
@@ -991,6 +1002,598 @@ body.fullscreen {
 	font-size: 16px;
 }
 
+.register-page .submit-btn.loading:before {
+   content: url('inc/images/rolling-loader-36px.svg');
+}
+
+/* WHOLESALE REGISTRATION */
+
+.register-page .register-wholesale-form  {
+
+}
+
+
+.register-page .register-wholesale-form {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-template-rows: auto;
+	column-gap: 20px;
+	row-gap: 30px;
+	grid-template-areas: 
+		"billing 			billing 			billing"
+		"billcountry		companystore 		website"
+		"ico 				dic 				icdph"
+		"billaddressline1	billaddressline2 	billstateregionprovince"
+		"billcity			billpostalcode ."
+		"contact . ."
+		"fullname 			email 				phonenumber"
+		"password 			confirmpassword ."
+		"shipping . ."
+		"shipoption 		. ."
+		"shipcountry 		shipcity 			shippostalcode"
+		"shipaddressline1 	shipaddressline2 	shipstateregionprovince"
+		".					submit .";
+}
+
+.register-page .register-wholesale-form .register-billing,
+.register-page .register-wholesale-form .register-contact,
+.register-page .register-wholesale-form .register-shipping,
+.register-page .register-wholesale-form .register-optional {
+	display: contents;
+	/*
+	grid-template-columns: auto; 
+  	grid-template-rows: auto;
+	grid-template-areas: 
+		"profile profile"
+		"username displayname"
+		"firstname lastname";*/
+}
+
+.register-page .register-wholesale-form .register-billing .billing-title {
+	grid-area: billing;
+}
+.register-page .register-wholesale-form .register-billing .country-field {
+	grid-area: billcountry;
+}
+.register-page .register-wholesale-form .register-billing .company-store-field {
+	grid-area: companystore;
+}
+.register-page .register-wholesale-form .register-billing .ico-field {
+	grid-area: ico;
+}
+.register-page .register-wholesale-form .register-billing .dic-field {
+	grid-area: dic;
+}
+.register-page .register-wholesale-form .register-billing .ic-dph-field {
+	grid-area: icdph;
+}
+.register-page .register-wholesale-form .register-billing .website-field {
+	grid-area: website;
+}
+.register-page .register-wholesale-form .register-billing .address-line-1-field {
+	grid-area: billaddressline1;
+}
+.register-page .register-wholesale-form .register-billing .address-line-2-field {
+	grid-area: billaddressline2;
+}
+.register-page .register-wholesale-form .register-billing .state-region-province-field {
+	grid-area: billstateregionprovince;
+}
+.register-page .register-wholesale-form .register-billing .city-field {
+	grid-area: billcity;
+}
+.register-page .register-wholesale-form .register-billing .postal-code-field {
+	grid-area: billpostalcode;
+}
+
+.register-page .register-wholesale-form .register-contact .contact-title {
+	grid-area: contact;
+}
+.register-page .register-wholesale-form .register-contact .full-name-field {
+	grid-area: fullname;
+}
+.register-page .register-wholesale-form .register-contact .email-field {
+	grid-area: email;
+}
+.register-page .register-wholesale-form .register-contact .password-field {
+	grid-area: password;
+}
+.register-page .register-wholesale-form .register-contact .confirm-password-field {
+	grid-area: confirmpassword;
+}
+.register-page .register-wholesale-form .register-contact .phone-number-field {
+	grid-area: phonenumber;
+}
+
+.register-page .register-wholesale-form .register-shipping .shipping-title {
+	grid-area: shipping;
+}
+
+.register-page .register-wholesale-form .register-shipping .shipping-option {
+	grid-area: shipoption;
+}
+
+.register-page .register-wholesale-form .register-shipping .shipping-country-field {
+	grid-area: shipcountry;
+}
+.register-page .register-wholesale-form .register-shipping .shipping-address-line-1-field {
+	grid-area: shipaddressline1;
+}
+.register-page .register-wholesale-form .register-shipping .shipping-address-line-2-field {
+	grid-area: shipaddressline2;
+}
+.register-page .register-wholesale-form .register-shipping .shipping-state-region-province-field {
+	grid-area: shipstateregionprovince;
+}
+.register-page .register-wholesale-form .register-shipping .shipping-city-field {
+	grid-area: shipcity;
+}
+.register-page .register-wholesale-form .register-shipping .shipping-postal-code-field {
+	grid-area: shippostalcode;
+}
+
+.register-page .phone-number-field {
+	display: flex;
+	flex-wrap: wrap;
+	position: relative;
+}
+
+.register-page .phone-number-field span {
+	width: 100%;
+}
+
+.register-page .phone-number-field #PhoneNumber {
+	flex: 1;
+}
+.register-page .phone-number-field .country-code-dropdown {
+	top: 90px;
+}
+
+.register-page .register-wholesale-form .register-shipping label:not(.shipping-option) {
+	display: none;
+}
+
+.register-page .register-wholesale-form .register-shipping .shipping-option {
+	display: flex;
+	align-items: center;
+	margin-top: -30px;
+}
+
+.register-page .register-wholesale-form .register-shipping #ShippingOption {
+	width: auto;
+	margin: 0 10px;
+	margin-left: 20px;
+}
+
+/**  My Account page **/
+
+.woocommerce-account #content {
+	background-color: #e1e2e3;
+}
+
+.woocommerce-account .page-header {
+	display: none;
+}
+
+.woocommerce-account .page-header h1 {
+	display: block;
+	border: 1px solid blue;
+}
+
+.woocommerce-page.woocommerce-account .woocommerce {
+	max-width: 100%;
+	display: flex;
+
+	/*border: 1px solid red;*/
+}
+
+.woocommerce-page.woocommerce-account .woocommerce-MyAccount-navigation {
+	flex: 0 1 30%;
+}
+.woocommerce-page.woocommerce-account .woocommerce-MyAccount-content {
+	flex: 0 1 70%;
+}
+
+.woocommerce-page.woocommerce-account .woocommerce-MyAccount-navigation,
+.woocommerce-page.woocommerce-account .woocommerce-MyAccount-content {
+	margin: 20px;
+	box-shadow: 1px 2px 6px gray;
+	background-color: #FFF;
+}
+
+.woocommerce-page.woocommerce-account .woocommerce-MyAccount-navigation {
+	margin-right: 0;
+}
+
+.woocommerce-page.woocommerce-account .woocommerce-MyAccount-navigation ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.woocommerce-page.woocommerce-account .woocommerce-MyAccount-navigation .custom-MyAccount-header {
+	background-color: #e8cb7f;/*#dfc78a;*/
+	margin-bottom: 20px;
+}
+
+.woocommerce-page.woocommerce-account .woocommerce-MyAccount-navigation li {
+	text-align: left;
+}
+
+
+
+.woocommerce-page.woocommerce-account .woocommerce-MyAccount-navigation li span {
+	color: #000;
+}
+
+
+.woocommerce-page.woocommerce-account .woocommerce-MyAccount-navigation li a {
+	width: 100%;
+	font-size: 16px;
+
+	display: flex;
+	align-items: center;
+}
+
+.woocommerce-page.woocommerce-account .woocommerce-MyAccount-navigation li i {
+	font-size: 26px;
+	margin-right: 26px;
+	line-height: normal; 
+}
+
+.woocommerce-page.woocommerce-account .woocommerce-MyAccount-navigation .custom-MyAccount-list-item {
+	border: 1px solid #bfbfbf;
+	
+	width: 80%;
+
+	padding: 10px 40px;
+	margin-top: 10px;
+
+	transform: translateX(-50%);
+	position: relative;
+	left: 50%;
+
+	box-shadow: 1px 1px 4px #bfbfbf;
+}
+
+.woocommerce-page.woocommerce-account .woocommerce-MyAccount-navigation li:last-child .custom-MyAccount-list-item {
+	margin-bottom: 30px;
+}
+
+.woocommerce-page.woocommerce-account .woocommerce-MyAccount-navigation .custom-MyAccount-list-item:hover {
+	background-color: #000;
+	color: white;
+
+	border-color: #000;
+	box-shadow: 0px 0px 4px #000;
+}
+
+.woocommerce-page.woocommerce-account .woocommerce-MyAccount-navigation .custom-MyAccount-title,
+.woocommerce-page.woocommerce-account .woocommerce-MyAccount-navigation .custom-MyAccount-name {
+	width: 100%;
+	display: inline-block;
+	text-align: center;
+	margin-top: 10px;
+}
+.woocommerce-page.woocommerce-account .woocommerce-MyAccount-navigation .custom-MyAccount-name {
+	margin-top: 0;
+	margin-bottom: 20px;
+}
+
+.woocommerce-page.woocommerce-account .woocommerce-MyAccount-navigation .custom-MyAccount-profile {
+	width: 100px;
+	height: 100px;
+	border-radius: 50%;
+	border: 1px solid black;
+	margin: 10px auto;
+}
+
+.woocommerce-page.woocommerce-account .woocommerce-MyAccount-content {
+	padding: 40px;
+}
+
+.woocommerce-page.woocommerce-account .woocommerce-MyAccount-content .address-card {
+	border: 2px solid #bfbfbf;
+	box-shadow: 3px 3px 10px #bfbfbf;
+	width: 400px;
+	padding: 20px 30px;
+
+	cursor: pointer;
+	position:relative;
+}
+
+.woocommerce-page.woocommerce-account .woocommerce-MyAccount-content .address-card:hover .address-edit-overlay {
+	display: block;
+}	
+
+.woocommerce-page.woocommerce-account .woocommerce-MyAccount-content .address-card address {
+	margin-bottom: 0;
+	font-size: 16px;
+	width: 90%;
+	display: inline-block;
+}
+
+.woocommerce-page.woocommerce-account .woocommerce-MyAccount-content .address-card i {
+	width: 10%;
+	font-size: 30px;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+.woocommerce-page.woocommerce-account .woocommerce-MyAccount-content .address-card .address-edit-overlay {
+	display: none;
+	position: absolute;
+	cursor: pointer;
+
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	background-color: black;
+	opacity: 0.5;
+}
+
+.woocommerce-page.woocommerce-account .woocommerce-MyAccount-content .address-card .address-edit-overlay button {
+	position: relative;
+	left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+}
+
+.woocommerce-page.woocommerce-account .woocommerce-MyAccount-content .modal-edit-container {
+	display: none;
+	border: 1px solid red;
+
+	width: 100vw;
+	height: 100vh;
+	position: fixed;
+	left: 0;
+	top: 0;
+	z-index: 99999999;
+
+	overflow-y: auto;
+}
+
+.woocommerce-page.woocommerce-account .woocommerce-MyAccount-content .modal-edit-container .loading {
+	display: none;
+	width: 100%;
+	height: 100%;
+	position: relative;
+	background-color: #000;
+	opacity: 0.1;
+	z-index: 1;	
+}
+
+.woocommerce-page.woocommerce-account .woocommerce-MyAccount-content .modal-background {
+	width: 100vw;
+	height: 100vh;
+	position: fixed;
+	background-color: rgba(0, 0, 0, 0.5);
+	
+	left: 0;
+	top: 0;
+}
+
+.woocommerce-page.woocommerce-account .woocommerce-MyAccount-content .modal-edit-container .notice-container {
+	display: none;
+	background-color: var(--primarycolor);
+	position: fixed;
+	width: 100vw;
+
+	list-style-type: none;	
+	padding:0;
+	margin:0;
+	padding: 2px 20px;
+	font-size: 18px;
+
+	z-index: 2;
+}
+
+.woocommerce-page.woocommerce-account .woocommerce-MyAccount-content .modal-edit-container .notice-container i {
+	margin-right: 8px;
+}
+
+.woocommerce-page.woocommerce-account .woocommerce-MyAccount-content .modal-edit-form {
+	background-color: #FFF;
+	
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);	
+	
+	padding: 20px 40px;
+	height: 100%;
+    overflow-y: auto;
+}
+
+.woocommerce-page.woocommerce-account .woocommerce-MyAccount-content .modal-edit-form .shipping-info,
+.woocommerce-page.woocommerce-account .woocommerce-MyAccount-content .modal-edit-form .billing-info, 
+.woocommerce-page.woocommerce-account .woocommerce-MyAccount-content .modal-edit-form .personal-info,
+.woocommerce-page.woocommerce-account .woocommerce-MyAccount-content .modal-edit-form .contact-info {
+	display: none;
+}
+
+.woocommerce-page.woocommerce-account .woocommerce-MyAccount-content .modal-edit-form label,
+.woocommerce-page.woocommerce-account .woocommerce-MyAccount-content .modal-edit-form span {
+	display: block;
+}
+
+.woocommerce-page.woocommerce-account .woocommerce-MyAccount-content .modal-edit-form label {
+	margin-bottom: 20px;
+}
+.woocommerce-page.woocommerce-account .woocommerce-MyAccount-content .modal-edit-form label.required {
+	font-weight: 600;
+}
+.woocommerce-page.woocommerce-account .woocommerce-MyAccount-content .modal-edit-form label:last-child {
+	margin-bottom: 40px;
+}
+
+.woocommerce-page.woocommerce-account .woocommerce-MyAccount-content .modal-edit-form span {
+	margin-bottom: 8px;
+}
+
+.woocommerce-page.woocommerce-account .woocommerce-MyAccount-content .modal-edit-form input {
+	width: 100%
+}
+
+.woocommerce-page.woocommerce-account .woocommerce-MyAccount-content .modal-edit-form select {
+	padding: 5px 20px; 
+	height: 55px;
+	font-weight: 600;
+}
+
+
+.woocommerce-page.woocommerce-account .woocommerce-MyAccount-content .modal-edit-form .submit-btn {
+	background-color: #000;
+	color: #FFF;
+	line-height: 1;
+	padding: 20px 30px;
+	outline: none;
+}
+.woocommerce-page.woocommerce-account .woocommerce-MyAccount-content .modal-edit-form .cancel-btn {
+	float: right;
+}
+
+.woocommerce-account #colophon {
+	padding: 20px 0;
+}
+
+/* MyAccount edit account details */
+
+.woocommerce-page.woocommerce-account .woocommerce-MyAccount-content .info-card .info-card-title {
+	margin: 10px 0;
+	margin-bottom: 20px;
+}
+
+.woocommerce-page.woocommerce-account .woocommerce-MyAccount-content .info-card {
+	border: 2px solid #bfbfbf;
+	box-shadow: 3px 3px 10px #bfbfbf;
+	padding: 20px 30px;
+	margin-bottom: 30px;
+
+	cursor: pointer;
+	position:relative;
+}
+
+.woocommerce-page.woocommerce-account .woocommerce-MyAccount-content .info-card i {
+	font-size: 34px;
+	margin-left: 10px;
+	color: #d0a431;
+	line-height: normal;
+}
+
+.woocommerce-page.woocommerce-account .woocommerce-MyAccount-content .info-card table {
+	margin-bottom: 0;
+	border-collapse: separate;
+	border-spacing: 0 16px;
+}
+
+.woocommerce-page.woocommerce-account .woocommerce-MyAccount-content .info-card table td{
+	;
+}
+
+.woocommerce-page.woocommerce-account .woocommerce-MyAccount-content .info-card .ellipse {
+	width: 120px;
+	padding: 4px 0;
+	background-color: #e8cb7f; 
+	color: black; 
+	border-radius: 25px; 
+	text-align: center;
+
+	font-weight: 500;
+}
+
+.woocommerce-page.woocommerce-account .woocommerce-MyAccount-content .modal-edit-form .gender-field.other {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.woocommerce-page.woocommerce-account .woocommerce-MyAccount-content .modal-edit-form .gender-field span.other {
+	width: 100%;
+}
+
+.woocommerce-page.woocommerce-account .woocommerce-MyAccount-content .modal-edit-form .gender-field input {
+	flex: 1 1;
+	margin-left: 10px;
+}
+
+.woocommerce-page.woocommerce-account .woocommerce-MyAccount-content .modal-edit-form .phone-number-field {
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+}
+
+.woocommerce-page.woocommerce-account .woocommerce-MyAccount-content .modal-edit-form .phone-number-field span {
+	width: 100%;
+}
+
+.woocommerce-page.woocommerce-account .woocommerce-MyAccount-content .modal-edit-form .phone-number-field input {
+	flex: 1 1;
+	margin-left: 10px;
+}
+
+.woocommerce-page.woocommerce-account .woocommerce-MyAccount-content .modal-edit-form .country-code-wrapper {
+	border: 1px solid rgb(227,227,227);
+	display: flex;
+	align-items: center;
+}
+
+.woocommerce-page.woocommerce-account .woocommerce-MyAccount-content .modal-edit-form .country-code-wrapper input {
+	text-align: right;
+	border: none;
+	padding: 5px 6px;
+	width: 56px;
+	height: 53px;
+}
+
+.woocommerce-page.woocommerce-account .woocommerce-MyAccount-content .modal-edit-form .country-code-wrapper i {
+	font-size: 28px;
+}
+
+
+.woocommerce-page.woocommerce-account .woocommerce-MyAccount-content .modal-edit-form .country-code-dropdown {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+
+	position: absolute;
+	background-color: #FFF;
+
+	top: 90px;
+}
+
+.woocommerce-page.woocommerce-account .woocommerce-MyAccount-content .modal-edit-form .country-code-dropdown.collapsed {
+	height: 0px;
+	overflow-y: hidden;
+	transition: all 0.15s ease-out;
+}
+
+.woocommerce-page.woocommerce-account .woocommerce-MyAccount-content .modal-edit-form .country-code-dropdown.open {
+	height: 200px;
+	overflow-y: scroll;
+	transition: all 0.25s ease-in;
+}
+
+.woocommerce-page.woocommerce-account .woocommerce-MyAccount-content .modal-edit-form .country-code-dropdown .country-code-item {
+	vertical-align: middle;
+}
+
+.woocommerce-page.woocommerce-account .woocommerce-MyAccount-content .modal-edit-form .country-code-dropdown .country-flag {
+	width: 20px; 
+	height: 15px; 
+	background-size: cover;
+	display: inline-block;
+
+	vertical-align: middle;
+}
+.woocommerce-page.woocommerce-account .woocommerce-MyAccount-content .modal-edit-form .country-code-dropdown .country-name {
+	display: inline-block; 
+	vertical-align: middle; 
+	margin-bottom: 0;
+	width: auto;
+}
 
 /* jQuery UI Datepicker */
 #ui-datepicker-div {

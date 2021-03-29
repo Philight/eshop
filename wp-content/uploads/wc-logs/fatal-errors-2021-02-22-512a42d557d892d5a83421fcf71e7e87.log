@@ -1,0 +1,44 @@
+2021-02-22T16:07:00+00:00 CRITICAL Uncaught Error: Call to undefined function str_starts_with() in C:\xampp\htdocs\eshop\wp-content\themes\leto-customized\custom\custom-ajax-save-registration-form.php:22
+Stack trace:
+#0 C:\xampp\htdocs\eshop\wp-includes\class-wp-hook.php(287): submit_user_registration_form('')
+#1 C:\xampp\htdocs\eshop\wp-includes\class-wp-hook.php(311): WP_Hook->apply_filters('', Array)
+#2 C:\xampp\htdocs\eshop\wp-includes\plugin.php(484): WP_Hook->do_action(Array)
+#3 C:\xampp\htdocs\eshop\wp-admin\admin-ajax.php(184): do_action('wp_ajax_custom_...')
+#4 {main}
+  thrown in C:\xampp\htdocs\eshop\wp-content\themes\leto-customized\custom\custom-ajax-save-registration-form.php on line 22
+
+2021-02-22T16:07:24+00:00 CRITICAL Uncaught Error: Call to undefined function str_starts_with() in C:\xampp\htdocs\eshop\wp-content\themes\leto-customized\custom\custom-ajax-save-registration-form.php:22
+Stack trace:
+#0 C:\xampp\htdocs\eshop\wp-includes\class-wp-hook.php(287): submit_user_registration_form('')
+#1 C:\xampp\htdocs\eshop\wp-includes\class-wp-hook.php(311): WP_Hook->apply_filters('', Array)
+#2 C:\xampp\htdocs\eshop\wp-includes\plugin.php(484): WP_Hook->do_action(Array)
+#3 C:\xampp\htdocs\eshop\wp-admin\admin-ajax.php(184): do_action('wp_ajax_custom_...')
+#4 {main}
+  thrown in C:\xampp\htdocs\eshop\wp-content\themes\leto-customized\custom\custom-ajax-save-registration-form.php on line 22
+
+2021-02-22T22:34:58+00:00 CRITICAL Cannot redeclare submit_user_registration_form() (previously declared in C:\xampp\htdocs\eshop\wp-content\themes\leto-customized\custom\custom-ajax-save-registration-form.php:6) in C:\xampp\htdocs\eshop\wp-content\themes\leto-customized\custom\custom-ajax-save-registration-form.php on line 127
+
+2021-02-22T22:36:59+00:00 CRITICAL Cannot redeclare submit_user_registration_form() (previously declared in C:\xampp\htdocs\eshop\wp-content\themes\leto-customized\custom\custom-ajax-save-registration-form.php:6) in C:\xampp\htdocs\eshop\wp-content\themes\leto-customized\custom\custom-ajax-save-registration-form.php on line 127
+
+2021-02-22T22:39:00+00:00 CRITICAL Cannot redeclare submit_user_registration_form() (previously declared in C:\xampp\htdocs\eshop\wp-content\themes\leto-customized\custom\custom-ajax-save-registration-form.php:6) in C:\xampp\htdocs\eshop\wp-content\themes\leto-customized\custom\custom-ajax-save-registration-form.php on line 127
+
+2021-02-22T22:41:01+00:00 CRITICAL Cannot redeclare submit_user_registration_form() (previously declared in C:\xampp\htdocs\eshop\wp-content\themes\leto-customized\custom\custom-ajax-save-registration-form.php:6) in C:\xampp\htdocs\eshop\wp-content\themes\leto-customized\custom\custom-ajax-save-registration-form.php on line 127
+
+2021-02-22T22:43:02+00:00 CRITICAL Cannot redeclare submit_user_registration_form() (previously declared in C:\xampp\htdocs\eshop\wp-content\themes\leto-customized\custom\custom-ajax-save-registration-form.php:6) in C:\xampp\htdocs\eshop\wp-content\themes\leto-customized\custom\custom-ajax-save-registration-form.php on line 127
+
+2021-02-22T22:45:03+00:00 CRITICAL Cannot redeclare submit_user_registration_form() (previously declared in C:\xampp\htdocs\eshop\wp-content\themes\leto-customized\custom\custom-ajax-save-registration-form.php:6) in C:\xampp\htdocs\eshop\wp-content\themes\leto-customized\custom\custom-ajax-save-registration-form.php on line 127
+
+2021-02-22T22:47:04+00:00 CRITICAL Cannot redeclare submit_user_registration_form() (previously declared in C:\xampp\htdocs\eshop\wp-content\themes\leto-customized\custom\custom-ajax-save-registration-form.php:6) in C:\xampp\htdocs\eshop\wp-content\themes\leto-customized\custom\custom-ajax-save-registration-form.php on line 127
+
+2021-02-22T22:49:05+00:00 CRITICAL Cannot redeclare submit_user_registration_form() (previously declared in C:\xampp\htdocs\eshop\wp-content\themes\leto-customized\custom\custom-ajax-save-registration-form.php:6) in C:\xampp\htdocs\eshop\wp-content\themes\leto-customized\custom\custom-ajax-save-registration-form.php on line 127
+
+2021-02-22T22:51:06+00:00 CRITICAL Cannot redeclare submit_user_registration_form() (previously declared in C:\xampp\htdocs\eshop\wp-content\themes\leto-customized\custom\custom-ajax-save-registration-form.php:6) in C:\xampp\htdocs\eshop\wp-content\themes\leto-customized\custom\custom-ajax-save-registration-form.php on line 127
+
+2021-02-22T22:53:07+00:00 CRITICAL Cannot redeclare submit_user_registration_form() (previously declared in C:\xampp\htdocs\eshop\wp-content\themes\leto-customized\custom\custom-ajax-save-registration-form.php:6) in C:\xampp\htdocs\eshop\wp-content\themes\leto-customized\custom\custom-ajax-save-registration-form.php on line 127
+
+2021-02-22T22:54:43+00:00 CRITICAL Cannot redeclare submit_user_registration_form() (previously declared in C:\xampp\htdocs\eshop\wp-content\themes\leto-customized\custom\custom-ajax-save-registration-form.php:6) in C:\xampp\htdocs\eshop\wp-content\themes\leto-customized\custom\custom-ajax-save-registration-form.php on line 127
+
+2021-02-22T22:55:08+00:00 CRITICAL Cannot redeclare submit_user_registration_form() (previously declared in C:\xampp\htdocs\eshop\wp-content\themes\leto-customized\custom\custom-ajax-save-registration-form.php:6) in C:\xampp\htdocs\eshop\wp-content\themes\leto-customized\custom\custom-ajax-save-registration-form.php on line 127
+
+2021-02-22T22:55:24+00:00 CRITICAL Cannot redeclare submit_user_registration_form() (previously declared in C:\xampp\htdocs\eshop\wp-content\themes\leto-customized\custom\custom-ajax-save-registration-form.php:6) in C:\xampp\htdocs\eshop\wp-content\themes\leto-customized\custom\custom-ajax-save-registration-form.php on line 127
+

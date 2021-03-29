@@ -212,7 +212,7 @@
 			>
 				<div class="split retail-account">
 
-					<a href="<?php echo custom_get_page_url('registrationuser'); ?>" class="button-container">
+					<a href="<?php echo custom_get_page_url('REGISTERUSER'); ?>" class="button-container">
 						<span class="circle" aria-hidden="true">
 				      		<span class="icon arrow"></span>
 				    	</span>
@@ -224,7 +224,7 @@
 				
 				<div class="split wholesale-account">
 
-					<a href="<?php echo custom_get_page_url('registrationwholesale'); ?>" class="button-container wholesale-button">
+					<a href="<?php echo custom_get_page_url('REGISTERWHOLESALE'); ?>" class="button-container wholesale-button">
 						<span class="circle wholesale-circle" aria-hidden="true">
 				      		<span class="icon arrow wholesale-arrow"></span>
 				    	</span>
