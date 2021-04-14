@@ -536,6 +536,19 @@ th.product-quantity {
 	z-index: 31;
 }
 
+.woocommerce-cart .cart-collaterals table.shop_table .shipping td {
+	text-align: right;
+	font-style: italic;
+	padding: 20px 0;
+}
+
+.woocommerce-cart .cart-collaterals table .free-shipping td {
+	padding-top: 0;
+	padding-bottom: 10px;
+	text-align: center;
+	font-weight: 600;
+}
+
 @media (max-width: 991px) {
 	.cart-collaterals.col-md-3 {
 		position: relative;

@@ -12,9 +12,15 @@
  * @package Leto
  */
 
-get_header(); ?>
+get_header(); 
 
-	<div id="primary" class="content-area col-md-9">
+$cols = 'col-md-9';
+if (is_checkout()) {
+	$cols = 'col-md-12';
+}
+?>
+
+	<div id="primary" class="content-area <?php echo $cols; ?>">
 		<main id="main" class="site-main">
 			<?php
 			while ( have_posts() ) : the_post();

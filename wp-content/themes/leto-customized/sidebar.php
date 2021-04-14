@@ -20,6 +20,8 @@ if (is_cart()) {
 
 	return;
 }
+
+if (is_checkout()) { return; }
 ?>
 
 <aside id="secondary" class="widget-area primary-sidebar col-md-3">

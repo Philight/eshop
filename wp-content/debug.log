@@ -1077,3 +1077,470 @@
 [29-Mar-2021 16:57:37 UTC] variation
 [29-Mar-2021 16:57:37 UTC] variation
 [29-Mar-2021 16:57:37 UTC] variation
+[29-Mar-2021 16:59:18 UTC] variation
+[29-Mar-2021 16:59:18 UTC] variation
+[29-Mar-2021 16:59:18 UTC] variation
+[29-Mar-2021 16:59:19 UTC] variation
+[29-Mar-2021 17:00:40 UTC] PHP Warning:  call_user_func_array() expects parameter 1 to be a valid callback, function 'wac_enqueue_scripts' not found or invalid function name in C:\xampp\htdocs\eshop\wp-includes\class-wp-hook.php on line 287
+[29-Mar-2021 17:00:40 UTC] variation
+[29-Mar-2021 17:00:40 UTC] variation
+[29-Mar-2021 17:00:40 UTC] variation
+[29-Mar-2021 17:00:40 UTC] variation
+[29-Mar-2021 17:01:10 UTC] variation
+[29-Mar-2021 17:01:10 UTC] variation
+[29-Mar-2021 17:01:10 UTC] variation
+[29-Mar-2021 17:01:10 UTC] variation
+[29-Mar-2021 17:01:12 UTC] variation
+[29-Mar-2021 17:01:12 UTC] variation
+[29-Mar-2021 17:01:12 UTC] variation
+[29-Mar-2021 17:01:12 UTC] variation
+[29-Mar-2021 17:01:31 UTC] PHP Notice:  register_rest_route was called <strong>incorrectly</strong>. The REST API route definition for <code>wc-category-slider/v1/slider/all</code> is missing the required <code>permission_callback</code> argument. For REST API routes that are intended to be public, use <code>__return_true</code> as the permission callback. Please see <a href="https://wordpress.org/support/article/debugging-in-wordpress/">Debugging in WordPress</a> for more information. (This message was added in version 5.5.0.) in C:\xampp\htdocs\eshop\wp-includes\functions.php on line 5311
+[29-Mar-2021 17:01:31 UTC] PHP Notice:  register_rest_route was called <strong>incorrectly</strong>. The REST API route definition for <code>wc-category-slider/v1/slider/(?P<id>\d+)</code> is missing the required <code>permission_callback</code> argument. For REST API routes that are intended to be public, use <code>__return_true</code> as the permission callback. Please see <a href="https://wordpress.org/support/article/debugging-in-wordpress/">Debugging in WordPress</a> for more information. (This message was added in version 5.5.0.) in C:\xampp\htdocs\eshop\wp-includes\functions.php on line 5311
+[29-Mar-2021 17:01:57 UTC] PHP Notice:  Undefined index: name in C:\xampp\htdocs\eshop\wp-content\plugins\woocommerce\packages\woocommerce-admin\src\API\Products.php on line 160
+[29-Mar-2021 17:02:19 UTC] PHP Notice:  register_rest_route was called <strong>incorrectly</strong>. The REST API route definition for <code>wc-category-slider/v1/slider/all</code> is missing the required <code>permission_callback</code> argument. For REST API routes that are intended to be public, use <code>__return_true</code> as the permission callback. Please see <a href="https://wordpress.org/support/article/debugging-in-wordpress/">Debugging in WordPress</a> for more information. (This message was added in version 5.5.0.) in C:\xampp\htdocs\eshop\wp-includes\functions.php on line 5311
+[29-Mar-2021 17:02:19 UTC] PHP Notice:  register_rest_route was called <strong>incorrectly</strong>. The REST API route definition for <code>wc-category-slider/v1/slider/(?P<id>\d+)</code> is missing the required <code>permission_callback</code> argument. For REST API routes that are intended to be public, use <code>__return_true</code> as the permission callback. Please see <a href="https://wordpress.org/support/article/debugging-in-wordpress/">Debugging in WordPress</a> for more information. (This message was added in version 5.5.0.) in C:\xampp\htdocs\eshop\wp-includes\functions.php on line 5311
+[29-Mar-2021 17:02:31 UTC] PHP Notice:  register_rest_route was called <strong>incorrectly</strong>. The REST API route definition for <code>wc-category-slider/v1/slider/all</code> is missing the required <code>permission_callback</code> argument. For REST API routes that are intended to be public, use <code>__return_true</code> as the permission callback. Please see <a href="https://wordpress.org/support/article/debugging-in-wordpress/">Debugging in WordPress</a> for more information. (This message was added in version 5.5.0.) in C:\xampp\htdocs\eshop\wp-includes\functions.php on line 5311
+[29-Mar-2021 17:02:31 UTC] PHP Notice:  register_rest_route was called <strong>incorrectly</strong>. The REST API route definition for <code>wc-category-slider/v1/slider/(?P<id>\d+)</code> is missing the required <code>permission_callback</code> argument. For REST API routes that are intended to be public, use <code>__return_true</code> as the permission callback. Please see <a href="https://wordpress.org/support/article/debugging-in-wordpress/">Debugging in WordPress</a> for more information. (This message was added in version 5.5.0.) in C:\xampp\htdocs\eshop\wp-includes\functions.php on line 5311
+[29-Mar-2021 17:02:56 UTC] PHP Notice:  register_rest_route was called <strong>incorrectly</strong>. The REST API route definition for <code>wc-category-slider/v1/slider/all</code> is missing the required <code>permission_callback</code> argument. For REST API routes that are intended to be public, use <code>__return_true</code> as the permission callback. Please see <a href="https://wordpress.org/support/article/debugging-in-wordpress/">Debugging in WordPress</a> for more information. (This message was added in version 5.5.0.) in C:\xampp\htdocs\eshop\wp-includes\functions.php on line 5311
+[29-Mar-2021 17:02:56 UTC] PHP Notice:  register_rest_route was called <strong>incorrectly</strong>. The REST API route definition for <code>wc-category-slider/v1/slider/(?P<id>\d+)</code> is missing the required <code>permission_callback</code> argument. For REST API routes that are intended to be public, use <code>__return_true</code> as the permission callback. Please see <a href="https://wordpress.org/support/article/debugging-in-wordpress/">Debugging in WordPress</a> for more information. (This message was added in version 5.5.0.) in C:\xampp\htdocs\eshop\wp-includes\functions.php on line 5311
+[29-Mar-2021 17:04:02 UTC] PHP Notice:  register_rest_route was called <strong>incorrectly</strong>. The REST API route definition for <code>wc-category-slider/v1/slider/all</code> is missing the required <code>permission_callback</code> argument. For REST API routes that are intended to be public, use <code>__return_true</code> as the permission callback. Please see <a href="https://wordpress.org/support/article/debugging-in-wordpress/">Debugging in WordPress</a> for more information. (This message was added in version 5.5.0.) in C:\xampp\htdocs\eshop\wp-includes\functions.php on line 5311
+[29-Mar-2021 17:04:02 UTC] PHP Notice:  register_rest_route was called <strong>incorrectly</strong>. The REST API route definition for <code>wc-category-slider/v1/slider/(?P<id>\d+)</code> is missing the required <code>permission_callback</code> argument. For REST API routes that are intended to be public, use <code>__return_true</code> as the permission callback. Please see <a href="https://wordpress.org/support/article/debugging-in-wordpress/">Debugging in WordPress</a> for more information. (This message was added in version 5.5.0.) in C:\xampp\htdocs\eshop\wp-includes\functions.php on line 5311
+[29-Mar-2021 17:04:37 UTC] PHP Notice:  register_rest_route was called <strong>incorrectly</strong>. The REST API route definition for <code>wc-category-slider/v1/slider/all</code> is missing the required <code>permission_callback</code> argument. For REST API routes that are intended to be public, use <code>__return_true</code> as the permission callback. Please see <a href="https://wordpress.org/support/article/debugging-in-wordpress/">Debugging in WordPress</a> for more information. (This message was added in version 5.5.0.) in C:\xampp\htdocs\eshop\wp-includes\functions.php on line 5311
+[29-Mar-2021 17:04:37 UTC] PHP Notice:  register_rest_route was called <strong>incorrectly</strong>. The REST API route definition for <code>wc-category-slider/v1/slider/(?P<id>\d+)</code> is missing the required <code>permission_callback</code> argument. For REST API routes that are intended to be public, use <code>__return_true</code> as the permission callback. Please see <a href="https://wordpress.org/support/article/debugging-in-wordpress/">Debugging in WordPress</a> for more information. (This message was added in version 5.5.0.) in C:\xampp\htdocs\eshop\wp-includes\functions.php on line 5311
+[29-Mar-2021 17:04:53 UTC] PHP Notice:  register_rest_route was called <strong>incorrectly</strong>. The REST API route definition for <code>wc-category-slider/v1/slider/all</code> is missing the required <code>permission_callback</code> argument. For REST API routes that are intended to be public, use <code>__return_true</code> as the permission callback. Please see <a href="https://wordpress.org/support/article/debugging-in-wordpress/">Debugging in WordPress</a> for more information. (This message was added in version 5.5.0.) in C:\xampp\htdocs\eshop\wp-includes\functions.php on line 5311
+[29-Mar-2021 17:04:53 UTC] PHP Notice:  register_rest_route was called <strong>incorrectly</strong>. The REST API route definition for <code>wc-category-slider/v1/slider/(?P<id>\d+)</code> is missing the required <code>permission_callback</code> argument. For REST API routes that are intended to be public, use <code>__return_true</code> as the permission callback. Please see <a href="https://wordpress.org/support/article/debugging-in-wordpress/">Debugging in WordPress</a> for more information. (This message was added in version 5.5.0.) in C:\xampp\htdocs\eshop\wp-includes\functions.php on line 5311
+[29-Mar-2021 17:05:24 UTC] PHP Notice:  register_rest_route was called <strong>incorrectly</strong>. The REST API route definition for <code>wc-category-slider/v1/slider/all</code> is missing the required <code>permission_callback</code> argument. For REST API routes that are intended to be public, use <code>__return_true</code> as the permission callback. Please see <a href="https://wordpress.org/support/article/debugging-in-wordpress/">Debugging in WordPress</a> for more information. (This message was added in version 5.5.0.) in C:\xampp\htdocs\eshop\wp-includes\functions.php on line 5311
+[29-Mar-2021 17:05:24 UTC] PHP Notice:  register_rest_route was called <strong>incorrectly</strong>. The REST API route definition for <code>wc-category-slider/v1/slider/(?P<id>\d+)</code> is missing the required <code>permission_callback</code> argument. For REST API routes that are intended to be public, use <code>__return_true</code> as the permission callback. Please see <a href="https://wordpress.org/support/article/debugging-in-wordpress/">Debugging in WordPress</a> for more information. (This message was added in version 5.5.0.) in C:\xampp\htdocs\eshop\wp-includes\functions.php on line 5311
+[29-Mar-2021 17:22:39 UTC] PHP Warning:  call_user_func_array() expects parameter 1 to be a valid callback, function 'wac_enqueue_scripts' not found or invalid function name in C:\xampp\htdocs\eshop\wp-includes\class-wp-hook.php on line 287
+[29-Mar-2021 17:22:39 UTC] variation
+[29-Mar-2021 17:22:39 UTC] variation
+[29-Mar-2021 17:22:39 UTC] variation
+[29-Mar-2021 17:22:39 UTC] variation
+[29-Mar-2021 17:26:50 UTC] PHP Notice:  Undefined property: WP_Post_Type::$term_id in C:\xampp\htdocs\eshop\wp-content\themes\leto-customized\functions.php on line 177
+[29-Mar-2021 17:26:55 UTC] variation
+[29-Mar-2021 17:26:55 UTC] variation
+[29-Mar-2021 17:26:55 UTC] variation
+[29-Mar-2021 17:26:56 UTC] variation
+[29-Mar-2021 17:26:57 UTC] variation
+[29-Mar-2021 17:26:57 UTC] variation
+[29-Mar-2021 17:26:57 UTC] variation
+[29-Mar-2021 17:26:57 UTC] variation
+[29-Mar-2021 17:36:38 UTC] PHP Warning:  call_user_func_array() expects parameter 1 to be a valid callback, function 'wac_enqueue_scripts' not found or invalid function name in C:\xampp\htdocs\eshop\wp-includes\class-wp-hook.php on line 287
+[29-Mar-2021 17:36:38 UTC] variation
+[29-Mar-2021 17:36:38 UTC] variation
+[29-Mar-2021 17:36:38 UTC] variation
+[29-Mar-2021 17:36:38 UTC] variation
+[29-Mar-2021 17:40:23 UTC] PHP Warning:  call_user_func_array() expects parameter 1 to be a valid callback, function 'wac_enqueue_scripts' not found or invalid function name in C:\xampp\htdocs\eshop\wp-includes\class-wp-hook.php on line 287
+[29-Mar-2021 17:40:23 UTC] variation
+[29-Mar-2021 17:40:23 UTC] variation
+[29-Mar-2021 17:40:23 UTC] variation
+[29-Mar-2021 17:40:23 UTC] variation
+[29-Mar-2021 17:42:00 UTC] PHP Warning:  call_user_func_array() expects parameter 1 to be a valid callback, function 'wac_enqueue_scripts' not found or invalid function name in C:\xampp\htdocs\eshop\wp-includes\class-wp-hook.php on line 287
+[29-Mar-2021 17:42:00 UTC] variation
+[29-Mar-2021 17:42:00 UTC] variation
+[29-Mar-2021 17:42:00 UTC] variation
+[29-Mar-2021 17:42:00 UTC] variation
+[29-Mar-2021 17:43:00 UTC] PHP Warning:  call_user_func_array() expects parameter 1 to be a valid callback, function 'wac_enqueue_scripts' not found or invalid function name in C:\xampp\htdocs\eshop\wp-includes\class-wp-hook.php on line 287
+[29-Mar-2021 17:43:00 UTC] variation
+[29-Mar-2021 17:43:00 UTC] variation
+[29-Mar-2021 17:43:00 UTC] variation
+[29-Mar-2021 17:43:01 UTC] variation
+[29-Mar-2021 17:43:15 UTC] PHP Warning:  call_user_func_array() expects parameter 1 to be a valid callback, function 'wac_enqueue_scripts' not found or invalid function name in C:\xampp\htdocs\eshop\wp-includes\class-wp-hook.php on line 287
+[29-Mar-2021 17:43:15 UTC] variation
+[29-Mar-2021 17:43:15 UTC] variation
+[29-Mar-2021 17:43:15 UTC] variation
+[29-Mar-2021 17:43:15 UTC] variation
+[29-Mar-2021 17:43:39 UTC] PHP Warning:  call_user_func_array() expects parameter 1 to be a valid callback, function 'wac_enqueue_scripts' not found or invalid function name in C:\xampp\htdocs\eshop\wp-includes\class-wp-hook.php on line 287
+[29-Mar-2021 17:43:39 UTC] variation
+[29-Mar-2021 17:43:39 UTC] variation
+[29-Mar-2021 17:43:39 UTC] variation
+[29-Mar-2021 17:43:39 UTC] variation
+[29-Mar-2021 17:45:00 UTC] PHP Warning:  call_user_func_array() expects parameter 1 to be a valid callback, function 'wac_enqueue_scripts' not found or invalid function name in C:\xampp\htdocs\eshop\wp-includes\class-wp-hook.php on line 287
+[29-Mar-2021 17:45:00 UTC] variation
+[29-Mar-2021 17:45:00 UTC] variation
+[29-Mar-2021 17:45:00 UTC] variation
+[29-Mar-2021 17:45:00 UTC] variation
+[29-Mar-2021 17:47:54 UTC] PHP Warning:  call_user_func_array() expects parameter 1 to be a valid callback, function 'wac_enqueue_scripts' not found or invalid function name in C:\xampp\htdocs\eshop\wp-includes\class-wp-hook.php on line 287
+[29-Mar-2021 17:47:54 UTC] variation
+[29-Mar-2021 17:47:54 UTC] variation
+[29-Mar-2021 17:47:54 UTC] variation
+[29-Mar-2021 17:47:54 UTC] variation
+[29-Mar-2021 17:48:08 UTC] PHP Warning:  call_user_func_array() expects parameter 1 to be a valid callback, function 'wac_enqueue_scripts' not found or invalid function name in C:\xampp\htdocs\eshop\wp-includes\class-wp-hook.php on line 287
+[29-Mar-2021 17:48:08 UTC] variation
+[29-Mar-2021 17:48:08 UTC] variation
+[29-Mar-2021 17:48:08 UTC] variation
+[29-Mar-2021 17:48:08 UTC] variation
+[29-Mar-2021 17:48:17 UTC] PHP Warning:  call_user_func_array() expects parameter 1 to be a valid callback, function 'wac_enqueue_scripts' not found or invalid function name in C:\xampp\htdocs\eshop\wp-includes\class-wp-hook.php on line 287
+[29-Mar-2021 17:48:17 UTC] variation
+[29-Mar-2021 17:48:17 UTC] variation
+[29-Mar-2021 17:48:17 UTC] variation
+[29-Mar-2021 17:48:17 UTC] variation
+[29-Mar-2021 18:06:08 UTC] PHP Warning:  call_user_func_array() expects parameter 1 to be a valid callback, function 'wac_enqueue_scripts' not found or invalid function name in C:\xampp\htdocs\eshop\wp-includes\class-wp-hook.php on line 287
+[29-Mar-2021 18:06:08 UTC] variation
+[29-Mar-2021 18:06:09 UTC] variation
+[29-Mar-2021 18:06:09 UTC] variation
+[29-Mar-2021 18:06:10 UTC] variation
+[29-Mar-2021 18:13:22 UTC] PHP Warning:  call_user_func_array() expects parameter 1 to be a valid callback, function 'wac_enqueue_scripts' not found or invalid function name in C:\xampp\htdocs\eshop\wp-includes\class-wp-hook.php on line 287
+[29-Mar-2021 18:13:22 UTC] variation
+[29-Mar-2021 18:13:22 UTC] variation
+[29-Mar-2021 18:13:22 UTC] variation
+[29-Mar-2021 18:13:22 UTC] variation
+[29-Mar-2021 18:13:42 UTC] PHP Warning:  call_user_func_array() expects parameter 1 to be a valid callback, function 'wac_enqueue_scripts' not found or invalid function name in C:\xampp\htdocs\eshop\wp-includes\class-wp-hook.php on line 287
+[29-Mar-2021 18:13:42 UTC] variation
+[29-Mar-2021 18:13:42 UTC] variation
+[29-Mar-2021 18:13:42 UTC] variation
+[29-Mar-2021 18:13:42 UTC] variation
+[29-Mar-2021 18:14:40 UTC] PHP Warning:  call_user_func_array() expects parameter 1 to be a valid callback, function 'wac_enqueue_scripts' not found or invalid function name in C:\xampp\htdocs\eshop\wp-includes\class-wp-hook.php on line 287
+[29-Mar-2021 18:14:40 UTC] variation
+[29-Mar-2021 18:14:40 UTC] variation
+[29-Mar-2021 18:14:40 UTC] variation
+[29-Mar-2021 18:14:41 UTC] variation
+[29-Mar-2021 18:15:25 UTC] PHP Warning:  call_user_func_array() expects parameter 1 to be a valid callback, function 'wac_enqueue_scripts' not found or invalid function name in C:\xampp\htdocs\eshop\wp-includes\class-wp-hook.php on line 287
+[29-Mar-2021 18:15:25 UTC] variation
+[29-Mar-2021 18:15:25 UTC] variation
+[29-Mar-2021 18:15:25 UTC] variation
+[29-Mar-2021 18:15:25 UTC] variation
+[29-Mar-2021 18:17:31 UTC] PHP Warning:  call_user_func_array() expects parameter 1 to be a valid callback, function 'wac_enqueue_scripts' not found or invalid function name in C:\xampp\htdocs\eshop\wp-includes\class-wp-hook.php on line 287
+[29-Mar-2021 18:17:31 UTC] variation
+[29-Mar-2021 18:17:31 UTC] variation
+[29-Mar-2021 18:17:31 UTC] variation
+[29-Mar-2021 18:17:32 UTC] variation
+[29-Mar-2021 18:20:33 UTC] PHP Warning:  call_user_func_array() expects parameter 1 to be a valid callback, function 'wac_enqueue_scripts' not found or invalid function name in C:\xampp\htdocs\eshop\wp-includes\class-wp-hook.php on line 287
+[29-Mar-2021 18:20:34 UTC] variation
+[29-Mar-2021 18:20:34 UTC] variation
+[29-Mar-2021 18:20:34 UTC] variation
+[29-Mar-2021 18:20:34 UTC] variation
+[29-Mar-2021 19:27:16 UTC] variation
+[29-Mar-2021 19:27:16 UTC] variation
+[29-Mar-2021 19:27:16 UTC] variation
+[29-Mar-2021 19:27:16 UTC] variation
+[02-Apr-2021 13:16:03 UTC] PHP Notice:  Undefined property: WP_Post_Type::$term_id in C:\xampp\htdocs\eshop\wp-content\themes\leto-customized\functions.php on line 177
+[02-Apr-2021 13:16:22 UTC] variation
+[02-Apr-2021 13:16:22 UTC] variation
+[02-Apr-2021 13:16:22 UTC] variation
+[02-Apr-2021 13:16:22 UTC] variation
+[02-Apr-2021 13:16:22 UTC] variation
+[02-Apr-2021 13:16:22 UTC] variation
+[02-Apr-2021 13:16:23 UTC] variation
+[02-Apr-2021 13:16:23 UTC] variation
+[02-Apr-2021 13:16:23 UTC] variation
+[02-Apr-2021 13:16:23 UTC] variation
+[02-Apr-2021 13:16:23 UTC] variation
+[02-Apr-2021 13:16:23 UTC] variation
+[02-Apr-2021 13:16:31 UTC] PHP Warning:  call_user_func_array() expects parameter 1 to be a valid callback, function 'wac_enqueue_scripts' not found or invalid function name in C:\xampp\htdocs\eshop\wp-includes\class-wp-hook.php on line 287
+[02-Apr-2021 13:16:31 UTC] variation
+[02-Apr-2021 13:16:31 UTC] variation
+[02-Apr-2021 13:16:31 UTC] variation
+[02-Apr-2021 13:16:31 UTC] variation
+[02-Apr-2021 13:16:32 UTC] variation
+[02-Apr-2021 13:16:32 UTC] variation
+[02-Apr-2021 13:16:39 UTC] variation
+[02-Apr-2021 13:16:39 UTC] variation
+[02-Apr-2021 13:16:39 UTC] variation
+[02-Apr-2021 13:16:39 UTC] variation
+[02-Apr-2021 13:16:39 UTC] variation
+[02-Apr-2021 13:16:39 UTC] variation
+[02-Apr-2021 13:17:25 UTC] variation
+[02-Apr-2021 13:17:25 UTC] variation
+[02-Apr-2021 13:17:25 UTC] variation
+[02-Apr-2021 13:17:25 UTC] variation
+[02-Apr-2021 13:17:25 UTC] variation
+[02-Apr-2021 13:17:25 UTC] variation
+[02-Apr-2021 13:21:40 UTC] PHP Warning:  call_user_func_array() expects parameter 1 to be a valid callback, function 'wac_enqueue_scripts' not found or invalid function name in C:\xampp\htdocs\eshop\wp-includes\class-wp-hook.php on line 287
+[02-Apr-2021 13:21:40 UTC] variation
+[02-Apr-2021 13:21:40 UTC] variation
+[02-Apr-2021 13:21:40 UTC] variation
+[02-Apr-2021 13:21:40 UTC] variation
+[02-Apr-2021 13:21:40 UTC] variation
+[02-Apr-2021 13:21:40 UTC] variation
+[02-Apr-2021 13:21:45 UTC] variation
+[02-Apr-2021 13:21:45 UTC] variation
+[02-Apr-2021 13:21:45 UTC] variation
+[02-Apr-2021 13:21:45 UTC] variation
+[02-Apr-2021 13:21:45 UTC] variation
+[02-Apr-2021 13:21:45 UTC] variation
+[02-Apr-2021 13:24:42 UTC] variation
+[02-Apr-2021 13:24:42 UTC] variation
+[02-Apr-2021 13:24:42 UTC] variation
+[02-Apr-2021 13:24:42 UTC] variation
+[02-Apr-2021 13:24:42 UTC] variation
+[02-Apr-2021 13:24:42 UTC] variation
+[02-Apr-2021 13:27:23 UTC] variation
+[02-Apr-2021 13:27:23 UTC] variation
+[02-Apr-2021 13:27:23 UTC] variation
+[02-Apr-2021 13:27:23 UTC] variation
+[02-Apr-2021 13:27:23 UTC] variation
+[02-Apr-2021 13:27:23 UTC] variation
+[02-Apr-2021 13:32:57 UTC] variation
+[02-Apr-2021 13:32:57 UTC] variation
+[02-Apr-2021 13:32:57 UTC] variation
+[02-Apr-2021 13:32:57 UTC] variation
+[02-Apr-2021 13:32:57 UTC] variation
+[02-Apr-2021 13:32:57 UTC] variation
+[02-Apr-2021 13:33:19 UTC] account items
+[02-Apr-2021 13:33:19 UTC] Dashboard
+[02-Apr-2021 13:33:19 UTC] account items
+[02-Apr-2021 13:33:19 UTC] Orders
+[02-Apr-2021 13:33:19 UTC] account items
+[02-Apr-2021 13:33:19 UTC] Downloads
+[02-Apr-2021 13:33:19 UTC] account items
+[02-Apr-2021 13:33:19 UTC] Addresses
+[02-Apr-2021 13:33:19 UTC] account items
+[02-Apr-2021 13:33:19 UTC] Account details
+[02-Apr-2021 13:33:19 UTC] account items
+[02-Apr-2021 13:33:19 UTC] Wishlist
+[02-Apr-2021 13:33:19 UTC] account items
+[02-Apr-2021 13:33:19 UTC] Logout
+[02-Apr-2021 13:33:26 UTC] variation
+[02-Apr-2021 13:33:26 UTC] variation
+[02-Apr-2021 13:33:26 UTC] variation
+[02-Apr-2021 13:33:26 UTC] variation
+[02-Apr-2021 13:33:26 UTC] variation
+[02-Apr-2021 13:33:26 UTC] variation
+[02-Apr-2021 13:33:30 UTC] PHP Notice:  Trying to access array offset on value of type int in C:\xampp\htdocs\eshop\wp-content\plugins\side-cart-woocommerce\templates\global\footer\buttons.php on line 32
+[02-Apr-2021 13:33:30 UTC] PHP Notice:  Trying to access array offset on value of type int in C:\xampp\htdocs\eshop\wp-content\plugins\side-cart-woocommerce\templates\global\footer\buttons.php on line 32
+[02-Apr-2021 13:33:35 UTC] PHP Notice:  Trying to access array offset on value of type int in C:\xampp\htdocs\eshop\wp-content\plugins\side-cart-woocommerce\templates\global\footer\buttons.php on line 32
+[02-Apr-2021 13:33:35 UTC] PHP Notice:  Trying to access array offset on value of type int in C:\xampp\htdocs\eshop\wp-content\plugins\side-cart-woocommerce\templates\global\footer\buttons.php on line 32
+[02-Apr-2021 13:33:37 UTC] PHP Notice:  Trying to access array offset on value of type int in C:\xampp\htdocs\eshop\wp-content\plugins\side-cart-woocommerce\templates\global\footer\buttons.php on line 32
+[02-Apr-2021 13:33:37 UTC] PHP Notice:  Trying to access array offset on value of type int in C:\xampp\htdocs\eshop\wp-content\plugins\side-cart-woocommerce\templates\global\footer\buttons.php on line 32
+[02-Apr-2021 13:33:38 UTC] PHP Notice:  Trying to access array offset on value of type int in C:\xampp\htdocs\eshop\wp-content\plugins\side-cart-woocommerce\templates\global\footer\buttons.php on line 32
+[02-Apr-2021 13:33:38 UTC] PHP Notice:  Trying to access array offset on value of type int in C:\xampp\htdocs\eshop\wp-content\plugins\side-cart-woocommerce\templates\global\footer\buttons.php on line 32
+[02-Apr-2021 13:33:40 UTC] PHP Notice:  Trying to access array offset on value of type int in C:\xampp\htdocs\eshop\wp-content\plugins\side-cart-woocommerce\templates\global\footer\buttons.php on line 32
+[02-Apr-2021 13:33:40 UTC] PHP Notice:  Trying to access array offset on value of type int in C:\xampp\htdocs\eshop\wp-content\plugins\side-cart-woocommerce\templates\global\footer\buttons.php on line 32
+[02-Apr-2021 13:33:41 UTC] PHP Notice:  Undefined property: WP_Post_Type::$term_id in C:\xampp\htdocs\eshop\wp-content\themes\leto-customized\functions.php on line 177
+[02-Apr-2021 13:33:43 UTC] PHP Notice:  Trying to access array offset on value of type int in C:\xampp\htdocs\eshop\wp-content\plugins\side-cart-woocommerce\templates\global\footer\buttons.php on line 32
+[02-Apr-2021 13:33:43 UTC] PHP Notice:  Trying to access array offset on value of type int in C:\xampp\htdocs\eshop\wp-content\plugins\side-cart-woocommerce\templates\global\footer\buttons.php on line 32
+[02-Apr-2021 13:33:48 UTC] PHP Notice:  Trying to access array offset on value of type int in C:\xampp\htdocs\eshop\wp-content\plugins\side-cart-woocommerce\templates\global\footer\buttons.php on line 32
+[02-Apr-2021 13:33:48 UTC] PHP Notice:  Trying to access array offset on value of type int in C:\xampp\htdocs\eshop\wp-content\plugins\side-cart-woocommerce\templates\global\footer\buttons.php on line 32
+[02-Apr-2021 13:33:49 UTC] PHP Notice:  Undefined variable: cart_item_data in C:\xampp\htdocs\eshop\wp-content\themes\leto-customized\inc\ajax-add-to-cart-extended.php on line 19
+[02-Apr-2021 13:33:49 UTC] variation
+[02-Apr-2021 13:33:49 UTC] variation
+[02-Apr-2021 13:33:52 UTC] variation
+[02-Apr-2021 13:33:52 UTC] variation
+[02-Apr-2021 13:33:52 UTC] variation
+[02-Apr-2021 13:33:52 UTC] variation
+[02-Apr-2021 13:33:53 UTC] variation
+[02-Apr-2021 13:33:53 UTC] variation
+[02-Apr-2021 13:33:54 UTC] variation
+[02-Apr-2021 13:33:54 UTC] variation
+[02-Apr-2021 13:33:55 UTC] variation
+[02-Apr-2021 13:33:55 UTC] variation
+[02-Apr-2021 13:34:10 UTC] variation
+[02-Apr-2021 13:34:10 UTC] variation
+[02-Apr-2021 13:34:58 UTC] variation
+[02-Apr-2021 13:34:58 UTC] variation
+[02-Apr-2021 13:34:58 UTC] variation
+[02-Apr-2021 13:34:58 UTC] variation
+[02-Apr-2021 13:34:58 UTC] variation
+[02-Apr-2021 13:34:58 UTC] variation
+[02-Apr-2021 13:34:58 UTC] variation
+[02-Apr-2021 13:34:58 UTC] variation
+[02-Apr-2021 13:34:58 UTC] variation
+[02-Apr-2021 13:34:58 UTC] variation
+[02-Apr-2021 13:34:58 UTC] variation
+[02-Apr-2021 13:34:58 UTC] variation
+[02-Apr-2021 13:35:01 UTC] variation
+[02-Apr-2021 13:35:01 UTC] variation
+[02-Apr-2021 13:35:01 UTC] variation
+[02-Apr-2021 13:35:01 UTC] variation
+[02-Apr-2021 13:35:01 UTC] variation
+[02-Apr-2021 13:35:01 UTC] variation
+[02-Apr-2021 13:35:01 UTC] variation
+[02-Apr-2021 13:35:01 UTC] variation
+[02-Apr-2021 13:35:01 UTC] variation
+[02-Apr-2021 13:35:01 UTC] variation
+[02-Apr-2021 13:35:01 UTC] variation
+[02-Apr-2021 13:35:01 UTC] variation
+[02-Apr-2021 15:08:53 UTC] variation
+[02-Apr-2021 15:08:53 UTC] variation
+[02-Apr-2021 15:08:53 UTC] variation
+[02-Apr-2021 15:08:53 UTC] variation
+[02-Apr-2021 15:08:53 UTC] variation
+[02-Apr-2021 15:08:53 UTC] variation
+[02-Apr-2021 16:40:09 UTC] PHP Notice:  Undefined property: WP_Post_Type::$term_id in C:\xampp\htdocs\eshop\wp-content\themes\leto-customized\functions.php on line 177
+[02-Apr-2021 16:40:24 UTC] variation
+[02-Apr-2021 16:40:24 UTC] variation
+[02-Apr-2021 16:40:24 UTC] variation
+[02-Apr-2021 16:40:24 UTC] variation
+[02-Apr-2021 16:40:24 UTC] variation
+[02-Apr-2021 16:40:24 UTC] variation
+[02-Apr-2021 16:40:24 UTC] variation
+[02-Apr-2021 16:40:24 UTC] variation
+[02-Apr-2021 16:40:24 UTC] variation
+[02-Apr-2021 16:40:24 UTC] variation
+[02-Apr-2021 16:40:24 UTC] variation
+[02-Apr-2021 16:40:24 UTC] variation
+[02-Apr-2021 16:40:31 UTC] PHP Warning:  call_user_func_array() expects parameter 1 to be a valid callback, function 'wac_enqueue_scripts' not found or invalid function name in C:\xampp\htdocs\eshop\wp-includes\class-wp-hook.php on line 287
+[02-Apr-2021 16:40:31 UTC] variation
+[02-Apr-2021 16:40:31 UTC] variation
+[02-Apr-2021 16:40:31 UTC] variation
+[02-Apr-2021 16:40:31 UTC] variation
+[02-Apr-2021 16:40:31 UTC] variation
+[02-Apr-2021 16:40:31 UTC] variation
+[02-Apr-2021 16:40:40 UTC] variation
+[02-Apr-2021 16:40:40 UTC] variation
+[02-Apr-2021 16:40:40 UTC] variation
+[02-Apr-2021 16:40:40 UTC] variation
+[02-Apr-2021 16:40:40 UTC] variation
+[02-Apr-2021 16:40:40 UTC] variation
+[02-Apr-2021 16:40:47 UTC] variation
+[02-Apr-2021 16:40:47 UTC] variation
+[02-Apr-2021 16:40:47 UTC] variation
+[02-Apr-2021 16:40:47 UTC] variation
+[02-Apr-2021 16:40:47 UTC] variation
+[02-Apr-2021 16:40:47 UTC] variation
+[02-Apr-2021 16:40:48 UTC] variation
+[02-Apr-2021 16:40:48 UTC] variation
+[02-Apr-2021 16:40:48 UTC] variation
+[02-Apr-2021 16:40:48 UTC] variation
+[02-Apr-2021 16:40:48 UTC] variation
+[02-Apr-2021 16:40:48 UTC] variation
+[02-Apr-2021 16:53:07 UTC] variation
+[02-Apr-2021 16:53:07 UTC] variation
+[02-Apr-2021 16:53:07 UTC] variation
+[02-Apr-2021 16:53:07 UTC] variation
+[02-Apr-2021 16:53:07 UTC] variation
+[02-Apr-2021 16:53:07 UTC] variation
+[02-Apr-2021 16:53:19 UTC] variation
+[02-Apr-2021 16:53:19 UTC] variation
+[02-Apr-2021 16:53:19 UTC] variation
+[02-Apr-2021 16:53:19 UTC] variation
+[02-Apr-2021 16:53:19 UTC] variation
+[02-Apr-2021 16:53:19 UTC] variation
+[02-Apr-2021 16:53:45 UTC] account items
+[02-Apr-2021 16:53:45 UTC] Dashboard
+[02-Apr-2021 16:53:45 UTC] account items
+[02-Apr-2021 16:53:45 UTC] Orders
+[02-Apr-2021 16:53:45 UTC] account items
+[02-Apr-2021 16:53:45 UTC] Downloads
+[02-Apr-2021 16:53:45 UTC] account items
+[02-Apr-2021 16:53:45 UTC] Addresses
+[02-Apr-2021 16:53:45 UTC] account items
+[02-Apr-2021 16:53:45 UTC] Account details
+[02-Apr-2021 16:53:45 UTC] account items
+[02-Apr-2021 16:53:45 UTC] Wishlist
+[02-Apr-2021 16:53:45 UTC] account items
+[02-Apr-2021 16:53:45 UTC] Logout
+[02-Apr-2021 16:53:50 UTC] variation
+[02-Apr-2021 16:53:50 UTC] variation
+[02-Apr-2021 16:53:50 UTC] variation
+[02-Apr-2021 16:53:50 UTC] variation
+[02-Apr-2021 16:53:50 UTC] variation
+[02-Apr-2021 16:53:50 UTC] variation
+[02-Apr-2021 16:53:53 UTC] PHP Notice:  Undefined property: WP_Post_Type::$term_id in C:\xampp\htdocs\eshop\wp-content\themes\leto-customized\functions.php on line 177
+[02-Apr-2021 16:54:00 UTC] variation
+[02-Apr-2021 16:54:00 UTC] variation
+[02-Apr-2021 16:54:00 UTC] variation
+[02-Apr-2021 16:54:00 UTC] variation
+[02-Apr-2021 16:54:00 UTC] variation
+[02-Apr-2021 16:54:00 UTC] variation
+[03-Apr-2021 17:05:48 UTC] PHP Notice:  Undefined property: WP_Post_Type::$term_id in C:\xampp\htdocs\eshop\wp-content\themes\leto-customized\functions.php on line 177
+[03-Apr-2021 17:05:59 UTC] variation
+[03-Apr-2021 17:05:59 UTC] variation
+[03-Apr-2021 17:05:59 UTC] variation
+[03-Apr-2021 17:05:59 UTC] variation
+[03-Apr-2021 17:05:59 UTC] variation
+[03-Apr-2021 17:05:59 UTC] variation
+[03-Apr-2021 17:05:59 UTC] variation
+[03-Apr-2021 17:05:59 UTC] variation
+[03-Apr-2021 17:05:59 UTC] variation
+[03-Apr-2021 17:05:59 UTC] variation
+[03-Apr-2021 17:05:59 UTC] variation
+[03-Apr-2021 17:05:59 UTC] variation
+[03-Apr-2021 17:06:11 UTC] variation
+[03-Apr-2021 17:06:11 UTC] variation
+[03-Apr-2021 17:06:11 UTC] variation
+[03-Apr-2021 17:06:11 UTC] variation
+[03-Apr-2021 17:06:11 UTC] variation
+[03-Apr-2021 17:06:11 UTC] variation
+[04-Apr-2021 16:27:26 UTC] PHP Notice:  Undefined property: WP_Post_Type::$term_id in C:\xampp\htdocs\eshop\wp-content\themes\leto-customized\functions.php on line 177
+[04-Apr-2021 16:27:39 UTC] variation
+[04-Apr-2021 16:27:39 UTC] variation
+[04-Apr-2021 16:27:39 UTC] variation
+[04-Apr-2021 16:27:39 UTC] variation
+[04-Apr-2021 16:27:39 UTC] variation
+[04-Apr-2021 16:27:39 UTC] variation
+[04-Apr-2021 16:27:39 UTC] variation
+[04-Apr-2021 16:27:39 UTC] variation
+[04-Apr-2021 16:27:39 UTC] variation
+[04-Apr-2021 16:27:40 UTC] variation
+[04-Apr-2021 16:27:40 UTC] variation
+[04-Apr-2021 16:27:40 UTC] variation
+[04-Apr-2021 16:27:56 UTC] variation
+[04-Apr-2021 16:27:56 UTC] variation
+[04-Apr-2021 16:27:56 UTC] variation
+[04-Apr-2021 16:27:56 UTC] variation
+[04-Apr-2021 16:27:56 UTC] variation
+[04-Apr-2021 16:27:56 UTC] variation
+[04-Apr-2021 16:27:56 UTC] variation
+[04-Apr-2021 16:27:56 UTC] variation
+[04-Apr-2021 16:27:56 UTC] variation
+[04-Apr-2021 16:27:56 UTC] variation
+[04-Apr-2021 16:27:56 UTC] variation
+[04-Apr-2021 16:27:57 UTC] variation
+[04-Apr-2021 16:28:48 UTC] PHP Notice:  register_rest_route was called <strong>incorrectly</strong>. The REST API route definition for <code>wc-category-slider/v1/slider/all</code> is missing the required <code>permission_callback</code> argument. For REST API routes that are intended to be public, use <code>__return_true</code> as the permission callback. Please see <a href="https://wordpress.org/support/article/debugging-in-wordpress/">Debugging in WordPress</a> for more information. (This message was added in version 5.5.0.) in C:\xampp\htdocs\eshop\wp-includes\functions.php on line 5311
+[04-Apr-2021 16:28:48 UTC] PHP Notice:  register_rest_route was called <strong>incorrectly</strong>. The REST API route definition for <code>wc-category-slider/v1/slider/(?P<id>\d+)</code> is missing the required <code>permission_callback</code> argument. For REST API routes that are intended to be public, use <code>__return_true</code> as the permission callback. Please see <a href="https://wordpress.org/support/article/debugging-in-wordpress/">Debugging in WordPress</a> for more information. (This message was added in version 5.5.0.) in C:\xampp\htdocs\eshop\wp-includes\functions.php on line 5311
+[04-Apr-2021 16:29:03 UTC] PHP Notice:  register_rest_route was called <strong>incorrectly</strong>. The REST API route definition for <code>wc-category-slider/v1/slider/all</code> is missing the required <code>permission_callback</code> argument. For REST API routes that are intended to be public, use <code>__return_true</code> as the permission callback. Please see <a href="https://wordpress.org/support/article/debugging-in-wordpress/">Debugging in WordPress</a> for more information. (This message was added in version 5.5.0.) in C:\xampp\htdocs\eshop\wp-includes\functions.php on line 5311
+[04-Apr-2021 16:29:03 UTC] PHP Notice:  register_rest_route was called <strong>incorrectly</strong>. The REST API route definition for <code>wc-category-slider/v1/slider/(?P<id>\d+)</code> is missing the required <code>permission_callback</code> argument. For REST API routes that are intended to be public, use <code>__return_true</code> as the permission callback. Please see <a href="https://wordpress.org/support/article/debugging-in-wordpress/">Debugging in WordPress</a> for more information. (This message was added in version 5.5.0.) in C:\xampp\htdocs\eshop\wp-includes\functions.php on line 5311
+[04-Apr-2021 16:29:33 UTC] PHP Notice:  register_rest_route was called <strong>incorrectly</strong>. The REST API route definition for <code>wc-category-slider/v1/slider/all</code> is missing the required <code>permission_callback</code> argument. For REST API routes that are intended to be public, use <code>__return_true</code> as the permission callback. Please see <a href="https://wordpress.org/support/article/debugging-in-wordpress/">Debugging in WordPress</a> for more information. (This message was added in version 5.5.0.) in C:\xampp\htdocs\eshop\wp-includes\functions.php on line 5311
+[04-Apr-2021 16:29:33 UTC] PHP Notice:  register_rest_route was called <strong>incorrectly</strong>. The REST API route definition for <code>wc-category-slider/v1/slider/(?P<id>\d+)</code> is missing the required <code>permission_callback</code> argument. For REST API routes that are intended to be public, use <code>__return_true</code> as the permission callback. Please see <a href="https://wordpress.org/support/article/debugging-in-wordpress/">Debugging in WordPress</a> for more information. (This message was added in version 5.5.0.) in C:\xampp\htdocs\eshop\wp-includes\functions.php on line 5311
+[04-Apr-2021 16:51:08 UTC] PHP Notice:  Undefined property: WP_Post_Type::$term_id in C:\xampp\htdocs\eshop\wp-content\themes\leto-customized\functions.php on line 177
+[04-Apr-2021 16:51:08 UTC] PHP Notice:  register_rest_route was called <strong>incorrectly</strong>. The REST API route definition for <code>wc-category-slider/v1/slider/all</code> is missing the required <code>permission_callback</code> argument. For REST API routes that are intended to be public, use <code>__return_true</code> as the permission callback. Please see <a href="https://wordpress.org/support/article/debugging-in-wordpress/">Debugging in WordPress</a> for more information. (This message was added in version 5.5.0.) in C:\xampp\htdocs\eshop\wp-includes\functions.php on line 5311
+[04-Apr-2021 16:51:08 UTC] PHP Notice:  register_rest_route was called <strong>incorrectly</strong>. The REST API route definition for <code>wc-category-slider/v1/slider/(?P<id>\d+)</code> is missing the required <code>permission_callback</code> argument. For REST API routes that are intended to be public, use <code>__return_true</code> as the permission callback. Please see <a href="https://wordpress.org/support/article/debugging-in-wordpress/">Debugging in WordPress</a> for more information. (This message was added in version 5.5.0.) in C:\xampp\htdocs\eshop\wp-includes\functions.php on line 5311
+[04-Apr-2021 16:51:22 UTC] variation
+[04-Apr-2021 16:51:22 UTC] variation
+[04-Apr-2021 16:51:22 UTC] variation
+[04-Apr-2021 16:51:22 UTC] variation
+[04-Apr-2021 16:51:22 UTC] variation
+[04-Apr-2021 16:51:22 UTC] variation
+[04-Apr-2021 16:51:23 UTC] variation
+[04-Apr-2021 16:51:23 UTC] variation
+[04-Apr-2021 16:51:23 UTC] variation
+[04-Apr-2021 16:51:23 UTC] variation
+[04-Apr-2021 16:51:23 UTC] variation
+[04-Apr-2021 16:51:23 UTC] variation
+[04-Apr-2021 16:51:24 UTC] PHP Notice:  register_rest_route was called <strong>incorrectly</strong>. The REST API route definition for <code>wc-category-slider/v1/slider/all</code> is missing the required <code>permission_callback</code> argument. For REST API routes that are intended to be public, use <code>__return_true</code> as the permission callback. Please see <a href="https://wordpress.org/support/article/debugging-in-wordpress/">Debugging in WordPress</a> for more information. (This message was added in version 5.5.0.) in C:\xampp\htdocs\eshop\wp-includes\functions.php on line 5311
+[04-Apr-2021 16:51:24 UTC] PHP Notice:  register_rest_route was called <strong>incorrectly</strong>. The REST API route definition for <code>wc-category-slider/v1/slider/(?P<id>\d+)</code> is missing the required <code>permission_callback</code> argument. For REST API routes that are intended to be public, use <code>__return_true</code> as the permission callback. Please see <a href="https://wordpress.org/support/article/debugging-in-wordpress/">Debugging in WordPress</a> for more information. (This message was added in version 5.5.0.) in C:\xampp\htdocs\eshop\wp-includes\functions.php on line 5311
+[04-Apr-2021 16:53:24 UTC] variation
+[04-Apr-2021 16:53:24 UTC] variation
+[04-Apr-2021 16:53:24 UTC] variation
+[04-Apr-2021 16:53:24 UTC] variation
+[04-Apr-2021 16:53:25 UTC] variation
+[04-Apr-2021 16:53:25 UTC] variation
+[04-Apr-2021 17:00:04 UTC] variation
+[04-Apr-2021 17:00:04 UTC] variation
+[04-Apr-2021 17:00:04 UTC] variation
+[04-Apr-2021 17:00:04 UTC] variation
+[04-Apr-2021 17:00:04 UTC] variation
+[04-Apr-2021 17:00:04 UTC] variation
+[04-Apr-2021 17:00:36 UTC] PHP Notice:  register_rest_route was called <strong>incorrectly</strong>. The REST API route definition for <code>wc-category-slider/v1/slider/all</code> is missing the required <code>permission_callback</code> argument. For REST API routes that are intended to be public, use <code>__return_true</code> as the permission callback. Please see <a href="https://wordpress.org/support/article/debugging-in-wordpress/">Debugging in WordPress</a> for more information. (This message was added in version 5.5.0.) in C:\xampp\htdocs\eshop\wp-includes\functions.php on line 5311
+[04-Apr-2021 17:00:36 UTC] PHP Notice:  register_rest_route was called <strong>incorrectly</strong>. The REST API route definition for <code>wc-category-slider/v1/slider/(?P<id>\d+)</code> is missing the required <code>permission_callback</code> argument. For REST API routes that are intended to be public, use <code>__return_true</code> as the permission callback. Please see <a href="https://wordpress.org/support/article/debugging-in-wordpress/">Debugging in WordPress</a> for more information. (This message was added in version 5.5.0.) in C:\xampp\htdocs\eshop\wp-includes\functions.php on line 5311
+[04-Apr-2021 17:00:47 UTC] PHP Notice:  register_rest_route was called <strong>incorrectly</strong>. The REST API route definition for <code>wc-category-slider/v1/slider/all</code> is missing the required <code>permission_callback</code> argument. For REST API routes that are intended to be public, use <code>__return_true</code> as the permission callback. Please see <a href="https://wordpress.org/support/article/debugging-in-wordpress/">Debugging in WordPress</a> for more information. (This message was added in version 5.5.0.) in C:\xampp\htdocs\eshop\wp-includes\functions.php on line 5311
+[04-Apr-2021 17:00:47 UTC] PHP Notice:  register_rest_route was called <strong>incorrectly</strong>. The REST API route definition for <code>wc-category-slider/v1/slider/(?P<id>\d+)</code> is missing the required <code>permission_callback</code> argument. For REST API routes that are intended to be public, use <code>__return_true</code> as the permission callback. Please see <a href="https://wordpress.org/support/article/debugging-in-wordpress/">Debugging in WordPress</a> for more information. (This message was added in version 5.5.0.) in C:\xampp\htdocs\eshop\wp-includes\functions.php on line 5311
+[04-Apr-2021 17:01:18 UTC] PHP Notice:  register_rest_route was called <strong>incorrectly</strong>. The REST API route definition for <code>wc-category-slider/v1/slider/all</code> is missing the required <code>permission_callback</code> argument. For REST API routes that are intended to be public, use <code>__return_true</code> as the permission callback. Please see <a href="https://wordpress.org/support/article/debugging-in-wordpress/">Debugging in WordPress</a> for more information. (This message was added in version 5.5.0.) in C:\xampp\htdocs\eshop\wp-includes\functions.php on line 5311
+[04-Apr-2021 17:01:18 UTC] PHP Notice:  register_rest_route was called <strong>incorrectly</strong>. The REST API route definition for <code>wc-category-slider/v1/slider/(?P<id>\d+)</code> is missing the required <code>permission_callback</code> argument. For REST API routes that are intended to be public, use <code>__return_true</code> as the permission callback. Please see <a href="https://wordpress.org/support/article/debugging-in-wordpress/">Debugging in WordPress</a> for more information. (This message was added in version 5.5.0.) in C:\xampp\htdocs\eshop\wp-includes\functions.php on line 5311
+[04-Apr-2021 17:02:30 UTC] PHP Notice:  register_rest_route was called <strong>incorrectly</strong>. The REST API route definition for <code>wc-category-slider/v1/slider/all</code> is missing the required <code>permission_callback</code> argument. For REST API routes that are intended to be public, use <code>__return_true</code> as the permission callback. Please see <a href="https://wordpress.org/support/article/debugging-in-wordpress/">Debugging in WordPress</a> for more information. (This message was added in version 5.5.0.) in C:\xampp\htdocs\eshop\wp-includes\functions.php on line 5311
+[04-Apr-2021 17:02:30 UTC] PHP Notice:  register_rest_route was called <strong>incorrectly</strong>. The REST API route definition for <code>wc-category-slider/v1/slider/(?P<id>\d+)</code> is missing the required <code>permission_callback</code> argument. For REST API routes that are intended to be public, use <code>__return_true</code> as the permission callback. Please see <a href="https://wordpress.org/support/article/debugging-in-wordpress/">Debugging in WordPress</a> for more information. (This message was added in version 5.5.0.) in C:\xampp\htdocs\eshop\wp-includes\functions.php on line 5311
+[04-Apr-2021 17:02:57 UTC] variation
+[04-Apr-2021 17:02:57 UTC] variation
+[04-Apr-2021 17:02:57 UTC] variation
+[04-Apr-2021 17:02:57 UTC] variation
+[04-Apr-2021 17:02:57 UTC] variation
+[04-Apr-2021 17:02:57 UTC] variation
+[04-Apr-2021 17:04:06 UTC] PHP Notice:  Trying to access array offset on value of type int in C:\xampp\htdocs\eshop\wp-content\plugins\side-cart-woocommerce\templates\global\footer\buttons.php on line 32
+[04-Apr-2021 17:04:06 UTC] PHP Notice:  Trying to access array offset on value of type int in C:\xampp\htdocs\eshop\wp-content\plugins\side-cart-woocommerce\templates\global\footer\buttons.php on line 32
+[04-Apr-2021 17:04:10 UTC] PHP Notice:  Trying to access array offset on value of type int in C:\xampp\htdocs\eshop\wp-content\plugins\side-cart-woocommerce\templates\global\footer\buttons.php on line 32
+[04-Apr-2021 17:04:10 UTC] PHP Notice:  Trying to access array offset on value of type int in C:\xampp\htdocs\eshop\wp-content\plugins\side-cart-woocommerce\templates\global\footer\buttons.php on line 32
+[04-Apr-2021 17:04:10 UTC] PHP Notice:  Trying to access array offset on value of type int in C:\xampp\htdocs\eshop\wp-content\plugins\side-cart-woocommerce\templates\global\footer\buttons.php on line 32
+[04-Apr-2021 17:04:10 UTC] PHP Notice:  Trying to access array offset on value of type int in C:\xampp\htdocs\eshop\wp-content\plugins\side-cart-woocommerce\templates\global\footer\buttons.php on line 32
+[04-Apr-2021 17:09:19 UTC] PHP Notice:  register_rest_route was called <strong>incorrectly</strong>. The REST API route definition for <code>wc-category-slider/v1/slider/all</code> is missing the required <code>permission_callback</code> argument. For REST API routes that are intended to be public, use <code>__return_true</code> as the permission callback. Please see <a href="https://wordpress.org/support/article/debugging-in-wordpress/">Debugging in WordPress</a> for more information. (This message was added in version 5.5.0.) in C:\xampp\htdocs\eshop\wp-includes\functions.php on line 5311
+[04-Apr-2021 17:09:19 UTC] PHP Notice:  register_rest_route was called <strong>incorrectly</strong>. The REST API route definition for <code>wc-category-slider/v1/slider/(?P<id>\d+)</code> is missing the required <code>permission_callback</code> argument. For REST API routes that are intended to be public, use <code>__return_true</code> as the permission callback. Please see <a href="https://wordpress.org/support/article/debugging-in-wordpress/">Debugging in WordPress</a> for more information. (This message was added in version 5.5.0.) in C:\xampp\htdocs\eshop\wp-includes\functions.php on line 5311
+[04-Apr-2021 17:19:29 UTC] PHP Notice:  Undefined property: WP_Post_Type::$term_id in C:\xampp\htdocs\eshop\wp-content\themes\leto-customized\functions.php on line 177
+[04-Apr-2021 17:19:36 UTC] PHP Notice:  Trying to access array offset on value of type int in C:\xampp\htdocs\eshop\wp-content\plugins\side-cart-woocommerce\templates\global\footer\buttons.php on line 32
+[04-Apr-2021 17:19:36 UTC] PHP Notice:  Trying to access array offset on value of type int in C:\xampp\htdocs\eshop\wp-content\plugins\side-cart-woocommerce\templates\global\footer\buttons.php on line 32
+[04-Apr-2021 17:19:41 UTC] PHP Notice:  Trying to access array offset on value of type int in C:\xampp\htdocs\eshop\wp-content\plugins\side-cart-woocommerce\templates\global\footer\buttons.php on line 32
+[04-Apr-2021 17:19:41 UTC] PHP Notice:  Trying to access array offset on value of type int in C:\xampp\htdocs\eshop\wp-content\plugins\side-cart-woocommerce\templates\global\footer\buttons.php on line 32
+[04-Apr-2021 17:19:41 UTC] PHP Notice:  Trying to access array offset on value of type int in C:\xampp\htdocs\eshop\wp-content\plugins\side-cart-woocommerce\templates\global\footer\buttons.php on line 32
+[04-Apr-2021 17:19:41 UTC] PHP Notice:  Trying to access array offset on value of type int in C:\xampp\htdocs\eshop\wp-content\plugins\side-cart-woocommerce\templates\global\footer\buttons.php on line 32
+[04-Apr-2021 17:19:55 UTC] PHP Notice:  Undefined variable: cart_item_data in C:\xampp\htdocs\eshop\wp-content\themes\leto-customized\inc\ajax-add-to-cart-extended.php on line 19
+[04-Apr-2021 17:52:44 UTC] PHP Notice:  Undefined property: WP_Post_Type::$term_id in C:\xampp\htdocs\eshop\wp-content\themes\leto-customized\functions.php on line 177
