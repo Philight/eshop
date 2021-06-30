@@ -428,7 +428,7 @@ if ( ! class_exists( 'UR_Admin_Profile', false ) ) :
 						$field_description = isset( $field->general_setting->description ) ? $field->general_setting->description : '';
 						$field_key         = isset( $field->field_key ) ? $field->field_key : '';
 
-						if ( 'credit_card' === $field_name ) {
+						if ( 'stripe_gateway' === $field_name ) {
 							break;
 						}
 
@@ -498,6 +498,7 @@ if ( ! class_exists( 'UR_Admin_Profile', false ) ) :
 									break;
 
 								case 'mailchimp':
+								case 'mailerlite':
 								case 'checkbox':
 									// Backward compatibility. Modified since 1.5.7.
 									$options      = isset( $field->advance_setting->choices ) ? explode( ',', $field->advance_setting->choices ) : array();

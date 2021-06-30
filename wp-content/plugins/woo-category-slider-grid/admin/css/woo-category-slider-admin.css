@@ -1,5 +1,5 @@
 #adminmenu #menu-posts-sp_wcslider div.wp-menu-image.svg {
-    background-size: 18px auto;
+    background-size: 20px auto;
 }
 
 /* Admin Preloader */
@@ -63,7 +63,7 @@
 }
 
 /* Help Page */
-.sp-wcsp-text-center{
+/* .sp-wcsp-text-center{
     text-align: center;
 }
 .sp-wcsp-help.about-wrap h1{
@@ -72,9 +72,8 @@
 div.sp-wcsp-help .wp-badge{
     border: none;
     background: url(../img/icons-128x128.png) right no-repeat;
-    background-size: 100px 100px;
+    background-size: 128px 128px;
     box-shadow: none;
-    height: auto;
 }
 .sp-wcsp-help .headline-feature.feature-video {
     position: relative;
@@ -169,12 +168,12 @@ div.sp-wcsp-help .feature-section i.sp-wcsp-font{
         background-position-x: center;
         top: 0;
     }
-}
+} */
 
 /**
  Upgrade Page CSS
 **/
-.sp-wcsp-text-center {
+/* .sp-wcsp-text-center {
     text-align: center;
 }
 .about-wrap.sp-wcsp-upgrade [class$="-col"] {
@@ -365,26 +364,67 @@ div.sp-wcsp-help .feature-section i.sp-wcsp-font{
 }
 .sp-wcsp-upgrade a.wcsp-upgrade-btn {
     display: inline-block;
-}
+} */
 
 /* Responsive CSS */
-@media screen and (max-width: 782px) {
+/* @media screen and (max-width: 782px) {
     .about-wrap .three-col .col {
         min-width: 48%!important;
         max-width: 48%!important;
         margin-left: 0!important;
     }
-}
-@media (max-width: 960px) {
+} */
+/* @media (max-width: 960px) {
     .sp-wcsp-upgrade .sp-wcsp-upgrade-sticky-footer {
         width: calc(100%);
     }
-}
+} */
 @media only screen and (max-width: 500px) {
-    .about-wrap .three-col .col {
+    /* .about-wrap .three-col .col {
         min-width: 100%!important;
     }
     .sp-wcsp-upgrade .wp-badge {
         background-position-x: center;
-    }
+    } */
+}
+/* #adminmenu .menu-icon-sp_wcslider .wp-menu-image img {
+    width: 20px;
+    padding: 4px 0;
+    margin-top: 3px;
+    opacity: 1;
+} */
+div#sp_wcsp_shortcode_options {
+    border-top-width: 0;
+}
+
+/* Gallery Slider admin notice. */
+.woogs-notice {
+    padding-left: 10px;
+    border-left-width: 1px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    margin-left: 0;
+    overflow: hidden;
+}
+.woogs-notice img {
+    float: left;
+    max-width: 48px;
+}
+.woogs-notice .woogs-activate-btn {
+    background: #2171B1;
+    color: #fff;
+    padding: 9px 15px;
+    border-radius: 2px;
+    line-height: 19px;
+    text-decoration: none;
+    margin-left: 15px;
+}
+.woogs-notice .woogs-notice-text {
+    float: left;
+    line-height: 48px;
+    font-size: 14px;
+    margin-left: 12px;
+}
+.woogs-notice .notice-dismiss {
+    top: 14px;
 }

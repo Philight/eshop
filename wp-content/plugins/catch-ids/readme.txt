@@ -3,7 +3,7 @@ Contributors: catchplugins, catchthemes, sakinshrestha, pratikshrestha, maheshma
 Donate link: https://catchplugins.com/plugins/catch-ids/
 Tags: catch-ids, simple, admin, wp-admin, show, ids, post, page, category, media, links, tag, user, id, post id, page id, category id, tag id, media id
 Requires at least: 4.5
-Tested up to: 5.6
+Tested up to: 5.7
 Stable tag: trunk
 License: GNU General Public License, version 3 (GPLv3)
 License URI: http://www.gnu.org/licenses/gpl-3.0.txt
@@ -50,6 +50,9 @@ Not so easy way (via FTP) :
 
 
 == Changelog ==
+= 2.2 (Released: March 04, 2021) =
+* Compatibility check up to version 5.7
+
 = 2.1 (Released: Aug 19, 2020) =
 * Bug Fixed: Issue in add new theme page
 

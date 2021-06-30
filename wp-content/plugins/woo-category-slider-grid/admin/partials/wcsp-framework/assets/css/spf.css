@@ -76,16 +76,16 @@
  *
  */
 
- /* Typography color */
- .spf-field-typography .spf--block-font-color button {
+/* Typography color */
+.spf-field-typography .spf--block-font-color button {
   pointer-events: none;
- }
+}
 
 /**
  * 01. Base
  */
 
- .spf {
+.spf {
   position: relative;
 }
 
@@ -99,7 +99,7 @@
   top: 2px;
 }
 
-#screen-meta-links+.spf-options {
+#screen-meta-links + .spf-options {
   margin-top: 40px;
 }
 
@@ -122,14 +122,14 @@ div.sp-wcsp-options.spf-theme-light .spf-nav ul li a {
 div.sp-wcsp-options.spf-theme-light .spf-nav ul li .spf-section-active {
   border-bottom: 1px solid #cecece;
 }
-.sp-wcsp-options.spf-theme-light .spf-header-inner{
+.sp-wcsp-options.spf-theme-light .spf-header-inner {
   background: #f2f2f2;
   border-bottom: 1px solid #cecece;
 }
 .sp-wcsp-options .spf-header-inner h1 {
-    font-weight: 500;
+  font-weight: 500;
 }
-div.sp-wcsp-options .spf-buttons .button{
+/* div.sp-wcsp-options .spf-buttons .button{
   margin: 0 2px;
   line-height: 26px;
   text-shadow: 0 0 0;
@@ -157,7 +157,7 @@ div.sp-wcsp-options .spf-buttons .button.spf-reset-all {
   -webkit-box-shadow: 0 3px 0 #c61004 !important;
   box-shadow: 0 3px 0 #c61004 !important;
   background-color: #e14d43 !important;
-}
+} */
 
 /**
  * Free Version
@@ -175,13 +175,19 @@ div.sp-wcsp-options .spf-buttons .button.spf-reset-all {
   position: absolute;
   top: 1px;
   right: 1px;
-  background: #E0E0E0;
+  background: #e0e0e0;
   padding: 0px 5px;
   font-size: 9px;
   color: #636363;
   font-weight: 400;
 }
 
+.spf-field.spf-field-image_select.wcsp_layout_presets img {
+  width: 100px;
+}
+.spf-field.spf-field-image_select.wcsp_cat_content_position.thumbnail_shape img {
+  width: 80px;
+}
 /**
  * 01. 01. Header
  */
@@ -197,14 +203,85 @@ div.sp-wcsp-options .spf-buttons .button.spf-reset-all {
 .spf-header-inner h1 {
   float: left;
   font-size: 1.5em;
-  line-height: 26px;
+  line-height: 38px;
   font-weight: 400;
   margin: 0;
 }
-
+.spf-header-inner h1 img {
+  height: 28px;
+  vertical-align: middle;
+  margin-right: 8px;
+  margin-top: -3px;
+}
 .spf-header-inner h1 small {
   font-size: 11px;
   font-weight: 500;
+}
+
+.spf-buttons .button {
+  margin: 0 4px;
+  padding: 0px 16px;
+  border-radius: 0;
+  height: 38px;
+  font-size: 13px;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+
+.spf-buttons .button.spf-save-ajax {
+  background-color: #02cc7b;
+  border-color: transparent;
+  color: #fff !important;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  text-shadow: none;
+  border-radius: 4px;
+  height: 38px;
+  width: 75px;
+  -webkit-transition: background-color 0.2s;
+  transition: background-color 0.2s;
+}
+
+.spf-buttons .button.spf-save-ajax:hover {
+  background-color: #02bb71;
+}
+
+.spf-buttons .button.spf-save-ajax:focus {
+  color: #fff;
+}
+
+.spf--buttons .button.spf--save-ajax[disabled] {
+  background-color: #02bb71 !important;
+  border: none;
+}
+
+.spf-buttons .button.spf-reset-all,
+.spf-buttons .button.spf-reset-section {
+  background-color: #cd3c3c !important;
+  border-color: transparent !important;
+  -webkit-box-shadow: none !important;
+  box-shadow: none !important;
+  text-shadow: none !important;
+  border-radius: 4px;
+  height: 38px;
+  -webkit-transition: background-color 0.2s;
+  transition: background-color 0.2s;
+  color: #ffffff;
+}
+
+.spf-buttons .button.spf-reset-all:hover,
+.spf--buttons .button.spf-reset-section:hover {
+  background-color: #b82f2f !important;
+}
+
+.spf-buttons .button.spf-reset-section {
+  background-color: #77777c !important;
+}
+
+.spf-buttons .button.spf-reset-section:hover {
+  background-color: #616166 !important;
+  color: #fff;
 }
 
 /**
@@ -233,7 +310,7 @@ div.sp-wcsp-options .spf-buttons .button.spf-reset-all {
 }
 
 .spf-buttons .button {
-  margin: 0 2px;
+  margin: 0 4px;
   line-height: 26px;
 }
 
@@ -494,15 +571,22 @@ Category Slider for WooCommerce Custom CSS.
  * 01. 10. Show All Options
  */
 
-.spf-search-all .spf-nav-background, .spf-search-all .spf-nav, .spf-show-all .spf-nav-background, .spf-show-all .spf-nav {
+.spf-search-all .spf-nav-background,
+.spf-search-all .spf-nav,
+.spf-show-all .spf-nav-background,
+.spf-show-all .spf-nav {
   display: none;
 }
 
-.spf-search-all .spf-content, .spf-show-all .spf-content {
+.spf-search-all .spf-content,
+.spf-show-all .spf-content {
   margin-left: 0;
 }
 
-.spf-search-all .spf-section-title, .spf-search-all .spf-section, .spf-show-all .spf-section-title, .spf-show-all .spf-section {
+.spf-search-all .spf-section-title,
+.spf-search-all .spf-section,
+.spf-show-all .spf-section-title,
+.spf-show-all .spf-section {
   display: block !important;
 }
 
@@ -556,7 +640,8 @@ Category Slider for WooCommerce Custom CSS.
   border-top: 1px solid #eee;
 }
 
-.spf-metabox-restore .spf-button-cancel, .spf-metabox-restore input {
+.spf-metabox-restore .spf-button-cancel,
+.spf-metabox-restore input {
   display: none;
 }
 
@@ -565,11 +650,11 @@ Category Slider for WooCommerce Custom CSS.
   user-select: none;
 }
 
-.spf-metabox-restore input:checked~.spf-button-restore {
+.spf-metabox-restore input:checked ~ .spf-button-restore {
   display: none;
 }
 
-.spf-metabox-restore input:checked~.spf-button-cancel {
+.spf-metabox-restore input:checked ~ .spf-button-cancel {
   display: inline-block;
 }
 
@@ -604,7 +689,7 @@ Category Slider for WooCommerce Custom CSS.
   z-index: 5000001;
   font-size: 12px;
   line-height: 1.4;
-  text-align: center;
+  text-align: left;
   text-decoration: none;
   padding: 6px 12px;
   max-width: 200px;
@@ -664,7 +749,7 @@ Category Slider for WooCommerce Custom CSS.
   background-color: rgba(34, 34, 34, 0.75);
 }
 
-.spf-theme-dark .spf-nav>ul>li:last-child>a {
+.spf-theme-dark .spf-nav > ul > li:last-child > a {
   border-bottom: none;
 }
 
@@ -716,7 +801,7 @@ Category Slider for WooCommerce Custom CSS.
 .spf-theme-light .spf-nav ul li a {
   background-color: #b43d74;
   border-top: 1px solid #b43d74;
-  border-right: 1px solid #E2E2E1;
+  border-right: 1px solid #e2e2e1;
   border-bottom: 1px solid #ddd;
   color: #fff;
   font-size: 13px;
@@ -763,7 +848,7 @@ Category Slider for WooCommerce Custom CSS.
   color: #b43d74;
 }
 .sp-wcsp-options.spf-theme-light .spf-nav ul li .spf-section-active {
-  background-color: #fff; 
+  background-color: #fff;
   border-right: 1px solid #fff;
   border-bottom: 1px solid #fff;
   border-top: 1px solid #fff;
@@ -815,7 +900,8 @@ Category Slider for WooCommerce Custom CSS.
   margin-bottom: 0;
 }
 
-.spf-field:after, .spf-field:before {
+.spf-field:after,
+.spf-field:before {
   content: " ";
   display: table;
 }
@@ -848,7 +934,7 @@ Category Slider for WooCommerce Custom CSS.
   display: inline-block;
 }
 
-.spf-pseudo-field+.spf-pseudo-field {
+.spf-pseudo-field + .spf-pseudo-field {
   border: 0;
 }
 
@@ -891,7 +977,9 @@ Category Slider for WooCommerce Custom CSS.
   transition: border-color 0.15s;
 }
 
-.spf-field-accordion .spf-accordion-title:active, .spf-field-accordion .spf-accordion-title:hover, .spf-field-accordion .spf-accordion-title:focus {
+.spf-field-accordion .spf-accordion-title:active,
+.spf-field-accordion .spf-accordion-title:hover,
+.spf-field-accordion .spf-accordion-title:focus {
   border: 1px solid #bbb;
   background-color: #fafafa;
   outline: none;
@@ -924,45 +1012,54 @@ Category Slider for WooCommerce Custom CSS.
  * 03. 03. Field: background
  */
 
-.spf-field-background_adv select, .spf-field-background select {
+.spf-field-background_adv select,
+.spf-field-background select {
   width: 100%;
 }
 
-.spf-field-group .spf-field-background_adv .spf-field, .spf-field-background_adv .spf-field, .spf-field-background .spf-field {
+.spf-field-custom_group .spf-field-background_adv .spf-field,
+.spf-field-background_adv .spf-field,
+.spf-field-background .spf-field {
   float: left;
   padding: 0;
   border: 0;
 }
 
-.spf-field-background_adv .spf--block, .spf-field-background .spf--block {
+.spf-field-background_adv .spf--block,
+.spf-field-background .spf--block {
   float: left;
   margin-bottom: 15px;
   box-sizing: border-box;
 }
 
-.spf-field-background_adv .spf--title, .spf-field-background .spf--title {
+.spf-field-background_adv .spf--title,
+.spf-field-background .spf--title {
   float: left;
   color: #999;
   margin-top: 3px;
   margin-right: 5px;
 }
 
-.spf-field-background_adv .spf--select, .spf-field-background .spf--select {
+.spf-field-background_adv .spf--select,
+.spf-field-background .spf--select {
   width: 25%;
   padding-right: 10px;
   box-sizing: border-box;
 }
 
-.spf-field-background_adv .spf--select .spf-field, .spf-field-background .spf--select .spf-field {
+.spf-field-background_adv .spf--select .spf-field,
+.spf-field-background .spf--select .spf-field {
   width: 100%;
 }
 
-.spf-field-background_adv .spf--media, .spf-field-background .spf--media {
+.spf-field-background_adv .spf--media,
+.spf-field-background .spf--media {
   width: 100%;
   padding-right: 10px;
 }
 
-.spf-field-background_adv .spf--media .spf-field, .spf-field-background .spf--media .spf-field {
+.spf-field-background_adv .spf--media .spf-field,
+.spf-field-background .spf--media .spf-field {
   width: 100%;
 }
 
@@ -970,13 +1067,15 @@ Category Slider for WooCommerce Custom CSS.
 * Custom CSS
 */
 
-.spf-field.spf-field-wp_editor.wcsp_carousel_content_source .spf-fieldset, .spf-field.spf-field-background_adv.wcsp_carousel_content_bg .spf-fieldset {
+.spf-field.spf-field-wp_editor.wcsp_carousel_content_source .spf-fieldset,
+.spf-field.spf-field-background_adv.wcsp_carousel_content_bg .spf-fieldset {
   margin-left: 0;
   /* display: block; */
   margin-top: 35px;
 }
 
-.spf-field.spf-field-wp_editor.wcsp_carousel_content_source .spf-title, .spf-field.spf-field-background_adv.wcsp_carousel_content_bg .spf-title {
+.spf-field.spf-field-wp_editor.wcsp_carousel_content_source .spf-title,
+.spf-field.spf-field-background_adv.wcsp_carousel_content_bg .spf-title {
   width: 100%;
 }
 
@@ -991,7 +1090,7 @@ Category Slider for WooCommerce Custom CSS.
   border-radius: 2.5px;
   user-select: none;
   -webkit-user-select: none;
-  transition: background-color .2s, border-color .2s;
+  transition: background-color 0.2s, border-color 0.2s;
 }
 
 .spf-field.spf-field-background_adv .spf--block-preview {
@@ -1036,7 +1135,7 @@ Category Slider for WooCommerce Custom CSS.
 }
 
 /* Gradient Color */
-.spf-field-gradient_color .spf--left{
+.spf-field-gradient_color .spf--left {
   float: left;
   margin-right: 10px;
   margin-bottom: 5px;
@@ -1046,27 +1145,44 @@ Category Slider for WooCommerce Custom CSS.
  * 03. 05. Field: border, spacing, dimensions, column, dimensions_advanced
  */
 
-.spf-field-border .spf--left, .spf-field-spacing .spf--left, .spf-field-column .spf--left, .spf-field-dimensions .spf--left, .spf-field-dimensions_advanced .spf--left, .spf-field-box_shadow .spf--left {
+.spf-field-border .spf--left,
+.spf-field-spacing .spf--left,
+.spf-field-column .spf--left,
+.spf-field-dimensions .spf--left,
+.spf-field-dimensions_advanced .spf--left,
+.spf-field-box_shadow .spf--left {
   float: left;
 }
 
-.spf-field-border .spf--input, .spf-field-spacing .spf--input, .spf-field-column .spf--input, .spf-field-dimensions .spf--input, .spf-field-dimensions_advanced .spf--input,
+.spf-field-border .spf--input,
+.spf-field-spacing .spf--input,
+.spf-field-column .spf--input,
+.spf-field-dimensions .spf--input,
+.spf-field-dimensions_advanced .spf--input,
 .spf-field-box_shadow .spf--input {
   float: left;
   margin-right: 10px;
   margin-bottom: 7px;
 }
 
-.spf-field-border .spf--input{
+.spf-field-border .spf--input {
   margin-bottom: 18px;
 }
 
-.spf-field-border .spf--input select, .spf-field-spacing .spf--input select, .spf-field-column .spf--input select, .spf-field-dimensions .spf--input select, .spf-field-dimensions_advanced .spf--input select,
+.spf-field-border .spf--input select,
+.spf-field-spacing .spf--input select,
+.spf-field-column .spf--input select,
+.spf-field-dimensions .spf--input select,
+.spf-field-dimensions_advanced .spf--input select,
 .spf-field-box_shadow .spf--input select {
   margin: 0;
 }
 
-.spf-field-border .spf--input input, .spf-field-spacing .spf--input input, .spf-field-column .spf--input input, .spf-field-dimensions .spf--input input, .spf-field-dimensions_advanced .spf--input input,
+.spf-field-border .spf--input input,
+.spf-field-spacing .spf--input input,
+.spf-field-column .spf--input input,
+.spf-field-dimensions .spf--input input,
+.spf-field-dimensions_advanced .spf--input input,
 .spf-field-box_shadow .spf--input input {
   line-height: 26px;
   float: left;
@@ -1087,17 +1203,21 @@ Category Slider for WooCommerce Custom CSS.
 
 .spf-field-spacing.wcsp-cat-padding .spf--input input,
 .spf-field-border .spf--input input,
-.spf-field-dimensions_advanced.wcsp-cat-thum-size .spf--input input{
+.spf-field-dimensions_advanced.wcsp-cat-thum-size .spf--input input {
   border-radius: 0;
 }
 
 .spf-field-spacing.wcsp-space-between-cat .spf--input input,
 .spf-field-spacing.wcsp-auto-play-speed .spf--input input,
-.spf-field-spacing.wcsp-standard-scroll-speed .spf--input input{
+.spf-field-spacing.wcsp-standard-scroll-speed .spf--input input {
   border-radius: 4px 0 0 4px;
 }
 
-.spf-field-border .spf--label, .spf-field-spacing .spf--label, .spf-field-column .spf--label, .spf-field-dimensions .spf--label, .spf-field-dimensions_advanced .spf--label,
+.spf-field-border .spf--label,
+.spf-field-spacing .spf--label,
+.spf-field-column .spf--label,
+.spf-field-dimensions .spf--label,
+.spf-field-dimensions_advanced .spf--label,
 .spf-field-box_shadow .spf--label {
   float: left;
   max-width: 100%;
@@ -1111,7 +1231,11 @@ Category Slider for WooCommerce Custom CSS.
   padding: 0 6px;
 }
 
-.spf-field-border .spf--label-icon, .spf-field-spacing .spf--label-icon, .spf-field-column .spf--label-icon, .spf-field-dimensions .spf--label-icon, .spf-field-dimensions_advanced .spf--label-icon,
+.spf-field-border .spf--label-icon,
+.spf-field-spacing .spf--label-icon,
+.spf-field-column .spf--label-icon,
+.spf-field-dimensions .spf--label-icon,
+.spf-field-dimensions_advanced .spf--label-icon,
 .spf-field-box_shadow .spf--label-icon {
   min-width: 20px;
   border-right: 0;
@@ -1119,7 +1243,11 @@ Category Slider for WooCommerce Custom CSS.
   min-height: 28px;
 }
 
-.spf-field-border .spf--label-unit, .spf-field-spacing .spf--label-unit, .spf-field-column .spf--label-unit, .spf-field-dimensions .spf--label-unit, .spf-field-dimensions_advanced .spf--label-unit,
+.spf-field-border .spf--label-unit,
+.spf-field-spacing .spf--label-unit,
+.spf-field-column .spf--label-unit,
+.spf-field-dimensions .spf--label-unit,
+.spf-field-dimensions_advanced .spf--label-unit,
 .spf-field-box_shadow .spf--label-unit {
   color: #999;
   border-left: 0;
@@ -1186,10 +1314,12 @@ Category Slider for WooCommerce Custom CSS.
   background-color: #eee;
 }
 
-.spf-field-button_set .spf--active:hover, .spf-field-button_set .spf--active,
-.spf-field-button_setf .spf--active:hover, .spf-field-button_setf .spf--active {
+.spf-field-button_set .spf--active:hover,
+.spf-field-button_set .spf--active,
+.spf-field-button_setf .spf--active:hover,
+.spf-field-button_setf .spf--active {
   z-index: 2;
-  color: #fff;
+  color: #ffffff !important;
   border-color: #006799;
   background-color: #0085ba;
 }
@@ -1203,7 +1333,8 @@ Category Slider for WooCommerce Custom CSS.
  * 03. 07. Field: checkbox, radio
  */
 
-.spf-field-checkbox ul, .spf-field-radio ul {
+.spf-field-checkbox ul,
+.spf-field-radio ul {
   margin: 0;
   padding: 0;
   list-style-type: none;
@@ -1211,17 +1342,28 @@ Category Slider for WooCommerce Custom CSS.
   max-height: 305px;
 }
 
-.spf-field-checkbox .spf--inline-list li, .spf-field-radio .spf--inline-list li {
+.spf-field-checkbox .spf--inline-list li,
+.spf-field-radio .spf--inline-list li {
   display: inline-block;
   margin-right: 15px;
 }
 
-.spf-field-checkbox input[type="radio"]:checked:before, .spf-field-radio input[type="radio"]:checked:before {
+.spf-field-checkbox input[type="radio"]:checked:before,
+.spf-field-radio input[type="radio"]:checked:before {
   line-height: 10px;
 }
 
-.spf-field-checkbox .spf-checker, .spf-field-radio .spf-checker {
+.spf-field-checkbox .spf-checker,
+.spf-field-radio .spf-checker {
   cursor: pointer;
+}
+.spf-field-checkbox .spf-help {
+  float: none;
+  margin-top: -24px;
+  margin-left: 0px;
+  position: static;
+  top: auto;
+  right: auto;
 }
 
 /**
@@ -1243,7 +1385,7 @@ Category Slider for WooCommerce Custom CSS.
  * 03. 09. Field: color
  */
 
-.spf-field-color>input {
+.spf-field-color > input {
   opacity: 0.75;
   width: 115px;
   max-width: 100%;
@@ -1313,7 +1455,8 @@ Category Slider for WooCommerce Custom CSS.
   border-radius: none;
 }
 
-.spf-datepicker-wrapper .ui-widget-header, .spf-datepicker-wrapper .ui-datepicker-header {
+.spf-datepicker-wrapper .ui-widget-header,
+.spf-datepicker-wrapper .ui-datepicker-header {
   color: #fff;
   background: #00a0d2;
 }
@@ -1328,7 +1471,8 @@ Category Slider for WooCommerce Custom CSS.
   text-align: center;
 }
 
-.spf-datepicker-wrapper .ui-datepicker-prev, .spf-datepicker-wrapper .ui-datepicker-next {
+.spf-datepicker-wrapper .ui-datepicker-prev,
+.spf-datepicker-wrapper .ui-datepicker-next {
   position: static;
   top: auto;
   left: auto;
@@ -1346,7 +1490,8 @@ Category Slider for WooCommerce Custom CSS.
   -moz-osx-font-smoothing: grayscale;
 }
 
-.spf-datepicker-wrapper .ui-datepicker-next span, .spf-datepicker-wrapper .ui-datepicker-prev span {
+.spf-datepicker-wrapper .ui-datepicker-next span,
+.spf-datepicker-wrapper .ui-datepicker-prev span {
   display: none;
 }
 
@@ -1359,14 +1504,15 @@ Category Slider for WooCommerce Custom CSS.
 }
 
 .spf-datepicker-wrapper .ui-datepicker-prev:before {
-  content: '\f053';
+  content: "\f053";
 }
 
 .spf-datepicker-wrapper .ui-datepicker-next:before {
-  content: '\f054';
+  content: "\f054";
 }
 
-.spf-datepicker-wrapper .ui-datepicker-prev-hover, .spf-datepicker-wrapper .ui-datepicker-next-hover {
+.spf-datepicker-wrapper .ui-datepicker-prev-hover,
+.spf-datepicker-wrapper .ui-datepicker-next-hover {
   opacity: 0.75;
 }
 
@@ -1431,7 +1577,8 @@ Category Slider for WooCommerce Custom CSS.
   padding: 6px 12px;
 }
 
-.spf-datepicker-wrapper td .ui-state-active, .spf-datepicker-wrapper td .ui-state-hover {
+.spf-datepicker-wrapper td .ui-state-active,
+.spf-datepicker-wrapper td .ui-state-hover {
   color: #fff;
   background-color: #0073aa;
 }
@@ -1475,7 +1622,9 @@ Category Slider for WooCommerce Custom CSS.
   vertical-align: middle;
 }
 
-.spf-field-gallery .button:focus, .spf-field-gallery .button:hover, .spf-field-gallery .button {
+.spf-field-gallery .button:focus,
+.spf-field-gallery .button:hover,
+.spf-field-gallery .button {
   margin-right: 5px;
   margin-bottom: 5px;
   /* SP Style */
@@ -1507,7 +1656,8 @@ Category Slider for WooCommerce Custom CSS.
   margin-bottom: 10px;
 }
 
-.spf-field-gallery a, .spf-field-gallery li {
+.spf-field-gallery a,
+.spf-field-gallery li {
   float: left;
 }
 
@@ -1515,38 +1665,38 @@ Category Slider for WooCommerce Custom CSS.
  * 03. 14. Field: group
  */
 
-.spf-field-group .spf-field {
+.spf-field-custom_group .spf-field {
   padding: 20px;
 }
 
-.spf-field-group .spf-cloneable-hidden {
+.spf-field-custom_group .spf-cloneable-hidden {
   display: none !important;
 }
 
-.spf-field-group .spf-cloneable-wrapper {
+.spf-field-custom_group .spf-cloneable-wrapper {
   position: relative;
 }
 
-.spf-field-group .spf-cloneable-item {
+.spf-field-custom_group .spf-cloneable-item {
   display: none;
   position: relative;
   margin-bottom: 5px;
 }
 
-.spf-field-group .spf-cloneable-item h4 {
+.spf-field-custom_group .spf-cloneable-item h4 {
   font-size: 1em;
 }
 
-.spf-field-group .ui-accordion .spf-cloneable-item {
+.spf-field-custom_group .ui-accordion .spf-cloneable-item {
   display: block;
 }
 
-.spf-field-group .spf-cloneable-content {
+.spf-field-custom_group .spf-cloneable-content {
   border: 1px solid #e5e5e5;
   background: #fff;
 }
 
-.spf-field-group .spf-cloneable-title {
+.spf-field-custom_group .spf-cloneable-title {
   display: block;
   cursor: pointer;
   position: relative;
@@ -1564,13 +1714,15 @@ Category Slider for WooCommerce Custom CSS.
   transition: border-color 0.15s;
 }
 
-.spf-field-group .spf-cloneable-title:active, .spf-field-group .spf-cloneable-title:hover, .spf-field-group .spf-cloneable-title:focus {
+.spf-field-custom_group .spf-cloneable-title:active,
+.spf-field-custom_group .spf-cloneable-title:hover,
+.spf-field-custom_group .spf-cloneable-title:focus {
   border: 1px solid #bbb;
   background: #fafafa;
   outline: none;
 }
 
-.spf-field-group .spf-cloneable-helper {
+.spf-field-custom_group .spf-cloneable-helper {
   position: absolute;
   top: 12px;
   right: 10px;
@@ -1579,27 +1731,28 @@ Category Slider for WooCommerce Custom CSS.
   line-height: 1em;
 }
 
-.spf-field-group .spf-cloneable-helper i {
+.spf-field-custom_group .spf-cloneable-helper i {
   display: inline-block;
   cursor: pointer;
   padding: 5px;
   color: #999;
 }
 
-.spf-field-group .spf-cloneable-helper i:hover {
+.spf-field-custom_group .spf-cloneable-helper i:hover {
   color: #555;
 }
 
-.spf-field-group .spf-cloneable-content {
+.spf-field-custom_group .spf-cloneable-content {
   padding: 0;
   border-top: 0;
 }
 
-.spf-field-group .spf-cloneable-title-prefix, .spf-field-group .spf-cloneable-title-number {
+.spf-field-custom_group .spf-cloneable-title-prefix,
+.spf-field-custom_group .spf-cloneable-title-number {
   margin-right: 5px;
 }
 
-.spf-field-group .spf-cloneable-alert {
+.spf-field-custom_group .spf-cloneable-alert {
   display: none;
   margin-bottom: 5px;
   padding: 10px 20px;
@@ -1608,13 +1761,13 @@ Category Slider for WooCommerce Custom CSS.
   background-color: #f2dede;
 }
 
-.spf-field-group .widget-placeholder {
+.spf-field-custom_group .widget-placeholder {
   margin-bottom: 10px;
   border: 1px dashed #f1c40f;
   background-color: #fffae4;
 }
 
-.spf-field-group .spf-cloneable-header-icon {
+.spf-field-custom_group .spf-cloneable-header-icon {
   display: inline-block;
   text-align: center;
   font-size: 14px;
@@ -1624,7 +1777,7 @@ Category Slider for WooCommerce Custom CSS.
   vertical-align: text-top;
 }
 
-.spf-field-group .spf-cloneable-placeholder {
+.spf-field-custom_group .spf-cloneable-placeholder {
   background-color: #ddd;
   margin-top: 4px;
   width: 100px;
@@ -1682,9 +1835,10 @@ Category Slider for WooCommerce Custom CSS.
   margin: 0 10px 5px 0;
 }
 
-.spf-field-image_select .spf--image p{
+.spf-field-image_select .spf--image p {
   text-align: center;
   margin-top: 5px;
+  font-weight: 500;
 }
 
 .spf-field-image_select .spf--image .spf--image-area {
@@ -1713,7 +1867,7 @@ Category Slider for WooCommerce Custom CSS.
   background-color: #3aa225;
 }
 
-.spf-field-image_select .spf--active .spf--image-area{
+.spf-field-image_select .spf--active .spf--image-area {
   outline: 3px solid #3aa225;
   outline-offset: -3px;
 }
@@ -1729,7 +1883,10 @@ Category Slider for WooCommerce Custom CSS.
 .spf-field-image_select input {
   display: none;
 }
-
+/* content position */
+.spf-field.spf-field-image_select.wcsp_cat_content_position img {
+  width: 110px;
+}
 /**
  * 03. 17. Field: link_color
  */
@@ -1762,7 +1919,7 @@ Category Slider for WooCommerce Custom CSS.
   margin-left: 7px;
 }
 
-.spf-field-media .hidden+.button {
+.spf-field-media .hidden + .button {
   margin-left: 0;
 }
 
@@ -1784,7 +1941,7 @@ Category Slider for WooCommerce Custom CSS.
   color: #fff;
   background-color: #dd3333;
   opacity: 0.8;
-  transition: all .2s;
+  transition: all 0.2s;
 }
 
 .spf-field-media .spf--preview .fa-times:hover {
@@ -1808,7 +1965,7 @@ Category Slider for WooCommerce Custom CSS.
   margin-bottom: 10px;
   user-select: none;
   -webkit-user-select: none;
-  transition: all .2s;
+  transition: all 0.2s;
 }
 
 .spf-field-palette .spf--palette span {
@@ -1835,7 +1992,7 @@ Category Slider for WooCommerce Custom CSS.
   opacity: 0;
   color: #fff;
   background-color: #222;
-  transition: opacity .2s;
+  transition: opacity 0.2s;
 }
 
 .spf-field-palette .spf--active {
@@ -1935,7 +2092,8 @@ Category Slider for WooCommerce Custom CSS.
   opacity: 0.5;
 }
 
-.spf-field-repeater .ui-sortable-helper .spf-repeater-helper, .spf-field-repeater .ui-sortable-helper .spf-repeater-content {
+.spf-field-repeater .ui-sortable-helper .spf-repeater-helper,
+.spf-field-repeater .ui-sortable-helper .spf-repeater-content {
   display: none;
 }
 
@@ -1989,7 +2147,8 @@ Category Slider for WooCommerce Custom CSS.
   border-radius: 2px;
 }
 
-.spf-field-slider .ui-state-active, .spf-field-slider .ui-slider-handle:hover {
+.spf-field-slider .ui-state-active,
+.spf-field-slider .ui-slider-handle:hover {
   cursor: pointer;
   background: #444;
 }
@@ -2062,7 +2221,8 @@ Category Slider for WooCommerce Custom CSS.
   opacity: 0.5;
 }
 
-.spf-field-sortable .ui-sortable-helper .spf--sortable-helper, .spf-field-sortable .ui-sortable-helper .spf--sortable-content {
+.spf-field-sortable .ui-sortable-helper .spf--sortable-helper,
+.spf-field-sortable .ui-sortable-helper .spf--sortable-content {
   display: none;
 }
 
@@ -2090,7 +2250,8 @@ Category Slider for WooCommerce Custom CSS.
   padding-left: 15px;
 }
 
-.spf-field-sorter .spf-disabled, .spf-field-sorter .spf-enabled {
+.spf-field-sorter .spf-disabled,
+.spf-field-sorter .spf-enabled {
   padding: 5px 15px;
   border: 1px dashed #ddd;
   background-color: #fff;
@@ -2264,12 +2425,14 @@ Category Slider for WooCommerce Custom CSS.
   height: 18px;
   background-color: #fff;
   border-radius: 4px;
-  transition: all .1s;
+  transition: all 0.1s;
   box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.15);
 }
 
-.spf-field-switcher .spf--on, .spf-field-switcher .spf--off,
-.spf-field-switcherf .spf--on, .spf-field-switcherf .spf--off {
+.spf-field-switcher .spf--on,
+.spf-field-switcher .spf--off,
+.spf-field-switcherf .spf--on,
+.spf-field-switcherf .spf--off {
   position: absolute;
   top: 0;
   left: 0;
@@ -2283,7 +2446,7 @@ Category Slider for WooCommerce Custom CSS.
   color: #fff;
   padding-right: 28px;
   opacity: 0;
-  transition: all .1s;
+  transition: all 0.1s;
 }
 
 .spf-field-switcher .spf--off,
@@ -2402,7 +2565,8 @@ Category Slider for WooCommerce Custom CSS.
  * 03. 30. Field: typography
  */
 
-.spf-field-typography textarea, .spf-field-typography select {
+.spf-field-typography textarea,
+.spf-field-typography select {
   margin: 0;
   width: 100%;
 }
@@ -2474,7 +2638,7 @@ Category Slider for WooCommerce Custom CSS.
   border-radius: 2.5px;
   user-select: none;
   -webkit-user-select: none;
-  transition: background-color .2s, border-color .2s;
+  transition: background-color 0.2s, border-color 0.2s;
 }
 
 .spf-field-typography .spf--block-preview {
@@ -2535,7 +2699,10 @@ Category Slider for WooCommerce Custom CSS.
   border: none;
 }
 
-.spf-field-wp_editor .mce-btn.mce-active button, .spf-field-wp_editor .mce-btn.mce-active:hover button, .spf-field-wp_editor .mce-btn.mce-active i, .spf-field-wp_editor .mce-btn.mce-active:hover i {
+.spf-field-wp_editor .mce-btn.mce-active button,
+.spf-field-wp_editor .mce-btn.mce-active:hover button,
+.spf-field-wp_editor .mce-btn.mce-active i,
+.spf-field-wp_editor .mce-btn.mce-active:hover i {
   color: #23282d;
 }
 
@@ -2603,7 +2770,7 @@ Category Slider for WooCommerce Custom CSS.
   border: 0 !important;
 }
 
-.spf-field-submessage+.spf-field {
+.spf-field-submessage + .spf-field {
   border-top: 0 !important;
 }
 
@@ -2649,15 +2816,7 @@ Category Slider for WooCommerce Custom CSS.
  */
 
 .spf-field-notice {
-  background-color: #f7f7f7;
-}
-
-.spf-notice {
-  padding: 12px;
-  background-color: #fff;
-  border-left-style: solid;
-  border-left-width: 4px;
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+  background-color: transparent;
 }
 
 .spf-notice-success {
@@ -2679,7 +2838,20 @@ Category Slider for WooCommerce Custom CSS.
 .spf-notice-normal {
   border-color: #222;
 }
-
+.spf-notice {
+  border-color: #222;
+  color: #999;
+  font-style: italic;
+  font-size: 13px;
+  padding: 12px 12px 12px 0;
+}
+.spf-notice {
+  padding: 0;
+  background-color: #fff;
+  border-left-style: solid;
+  border-left-width: 0;
+  box-shadow: none;
+}
 /**
  * 03. 37. others
  */
@@ -2894,7 +3066,7 @@ Category Slider for WooCommerce Custom CSS.
   user-select: none;
   -webkit-user-select: none;
   color: #999;
-  transition: background-color .2s, border-color .2s, color .2s;
+  transition: background-color 0.2s, border-color 0.2s, color 0.2s;
 }
 
 .spf-field .spf--transparent-active .wp-color-result {
@@ -2914,7 +3086,7 @@ Category Slider for WooCommerce Custom CSS.
  * 04. Widget
  */
 
-.spf-widgets>.spf-field {
+.spf-widgets > .spf-field {
   position: relative;
   top: -1px;
   margin-right: -15px;
@@ -2922,18 +3094,18 @@ Category Slider for WooCommerce Custom CSS.
   padding: 12px 15px;
 }
 
-.spf-widgets>.spf-field .spf-field {
+.spf-widgets > .spf-field .spf-field {
   margin-left: 0;
   margin-right: 0;
 }
 
-.spf-widgets>.spf-field .spf-title {
+.spf-widgets > .spf-field .spf-title {
   float: none;
   width: 100%;
   margin-bottom: 5px;
 }
 
-.spf-widgets>.spf-field .spf-fieldset {
+.spf-widgets > .spf-field .spf-fieldset {
   margin-left: 0;
 }
 
@@ -2945,7 +3117,7 @@ Category Slider for WooCommerce Custom CSS.
   padding: 15px;
 }
 
-.control-section .spf-widgets>.spf-field {
+.control-section .spf-widgets > .spf-field {
   margin-right: -10px;
   margin-left: -10px;
   padding: 10px 12px;
@@ -3001,13 +3173,16 @@ Category Slider for WooCommerce Custom CSS.
   font-size: 12px;
 }
 
-.control-section .spf-field-content, .control-section .spf-field-submessage .spf-submessage {
+.control-section .spf-field-content,
+.control-section .spf-field-submessage .spf-submessage {
   margin-right: -15px;
   margin-left: -15px;
   padding: 15px;
 }
 
-.control-section .spf-fieldset .spf-field-submessage .spf-submessage, .control-section .spf-fieldset .spf-field-heading, .control-section .spf-fieldset .spf-field-subheading {
+.control-section .spf-fieldset .spf-field-submessage .spf-submessage,
+.control-section .spf-fieldset .spf-field-heading,
+.control-section .spf-fieldset .spf-field-subheading {
   margin-left: 0;
   margin-right: 0;
 }
@@ -3030,11 +3205,16 @@ Category Slider for WooCommerce Custom CSS.
   padding-bottom: 15px;
 }
 
-.control-section .spf-field-background_adv .spf--select, .control-section .spf-field-background .spf--select {
+.control-section .spf-field-background_adv .spf--select,
+.control-section .spf-field-background .spf--select {
   width: 100%;
 }
 
-.control-section .spf-field-border select, .control-section .spf-field-spacing select, .control-section .spf-field-column select, .control-section .spf-field-dimensions select, .control-section .spf-field-dimensions_advanced select {
+.control-section .spf-field-border select,
+.control-section .spf-field-spacing select,
+.control-section .spf-field-column select,
+.control-section .spf-field-dimensions select,
+.control-section .spf-field-dimensions_advanced select {
   width: auto;
 }
 
@@ -3062,15 +3242,27 @@ Category Slider for WooCommerce Custom CSS.
   font-size: 12px;
 }
 
-.control-section .spf-field-group .spf-field, .control-section .spf-field-tabbed .spf-field, .control-section .spf-field-sortable .spf-field, .control-section .spf-field-repeater .spf-field, .control-section .spf-field-accordion .spf-field {
+.control-section .spf-field-custom_group .spf-field,
+.control-section .spf-field-tabbed .spf-field,
+.control-section .spf-field-sortable .spf-field,
+.control-section .spf-field-repeater .spf-field,
+.control-section .spf-field-accordion .spf-field {
   padding: 10px;
 }
 
-.control-section .spf-field-group .spf-field .spf-title, .control-section .spf-field-tabbed .spf-field .spf-title, .control-section .spf-field-sortable .spf-field .spf-title, .control-section .spf-field-repeater .spf-field .spf-title, .control-section .spf-field-accordion .spf-field .spf-title {
+.control-section .spf-field-custom_group .spf-field .spf-title,
+.control-section .spf-field-tabbed .spf-field .spf-title,
+.control-section .spf-field-sortable .spf-field .spf-title,
+.control-section .spf-field-repeater .spf-field .spf-title,
+.control-section .spf-field-accordion .spf-field .spf-title {
   margin-bottom: 5px;
 }
 
-.control-section .spf-field-group .spf-field h4, .control-section .spf-field-tabbed .spf-field h4, .control-section .spf-field-sortable .spf-field h4, .control-section .spf-field-repeater .spf-field h4, .control-section .spf-field-accordion .spf-field h4 {
+.control-section .spf-field-custom_group .spf-field h4,
+.control-section .spf-field-tabbed .spf-field h4,
+.control-section .spf-field-sortable .spf-field h4,
+.control-section .spf-field-repeater .spf-field h4,
+.control-section .spf-field-accordion .spf-field h4 {
   font-size: 12px;
 }
 
@@ -3082,23 +3274,23 @@ Category Slider for WooCommerce Custom CSS.
  * 06. Taxonomy
  */
 
-.spf-taxonomy>.spf-field {
+.spf-taxonomy > .spf-field {
   border-top: none !important;
 }
 
-.spf-taxonomy>.spf-field-heading {
+.spf-taxonomy > .spf-field-heading {
   font-size: 1.1em;
   padding: 20px !important;
   border: 1px solid #ddd;
 }
 
-.spf-taxonomy>.spf-field-subheading {
+.spf-taxonomy > .spf-field-subheading {
   font-size: 12px;
   padding: 15px !important;
   border: 1px solid #ddd;
 }
 
-.spf-taxonomy>.spf-field-submessage .spf-submessage {
+.spf-taxonomy > .spf-field-submessage .spf-submessage {
   padding: 15px;
   border-left-width: 1px;
   border-left-style: solid;
@@ -3106,7 +3298,7 @@ Category Slider for WooCommerce Custom CSS.
   border-right-style: solid;
 }
 
-.spf-taxonomy>.spf-field-notice {
+.spf-taxonomy > .spf-field-notice {
   background-color: transparent;
 }
 
@@ -3120,42 +3312,42 @@ Category Slider for WooCommerce Custom CSS.
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.04);
 }
 
-.spf-taxonomy-add-fields>.spf-field {
+.spf-taxonomy-add-fields > .spf-field {
   padding: 8px 0;
 }
 
-.spf-taxonomy-add-fields>.spf-field>.spf-title {
+.spf-taxonomy-add-fields > .spf-field > .spf-title {
   float: none;
   width: 100%;
   padding: 2px 2px 4px 0;
 }
 
-.spf-taxonomy-add-fields>.spf-field>.spf-title h4 {
+.spf-taxonomy-add-fields > .spf-field > .spf-title h4 {
   font-size: 12px;
   font-weight: normal;
 }
 
-.spf-taxonomy-add-fields>.spf-field>.spf-fieldset {
+.spf-taxonomy-add-fields > .spf-field > .spf-fieldset {
   margin-left: 0;
 }
 
-.spf-taxonomy-add-fields>.spf-field>.spf-fieldset>.spf-help {
+.spf-taxonomy-add-fields > .spf-field > .spf-fieldset > .spf-help {
   right: -5px;
 }
 
-.spf-taxonomy-add-fields+p.submit {
+.spf-taxonomy-add-fields + p.submit {
   margin-top: 0;
 }
 
-.spf-taxonomy-edit-fields>.spf-field {
+.spf-taxonomy-edit-fields > .spf-field {
   padding: 20px 0;
 }
 
-.spf-taxonomy-edit-fields>.spf-field>.spf-title {
+.spf-taxonomy-edit-fields > .spf-field > .spf-title {
   width: 225px;
 }
 
-.spf-taxonomy-edit-fields>.spf-field>.spf-title h4 {
+.spf-taxonomy-edit-fields > .spf-field > .spf-title h4 {
   font-size: 14px;
   font-weight: 600;
   line-height: 1.3;
@@ -3163,20 +3355,21 @@ Category Slider for WooCommerce Custom CSS.
   vertical-align: middle;
 }
 
-.spf-taxonomy-edit-fields>.spf-field>.spf-fieldset {
+.spf-taxonomy-edit-fields > .spf-field > .spf-fieldset {
   margin-left: 225px;
 }
 
-.spf-taxonomy-edit-fields>.spf-field>.spf-fieldset>.spf-help {
+.spf-taxonomy-edit-fields > .spf-field > .spf-fieldset > .spf-help {
   top: -5px;
   right: -5px;
 }
 
-.spf-taxonomy-edit-fields>.spf-field-submessage {
+.spf-taxonomy-edit-fields > .spf-field-submessage {
   margin: 20px 0;
 }
 
-.spf-taxonomy-edit-fields>.spf-field-subheading, .spf-taxonomy-edit-fields>.spf-field-heading {
+.spf-taxonomy-edit-fields > .spf-field-subheading,
+.spf-taxonomy-edit-fields > .spf-field-heading {
   margin: 20px 0;
   border: 1px solid #ddd;
 }
@@ -3185,20 +3378,20 @@ Category Slider for WooCommerce Custom CSS.
  * 07. Profile
  */
 
-.spf-profile>h2>.fa {
+.spf-profile > h2 > .fa {
   padding-right: 7px;
 }
 
-.spf-profile>.spf-field {
+.spf-profile > .spf-field {
   padding: 15px 0;
   border-top: none !important;
 }
 
-.spf-profile>.spf-field>.spf-title {
+.spf-profile > .spf-field > .spf-title {
   width: 220px;
 }
 
-.spf-profile>.spf-field>.spf-title h4 {
+.spf-profile > .spf-field > .spf-title h4 {
   font-size: 14px;
   font-weight: 600;
   line-height: 1.3;
@@ -3206,34 +3399,35 @@ Category Slider for WooCommerce Custom CSS.
   vertical-align: middle;
 }
 
-.spf-profile>.spf-field>.spf-fieldset {
+.spf-profile > .spf-field > .spf-fieldset {
   margin-left: 220px;
 }
 
-.spf-profile>.spf-field>.spf-fieldset>.spf-help {
+.spf-profile > .spf-field > .spf-fieldset > .spf-help {
   top: -15px;
   right: -5px;
 }
 
-.spf-profile>.spf-field-heading {
+.spf-profile > .spf-field-heading {
   font-size: 1.1em;
 }
 
-.spf-profile>.spf-field-subheading {
+.spf-profile > .spf-field-subheading {
   font-size: 12px;
 }
 
-.spf-profile>.spf-field-subheading, .spf-profile>.spf-field-heading {
+.spf-profile > .spf-field-subheading,
+.spf-profile > .spf-field-heading {
   margin: 10px 0;
   padding: 15px !important;
   border: 1px solid #ddd;
 }
 
-.spf-profile>.spf-field-submessage {
+.spf-profile > .spf-field-submessage {
   margin: 20px 0;
 }
 
-.spf-profile>.spf-field-submessage .spf-submessage {
+.spf-profile > .spf-field-submessage .spf-submessage {
   padding: 10px;
   border-left-width: 1px;
   border-left-style: solid;
@@ -3241,7 +3435,7 @@ Category Slider for WooCommerce Custom CSS.
   border-right-style: solid;
 }
 
-.spf-profile>.spf-field-notice {
+.spf-profile > .spf-field-notice {
   background-color: transparent;
 }
 
@@ -3307,7 +3501,8 @@ Category Slider for WooCommerce Custom CSS.
   padding: 15px 30px 15px 15px;
 }
 
-.spf-modal-content a:active, .spf-modal-content a:focus {
+.spf-modal-content a:active,
+.spf-modal-content a:focus {
   outline: none;
   -moz-box-shadow: none;
   -webkit-box-shadow: none;
@@ -3464,7 +3659,8 @@ Category Slider for WooCommerce Custom CSS.
   padding: 14px;
   font-size: 13px;
   background-color: #f5f5f5;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue",
+    sans-serif;
 }
 
 .spf-shortcode-block .button {
@@ -3624,7 +3820,8 @@ Category Slider for WooCommerce Custom CSS.
  * 09. Helper
  */
 
-.spf-text-desc, .spf-text-subtitle {
+.spf-text-desc,
+.spf-text-subtitle {
   font-weight: 400;
   font-style: italic;
   margin-top: 4px;
@@ -3743,7 +3940,8 @@ Category Slider for WooCommerce Custom CSS.
   text-shadow: 0 -1px 1px #ba281e, 1px 0 1px #ba281e, 0 1px 1px #ba281e, -1px 0 1px #ba281e !important;
 }
 
-.spf-warning-primary:hover, .spf-warning-primary:focus {
+.spf-warning-primary:hover,
+.spf-warning-primary:focus {
   border-color: #ba281e !important;
   background: #e35950 !important;
   -moz-box-shadow: 0 1px 0 #ba281e !important;
@@ -3981,7 +4179,8 @@ Category Slider for WooCommerce Custom CSS.
   text-align: center;
 }
 
-.spf--table-compare thead td, .spf--table-compare tfoot td {
+.spf--table-compare thead td,
+.spf--table-compare tfoot td {
   text-align: center;
 }
 
@@ -4038,7 +4237,8 @@ Category Slider for WooCommerce Custom CSS.
   border-right: 1px solid #e5e5e5;
 }
 
-.spf-welcome-cols .spf--left, .spf-welcome-cols .spf--block {
+.spf-welcome-cols .spf--left,
+.spf-welcome-cols .spf--block {
   float: left;
   width: 20%;
   padding: 0 30px;
@@ -4114,7 +4314,8 @@ Category Slider for WooCommerce Custom CSS.
   font-weight: bold;
 }
 
-.spf--upgrade a:focus, .spf--upgrade a:hover {
+.spf--upgrade a:focus,
+.spf--upgrade a:hover {
   color: #4aa14a;
   outline: none;
   box-shadow: none;
@@ -4143,7 +4344,9 @@ Category Slider for WooCommerce Custom CSS.
     width: 100%;
     margin-bottom: 10px;
   }
-  .spf-search, .spf-header-right, .spf-header-left {
+  .spf-search,
+  .spf-header-right,
+  .spf-header-left {
     width: 100%;
   }
   .spf-search {
@@ -4160,13 +4363,20 @@ Category Slider for WooCommerce Custom CSS.
     float: none;
     margin-top: 10px;
   }
-  .sp-wcsp-options .spf-nav, .spf-nav, .spf-expand-all, .spf-reset-section, .spf-nav-background {
+  .sp-wcsp-options .spf-nav,
+  .spf-nav,
+  .spf-expand-all,
+  .spf-reset-section,
+  .spf-nav-background {
     display: none !important;
   }
-  .sp-wcsp-options .spf-content, .spf-content {
+  .sp-wcsp-options .spf-content,
+  .spf-content {
     margin-left: 0;
   }
-  .spf-section-title, .sp-wcsp-options .spf-section, .spf-section {
+  .spf-section-title,
+  .sp-wcsp-options .spf-section,
+  .spf-section {
     display: block !important;
   }
   .spf-field .spf-title {
@@ -4201,12 +4411,12 @@ Category Slider for WooCommerce Custom CSS.
   .spf-modal-icon .spf-modal-content {
     height: 252px;
   }
-  .spf-profile>.spf-field>.spf-title {
+  .spf-profile > .spf-field > .spf-title {
     float: none;
     width: 100%;
     margin-bottom: 10px;
   }
-  .spf-profile>.spf-field>.spf-fieldset {
+  .spf-profile > .spf-field > .spf-fieldset {
     margin-left: 0;
   }
 }
@@ -4251,7 +4461,8 @@ Category Slider for WooCommerce Custom CSS.
   cursor: pointer;
 }
 
-.chosen-container .search-choice .group-name, .chosen-container .chosen-single .group-name {
+.chosen-container .search-choice .group-name,
+.chosen-container .chosen-single .group-name {
   margin-right: 4px;
   overflow: hidden;
   white-space: nowrap;
@@ -4260,7 +4471,8 @@ Category Slider for WooCommerce Custom CSS.
   color: #999999;
 }
 
-.chosen-container .search-choice .group-name:after, .chosen-container .chosen-single .group-name:after {
+.chosen-container .search-choice .group-name:after,
+.chosen-container .chosen-single .group-name:after {
   content: ":";
   padding-left: 2px;
   vertical-align: top;
@@ -4626,7 +4838,7 @@ Category Slider for WooCommerce Custom CSS.
 }
 
 /**
- * 
+ *
  *Custom Style for the wcsp
  *
  **/
@@ -4647,21 +4859,25 @@ Category Slider for WooCommerce Custom CSS.
 #sp_wcsp_shortcode_banner_options .postbox-header,
 #sp_wcsp_shortcode_options .postbox-header,
 #sp_wcsp_display_shortcode .postbox-header,
-#sp_wcsp_display_shortcode .hndle, #sp_wcsp_display_shortcode .handlediv,
-#sp_wcsp_shortcode_options .hndle, #sp_wcsp_shortcode_options .handlediv,
-#sp_wcsp_shortcode_banner_options .handlediv, #sp_wcsp_shortcode_banner_options .hndle {
+#sp_wcsp_display_shortcode .hndle,
+#sp_wcsp_display_shortcode .handlediv,
+#sp_wcsp_shortcode_options .hndle,
+#sp_wcsp_shortcode_options .handlediv,
+#sp_wcsp_shortcode_banner_options .handlediv,
+#sp_wcsp_shortcode_banner_options .hndle {
   display: none;
 }
 
 #spf-section-sp_wcsp_shortcode_banner_options_1 .wcsp-admin-header {
-  background-color: #945492;
-  background: linear-gradient(-45deg, #cc2b5e, #945492);
+  background-color: #cc2b5e;
+  background: linear-gradient(-45deg, #cc2b5e, #6d286d);
   padding: 18px 26px;
   overflow: hidden;
   height: 35px;
 }
 #spf-section-sp_wcsp_shortcode_banner_options_1 .wcsp-admin-header img {
-  max-width: 181px;
+  max-width: 200px;
+  height: 35px;
 }
 
 #spf-section-sp_wcsp_shortcode_banner_options_1 .wcsp-admin-header .support {
@@ -4690,7 +4906,7 @@ Category Slider for WooCommerce Custom CSS.
 }
 #spf-section-sp_wcsp_shortcode_banner_options_1 .wcsp-scode-wrap .wcsp-col-lg-3 {
   border-right: 1px solid #dddddd;
-  width: 33.33%;
+  width: 50%;
 }
 #spf-section-sp_wcsp_shortcode_banner_options_1 .wcsp-scode-wrap .wcsp-col-lg-3:last-of-type {
   border-right: 0;
@@ -4711,18 +4927,102 @@ Category Slider for WooCommerce Custom CSS.
   margin-top: 2px;
   color: #4c5158;
 }
-#spf-section-sp_wcsp_shortcode_banner_options_1 .wcsp-scode-wrap .wcsp-scode-content .selectable{
-  background-color: rgba(204, 43, 94, 0.10);
+#spf-section-sp_wcsp_shortcode_banner_options_1 .wcsp-scode-wrap .wcsp-scode-content .selectable {
+  background-color: rgba(204, 43, 94, 0.04);
   color: #5b5b5b;
-  padding: 10px 10px;
+  padding: 10px 10px 10px 30px;
   display: inline-block;
   -webkit-user-select: all;
   -moz-user-select: all;
   -ms-user-select: all;
   user-select: all;
+  cursor: pointer;
+  border-radius: 3px;
+  border: 1px solid rgba(204, 43, 94, 0.09);
+  background-image: url(../images/copy.svg);
+  background-size: 16px;
+  background-position: 10px center;
+  background-repeat: no-repeat;
+}
+.wcsp-after-copy-text {
+  top: 0px;
+  opacity: 0;
+  z-index: 9999999;
+  position: fixed;
+  width: 250px;
+  left: 50%;
+  text-align: center;
+  margin-left: -125px;
+  padding: 13px 15px;
+  line-height: 15px;
+  color: #5db62e;
+  border-radius: 3px;
+  background: #eaf8e1;
+  border: 1px solid #a2de83;
+}
+#spf-section-sp_wcsp_shortcode_banner_options_1 .wcsp-scode-wrap .wcsp-scode-content .wcsp-copy-btn {
+  width: 16px;
+  margin-left: 10px;
+  position: absolute;
+  top: 50%;
+  margin-top: -7px;
+}
+#spf-section-sp_wcsp_shortcode_banner_options_1 .wcsp-scode-wrap .shortcode-wrap {
+  position: relative;
+  display: inline-block;
 }
 #spf-section-sp_wcsp_shortcode_banner_options_1 .wcsp-scode-wrap img {
   max-width: 100%;
   display: block;
   margin: 0 auto;
+}
+/* Pro only filed css */
+.pro_only_field .spf--switcher {
+  background-color: #cbcfd0;
+  pointer-events: none;
+}
+.pro_option .spf--sibling.spf--button.wcs-disabled::after {
+  content: 'Pro';
+  position: absolute;
+  top: -1px;
+  right: -1px;
+  font-size: 8px;
+  background: #d4d4d4;
+  color: #a5a5a5;
+  padding: 0 3px;
+  text-transform: uppercase;
+}
+.spf-field-switcher.pro_only_field .spf--ball::after {
+  content: "PRO";
+  position: relative;
+  text-align: center;
+  width: 24px;
+  float: right;
+  font-weight: 600;
+  font-size: 8px;
+  color: #a5a5a5;
+  opacity: 1;
+  line-height: 18px;
+}
+.spf-field-custom_group .spf-cloneable-wrapper,
+.spf-field-custom_group .spf-cloneable-add,
+.spf-field.spf-field-column.pro_only_field {
+  pointer-events: none;
+  opacity: 0.7;
+}
+.spf-field.spf-field-column.pro_only_field .spf--input:last-child::after {
+  content: "PRO";
+  background-color: #d4d4d4;
+  padding: 2px 4px;
+  font-size: 8px;
+  border-radius: 2px;
+  height: 11px;
+  line-height: 30px;
+  margin-left: 5px;
+}
+.spf-field-button_setf.pro_option .spf--button:first-child{
+  z-index: 2;
+  color: #ffffff !important;
+  border-color: #006799;
+  background-color: #0085ba;
 }

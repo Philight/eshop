@@ -21,15 +21,7 @@ class ComposerStaticInitfbb707a75eeecdca1fc39e24f7e3a0d0
     );
 
     public static $classMap = array (
-        'Rtwpvs\\Controllers\\Hooks' => __DIR__ . '/../..' . '/app/Controllers/Hooks.php',
-        'Rtwpvs\\Controllers\\InitHooks' => __DIR__ . '/../..' . '/app/Controllers/InitHooks.php',
-        'Rtwpvs\\Controllers\\Install' => __DIR__ . '/../..' . '/app/Controllers/Install.php',
-        'Rtwpvs\\Controllers\\Notifications' => __DIR__ . '/../..' . '/app/Controllers/Notifications.php',
-        'Rtwpvs\\Controllers\\ScriptLoader' => __DIR__ . '/../..' . '/app/Controllers/ScriptLoader.php',
-        'Rtwpvs\\Controllers\\SettingsAPI' => __DIR__ . '/../..' . '/app/Controllers/SettingsAPI.php',
-        'Rtwpvs\\Controllers\\TermMeta' => __DIR__ . '/../..' . '/app/Controllers/TermMeta.php',
-        'Rtwpvs\\Helpers\\Functions' => __DIR__ . '/../..' . '/app/Helpers/Functions.php',
-        'Rtwpvs\\Helpers\\Options' => __DIR__ . '/../..' . '/app/Helpers/Options.php',
+        'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
     );
 
     public static function getInitializer(ClassLoader $loader)

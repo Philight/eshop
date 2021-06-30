@@ -48,9 +48,9 @@ class SP_WCS_Metaboxs {
 				'fields' => array(
 					array(
 						'type'  => 'heading',
-						'image' => plugin_dir_url( __DIR__ ) . 'img/woo-category-slider-logo.png',
+						'image' => plugin_dir_url( __DIR__ ) . 'img/woo-category-slider-logo.svg',
 						'after' => '<i class="fa fa-life-ring"></i> Support',
-						'link'  => 'https://shapedplugin.com/support/',
+						'link'  => 'https://shapedplugin.com/support/?user=lite',
 						'class' => 'wcsp-admin-header',
 					),
 					array(
@@ -86,9 +86,9 @@ class SP_WCS_Metaboxs {
 			)
 		);
 		SP_WCS_General::section( $prefix );
-		SP_WCS_Slider::section( $prefix );
 		SP_WCS_Display::section( $prefix );
 		SP_WCS_Thumbnail::section( $prefix );
+		SP_WCS_Slider::section( $prefix );
 		SP_WCS_Typography::section( $prefix );
 	}
 }

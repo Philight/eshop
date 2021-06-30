@@ -28,37 +28,26 @@ if( ! class_exists('BeRocket_AAPF_Template_Style_color') ) {
             $template['content']['checkbox'] = BeRocket_AAPF_dynamic_data_template::create_element_arrays($template['content']['checkbox'], array('attributes', 'style'));
             $template['content']['checkbox']['attributes']['style']['display'] = 'display:none;';
             $template['content']['label']['content'] = array(
-                'wrapper'         => array(
+                'color' => array(
                     'type'          => 'tag',
-                    'tag'           => 'div',
+                    'tag'           => 'span',
                     'attributes'    => array(
                         'class'         => array(
-                            'main'          => 'color-wrapper',
-                        )
-                    ),    
-                    'content'       => array(    
-                        'color'         => array(
+                            'main'          => 'bapf_clr_span',
+                        ),
+                        'style'         => array(
+                            'bg-color'      => 'background-color: #'.$meta_color.';'
+                        ),
+                    ),
+                    'content'       => array(
+                        'span'          => array(
                             'type'          => 'tag',
                             'tag'           => 'span',
                             'attributes'    => array(
                                 'class'         => array(
-                                    'main'          => 'bapf_clr_span',
-                                ),
-                                'style'         => array(
-                                    'bg-color'      => 'background-color: #'.$meta_color.';'
+                                    'main'          => 'bapf_clr_span_abslt',
                                 ),
                             ),
-                            'content'       => array(
-                                'span'          => array(
-                                    'type'          => 'tag',
-                                    'tag'           => 'span',
-                                    'attributes'    => array(
-                                        'class'         => array(
-                                            'main'          => 'bapf_clr_span_abslt',
-                                        ),
-                                    ),
-                                )
-                            )
                         )
                     )
                 )
@@ -177,4 +166,3 @@ if( ! class_exists('BeRocket_AAPF_Template_Style_image_woborder') ) {
     }
     new BeRocket_AAPF_Template_Style_image_woborder();
 }
-

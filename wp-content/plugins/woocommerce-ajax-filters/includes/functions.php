@@ -2178,7 +2178,7 @@ if ( ! function_exists( 'br_filters_query' ) ) {
         }
 
         $queried_object = $wp_query->get_queried_object_id();
-        if ( ! empty( $queried_object ) ) {
+        if ( ! empty( $queried_object ) && $for != 'price' ) {
             $query_object = $wp_query->get_queried_object();
             if ( ! empty( $query_object->taxonomy ) && ! empty( $query_object->slug ) ) {
                 $tax_query[ $query_object->taxonomy ] = array(
@@ -2250,7 +2250,7 @@ if ( ! function_exists( 'br_filters_query' ) ) {
                 $query['where'] .= " AND {$wpdb->posts}.post_author IN ({$author})";
             }
         }
-        
+
         /*if( function_exists('wc_get_product_visibility_term_ids') ) {
             $product_visibility_term_ids = wc_get_product_visibility_term_ids();
             $query[ 'where' ] .= " AND ( {$wpdb->posts}.ID NOT IN (SELECT object_id FROM {$wpdb->term_relationships} WHERE term_taxonomy_id='" . $product_visibility_term_ids[ 'exclude-from-catalog' ] . "') ) ";
@@ -2502,6 +2502,12 @@ if( ! function_exists('br_generate_taxonomy_hierarchy') ) {
                 $term->child = array();
                 $term->child_list = array();
                 $term->parent_list = array($term->term_id => array($term->term_id));
+                if( property_exists($term, 'description') ) {
+                    unset($term->description);
+                }
+                if( property_exists($term, 'filter') ) {
+                    unset($term->filter);
+                }
                 if( ! empty($child_terms) && is_array($child_terms) && count($child_terms) ) {
                     foreach($child_terms as $child_term) {
                         $term->child[$child_term->term_id] = $child_term;

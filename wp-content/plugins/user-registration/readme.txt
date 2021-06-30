@@ -3,8 +3,8 @@ Contributors: WPEverest
 Tags: user registration, registration, user profile, registration form, login form,
 Requires at least: 4.0
 Requires PHP: 5.3
-Tested up to: 5.6
-Stable tag: 1.9.3
+Tested up to: 5.7.2
+Stable tag: 1.9.9
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -152,6 +152,69 @@ Yes, the plugin has a shortcode for the login form.
 16. User Account Page -  Vertical Layout
 
 == Changelog ==
+
+= 1.9.9   - 30/06/2021
+* Feature - Gutenberg block for login.
+* Feature - Send test email.
+* Tweak   - Add smart tag filter and content mapping.
+* Tweak   - Add filter for login redirect when core login is disabled.
+* Fix 	  - Auto login conflicts with payment.
+* Fix 	  - Hide label in edit profile for section title field.
+* Fix	  - Unexpected end of file in edit profile.
+
+= 1.9.8 - 31/05/2021
+* Feature - Edit profile form shortcode.
+* Enhance - Valid file type in my account profile picture.
+* Enhance - Reset Button in UR Form.
+* Enhance - Payment slider in range field.
+* Tweak - Email exists check in edit profile.
+* Tweak - Redirection filter in ajax login.
+* Fix - My Account slug not translate via polylang plugin.
+* Fix - UR not working if dashboard language changed.
+* Fix - Recaptcha issue on login and registration shortcode page.
+
+= 1.9.7 - 28/04/2021
+* Feature - Login Form Using Ajax.
+* Feature - Disable profile picture in my account.
+* Enhance - Pending users approval banner.
+* Tweak   - Not allow old password in reset password.
+* Tweak	  - Global function for smart tag name_value parser.
+* Tweak   - Removed ReCaptcha secret key from localization.
+* Fix     - Disable login confirmation for socially connected users.
+* Fix 	  - Wpnonce in URL.
+
+= 1.9.6 - 06/04/2021
+* Enhance 	- Password strength meter in reset password page.
+* Enhance 	- Disallow special characters in username field.
+* Enhance 	- Review notice UI and contents.
+* Dev	  	- Frontend listing addon compatibility.
+* Dev	  	- iDEAL payment gateway compatibility.
+* Fix 		- Localization of password strength js params.
+* Fix 		- Disable logout confirmation issue with logout endpoint menu.
+* Fix 		- Reset password button not working.
+* Fix 		- Hide label in edit profile.
+
+= 1.9.5 - 15/03/2021
+* Enhance 	- Setting page header UI.
+* Dev	  	- MailerLite add-on compatibility.
+* Tweak 	- WordPress 5.7 compatibility.
+* Fix 		- WYSIWYG field value save and sanitization in edit-profile.
+* Fix 		- Email overrider undefined index issue.
+* Fix 		- Form Duplication issue with anchor tag.
+* Fix 		- Token mismatch issue.
+
+= 1.9.4.1 - 12/02/2021
+* Fix - Login button not working on pages with both registration and login forms.
+
+= 1.9.4 - 12/02/2021
+* Enhance - Limit username length.
+* Enhance - Limit Choice in checkbox field.
+* Enhance - Resend Verification Email to User from Admin.
+* Add - Filter to add new smart tags.
+* Dev - Learndash Compatibility.
+* Dev - Range field Compatibility.
+* Tweak - Woocommerce myaccount compatibility with prevent core login.
+* Fix - All In One SEO conflict with my account.
 
 = 1.9.3 - 12/01/2021
 * Feature 	- Success Message display position option.

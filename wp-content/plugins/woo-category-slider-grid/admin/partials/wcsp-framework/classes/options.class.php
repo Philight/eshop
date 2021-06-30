@@ -547,9 +547,9 @@ if ( ! class_exists( 'SP_WCS_Options' ) ) {
 			echo '<div class="spf-header-inner">';
 
 			echo '<div class="spf-header-left">';
-			echo '<h1>' . $this->args['framework_title'] . '</h1>';
-			echo '</div>';
+			echo '<h1><img src="'. SP_WCS_URL . 'admin/img/wcs-icon-color.svg" alt="">' . $this->args['framework_title'] . '</h1>';
 
+			echo '</div>';
 			echo '<div class="spf-header-right">';
 
 			echo '<div class="spf-buttons">';

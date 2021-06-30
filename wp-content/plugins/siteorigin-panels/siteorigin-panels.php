@@ -3,7 +3,7 @@
 Plugin Name: Page Builder by SiteOrigin
 Plugin URI: https://siteorigin.com/page-builder/
 Description: A drag and drop, responsive page builder that simplifies building your website.
-Version: 2.11.7
+Version: 2.12.5
 Author: SiteOrigin
 Author URI: https://siteorigin.com
 License: GPL3
@@ -11,7 +11,7 @@ License URI: http://www.gnu.org/licenses/gpl.html
 Donate link: http://siteorigin.com/page-builder/#donate
 */
 
-define( 'SITEORIGIN_PANELS_VERSION', '2.11.7' );
+define( 'SITEORIGIN_PANELS_VERSION', '2.12.5' );
 if ( ! defined( 'SITEORIGIN_PANELS_JS_SUFFIX' ) ) {
 	define( 'SITEORIGIN_PANELS_JS_SUFFIX', '.min' );
 }
@@ -211,6 +211,26 @@ class SiteOrigin_Panels {
 		if ( is_admin() && function_exists( 'amp_bootstrap_plugin' ) ) {
 			require_once plugin_dir_path( __FILE__ ) . 'compat/amp.php';
 		}
+
+
+		// Compatibility with Gravity Forms.
+		if ( class_exists( 'GFCommon' ) ) {
+			require_once plugin_dir_path( __FILE__ ) . 'compat/gravity-forms.php';
+		}
+
+		$load_lazy_load_compat = false;
+		// LazyLoad by WP Rocket.
+		if ( defined( 'ROCKET_LL_VERSION' ) ) {
+			$lazy_load_settings = get_option( 'rocket_lazyload_options' );
+			$load_lazy_load_compat = ! empty( $lazy_load_settings ) && ! empty( $lazy_load_settings['images'] );
+		// WP Rocket
+		} elseif ( function_exists( 'get_rocket_option' ) && ! defined( 'DONOTROCKETOPTIMIZE' ) ) {
+			$load_lazy_load_compat = get_rocket_option( 'lazyload' ) && apply_filters( 'do_rocket_lazyload', true );
+		}
+		
+		if ( apply_filters( 'siteorigin_lazyload_compat', $load_lazy_load_compat ) ) {
+			require_once plugin_dir_path( __FILE__ ) . 'compat/lazy-load-backgrounds.php';
+		}
 	}
 
 	/**
@@ -377,9 +397,23 @@ class SiteOrigin_Panels {
 		}
 
 		$post_id = $this->get_post_id();
-
-		// Check if this post has panels_data
 		$panels_data = get_post_meta( $post_id, 'panels_data', true );
+
+		// If no panels_data is detected, check if the post has blocks.
+		if ( empty( $panels_data ) ) {
+			if ( function_exists( 'has_blocks' ) && has_blocks( get_the_content() ) ) {
+				$parsed_content = parse_blocks( get_the_content() );
+				// Check if the first block is an SO Layout Block, and extract panels_data if it is.
+				if (
+					$parsed_content[0]['blockName'] == 'siteorigin-panels/layout-block' &&
+					isset( $parsed_content[0]['attrs'] ) &&
+					! empty( $parsed_content[0]['attrs']['panelsData'] )
+				) {
+					$panels_data = $parsed_content[0]['attrs']['panelsData'];
+				}
+			}
+		}
+
 		if ( $panels_data && ! empty( $panels_data['widgets'] ) ) {
 			$raw_excerpt = '';
 			$excerpt_length = apply_filters( 'excerpt_length', 55 );
@@ -397,6 +431,14 @@ class SiteOrigin_Panels {
 					$text = strip_shortcodes( $raw_excerpt );
 					$text = str_replace( ']]>', ']]&gt;', $text );
 					if ( $this->get_localized_word_count( $text ) >= $excerpt_length ) {
+						break;
+					}
+
+					// Check for more quicktag.
+					if ( strpos( $text, '<!--more' ) !== false ) {
+						// Only return everything prior to more quicktag.
+						$raw_excerpt = explode( '<!--more', $text )[0];
+						$excerpt_length = $this->get_localized_word_count( $raw_excerpt );
 						break;
 					}
 				}

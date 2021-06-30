@@ -345,12 +345,15 @@ braapf_checked_style_parent;
         $('#braapf_single_selection').data('was_select', braapf_current_template() == 'select');
 
         $('#post').on('submit', function(event) {
-            if($('.braapf_widget_type input[type=radio]:enabled:checked').length == 0) {
-                $(document).trigger('braapf_error_select_widget_type');
-                event.preventDefault();
-            } else if($('.braapf_style input[name="br_product_filter[style]"]:enabled:checked').length == 0) {
-                $(document).trigger('braapf_error_select_style');
-                event.preventDefault();
+            var copy_val = $('[name="berocket_copy_from_custom_post"]').val();
+            if( ! copy_val ) {
+                if($('.braapf_widget_type input[type=radio]:enabled:checked').length == 0) {
+                    $(document).trigger('braapf_error_select_widget_type');
+                    event.preventDefault();
+                } else if($('.braapf_style input[name="br_product_filter[style]"]:enabled:checked').length == 0) {
+                    $(document).trigger('braapf_error_select_style');
+                    event.preventDefault();
+                }
             }
         });
         $(window).on('scroll', function() {

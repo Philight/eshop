@@ -7,42 +7,23 @@
  * Plugin Name:       Category Slider for WooCommerce
  * Plugin URI:        https://shapedplugin.com/plugin/woocommerce-category-slider-pro/
  * Description:       Category Slider for WooCommerce helps you display WooCommerce Categories aesthetically in a nice sliding manner. You can manage and show your product categories with thumbnail, child category (beside), description, shop now button with an easy to use shortcode generator interface with many handy options.
- * Version:           1.2.6
+ * Version:           1.2.12
  * Author:            ShapedPlugin
  * Author URI:        https://shapedplugin.com/
  * License:           GPL-2.0+
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
  * Text Domain:       woo-category-slider
  * Domain Path:       /languages
- * WC requires at least: 3.0.0
- * WC tested up to: 4.8.0
+ * Requires at least: 5.0
+ * Requires PHP: 5.6
+ * WC requires at least: 4.5
+ * WC tested up to: 5.3.0
  */
 
 // If this file is called directly, abort.
 if ( ! defined( 'WPINC' ) ) {
 	die;
 }
-
-/**
- * The code that runs during plugin activation.
- * This action is documented in includes/class-woo-category-slider-activator.php
- */
-function activate_woo_category_slider() {
-	require_once plugin_dir_path( __FILE__ ) . 'includes/class-woo-category-slider-activator.php';
-	Woo_Category_Slider_Activator::activate();
-}
-
-/**
- * The code that runs during plugin deactivation.
- * This action is documented in includes/class-woo-category-slider-deactivator.php
- */
-function deactivate_woo_category_slider() {
-	require_once plugin_dir_path( __FILE__ ) . 'includes/class-woo-category-slider-deactivator.php';
-	Woo_Category_Slider_Deactivator::deactivate();
-}
-
-register_activation_hook( __FILE__, 'activate_woo_category_slider' );
-register_deactivation_hook( __FILE__, 'deactivate_woo_category_slider' );
 
 /**
  * The core plugin class.
@@ -86,7 +67,7 @@ class Woo_Category_Slider {
 	 * @access   protected
 	 * @var      string    $version    The current version of the plugin.
 	 */
-	protected $version = '1.2.6';
+	protected $version = '1.2.12';
 
 	/**
 	 * Holds class object
@@ -254,12 +235,18 @@ class Woo_Category_Slider {
 		$this->loader->add_filter( 'plugin_row_meta', $plugin_admin, 'plugin_row_meta', 10, 2 );
 		$this->loader->add_filter( 'post_updated_messages', $plugin_admin, 'post_update_message' );
 		$this->loader->add_filter( 'admin_footer_text', $plugin_admin, 'admin_footer', 1, 2 );
-		$this->loader->add_filter( 'screen_options_show_screen', $plugin_admin, 'sp_wcsp_remove_screen_options', 10, 2 );
+
+		// Redirect after active.
+		$this->loader->add_action( 'activated_plugin', $plugin_admin, 'redirect_to' );
+
 		// WooCommerce plugin is not installed notice.
 		if ( empty( get_option( 'sp-wcsp-woo-notice-dismissed' ) ) ) {
 			$this->loader->add_action( 'admin_notices', $plugin_admin, 'admin_notice' );
 		}
 		$this->loader->add_action( 'wp_ajax_dismiss_woo_notice', $plugin_admin, 'dismiss_woo_notice' );
+
+		$this->loader->add_action( 'admin_notices', $plugin_admin, 'woo_gallery_slider_admin_notice' );
+		$this->loader->add_action( 'wp_ajax_dismiss_woo_gallery_slider_notice', $plugin_admin, 'dismiss_woo_gallery_slider_notice' );
 
 	}
 
@@ -337,7 +324,9 @@ function run_woo_category_slider() {
 	$plugin->run();
 
 }
-if ( ! in_array( 'woo-category-slider-pro/woo-category-slider-pro.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) ) {
+
+require_once ABSPATH . 'wp-admin/includes/plugin.php';
+if ( ! ( is_plugin_active( 'woo-category-slider-pro/woo-category-slider-pro.php' ) || is_plugin_active_for_network( 'woo-category-slider-pro/woo-category-slider-pro.php' ) ) ) {
 	run_woo_category_slider();
 
 	require_once plugin_dir_path( __FILE__ ) . 'deprecated/woo-category-slider.php';

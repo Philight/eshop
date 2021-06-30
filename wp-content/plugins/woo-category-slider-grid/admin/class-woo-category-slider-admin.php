@@ -251,7 +251,7 @@ class Woo_Category_Slider_Admin {
 	public function add_shortcode_form( $column, $post_id ) {
 		switch ( $column ) {
 			case 'shortcode':
-				$column_field = '<input style="width: 230px;padding: 6px;" type="text" onClick="this.select();" readonly="readonly" value="[woocatslider ' . 'id=&quot;' . $post_id . '&quot;' . ']"/>';
+				$column_field = '<div class="wcsp-after-copy-text"><i class="fa fa-check-circle"></i>  Shortcode  Copied to Clipboard! </div><input style="width: 230px;padding: 6pwidth: 230px;padding: 6px;;cursor:pointer;" type="text" onClick="this.select();" readonly="readonly" value="[woocatslider ' . 'id=&quot;' . $post_id . '&quot;' . ']"/>';
 				echo $column_field;
 				break;
 			default:
@@ -276,7 +276,7 @@ class Woo_Category_Slider_Admin {
 
 			array_unshift( $links, $ui_links );
 
-			$links['go_pro'] = sprintf( '<a target="_blank" href="%1$s" style="color: #35b747; font-weight: 700;">Go Premium!</a>', 'https://shapedplugin.com/plugin/woocommerce-category-slider-pro/' );
+			$links['go_pro'] = sprintf( '<a target="_blank" href="%1$s" style="color: #35b747; font-weight: 700;">Go Premium!</a>', 'https://shapedplugin.com/plugin/woocommerce-category-slider-pro/?ref=115' );
 		}
 
 		return $links;
@@ -302,7 +302,7 @@ class Woo_Category_Slider_Admin {
 	public function plugin_row_meta( $plugin_meta, $plugin_file ) {
 		if ( SP_WCS_BASENAME === $plugin_file ) {
 			$row_meta = [
-				'live_demo' => '<a href="https://shapedplugin.com/demo/woocommerce-category-slider/" aria-label="' . esc_attr( __( 'Live Demo', 'woo-category-slider' ) ) . '" target="_blank">' . __( 'Live Demo', 'woo-category-slider' ) . '</a>',
+				'live_demo' => '<a href="https://demo.shapedplugin.com/woocommerce-category-slider/" aria-label="' . esc_attr( __( 'Live Demo', 'woo-category-slider' ) ) . '" target="_blank">' . __( 'Live Demo', 'woo-category-slider' ) . '</a>',
 			];
 
 			$plugin_meta = array_merge( $plugin_meta, $row_meta );
@@ -349,15 +349,15 @@ class Woo_Category_Slider_Admin {
 	 * @param [type] $wp_screen_object
 	 * @return void
 	 */
-	public function sp_wcsp_remove_screen_options( $display_boolean, $wp_screen_object ) {
-		$screen = get_current_screen();
-		if ( 'sp_wcslider' == $screen->post_type ) {
-			$wp_screen_object->render_screen_layout();
-			$wp_screen_object->render_per_page_options();
-			return false;
-		}
-		return true;
-	}
+	// public function sp_wcsp_remove_screen_options( $display_boolean, $wp_screen_object ) {
+	// $screen = get_current_screen();
+	// if ( 'sp_wcslider' == $screen->post_type ) {
+	// $wp_screen_object->render_screen_layout();
+	// $wp_screen_object->render_per_page_options();
+	// return false;
+	// }
+	// return true;
+	// }
 
 	/**
 	 * Show notice if woocommerce plugin is not installed
@@ -419,6 +419,76 @@ class Woo_Category_Slider_Admin {
 	 */
 	public function dismiss_woo_notice() {
 		update_option( 'sp-wcsp-woo-notice-dismissed', 1 );
+	}
+
+	/**
+	 * Gallery Slider for WooCommerce admin notice.
+	 *
+	 * @since 1.2.10
+	 */
+	public function woo_gallery_slider_admin_notice() {
+
+		if ( is_plugin_active( 'gallery-slider-for-woocommerce/woo-gallery-slider.php' ) ) {
+			return;
+		}
+		if ( get_option( 'sp-woogs-notice-dismissed' ) ) {
+			return;
+		}
+
+		$current_screen        = get_current_screen();
+		$the_current_post_type = $current_screen->post_type;
+
+		if ( current_user_can( 'install_plugins' ) && 'sp_wcslider' === $the_current_post_type ) {
+
+			$plugins     = array_keys( get_plugins() );
+			$slug        = 'gallery-slider-for-woocommerce';
+			$icon        = SP_WCS_URL . 'admin/img/woogs-logo.svg';
+			$button_text = esc_html__( 'Install', 'woo-category-slider' );
+			$install_url = esc_url( wp_nonce_url( self_admin_url( 'update.php?action=install-plugin&plugin=' . $slug ), 'install-plugin_' . $slug ) );
+
+			if ( in_array( 'gallery-slider-for-woocommerce/woo-gallery-slider.php', $plugins ) ) {
+				$button_text = esc_html( 'Activate', 'woo-category-slider' );
+				$install_url = esc_url( self_admin_url( 'plugins.php?action=activate&plugin=' . urlencode( 'gallery-slider-for-woocommerce/woo-gallery-slider.php' ) . '&plugin_status=all&paged=1&s&_wpnonce=' . urlencode( wp_create_nonce( 'activate-plugin_gallery-slider-for-woocommerce/woo-gallery-slider.php' ) ) ) );
+			}
+
+			$popup_url = esc_url(
+				add_query_arg(
+					array(
+						'tab'       => 'plugin-information',
+						'plugin'    => $slug,
+						'TB_iframe' => 'true',
+						'width'     => '640',
+						'height'    => '500',
+					),
+					admin_url( 'plugin-install.php' )
+				)
+			);
+
+			echo sprintf( '<div class="woogs-notice notice is-dismissible"><img src="%1$s"/><div class="woogs-notice-text">To enable single <strong>Product Image Gallery Slider</strong>, %4$s the <a href="%2$s" class="thickbox open-plugin-details-modal"><strong>Gallery Slider for WooCommerce</strong></a> plugin <a href="%3$s" rel="noopener" class="woogs-activate-btn">%4$s</a></div></div>', $icon, $popup_url, $install_url, $button_text );
+		}
+
+	}
+
+	/**
+	 * Dismiss Gallery Slider notice message
+	 *
+	 * @since 1.2.10
+	 *
+	 * @return void
+	 */
+	public function dismiss_woo_gallery_slider_notice() {
+		update_option( 'sp-woogs-notice-dismissed', 1 );
+	}
+
+	/**
+	 * Redirect after active.
+	 *
+	 * @return void
+	 */
+	public function redirect_to( $plugin ) {
+		if ( SP_WCS_BASENAME === $plugin ) {
+			exit( wp_redirect( admin_url( 'edit.php?post_type=sp_wcslider&page=wcsp_help' ) ) );
+		}
 	}
 
 }

@@ -362,17 +362,17 @@ if ( ! class_exists( 'SP_WCS' ) ) {
 
 				// Framework core styles.
 				wp_enqueue_style( 'sp-wcs-font-awesome', SP_WCS_URL . 'public/css/font-awesome.min.css', array(), SP_WCS_VERSION, 'all' );
-				//wp_enqueue_style( 'sp-wcs-icon', SP_WCS_URL . 'public/css/sp-wcsp-icon.css', array(), SP_WCS_VERSION, 'all' );
-				wp_enqueue_style( 'spf', SP_WCS_URL . 'admin/partials/wcsp-framework/assets/css/spf' . $min . '.css', array(), '1.0.0', 'all' );
+				// wp_enqueue_style( 'sp-wcs-icon', SP_WCS_URL . 'public/css/sp-wcsp-icon.css', array(), SP_WCS_VERSION, 'all' );
+				wp_enqueue_style( 'spf', SP_WCS_URL . 'admin/partials/wcsp-framework/assets/css/spf' . $min . '.css', array(), SP_WCS_VERSION, 'all' );
 
 				// rtl styles.
 				if ( is_rtl() ) {
-					wp_enqueue_style( 'spf-rtl', SP_WCS_URL . 'admin/partials/wcsp-framework/assets/css/spf-rtl' . $min . '.css', array(), '1.0.0', 'all' );
+					wp_enqueue_style( 'spf-rtl', SP_WCS_URL . 'admin/partials/wcsp-framework/assets/css/spf-rtl' . $min . '.css', array(), SP_WCS_VERSION, 'all' );
 				}
 
 				// framework core scripts.
-				wp_enqueue_script( 'spf-plugins', SP_WCS_URL . 'admin/partials/wcsp-framework/assets/js/spf-plugins' . $min . '.js', array(), '1.0.0', true );
-				wp_enqueue_script( 'spf', SP_WCS_URL . 'admin/partials/wcsp-framework/assets/js/spf' . $min . '.js', array( 'spf-plugins' ), '1.0.0', true );
+				wp_enqueue_script( 'spf-plugins', SP_WCS_URL . 'admin/partials/wcsp-framework/assets/js/spf-plugins' . $min . '.js', array(), SP_WCS_VERSION, true );
+				wp_enqueue_script( 'spf', SP_WCS_URL . 'admin/partials/wcsp-framework/assets/js/spf' . $min . '.js', array( 'spf-plugins' ), SP_WCS_VERSION, true );
 
 				wp_localize_script(
 					'spf',

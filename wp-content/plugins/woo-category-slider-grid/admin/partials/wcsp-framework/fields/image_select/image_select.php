@@ -40,7 +40,7 @@ if ( ! class_exists( 'SP_WCS_Field_image_select' ) ) {
 
 					$type    = ( $args['multiple'] ) ? 'checkbox' : 'radio';
 					$extra   = ( $args['multiple'] ) ? '[]' : '';
-					$option_name   = ( $args['option_name'] ) ? '<p><b>' . $option['option_name'] . '</b></p>' : '';
+					$option_name   = ( $args['option_name'] ) ? '<p>' . $option['option_name'] . '</p>' : '';
 					$active  = ( in_array( $key, $value ) ) ? ' spf--active' : '';
 					$checked = ( in_array( $key, $value ) ) ? ' checked' : '';
 					$pro_only      = isset( $option['pro_only'] ) ? ' disabled' : '';

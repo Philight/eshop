@@ -116,7 +116,7 @@ if ( ! class_exists( 'SP_WCS_Field_dimensions_advanced' ) ) {
 					echo '<option value="' . $style_prop . '"' . $selected . '>' . $style_prop . '</option>';
 				}
 				echo '</select>';
-				$pro_text = true == $args['unit'] ? '<span style="font-weight: 600;font-style: italic;margin-left: 6px;color: #aaa;">Pro</span>' : '';
+				$pro_text = true == $args['unit'] ? '<span style=" background-color: #d4d4d4;padding: 2px 4px;font-size: 8px;border-radius: 2px;height: 11px;line-height: 30px;opacity: .7;margin-left: 5px">PRO</span>' : '';
 				echo $pro_text;
 				echo '</div>';
 			}

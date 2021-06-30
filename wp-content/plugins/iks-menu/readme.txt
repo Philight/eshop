@@ -2,9 +2,9 @@
 Contributors: iksstudio, freemius
 Tags: accordion menu, category menu, category widget, woocommerce menu, taxonomies menu
 Requires at least: 4.4.0
-Tested up to: 5.5
+Tested up to: 5.6
 Requires PHP: 5.4
-Stable tag: 1.8.8
+Stable tag: 1.9.0
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -14,7 +14,7 @@ Super customizable WordPress plugin for displaying custom menus or taxonomy/cate
 
 Iks Menu is a WordPress plugin that provides powerful customizable system and has loads of settings for creating WordPress accordion menus.
 
->[All previews](http://iks-menu.ru/previews)|[WooCommerce sidebar menu](http://iks-menu.ru/product-category/computers/laptops/)|[User-friendly documentation with screenshots](https://docs.iks-menu.ru/#/README)
+>[All previews](https://iks-menu.ru/previews)|[WooCommerce sidebar menu](https://iks-menu.ru/product-category/computers/laptops/)|[User-friendly documentation with screenshots](https://docs.iks-menu.ru/#/README)
 
 Iks Menu is a best choice for sidebar menu. This plugin allows you to select custom WordPress menus or any taxonomy (categories, post tags, WooCommerce product category, etc.) as a source for accordion menus.
 It also provides images support both for custom menus and taxonomies (also supports WooCommerce categories images).
@@ -24,7 +24,7 @@ And you do not need to learn coding to use Iks Menu! Just set all the settings u
 Iks Menu has more than 15 starter skins (6 FREE) - so it’s super easy to use for beginners and very customizable for advanced users.
 
 = Plans =
-Iks Menu has 2 plans: FREE and PRO ([Pricing and Features](http://iks-menu.ru/pricing)).
+Iks Menu has 2 plans: FREE and PRO ([Pricing and Features](https://iks-menu.ru/pricing)).
 
 = FREE Version Features =
 * Supports Taxonomies (Categories, Tags, WooCommerce products, any other)
@@ -37,6 +37,7 @@ Iks Menu has 2 plans: FREE and PRO ([Pricing and Features](http://iks-menu.ru/pr
 * Supports exporting and importing settings to reuse it again (all settings or just for appearance)
 * Provides various unique settings for your menus
 * Provides 6 free awesome looking skins out of the box: start using skins with clean design right now with just one click.
+* Supports keyboard accessibility: "Tab" & "Enter" navigation + "Focus" state for all elements in menu
 * ... Just take a look at screenshots to see all features!
 
 = PRO Version Features =
@@ -48,7 +49,7 @@ Iks Menu has 2 plans: FREE and PRO ([Pricing and Features](http://iks-menu.ru/pr
 * Setting to use parents as sub-menu toggles
 * Toggle: 50+ icons and 5+ animations for expanding
 * 20+ skins
-* ... [Take a look at pricing](http://iks-menu.ru/pricing)
+* ... [Take a look at pricing](https://iks-menu.ru/pricing)
 
 = Settings =
 Using taxonomy menu you can configure the next settings:
@@ -116,6 +117,15 @@ Manual installation method requires downloading the Iks Menu plugin and uploadin
 * Loading menus by AJAX
 * Group skins by tags (like flat, white, colored, etc.)
 * Translate plugin into other languages
+
+= 1.9.0 - 2021-02-20 =
+* Added: New setting "Icon Tag" for Toggle
+* Added: Freemius SDK was updated to the latest version
+
+= 1.8.9 - 2021-01-03 =
+* Fixed: Keyboard accessibility "freeze" bug
+* Fixed: https for loading Skins
+* Fixed: DELETE method was changed to POST due to problems of some users
 
 = 1.8.8 - 2020-11-13 =
 * Added: Keyboard accessibility: "Tab" & "Enter" navigation + "Focus" state for all elements in menu

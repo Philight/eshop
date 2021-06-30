@@ -116,6 +116,7 @@ class UR_Admin_Assets {
 				'ur-enhanced-select',
 				'perfect-scrollbar',
 				'sweetalert2',
+				'user-registration-scroll-ui-js',
 			),
 			UR_VERSION
 		);
@@ -131,6 +132,8 @@ class UR_Admin_Assets {
 			),
 			UR_VERSION
 		);
+
+		wp_register_script( 'user-registration-scroll-ui-js', UR()->plugin_url() . '/assets/js/ur-components/scroll-ui.js', 'jquery' );
 
 		wp_register_script( 'user-registration-form-modal-js', UR()->plugin_url() . '/assets/js/admin/form-modal' . $suffix . '.js', 'jquery' );
 		wp_register_script( 'user-registration-dashboard-widget-js', UR()->plugin_url() . '/assets/js/admin/dashboard-widget' . $suffix . '.js', 'jquery' );
@@ -149,6 +152,7 @@ class UR_Admin_Assets {
 		wp_register_script( 'chartjs', UR()->plugin_url() . '/assets/js/chartjs/Chart.min.js', array( 'jquery' ), UR_VERSION );
 		wp_register_script( 'perfect-scrollbar', UR()->plugin_url() . '/assets/js/perfect-scrollbar/perfect-scrollbar.min.js', array( 'jquery' ), '1.4.0' );
 		wp_register_script( 'sweetalert2', UR()->plugin_url() . '/assets/js/sweetalert2/sweetalert2.min.js', array( 'jquery' ), '8.17.1' );
+		wp_register_script( 'ur-copy', UR()->plugin_url() . '/assets/js/admin/ur-copy' . $suffix . '.js', 'jquery' );
 		wp_register_script( 'ur-my-account', UR()->plugin_url() . '/assets/js/frontend/my-account' . $suffix . '.js', array( 'jquery' ), UR_VERSION );
 		wp_localize_script(
 			'ur-my-account',
@@ -160,9 +164,6 @@ class UR_Admin_Assets {
 			)
 		);
 
-		if ( 'user-registration_page_add-new-registration' === $screen_id || 'toplevel_page_user-registration' === $screen_id ) {
-			wp_enqueue_script( 'ur-copy', UR()->plugin_url() . '/assets/js/admin/ur-copy' . $suffix . '.js', 'jquery' );
-		}
 
 		wp_enqueue_script( 'user-registration-form-modal-js' );
 
@@ -216,6 +217,7 @@ class UR_Admin_Assets {
 			wp_enqueue_script( 'jquery-ui-sortable' );
 			wp_enqueue_script( 'jquery-ui-autocomplete' );
 			wp_enqueue_script( 'jquery-ui-widget' );
+			wp_enqueue_script( 'ur-copy' );
 
 			$params = array(
 				'required_form_html'             => self::get_form_required_html(),
@@ -232,7 +234,7 @@ class UR_Admin_Assets {
 				'form_one_time_draggable_fields' => ur_get_one_time_draggable_fields(),
 				'i18n_admin'                     => self::get_i18n_admin_data(),
 				'add_new'                        => esc_html( 'Add New', 'user-registratoin' ),
-				'no_file_selected'               => esc_html( 'No file selected.', 'user-registration' )
+				'no_file_selected'               => esc_html( 'No file selected.', 'user-registration' ),
 			);
 
 			wp_localize_script( 'user-registration-admin', 'user_registration_admin_data', $params );
@@ -271,6 +273,17 @@ class UR_Admin_Assets {
 					'ajax_url'           => admin_url( 'admin-ajax.php' ),
 					'deactivation_nonce' => wp_create_nonce( 'deactivation-notice' ),
 				)
+			);
+		}
+		//send test email
+		$current_tab = ! empty( $_REQUEST['tab'] ) ? sanitize_title( $_REQUEST['tab'] ) : '';
+		if ( 'user-registration_page_user-registration-settings' === $screen_id && 'email' === $current_tab ) {
+			wp_localize_script(
+				'user-registration-admin',
+				'user_registration_send_email',
+				array(
+					'ajax_url' => admin_url( 'admin-ajax.php' )
+					)
 			);
 		}
 

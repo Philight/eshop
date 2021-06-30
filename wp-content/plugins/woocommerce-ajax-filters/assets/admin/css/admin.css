@@ -453,29 +453,29 @@ td.br_colorpicker_field.colorpicker_removed:after {
     vertical-align: middle;
 }
 .berocket_group_is_hide_theme_option_slider {
-    height: 80px;
+    min-height: 80px;
     overflow-y: hidden;
     overflow-x: auto;
     white-space: nowrap;
     width: 960px;
     max-width: 100%;
     display: flex;
-    align-items: center;
+    align-items: stretch;
     padding-top: 4px;
     padding-bottom: 4px;
 }
 .berocket_group_is_hide_theme_option_slider div {
-    display: block;
+    display: flex;
     width: 240px;
     box-sizing: border-box;
     padding: 0 10px;
-    align-items: center;
+    align-items: stretch;
 }
 .berocket_group_is_hide_theme_option_slider div label {
     display: flex;
     padding: 0;
     font-size: 0;
-    height: 62px;
+    min-height: 62px;
     border: 3px solid transparent;
     border-radius: 3px;
     width: 220px;
@@ -483,6 +483,7 @@ td.br_colorpicker_field.colorpicker_removed:after {
     text-align: center;
     justify-content: center;
     transition: all 0.2s;
+    flex-direction: column;
 }
 .berocket_group_is_hide_theme_option_slider div label:hover {
     border-color: #e8ebf1;
@@ -494,6 +495,10 @@ td.br_colorpicker_field.colorpicker_removed:after {
     padding: 0;
     margin: 0;
 }
+.berocket_group_is_hide_theme_option_slider.icon_size {
+    height: 68px;
+    min-height: 68px;
+}
 .berocket_group_is_hide_theme_option_slider.icon_size div {
     width: 88px;
 }
@@ -502,13 +507,21 @@ td.br_colorpicker_field.colorpicker_removed:after {
 }
 
 .berocket_group_is_hide_theme_option_slider.slider_shadow {
-    height: 160px;
+    min-height: 160px;
 }
 .berocket_group_is_hide_theme_option_slider.slider_shadow div label{
-    height: 151px;
+    min-height: 151px;
+}
+.berocket_group_is_hide_theme_option_slider.slider_shadow div span {
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 10px;
 }
 .berocket_group_is_hide_theme_option_slider.slider_shadow div label img{
-    mac-height: 151px;
+    max-height: 151px;
+}
+.design_show_title_only_styles {
+    margin-top: 100px;
 }
 /*Filters Group*/
 .button.berocket_add_filter_to_group {
@@ -594,6 +607,9 @@ td.br_colorpicker_field.colorpicker_removed:after {
     padding: 5px 12px 1px;
     margin-top: 8px;
 }
+#conditions .section_conditions_hide_this_on label {
+    display: inline-block;
+}
 #poststuff #conditions .inside {
     padding-bottom: 6px;
 }
@@ -617,4 +633,34 @@ td.br_colorpicker_field.colorpicker_removed:after {
 }
 .tr_out_of_stock_variable td label{
     display: block;
+}
+.br_framework_settings .wp-list-table input[type=button].button.tiny-button {
+    margin-top: 5px;
+    margin-bottom: 0;
+}
+.br_framework_settings .button.berocket_purge_cache {
+    margin: 0;
+}
+.br_framework_settings.br_ajax_filters_settings textarea {
+    min-height: 70px;
+}
+.bapf_custom_css_admin td {
+    margin: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+.bapf_custom_css_admin td h3 {
+    margin-top: 0;
+}
+.bapf_incompatibility_fixes_header {
+    cursor: pointer;
+}
+.bapf_incompatibility_fixes_header .fa {
+    margin-left: 20px;
+}
+.bapf_incompatibility_fixes_header:hover .fa {
+    color: #0085ba;
+}
+.bapf_incompatibility_fixes_hide {
+    display: none!important;
 }

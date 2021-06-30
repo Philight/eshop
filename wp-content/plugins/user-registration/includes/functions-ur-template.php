@@ -197,7 +197,7 @@ if ( ! function_exists( 'user_registration_form_field' ) ) {
 			$args['required'] = $required = '';
 		}
 
-		if ( is_null( $value ) ) {
+		if ( is_null( $value ) || empty($value)) {
 			$value = $args['default'];
 		}
 
@@ -269,6 +269,11 @@ if ( ! function_exists( 'user_registration_form_field' ) ) {
 				$default_value = isset( $args['default_value'] ) ? $args['default_value'] : '';    // Backward compatibility. Modified since 1.5.7
 				$default       = ! empty( $value ) ? $value : $default_value;
 				$options       = isset( $args['options'] ) ? $args['options'] : ( $args['choices'] ? $args['choices'] : array() ); // $args['choices'] for backward compatibility. Modified since 1.5.7.
+				$choice_limit = isset( $args['choice_limit'] ) ?  $args['choice_limit'] : "";
+				$choice_limit_attr = "";
+				if( "" !== $choice_limit ){
+					$choice_limit_attr = 'data-choice-limit="' . $choice_limit . '"';
+				}
 
 				if ( isset( $options ) && array_filter( $options ) ) {
 
@@ -283,7 +288,8 @@ if ( ! function_exists( 'user_registration_form_field' ) ) {
 
 					$checkbox_start = 0;
 
-					$field .= '<ul>';
+					$field .= '<ul ' . $choice_limit_attr . '>';
+
 					foreach ( $choices as $choice_index => $choice ) {
 
 						$value = '';
@@ -334,11 +340,21 @@ if ( ! function_exists( 'user_registration_form_field' ) ) {
 			case 'timepicker':
 				$extra_params_key = str_replace( 'user_registration_', 'ur_', $key ) . '_params';
 				$extra_params     = json_decode( get_user_meta( get_current_user_id(), $extra_params_key, true ) );
+				$username_length = isset( $args['username_length'] ) ?  $args['username_length'] : "";
+				$username_character = isset( $args['username_character'] ) ?  $args['username_character'] : "";
+				$attr = "";
+				if( "" !== $username_length ) {
+					$attr .= 'data-username-length="' . $username_length . '"';
+				}
+
+				if( $username_character ) {
+					$attr .= 'data-username-character="' . $username_character . '"';
+				}
 
 				if ( empty( $extra_params ) ) {
-					$field .= '<input data-rules="' . esc_attr( $rules ) . '" data-id="' . esc_attr( $key ) . '" type="' . esc_attr( $args['type'] ) . '" class="input-text input-' . esc_attr( $args['type'] ) . ' ' . esc_attr( implode( ' ', $args['input_class'] ) ) . '" name="' . esc_attr( $key ) . '" id="' . esc_attr( $args['id'] ) . '" placeholder="' . esc_attr( $args['placeholder'] ) . '"  value="' . esc_attr( $value ) . '" ' . implode( ' ', $custom_attributes ) . ' />';
+					$field .= '<input data-rules="' . esc_attr( $rules ) . '" data-id="' . esc_attr( $key ) . '" type="' . esc_attr( $args['type'] ) . '" class="input-text input-' . esc_attr( $args['type'] ) . ' ' . esc_attr( implode( ' ', $args['input_class'] ) ) . '" name="' . esc_attr( $key ) . '" id="' . esc_attr( $args['id'] ) . '" placeholder="' . esc_attr( $args['placeholder'] ) . '"  value="' . esc_attr( $value ) . '" ' . implode( ' ', $custom_attributes ) . ' ' . $attr . '/>';
 				} else {
-					$field .= '<input data-rules="' . esc_attr( $rules ) . '" data-id="' . esc_attr( $key ) . '" type="' . esc_attr( $args['type'] ) . '" class="input-text ' . esc_attr( implode( ' ', $args['input_class'] ) ) . '" name="' . esc_attr( $key ) . '" id="' . esc_attr( $args['id'] ) . '" placeholder="' . esc_attr( $args['placeholder'] ) . '"  value="' . esc_attr( $value ) . '" ' . implode( ' ', $custom_attributes ) . ' />';
+					$field .= '<input data-rules="' . esc_attr( $rules ) . '" data-id="' . esc_attr( $key ) . '" type="' . esc_attr( $args['type'] ) . '" class="input-text ' . esc_attr( implode( ' ', $args['input_class'] ) ) . '" name="' . esc_attr( $key ) . '" id="' . esc_attr( $args['id'] ) . '" placeholder="' . esc_attr( $args['placeholder'] ) . '"  value="' . esc_attr( $value ) . '" ' . implode( ' ', $custom_attributes ) . ' ' . $attr . ' />';
 				}
 				break;
 			case 'date':
@@ -730,9 +746,10 @@ if ( ! function_exists( 'user_registration_account_edit_account' ) ) {
 
 function ur_logout_url( $redirect = '' ) {
 	$logout_endpoint = get_option( 'user_registration_logout_endpoint' );
+
+	global $post;
+	$post_content = isset( $post->post_content ) ? $post->post_content : '';
 	if ( ( ur_post_content_has_shortcode( 'user_registration_login' ) || ur_post_content_has_shortcode( 'user_registration_my_account' ) ) && is_user_logged_in() ) {
-		global $post;
-		$post_content = isset( $post->post_content ) ? $post->post_content : '';
 		preg_match( '/' . get_shortcode_regex() . '/s', $post_content, $matches );
 
 		$attributes = shortcode_parse_atts( $matches[3] );
@@ -747,6 +764,14 @@ function ur_logout_url( $redirect = '' ) {
 			$redirect = trim( $redirect, '"' );
 			$redirect = trim( $redirect, "'" );
 			$redirect = '' != $redirect ? home_url( $redirect ) : ur_get_page_permalink( 'myaccount' );
+		}
+	}else {
+		$blocks = parse_blocks( $post->post_content );
+
+   		foreach ( $blocks as $block ) {
+			if ( 'user-registration/form-selector' === $block['blockName'] && isset( $block['attrs']['logoutUrl'] ) ) {
+				$redirect = home_url( $block['attrs']['logoutUrl'] );
+			}
 		}
 	}
 	$redirect = apply_filters( 'user_registration_redirect_after_logout', $redirect );

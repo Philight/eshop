@@ -41,25 +41,44 @@ class SP_WCS_General {
 						'type'        => 'image_select',
 						'title'       => __( 'Layout Preset', 'woo-category-slider' ),
 						'subtitle'    => __( 'Choose a layout preset.', 'woo-category-slider' ),
+						'desc'        => __( 'To unlock Grid and Block layouts, <a href="https://shapedplugin.com/plugin/woocommerce-category-slider-pro/?ref=115" target="_blank"><b>Upgrade To Pro!</b></a>', 'woo-category-slider' ),
 						'class'       => 'wcsp_layout_presets',
 						'option_name' => true,
 						'options'     => array(
 							'slider' => array(
-								'image'       => SP_WCS_URL . 'admin/img/slider.png',
+								'image'       => SP_WCS_URL . 'admin/img/slider.svg',
 								'option_name' => __( 'Slider', 'woo-category-slider' ),
 							),
 							'grid'   => array(
-								'image'       => SP_WCS_URL . 'admin/img/grid.png',
+								'image'       => SP_WCS_URL . 'admin/img/grid.svg',
 								'option_name' => __( 'Grid', 'woo-category-slider' ),
 								'pro_only'    => true,
 							),
 							'block'  => array(
-								'image'       => SP_WCS_URL . 'admin/img/block.png',
+								'image'       => SP_WCS_URL . 'admin/img/block.svg',
 								'option_name' => __( 'Block', 'woo-category-slider' ),
 								'pro_only'    => true,
 							),
 						),
 						'default'     => 'slider',
+					),
+					array(
+						'id'       => 'wcsp_slider_mode',
+						'type'     => 'button_setf',
+						'class'    => 'pro_option',
+						'title'    => __( 'Slider Mode', 'woo-category-slider' ),
+						'subtitle' => __( 'Set a mode for the slider.', 'woo-category-slider' ),
+						'options'  => array(
+							'standard' => array(
+								'text'     => __( 'Standard', 'woo-category-slider' ),
+								'pro_only' => false,
+							),
+							'ticker'   => array(
+								'text'     => __( 'Ticker', 'woo-category-slider' ),
+								'pro_only' => true,
+							),
+						),
+						'default'  => 'standard',
 					),
 					array(
 						'id'       => 'wcsp_number_of_column',
@@ -91,18 +110,48 @@ class SP_WCS_General {
 								'pro_only' => false,
 							),
 							'parent_and_child' => array(
-								'text'     => __( 'Parent and Child (Pro)', 'woo-category-slider' ),
-								'pro_only' => true,
+								'text'     => __( 'Parent and Child', 'woo-category-slider' ),
+								'pro_only' => false,
 							),
 						),
 						'default'  => 'hide',
 					),
 					array(
-						'id'       => 'wcsp_filter_categories',
-						'type'     => 'selectf',
-						'title'    => __( 'Filter Categories', 'woo-category-slider' ),
-						'subtitle' => __( 'Select an option to filter the categories.', 'woo-category-slider' ),
-						'options'  => array(
+						'id'         => 'wcsp_parent_and_child_categories',
+						'type'       => 'custom_group',
+						'title'      => __( 'Parent and Child', 'woo-category-slider' ),
+						'desc'       => __( 'To display Parent with Child or Child Categories and to unlock more amazing settings, <a href="https://shapedplugin.com/plugin/woocommerce-category-slider-pro/?ref=115" target="_blank"><b>Upgrade To Pro!</b></a>', 'woo-category-slider' ),
+						'dependency' => array( 'wcsp_child_categories', '==', 'parent_and_child' ),
+					),
+					array(
+						'id'         => 'wcsp_parent_child_display_type',
+						'type'       => 'button_setf',
+						'class'      => 'pro_option',
+						'title'      => __( 'Parent and Child Display Type', 'woo-category-slider' ),
+						'subtitle'   => __( 'Select an display type for parent and child categories.', 'woo-category-slider' ),
+						'options'    => array(
+							'individualize_each' => array(
+								'text'     => __( 'Individualize Each', 'woo-category-slider' ),
+								'pro_only' => true,
+							),
+							'child_only'         => array(
+								'text'     => __( 'Child Only', 'woo-category-slider' ),
+								'pro_only' => true,
+							),
+							'under_parent'       => array(
+								'text'     => __( 'Child Under Parent', 'woo-category-slider' ),
+								'pro_only' => true,
+							),
+						),
+						'default'    => 'individualize_each',
+						'dependency' => array( 'wcsp_child_categories', '==', 'parent_and_child' ),
+					),
+					array(
+						'id'         => 'wcsp_filter_categories',
+						'type'       => 'selectf',
+						'title'      => __( 'Filter Categories', 'woo-category-slider' ),
+						'subtitle'   => __( 'Select an option to filter the categories.', 'woo-category-slider' ),
+						'options'    => array(
 							'all'      => array(
 								'text'     => __( 'All', 'woo-category-slider' ),
 								'pro_only' => false,
@@ -116,7 +165,9 @@ class SP_WCS_General {
 								'pro_only' => true,
 							),
 						),
-						'default'  => 'all',
+						'default'    => 'all',
+						'dependency' => array( 'wcsp_child_categories', '==', 'hide' ),
+
 					),
 					array(
 						'id'          => 'wcsp_categories_list',
@@ -131,9 +182,9 @@ class SP_WCS_General {
 						'placeholder' => __( 'Select Category(s)', 'woo-category-slider' ),
 						'chosen'      => true,
 						'dependency'  => array(
-							'wcsp_filter_categories',
-							'==',
-							'specific',
+							'wcsp_filter_categories|wcsp_child_categories',
+							'==|==',
+							'specific|hide',
 						),
 					),
 					array(
@@ -188,9 +239,9 @@ class SP_WCS_General {
 						'type'       => 'switcher',
 						'title'      => __( 'Preloader', 'woo-category-slider' ),
 						'subtitle'   => __( 'Slider will be hidden until page load completed.', 'woo-category-slider' ),
-						'text_on'    => __( 'Enable', 'woo-category-slider' ),
-						'text_off'   => __( 'Disable', 'woo-category-slider' ),
-						'text_width' => 93,
+						'text_on'    => __( 'Enabled', 'woo-category-slider' ),
+						'text_off'   => __( 'Disabled', 'woo-category-slider' ),
+						'text_width' => 100,
 						'default'    => true,
 					),
 

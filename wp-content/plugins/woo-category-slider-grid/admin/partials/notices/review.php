@@ -51,7 +51,7 @@ class Woo_Category_Slider_Review {
 		?>
 		<div id="sp-woocatslider-review-notice" class="sp-woocatslider-review-notice">
 			<div class="sp-woocatslider-plugin-icon">
-				<img src="<?php echo SP_WCS_URL . 'admin/img/icons-128x128.png'; ?>" alt="Category Slider for Woocommerce">
+				<img src="<?php echo SP_WCS_URL . 'admin/css/images/wcs-pro.svg'; ?>" alt="Category Slider for Woocommerce">
 			</div>
 			<div class="sp-woocatslider-notice-text">
 				<h3>Enjoying <strong>Category Slider for Woocommerce</strong>?</h3>

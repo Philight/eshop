@@ -21,38 +21,6 @@ if( ! class_exists('BeRocket_AAPF_Template_Style_example') ) {
             $template['template']['attributes']['class'][] = 'bapf_ckbox_square';
             return $template;
         }
-
-        function template_single_item($template, $term, $i, $berocket_query_var_title) {
-            $template['content']['checkbox']['attributes']['style']['display'] = 'display:none;';
-
-            $template['content']['label']['content'] = array(
-                'filter-btn-wrapper'    => array(
-                    'type'                  => 'tag',
-                    'tag'                   => 'div',
-                    'attributes'            => array(
-                        'class'                 => array(
-                            'main'              => 'filter-btn-wrapper',
-                        )
-                    ),    
-                    'content'           => array(    
-                        'filter-btn-span'   => array(
-                            'type'              => 'tag',
-                            'tag'               => 'span',
-                            'attributes'        => array(
-                                'class'             => array(
-                                    'main'              => 'filter-btn-span',
-                                ),
-
-                            ),
-                            'content'   => array(
-                                'name' => $term->name
-                            )
-                        ),  
-                    )
-                )
-            );
-            return $template;
-        }
     }
     new BeRocket_AAPF_Template_Style_example();
 }

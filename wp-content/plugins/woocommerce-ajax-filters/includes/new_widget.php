@@ -13,6 +13,7 @@ class BeRocket_new_AAPF_Widget extends WP_Widget
         $instance['group_id'] = apply_filters( 'wpml_object_id', $instance['group_id'], 'page', true, $current_language );
         $BeRocket_AAPF_group_filters = BeRocket_AAPF_group_filters::getInstance();
         $filters = $BeRocket_AAPF_group_filters->get_option($instance['group_id']);
+        $filters['group_id'] = $instance['group_id'];
         global $wp_registered_sidebars;
         $is_shortcode = empty($args['id']) || ! isset($wp_registered_sidebars[$args['id']]);
         $new_args = $args;
@@ -92,7 +93,7 @@ class BeRocket_new_AAPF_Widget extends WP_Widget
             braapf_is_filters_displayed_debug($instance['group_id'], 'group', 'without_filters', 'Do not have any filters');
             return false;
         }
-        if( apply_filters('braapf_check_widget_by_instance_group', (! empty($filters['data']) && ! BeRocket_conditions::check($filters['data'], $BeRocket_AAPF_group_filters->hook_name) ) ) ) {
+        if( apply_filters('braapf_check_widget_by_instance_group', (! empty($filters['data']) && ! BeRocket_conditions::check($filters['data'], $BeRocket_AAPF_group_filters->hook_name) ), $instance, $filters ) ) {
             braapf_is_filters_displayed_debug($instance['group_id'], 'group', 'condition_restriction', 'Disabled for this page by conditions');
             return false;
         }
@@ -200,7 +201,6 @@ class BeRocket_new_AAPF_Widget_single extends WP_Widget
         $additional_class[] = 'berocket_single_filter_widget';
         $additional_class[] = 'berocket_single_filter_widget_' . esc_html($filter_id);
         $additional_class[] = trim(br_get_value_from_array($args, 'custom_class'));
-        $additional_class = array_unique($additional_class);
         $filter_data['filter_id'] = $filter_id;
         ob_start();
         new BeRocket_AAPF_Widget($filter_data, $args);
@@ -216,6 +216,8 @@ class BeRocket_new_AAPF_Widget_single extends WP_Widget
         } else {
             braapf_is_filters_displayed_debug($filter_id, 'filter', 'displayed', 'Must be displayed on the page');
         }
+        $additional_class = apply_filters('BeRocket_AAPF_widget_additional_classes', $additional_class, $filter_id, $filter_data);
+        $additional_class = array_unique($additional_class);
         if( ! empty($filter_data['widget_type']) && ($filter_data['widget_type'] == 'update_button' || $filter_data['widget_type'] == 'reset_button' ) ) {
             $search_berocket_hidden_clickable = array_search('berocket_hidden_clickable', $additional_class);
             if( $search_berocket_hidden_clickable !== FALSE ) {
@@ -276,7 +278,7 @@ class BeRocket_new_AAPF_Widget_single extends WP_Widget
         if( empty($filter_data) || empty($filter_post) ) {
             return false;
         }
-        if( apply_filters('braapf_check_widget_by_instance_single', (! empty($filter_data['data']) && ! BeRocket_conditions::check($filter_data['data'], $BeRocket_AAPF_single_filter->hook_name) ) ) ) {
+        if( apply_filters('braapf_check_widget_by_instance_single', (! empty($filter_data['data']) && ! BeRocket_conditions::check($filter_data['data'], $BeRocket_AAPF_single_filter->hook_name) ), $instance, $filter_data ) ) {
             braapf_is_filters_displayed_debug($instance['filter_id'], 'filter', 'condition_restriction', 'Disabled for this page by conditions');
             return false;
         }

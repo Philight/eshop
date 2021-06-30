@@ -151,9 +151,11 @@ if( ! class_exists('braapf_single_filter_edit_elements') ) {
             echo '</div>';
         }
         static function cat_value_limit($settings_name, $braapf_filter_settings) {
-            echo '<div class="braapf_attribute_setup_flex">';
+            $cat_value_limit = br_get_value_from_array($braapf_filter_settings, 'cat_value_limit', '0');
+            echo '<div class="braapf_attribute_setup_flex"'
+            . ( apply_filters('braapf_single_filter_hide_cat_value_limit', empty($cat_value_limit), $cat_value_limit) ? ' style="display:none;"' : '' )
+            . '>';
                 echo '<div class="braapf_cat_value_limit braapf_full_select_full">';
-                    $cat_value_limit = br_get_value_from_array($braapf_filter_settings, 'cat_value_limit', '0');
                     $hrterms = berocket_aapf_get_terms(array(
                         'taxonomy'          => 'product_cat',
                         'hide_empty'        => false
@@ -161,7 +163,8 @@ if( ! class_exists('braapf_single_filter_edit_elements') ) {
                         'disable_recount'   => true,
                         'hierarchical'      => true
                     ));
-                    echo '<label for="braapf_cat_value_limit">' . __('Limit filter values by products from the selected category', 'BeRocket_AJAX_domain') . '</label>';
+                    echo '<label for="braapf_cat_value_limit">' . __('Limit filter values by products from the selected category', 'BeRocket_AJAX_domain')
+                    . '<span id="braapf_sinfo_cat_value_limit" class="dashicons dashicons-editor-help"></span>' . '</label>';
                     echo '<select id="braapf_cat_value_limit" name="'.$settings_name.'[cat_value_limit]">';
                         echo '<option value="">' . __('Use all attribute values', 'BeRocket_AJAX_domain') . '</option>';
                         echo '<optgroup label="'.__('Limit by category:', 'BeRocket_AJAX_domain').'">';
@@ -176,6 +179,10 @@ if( ! class_exists('braapf_single_filter_edit_elements') ) {
                     echo '</select>';
                 echo '</div>';
             echo '</div>';
+            $tooltip_text = '<strong>' . __('Option does not hide filters on pages.', 'BeRocket_AJAX_domain') . '</strong>'
+            . '<p>' . __('Filter will be displayed on same pages, but values that is displayed in filter will be limited by products that is inside selected category.', 'BeRocket_AJAX_domain') . '</p>'
+            . '<p>' . __('To limit pages where filters are displayed use "Conditions" meta box.', 'BeRocket_AJAX_domain') . '</p>';
+            BeRocket_AAPF::add_tooltip('#braapf_sinfo_cat_value_limit', $tooltip_text);
         }
         //STYLES
         static function styles_template($settings_name, $braapf_filter_settings) {

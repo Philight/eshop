@@ -35,7 +35,7 @@ class SP_WCS_Settings {
 				'ajax_save'       => true,
 				'save_defaults'   => true,
 				'show_reset_all'  => true,
-				'framework_title' => __( 'Category Slider for WooCommerce', 'woo-category-slider' ),
+				'framework_title' => __( 'Settings', 'woo-category-slider' ),
 				'framework_class' => 'sp-wcsp-options',
 				'theme'           => 'light',
 				'show_bar_menu'   => false,

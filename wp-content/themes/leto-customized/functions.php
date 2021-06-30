@@ -184,7 +184,7 @@
 					break;
 			}
 
-		    echo do_shortcode('[woocatslider id="92"]');
+		    //echo do_shortcode('[woocatslider id="92"]');
 
 		    $prefix = '
 		    <div class="berocket_single_filter_widget " style="">

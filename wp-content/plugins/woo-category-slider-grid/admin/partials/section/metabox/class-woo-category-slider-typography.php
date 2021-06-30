@@ -39,7 +39,7 @@ class SP_WCS_Typography {
 					array(
 						'type'    => 'notice',
 						'style'   => 'normal',
-						'content' => __( 'The Following Typography (900+ Google Fonts) options are available in the <a href="https://shapedplugin.com/plugin/woocommerce-category-slider-pro/" target="_blank">Pro Version</a> only.', 'woo-category-slider' ),
+						'content' => __( 'To unlock the following typography(900+ Google Fonts) options, <a href="https://shapedplugin.com/plugin/woocommerce-category-slider-pro/?ref=115" target="_blank"><b>Upgrade to Pro!</b></a>', 'woo-category-slider' ),
 					),
 					array(
 						'id'       => 'wpsp_section_title_font_load',

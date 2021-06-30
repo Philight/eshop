@@ -19,6 +19,8 @@ jQuery(document).ready(function ($) {
                 slidesPerColumn: 1,
                 autoHeight: wcspSliderData.auto_height,
                 allowTouchMove: wcspSliderData.touch_swipe,
+                mousewheel: wcspSliderData.mouse_wheel,
+                allowTouchMove: wcspSliderData.mouse_draggable,
                 navigation: wcspSliderData.navigation == 'show' ? ({
                     nextEl: '#' + sp_wcsp_id + ' .sp-wcsp-button-next',
                     prevEl: '#' + sp_wcsp_id + ' .sp-wcsp-button-prev',

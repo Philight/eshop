@@ -80,6 +80,8 @@ class BeRocket_aapf_deprecated_compat_addon extends BeRocket_framework_addon_lib
         wp_register_script( 'berocket_aapf_widget-script', plugins_url( 'widget.min.js', __FILE__ ), array( 'jquery', 'jquery-ui-slider', 'jquery-ui-datepicker' ), BeRocket_AJAX_filters_version );
         wp_register_style ( 'berocket_aapf_widget-style', plugins_url( 'widget.css', __FILE__ ), "", BeRocket_AJAX_filters_version );
         add_action('wp_footer', array($this, 'footer_css'));
+        add_action( "wp_ajax_br_aapf_get_child", array ( $this, 'br_aapf_get_child' ) );
+        add_action( "wp_ajax_nopriv_br_aapf_get_child", array ( $this, 'br_aapf_get_child' ) );
     }
     public function footer_css() {
         $this->br_custom_user_css();
@@ -556,6 +558,76 @@ class BeRocket_aapf_deprecated_compat_addon extends BeRocket_framework_addon_lib
         $replace['#widget#']        = '.berocket_aapf_widget';
         $replace['#widget-title#']  = '.berocket_aapf_widget-title';
         return $replace;
+    }
+    public function br_aapf_get_child() {
+        $br_options = apply_filters( 'berocket_aapf_listener_br_options', $this->get_option() );
+        $taxonomy = $_POST['taxonomy'];
+        $type = $_POST['type'];
+        $term_id = $_POST['term_id'];
+        $term_id = str_replace( '\\', '', $term_id );
+        $term_id = json_decode($term_id);
+        $term_id = berocket_sanitize_array($term_id);
+        if ( $type == 'slider' ) {
+            $all_terms_name = array();
+            $terms_1        = get_terms( $taxonomy );
+            $is_numeric = true;
+            $terms = array();
+            foreach ( $terms_1 as $term_ar ) {
+                array_push( $all_terms_name, $term_ar->name );
+                if( ! is_numeric( substr( $term_ar->name[0], 0, 1 ) ) ) {
+                    $is_numeric = false;
+                }
+            }
+            if( $is_numeric ) {
+                sort( $all_terms_name, SORT_NUMERIC );
+            } else {
+                sort( $all_terms_name );
+            }
+            $start_terms    = array_search( $term_id[0], $all_terms_name );
+            $end_terms      = array_search( $term_id[1], $all_terms_name );
+            $all_terms_name = array_slice( $all_terms_name, $start_terms, ( $end_terms - $start_terms + 1 ) );
+            foreach ( $all_terms_name as $term_name ) {
+                $term_id = get_term_by ( 'name', $term_name, $taxonomy );
+                $args_terms = array(
+                    'orderby'    => 'id',
+                    'order'      => 'ASC',
+                    'hide_empty' => false,
+                    'parent'     => $term_id->term_id,
+                );
+                $current_terms = get_terms( $taxonomy, $args_terms );
+                foreach ( $current_terms as $current_term ) {
+                    $terms[] = $current_term;
+                }
+            }
+            wp_send_json($terms);
+        } else {
+            if( is_array($term_id) && count($term_id) > 0 ) {
+                $terms = array();
+                foreach ( $term_id as $parent ) {
+                    $args_terms = array(
+                        'taxonomy'   => $taxonomy,
+                        'hide_empty' => false,
+                        'parent'     => intval($parent),
+                    );
+                    $new_terms = berocket_aapf_get_terms($args_terms);
+                    if( ! is_array( $new_terms ) ) {
+                        $new_terms = array();
+                    }
+                    if ( is_array( $new_terms ) ) {
+                        foreach ( $new_terms as $key => $term_val ) {
+                            $new_terms[$key]->color = get_metadata( 'berocket_term', $term_val->term_id, 'color' );
+                            $new_terms[$key]->r_class = '';
+                            if( ! empty($br_options['hide_value']['o']) && isset($term_val->count) && $term_val->count == 0 ) {
+                                $new_terms[$key]->r_class += 'berocket_hide_o_value ';
+                            }
+                        }
+                    }
+                    $terms = array_merge( $terms, $new_terms );
+                }
+                wp_send_json($terms);
+            }
+        }
+        wp_die();
     }
 }
 new BeRocket_aapf_deprecated_compat_addon();

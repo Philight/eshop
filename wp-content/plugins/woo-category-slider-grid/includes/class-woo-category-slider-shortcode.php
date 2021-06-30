@@ -124,6 +124,9 @@ class Woo_Category_Slider_Shortcode {
 
 			// Miscellaneous.
 		$touch_swipe = isset( $shortcode_meta['wcsp_touch_swipe'] ) ? $shortcode_meta['wcsp_touch_swipe'] : false;
+		$slider_mouse_wheel   = isset( $shortcode_meta['wcsp_slider_mouse_wheel'] ) && $shortcode_meta['wcsp_slider_mouse_wheel'] ? 'true' : 'false';
+		$slider_mouse_draggable   = isset( $shortcode_meta['wcsp_slider_mouse_draggable'] ) && $shortcode_meta['wcsp_slider_mouse_draggable'] ? 'true' : 'false';
+
 		$auto_height = isset( $shortcode_meta['wcsp_auto_height'] ) ? $shortcode_meta['wcsp_auto_height'] : true;
 
 		//
@@ -221,6 +224,8 @@ class Woo_Category_Slider_Shortcode {
 				"pagination": "' . $pagination . '",
 				"navigation": "' . $navigation . '",
 				"touch_swipe": ' . $touch_swipe . ',
+				"mouse_wheel": ' . $slider_mouse_wheel . ',
+				"mouse_draggable": ' . $slider_mouse_draggable . ',
 				"breakpoints": {
 					"desktop": ' . $desktop . ',
 					"laptop": ' . $laptop . ',

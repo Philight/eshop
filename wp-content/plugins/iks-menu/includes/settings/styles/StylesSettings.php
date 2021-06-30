@@ -7,7 +7,7 @@
  * @package   Iks Menu
  * @author    IksStudio
  * @license   GPL-3.0
- * @link      http://iks-menu.ru
+ * @link      https://iks-menu.ru
  * @copyright 2019 IksStudio
  */
 namespace IksStudio\IKSM\settings\styles;
@@ -242,7 +242,22 @@ class StylesSettings
             "main"                  => [
             "title"               => Utils::t( "Main" ),
             "selector"            => ".iksm-term__toggle",
-            "custom_settings"     => [ StylesSettingsTypes::$transition ],
+            "custom_settings"     => [ StylesSettingsTypes::$transition, "icon_tag" => [
+            "key"     => "icon_tag",
+            "type"    => SettingsTypes::$select,
+            "options" => [ [
+            "id"    => "div",
+            "label" => Utils::t( "<div/>" ),
+        ], [
+            "id"    => "i",
+            "label" => Utils::t( "<i/>" ),
+        ], [
+            "id"    => "span",
+            "label" => Utils::t( "<span/>" ),
+        ] ],
+            "default" => "i",
+            "label"   => Utils::t( "Icon Tag" ),
+        ] ],
             "defaults"            => [
             "font_size"   => [
             "number"  => 22,

@@ -90,7 +90,22 @@ class Woo_Category_Slider_Post_Type {
 				'all_items'          => esc_html__( 'Manage Sliders', 'woo-category-slider' ),
 			)
 		);
+		// Base 64 encoded SVG image.
 
+		// $_menu_icon = ( SP_WCS_URL . 'admin/img/wcs-icon.svg' );
+		$_menu_icon = 'data:image/svg+xml;base64,' . base64_encode('<?xml version="1.0" encoding="utf-8"?>
+		<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 144 144" enable-background="new 0 0 144 144" xml:space="preserve">
+		<g> <path fill="#A0A5AA" d="M108.6,60.7c1.8,2.6,5.5,3.1,8.1,1.3s3.1-5.5,1.3-8.1l-27.8-38c-1.8-2.6-5.5-3.1-8.1-1.3s-3.1,5.5-1.3,8.1
+				L108.6,60.7z"/>
+			<path fill="#A0A5AA" d="M27.2,62.1c2.6,1.8,6.3,1.3,8.1-1.3l27.5-38c1.8-2.6,1.3-6.3-1.3-8.1c-2.6-1.8-6.3-1.3-8.1,1.3L25.9,54
+				C24.1,56.5,24.6,60.2,27.2,62.1z"/>
+			<path fill="#A0A5AA" d="M130.1,69.7H13.9c-5.6,0-10.1-4.5-10.1-10.1l0,0c0-5.6,4.5-10.1,10.1-10.1h116.2c5.6,0,10.1,4.5,10.1,10.1
+				l0,0C140.2,65.2,135.7,69.7,130.1,69.7z"/>
+			<path fill="#A0A5AA" d="M14.7,69.7l14.6,54.9c1,3.7,4.1,6,7.8,6h70.1c3.6,0,6.7-2.3,7.8-6l14.3-54.9
+				C129.3,69.7,14.7,69.7,14.7,69.7z M80.7,101.6c0,1.1-0.8,1.9-1.7,1.9H52.9c-0.9,0-1.7-0.9-1.7-1.9v-23c0-1.1,0.8-2,1.7-2H79
+				c0.9,0,1.7,0.9,1.7,2V101.6z M92.9,101.6c0,1.1-0.8,1.9-1.7,1.9h-6.9V76.6h6.9c0.9,0,1.7,0.9,1.7,2V101.6z"/>
+		</g>
+		</svg> ' );
 		// Set the WordPress carousel post type arguments.
 		$args = apply_filters(
 			'woo_category_slider_post_type_args',
@@ -101,7 +116,7 @@ class Woo_Category_Slider_Post_Type {
 				'publicaly_queryable' => false,
 				'show_ui'             => true,
 				'show_in_menu'        => true,
-				'menu_icon'           => 'data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxNy4wLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+DQo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB3aWR0aD0iNjEycHgiIGhlaWdodD0iNzkycHgiIHZpZXdCb3g9IjAgMCA2MTIgNzkyIiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCA2MTIgNzkyIiB4bWw6c3BhY2U9InByZXNlcnZlIj4NCjx0aXRsZT48L3RpdGxlPg0KPGcgaWQ9ImZvbGRlcl9maWx0ZXJfZmlsZV9mb2xkZXJfZG9jdW1lbnRfZm9ybWF0Ij4NCgk8cGF0aCBmaWxsPSIjOUZBNEE5IiBkPSJNNTUxLjA3MSwxOTIuNjA3SDI3NC42NmwtNzUuMjU1LTc1LjQ1OWMtMy44MzgtMy44MDctOS4wMzQtNS45My0xNC40NDEtNS44OThINjIuOTI5DQoJCWMtMzMuNjk5LDAtNjEuMDE4LDI3LjMxOS02MS4wMTgsNjEuMDE4djQ0Ny40NjRjMCwzMy42OTksMjcuMzE5LDYxLjAxOCw2MS4wMTgsNjEuMDE4aDQ4OC4xNDMNCgkJYzMzLjY5OSwwLDYxLjAxOC0yNy4zMTksNjEuMDE4LTYxLjAxOFYyNTMuNjI1QzYxMi4wODksMjE5LjkyNiw1ODQuNzcsMTkyLjYwNyw1NTEuMDcxLDE5Mi42MDd6IE04Mi4yNjgsMjMzLjI4NnY0MDYuNzg2SDYxLjkyOQ0KCQljLTExLjIzMywwLTIwLjMzOS05LjEwNy0yMC4zMzktMjAuMzM5VjE3Mi4yNjhjMC0xMS4yMzMsOS4xMDctMjAuMzM5LDIwLjMzOS0yMC4zMzloMTEzLjY5N2w0MC42NzksNDAuNjc5aC05My4zNTgNCgkJQzEwMC40OCwxOTIuNjA3LDgyLjI2OCwyMTAuODE5LDgyLjI2OCwyMzMuMjg2eiBNNTA5LjM5MywzMTQuNjQzaC0yMC4zMzl2NjEuMDE4Yy0wLjAyNyw0LjU4OC0xLjYwNCw5LjAzMi00LjQ3NCwxMi42MQ0KCQlsLTc2Ljg4Myw5Ni4yMDV2NTMuODk5Yy0wLjAyMyw3LjY1OS00LjM0NiwxNC42NTYtMTEuMTg3LDE4LjEwMmwtODEuMzU3LDQwLjY3OWMtMTAuMDMyLDUuMDU1LTIyLjI2MSwxLjAyMS0yNy4zMTYtOS4wMTENCgkJYy0xLjQyMS0yLjgyLTIuMTY2LTUuOTMzLTIuMTc2LTkuMDkxdi05NC41NzdsLTc2Ljg4Mi05Ni4yMDVjLTIuODcxLTMuNTc5LTQuNDQ4LTguMDIzLTQuNDc1LTEyLjYxMXYtNjEuMDE3aC0yMC4zMzkNCgkJYy0xMS4yMzMsMC0yMC4zMzktOS4xMDctMjAuMzM5LTIwLjMzOXM5LjEwNy0yMC4zMzksMjAuMzM5LTIwLjMzOWgzMjUuNDI5YzExLjIzMywwLDIwLjMzOSw5LjEwNywyMC4zMzksMjAuMzM5DQoJCVM1MjAuNjI1LDMxNC42NDMsNTA5LjM5MywzMTQuNjQzeiIvPg0KPC9nPg0KPHBhdGggZmlsbD0iI0NDMkI1RSIgZD0iTTY3Mi41LDIwMy41Ii8+DQo8L3N2Zz4NCg==',
+				'menu_icon'           => $_menu_icon,
 				'hierarchical'        => false,
 				'query_var'           => false,
 				'supports'            => array( 'title' ),

@@ -56,7 +56,6 @@ class UR_Frontend_Form_Handler {
 		$form_field_data = self::get_form_field_data( $post_content_array );
 
 		self::match_email( $form_field_data, $form_data );
-
 		self::add_hook( $form_field_data, $form_data );
 		$activated_form_list = get_option( 'user_registration_auto_password_activated_forms', array() );
 
@@ -106,18 +105,34 @@ class UR_Frontend_Form_Handler {
 					'username' => isset( self::$valid_form_data['user_login'] ) ? self::$valid_form_data['user_login']->value : '',
 				);
 
-				if ( 'auto_login' === $login_option ) {
-					wp_clear_auth_cookie();
-					wp_set_auth_cookie( $user_id );
-					$success_params['auto_login'] = true;
-				}
+				if ( isset( $_POST['ur_stripe_payment_method'] ) && 'ideal' ===  sanitize_text_field( $_POST['ur_stripe_payment_method'] ) ) {
 
+					if ( 'auto_login' === $login_option ) {
+						$success_params['auto_login'] = true;
+					}
+				} elseif ( '1' === ur_get_single_post_meta( $form_id, 'user_registration_enable_paypal_standard', 'no' ) ) {
+						if ( 'auto_login' === $login_option ) {
+							$success_params['auto_login'] = false;
+						}
+					}
+				 else {
+
+					if ( 'auto_login' === $login_option ) {
+						wp_clear_auth_cookie();
+						wp_set_auth_cookie( $user_id );
+						$success_params['auto_login'] = true;
+					}
+				}
 				$success_params['success_message_positon'] = ur_get_single_post_meta( $form_id, 'user_registration_form_setting_success_message_position', '1' );
 				$success_params['form_login_option'] = $login_option;
 				$success_params                      = apply_filters( 'user_registration_success_params', $success_params, self::$valid_form_data, $form_id, $user_id );
 
-				do_action( 'user_registration_after_register_user_action', self::$valid_form_data, $form_id, $user_id );
-				wp_send_json_success( $success_params );
+				if ( isset( $_POST['ur_stripe_payment_method'] ) && 'ideal' ===  sanitize_text_field( $_POST['ur_stripe_payment_method'] ) ) {
+					wp_send_json_success( $success_params );
+				}else{
+					do_action( 'user_registration_after_register_user_action', self::$valid_form_data, $form_id, $user_id );
+					wp_send_json_success( $success_params );
+				}
 			}
 			wp_send_json_error(
 				array(
@@ -182,7 +197,7 @@ class UR_Frontend_Form_Handler {
 
 			foreach ( $missing_item as $key => $value ) {
 
-				$ignorable_field = array( 'user_pass', 'user_confirm_password', 'user_confirm_email', 'invite_code', 'credit_card' );
+				$ignorable_field = array( 'user_pass', 'user_confirm_password', 'user_confirm_email', 'invite_code', 'stripe_gateway' );
 
 				// Ignoring confirm password and confirm email field, since they are handled separately.
 				if ( ! in_array( $value, $ignorable_field, true ) ) {
@@ -302,6 +317,7 @@ class UR_Frontend_Form_Handler {
 				case 'checkbox':
 				case 'privacy_policy':
 				case 'mailchimp':
+				case 'mailerlite':
 				case 'select':
 				case 'country':
 				case 'file':
@@ -333,8 +349,10 @@ class UR_Frontend_Form_Handler {
 					$field_name = 'user_registration_' . $field_name;
 				}
 
-				if ( isset( $data->extra_params['field_key'] ) && $data->extra_params['field_key'] === 'checkbox' ) {
+				if ( isset( $data->extra_params['field_key'] ) && ( $data->extra_params['field_key'] === 'checkbox' || $data->extra_params['field_key'] === 'learndash_course' ) ) {
 					$data->value = ( json_decode( $data->value ) !== null ) ? json_decode( $data->value ) : $data->value;
+				} else if( isset( $data->extra_params['field_key'] ) && ( $data->extra_params['field_key'] === 'wysiwyg' ) ) {
+					$data->value = sanitize_text_field( htmlentities( $data->value ) );
 				}
 				update_user_meta( $user_id, $field_name, $data->value );
 			}
@@ -411,6 +429,7 @@ class UR_Frontend_Form_Handler {
 		}
 
 		foreach ( $form_data as $index => $single_data ) {
+
 			if ( 'user_confirm_email' == $single_data->field_name ) {
 				$confirm_email_value = $single_data->value;
 				$has_confirm_email   = true;
@@ -488,5 +507,4 @@ class UR_Frontend_Form_Handler {
 		}
 	}
 }
-
 return new UR_Frontend_Form_Handler();

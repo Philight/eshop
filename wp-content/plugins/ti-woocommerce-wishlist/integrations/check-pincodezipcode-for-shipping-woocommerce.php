@@ -13,11 +13,35 @@
  */
 
 // If this file is called directly, abort.
-if ( ! defined( 'ABSPATH' ) ) {
-	die;
+if (!defined('ABSPATH')) {
+	exit;
 }
 
-if ( defined( 'WCZP_PLUGIN_NAME' ) ) {
+// Load integration depends on current settings.
+global $tinvwl_integrations;
+
+$slug = "check-pincodezipcode-for-shipping-woocommerce";
+
+$name = "Check Pincode/Zipcode for Shipping Woocommerce";
+
+$available = defined('WCZP_PLUGIN_NAME');
+
+$tinvwl_integrations = is_array($tinvwl_integrations) ? $tinvwl_integrations : [];
+
+$tinvwl_integrations[$slug] = array(
+	'name' => $name,
+	'available' => $available,
+);
+
+if (!tinv_get_option('integrations', $slug)) {
+	return;
+}
+
+if (!$available) {
+	return;
+}
+
+if (defined('WCZP_PLUGIN_NAME')) {
 
 	/**
 	 * Set description for meta Check Pincode/Zipcode for Shipping Woocommerce
@@ -29,11 +53,12 @@ if ( defined( 'WCZP_PLUGIN_NAME' ) ) {
 	 * @return array
 	 */
 
-	function tinv_wishlist_item_meta_wczp( $item_data, $product_id, $variation_id ) {
+	function tinv_wishlist_item_meta_wczp($item_data, $product_id, $variation_id)
+	{
 
-		foreach ( array_keys( $item_data ) as $key ) {
-			if ( strpos( $key, 'wczp' ) === 0 ) {
-				unset( $item_data[ $key ] );
+		foreach (array_keys($item_data) as $key) {
+			if (strpos($key, 'wczp') === 0) {
+				unset($item_data[$key]);
 			}
 		}
 
@@ -41,5 +66,5 @@ if ( defined( 'WCZP_PLUGIN_NAME' ) ) {
 		return $item_data;
 	}
 
-	add_filter( 'tinvwl_wishlist_item_meta_post', 'tinv_wishlist_item_meta_wczp', 10, 3 );
+	add_filter('tinvwl_wishlist_item_meta_post', 'tinv_wishlist_item_meta_wczp', 10, 3);
 }

@@ -13,19 +13,44 @@
  */
 
 // If this file is called directly, abort.
-if ( ! defined('ABSPATH')) {
-	die;
+if (!defined('ABSPATH')) {
+	exit;
 }
+
+// Load integration depends on current settings.
+global $tinvwl_integrations;
+
+$slug = "flatsome";
+
+$name = "Flatsome Theme";
+
+$available = true;
+
+$tinvwl_integrations = is_array( $tinvwl_integrations ) ? $tinvwl_integrations : [];
+
+$tinvwl_integrations[$slug] = array(
+		'name' => $name,
+		'available' => $available,
+);
+
+if (!tinv_get_option('integrations', $slug)) {
+	return;
+}
+
+if (!$available) {
+	return;
+}
+
 add_action('after_setup_theme', 'tinvwl_flatsome');
 
 function tinvwl_flatsome()
 {
-	if ( ! class_exists('Flatsome_Default')) {
+	if (!class_exists('Flatsome_Default')) {
 		return;
 	}
 
 	// Catalog mode
-	if ( ! function_exists('tinvwl_flatsome_init')) {
+	if (!function_exists('tinvwl_flatsome_init')) {
 
 		/**
 		 * Run hooks after theme init.
@@ -54,7 +79,7 @@ function tinvwl_flatsome()
 		add_action('init', 'tinvwl_flatsome_init');
 	}
 
-	if ( ! function_exists('tinvwl_tinvwl_flatsome_woocommerce_catalog_mode_variable')) {
+	if (!function_exists('tinvwl_tinvwl_flatsome_woocommerce_catalog_mode_variable')) {
 
 		/**
 		 * Output variation hidden field.
@@ -66,7 +91,7 @@ function tinvwl_flatsome()
 		}
 	}
 
-	if ( ! function_exists('tinvwl_flatsome_woocommerce_catalog_mode')) {
+	if (!function_exists('tinvwl_flatsome_woocommerce_catalog_mode')) {
 
 		/**
 		 * Output wishlist button for Flatsome catalog mode
@@ -77,7 +102,7 @@ function tinvwl_flatsome()
 		 */
 		function tinvwl_flatsome_woocommerce_catalog_mode($allow, $product)
 		{
-			if ( ! $product->is_type('variable')) {
+			if (!$product->is_type('variable')) {
 				return true;
 			}
 
@@ -86,7 +111,7 @@ function tinvwl_flatsome()
 	}
 
 	// Header wishlist counter
-	if ( ! function_exists('tinvwl_flatsome_header_wishlist')) {
+	if (!function_exists('tinvwl_flatsome_header_wishlist')) {
 		/**
 		 * Header Wishlist element
 		 *
@@ -103,28 +128,28 @@ function tinvwl_flatsome()
 	}
 	add_filter('flatsome_header_element', 'tinvwl_flatsome_header_wishlist');
 
-	if ( ! function_exists('tinvwl_flatsome_refresh_wishlist_partials')) {
+	if (!function_exists('tinvwl_flatsome_refresh_wishlist_partials')) {
 
 		function tinvwl_flatsome_refresh_wishlist_partials(WP_Customize_Manager $wp_customize)
 		{
 
 			// Abort if selective refresh is not available.
-			if ( ! isset($wp_customize->selective_refresh)) {
+			if (!isset($wp_customize->selective_refresh)) {
 				return;
 			}
 
 
 			$wp_customize->selective_refresh->add_partial('header-wishlist', array(
-					'selector'            => '.header-wishlist-icon',
+					'selector' => '.header-wishlist-icon',
 					'container_inclusive' => true,
-					'settings'            => array(
+					'settings' => array(
 							'wishlist_title',
 							'wishlist_icon',
 							'wishlist_title',
 							'wishlist_icon_style',
 							'header_wishlist_label'
 					),
-					'render_callback'     => tinvwl_flatsome_render_header_wishlist(),
+					'render_callback' => tinvwl_flatsome_render_header_wishlist(),
 			));
 
 		}
@@ -133,79 +158,79 @@ function tinvwl_flatsome()
 
 
 	$transport = 'postMessage';
-	if ( ! isset($wp_customize->selective_refresh)) {
+	if (!isset($wp_customize->selective_refresh)) {
 		$transport = 'refresh';
 	}
 
 	$image_url = get_template_directory_uri() . '/inc/admin/customizer/img/';
 	Flatsome_Option::add_section('header_wishlist', array(
-			'title'    => __('Wishlist', 'flatsome-admin'),
-			'panel'    => 'header',
+			'title' => __('Wishlist', 'ti-woocommerce-wishlist'),
+			'panel' => 'header',
 			'priority' => 110,
 	));
 
 	Flatsome_Option::add_field('option', array(
-			'type'      => 'select',
-			'settings'  => 'wishlist_icon',
-			'label'     => __('Wishlist Icon', 'flatsome-admin'),
+			'type' => 'select',
+			'settings' => 'wishlist_icon',
+			'label' => __('Wishlist Icon', 'ti-woocommerce-wishlist'),
 			'transport' => $transport,
-			'section'   => 'header_wishlist',
-			'default'   => 'heart',
-			'choices'   => array(
-					''             => "None",
-					"heart"        => "Heart (Default)",
-					"heart-o"      => "Heart Outline",
-					"star"         => "Star",
-					"star-o"       => "Star Outline",
-					"menu"         => "List",
+			'section' => 'header_wishlist',
+			'default' => 'heart',
+			'choices' => array(
+					'' => "None",
+					"heart" => "Heart (Default)",
+					"heart-o" => "Heart Outline",
+					"star" => "Star",
+					"star-o" => "Star Outline",
+					"menu" => "List",
 					"pen-alt-fill" => "Pen",
 			),
 	));
 
 
 	Flatsome_Option::add_field('option', array(
-			'type'      => 'radio-image',
-			'settings'  => 'wishlist_icon_style',
-			'label'     => __('Wishlist Icon Style', 'flatsome-admin'),
-			'section'   => 'header_wishlist',
+			'type' => 'radio-image',
+			'settings' => 'wishlist_icon_style',
+			'label' => __('Wishlist Icon Style', 'ti-woocommerce-wishlist'),
+			'section' => 'header_wishlist',
 			'transport' => $transport,
-			'default'   => '',
-			'choices'   => array(
-					''              => $image_url . 'icon-plain.svg',
-					'outline'       => $image_url . 'icon-outline.svg',
-					'fill'          => $image_url . 'icon-fill.svg',
-					'fill-round'    => $image_url . 'icon-fill-round.svg',
+			'default' => '',
+			'choices' => array(
+					'' => $image_url . 'icon-plain.svg',
+					'outline' => $image_url . 'icon-outline.svg',
+					'fill' => $image_url . 'icon-fill.svg',
+					'fill-round' => $image_url . 'icon-fill-round.svg',
 					'outline-round' => $image_url . 'icon-outline-round.svg',
 			),
 	));
 
 
 	Flatsome_Option::add_field('option', array(
-			'type'      => 'checkbox',
-			'settings'  => 'wishlist_title',
-			'label'     => __('Show Wishlist Title', 'flatsome-admin'),
-		//'description' => __( 'This is the control description', 'flatsome-admin' ),
-		//'help'        => __( 'This is some extra help. You can use this to add some additional instructions for users. The main description should go in the "description" of the field, this is only to be used for help tips.', 'flatsome-admin' ),
-			'section'   => 'header_wishlist',
+			'type' => 'checkbox',
+			'settings' => 'wishlist_title',
+			'label' => __('Show Wishlist Title', 'ti-woocommerce-wishlist'),
+		//'description' => __( 'This is the control description', 'ti-woocommerce-wishlist' ),
+		//'help'        => __( 'This is some extra help. You can use this to add some additional instructions for users. The main description should go in the "description" of the field, this is only to be used for help tips.', 'ti-woocommerce-wishlist' ),
+			'section' => 'header_wishlist',
 			'transport' => $transport,
-			'default'   => 1,
+			'default' => 1,
 	));
 
 	Flatsome_Option::add_field('option', array(
-			'type'      => 'text',
-			'settings'  => 'header_wishlist_label',
-			'label'     => __('Custom Title', 'flatsome-admin'),
-			'section'   => 'header_wishlist',
+			'type' => 'text',
+			'settings' => 'header_wishlist_label',
+			'label' => __('Custom Title', 'ti-woocommerce-wishlist'),
+			'section' => 'header_wishlist',
 			'transport' => $transport,
-			'default'   => '',
+			'default' => '',
 	));
 
 
 	function tinvwl_flatsome_render_header_wishlist()
 	{
-		$icon       = get_theme_mod('wishlist_icon', flatsome_defaults('wishlist_icon'));
+		$icon = get_theme_mod('wishlist_icon', flatsome_defaults('wishlist_icon'));
 		$icon_style = get_theme_mod('wishlist_icon_style', flatsome_defaults('wishlist_icon_style'));
-
+		ob_start();
 		?>
 		<li class="header-wishlist-icon">
 			<?php if ($icon_style) { ?>
@@ -217,7 +242,7 @@ function tinvwl_flatsome()
 						  <?php if (get_theme_mod('header_wishlist_label', flatsome_defaults('header_wishlist_label'))) {
 							  echo get_theme_mod('header_wishlist_label', flatsome_defaults('header_wishlist_label'));
 						  } else {
-							  _e('Wishlist', 'woocommerce');
+							  _e('Wishlist', 'ti-woocommerce-wishlist');
 						  } ?>
 						</span>
 					<?php } ?>
@@ -229,6 +254,7 @@ function tinvwl_flatsome()
 				</a>
 				<?php if ($icon_style) { ?> </div> <?php } ?>
 		</li> <?php
+		return ob_get_clean();
 	}
 
 	add_action('flatsome_header_elements', 'tinvwl_flatsome_hook_header_element');
@@ -236,26 +262,26 @@ function tinvwl_flatsome()
 	function tinvwl_flatsome_hook_header_element($value)
 	{
 		if ('wishlist' === $value) {
-			tinvwl_flatsome_render_header_wishlist();
+			echo tinvwl_flatsome_render_header_wishlist();
 		}
 
 	}
 
 	// Add to wishlist button
-	if ( ! function_exists('tinvwl_flatsome_product_wishlist_button')) {
+	if (!function_exists('tinvwl_flatsome_product_wishlist_button')) {
 		/**
 		 * Add wishlist Button to Product Image
 		 */
 		function tinvwl_flatsome_product_wishlist_button()
 		{
 			$icon = get_theme_mod('wishlist_icon', 'heart');
-			if ( ! $icon) {
+			if (!$icon) {
 				$icon = 'heart';
 			}
 			?>
 			<div class="wishlist-icon">
 				<button class="wishlist-button button is-outline circle icon"
-						aria-label="<?php echo __('Wishlist', 'flatsome'); ?>">
+						aria-label="<?php echo __('Wishlist', 'ti-woocommerce-wishlist'); ?>">
 					<?php echo get_flatsome_icon('icon-' . $icon); ?>
 				</button>
 				<div class="wishlist-popup dark">
@@ -266,7 +292,9 @@ function tinvwl_flatsome()
 		}
 	}
 	add_action('flatsome_product_image_tools_top', 'tinvwl_flatsome_product_wishlist_button', 2);
-	add_action('flatsome_product_box_tools_top', 'tinvwl_flatsome_product_wishlist_button', 2);
+	if (tinv_get_option('add_to_wishlist_catalog', 'show_in_loop')) {
+		add_action('flatsome_product_box_tools_top', 'tinvwl_flatsome_product_wishlist_button', 2);
+	}
 
 
 	function tinv_add_to_wishlist_flatsome()
@@ -280,7 +308,7 @@ function tinvwl_flatsome()
 						});
 					});
 
-					jQuery('body').on('tinvwl_wishlist_mark_products', function(e, data){
+					jQuery('body').on('tinvwl_wishlist_mark_products tinvwl_modal_closed', function(e, data){
 						jQuery('.wishlist-button').removeClass('wishlist-added loading');
 					});
 

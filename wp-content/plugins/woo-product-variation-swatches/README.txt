@@ -2,9 +2,9 @@
 Contributors: techlabpro1
 Tags: woocommerce variation swatches, woocommerce variation, woocommerce, variation swatches, woocommerce attributes, variation product swatches, variable product attributes, product attributes, product color, product size, color variation swatch, image variation swatch, printful color swatches
 Requires at least: 4.8
-Tested up to: 5.5
+Tested up to: 5.7
 Requires PHP: 5.6
-Stable tag: 1.1.55
+Stable tag: 1.1.55.2
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -93,6 +93,12 @@ Yes, it is.
 
 
 == Changelog ==
+
+= 1.1.55.2 =
+* Add WordPress 5.7 Support
+
+= 1.1.55.1 =
+* Add WordPress 5.6 Support
 
 = 1.1.55 =
 * Compatible with Wordpress 5.5

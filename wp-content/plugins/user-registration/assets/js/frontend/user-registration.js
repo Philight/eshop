@@ -3,327 +3,6 @@
 /* global  grecaptcha */
 (function ($) {
 	var user_registration_form_init = function () {
-		var user_registration_class_selector;
-
-		// Check if the ajax submission on edit profile is enabled.
-		if (
-			"yes" === user_registration_params.ajax_submission_on_edit_profile
-		) {
-			user_registration_class_selector = $(
-				".ur-frontend-form form.register, .ur-frontend-form form.edit-password, .ur-frontend-form form.edit-profile"
-			);
-		} else {
-			user_registration_class_selector = $(
-				".ur-frontend-form form.register, .ur-frontend-form form.edit-password"
-			);
-		}
-
-		var user_registration = {
-			$user_registration: user_registration_class_selector,
-			init: function () {
-				this.load_validation();
-				this.init_inputMask();
-				this.init_tiptip();
-
-				// Inline validation
-				this.$user_registration.on(
-					"input validate change",
-					".input-text, select, input:checkbox input:radio",
-					this.validate_field
-				);
-			},
-			init_inputMask: function () {
-				if (typeof $.fn.inputmask !== "undefined") {
-					$(".ur-masked-input").inputmask();
-				}
-			},
-			init_tiptip: function () {
-				if (typeof tipTip !== "undefined") {
-					var tiptip_args = {
-						attribute: "title",
-						fadeIn: 50,
-						fadeOut: 50,
-						delay: 200,
-					};
-					$(".user-registration-help-tip").tipTip(tiptip_args);
-				}
-			},
-			load_validation: function () {
-				if (typeof $.fn.validate === "undefined") {
-					return false;
-				}
-
-				// Validate email addresses.
-				$.validator.methods.email = function (value, element) {
-					/* https://stackoverflow.com/questions/2855865/jquery-validate-e-mail-address-regex */
-					var pattern = new RegExp(
-						/^((([a-z]|\d|[!#\$%&'\*\+\-\/=\?\^_`{\|}~]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])+(\.([a-z]|\d|[!#\$%&'\*\+\-\/=\?\^_`{\|}~]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])+)*)|((\x22)((((\x20|\x09)*(\x0d\x0a))?(\x20|\x09)+)?(([\x01-\x08\x0b\x0c\x0e-\x1f\x7f]|\x21|[\x23-\x5b]|[\x5d-\x7e]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(\\([\x01-\x09\x0b\x0c\x0d-\x7f]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]))))*(((\x20|\x09)*(\x0d\x0a))?(\x20|\x09)+)?(\x22)))@((([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))\.)+(([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))\.?$/i
-					);
-					return this.optional(element) || pattern.test(value);
-				};
-
-				this.$user_registration.each(function () {
-					var $this = $(this);
-					var rules = {};
-					var messages = {};
-
-					if ($this.find("#user_confirm_email").length) {
-						/**
-						 * For real time email matching
-						 */
-						var form_id = $this
-							.closest(".ur-frontend-form")
-							.attr("id");
-
-						rules.user_confirm_email = {
-							equalTo: "#" + form_id + " #user_email",
-						};
-						messages.user_confirm_email =
-							user_registration_params.message_confirm_email_fields;
-					}
-
-					if ($this.hasClass("edit-password")) {
-						/**
-						 * Password matching for `Change Password` form
-						 */
-						rules.password_2 = {
-							equalTo: "#password_1",
-						};
-						messages.password_2 =
-							user_registration_params.message_confirm_password_fields;
-					} else if (
-						$this.hasClass("register") &&
-						$this.find("#user_confirm_password").length
-					) {
-						/**
-						 * Password matching for registration form
-						 */
-						var form_id = $this
-							.closest(".ur-frontend-form")
-							.attr("id");
-
-						rules.user_confirm_password = {
-							equalTo: "#" + form_id + " #user_pass",
-						};
-						messages.user_confirm_password =
-							user_registration_params.message_confirm_password_fields;
-					}
-
-					// Override default jquery validator messages with our plugin's validation messages.
-					$.validator.messages.required =
-						user_registration_params.message_required_fields;
-					$.validator.messages.url =
-						user_registration_params.message_url_fields;
-					$.validator.messages.email =
-						user_registration_params.message_email_fields;
-					$.validator.messages.number =
-						user_registration_params.message_number_fields;
-					$.validator.messages.confirmpassword =
-						user_registration_params.message_confirm_password_fields;
-					$.validator.messages.max = function (params, element) {
-						return user_registration_params.message_confirm_number_field_max.replace(
-							"%qty%",
-							element.max
-						);
-					};
-					$.validator.messages.min = function (params, element) {
-						return user_registration_params.message_confirm_number_field_min.replace(
-							"%qty%",
-							element.min
-						);
-					};
-					$.validator.messages.step = function (params, element) {
-						return user_registration_params.message_confirm_number_field_step.replace(
-							"%qty%",
-							element.step
-						);
-					};
-
-					$this.validate({
-						errorClass: "user-registration-error",
-						validClass: "user-registration-valid",
-						rules: rules,
-						messages: messages,
-						focusInvalid: false,
-						invalidHandler: function (form, validator) {
-							if (!validator.numberOfInvalids()) return;
-
-							// Scroll to first error message on submit..
-							$(window).scrollTop(
-								$(validator.errorList[0].element).offset().top
-							);
-						},
-						errorPlacement: function (error, element) {
-							if (element.is("#password_2")) {
-								element.parent().after(error);
-							} else if (
-								"radio" === element.attr("type") ||
-								"checkbox" === element.attr("type") ||
-								"password" === element.attr("type")
-							) {
-								element
-									.parent()
-									.parent()
-									.parent()
-									.append(error);
-							} else if (
-								element.is("select") &&
-								element
-									.attr("class")
-									.match(/date-month|date-day|date-year/)
-							) {
-								if (
-									element
-										.parent()
-										.find(
-											"label.user-registration-error:visible"
-										).length === 0
-								) {
-									element
-										.parent()
-										.find("select:last")
-										.after(error);
-								}
-							} else if (
-								element.hasClass("ur-smart-phone-field")
-							) {
-								var wrapper = element.closest("p.form-row");
-								wrapper
-									.find("#" + element.data("id") + "-error")
-									.remove();
-								wrapper.append(error);
-							} else {
-								if (
-									element.hasClass("urfu-file-input") ||
-									element.closest(".field-multi_select2")
-										.length
-								) {
-									error.insertAfter(
-										element.parent().parent()
-									);
-								} else {
-									error.insertAfter(element);
-								}
-							}
-						},
-						highlight: function (element, errorClass, validClass) {
-							var $element = $(element),
-								$parent = $element.closest(".form-row"),
-								inputName = $element.attr("name");
-						},
-						unhighlight: function (
-							element,
-							errorClass,
-							validClass
-						) {
-							var $element = $(element),
-								$parent = $element.closest(".form-row"),
-								inputName = $element.attr("name");
-
-							if (
-								$element.attr("type") === "radio" ||
-								$element.attr("type") === "checkbox"
-							) {
-								$parent
-									.find("input[name='" + inputName + "']")
-									.addClass(validClass)
-									.removeClass(errorClass);
-							} else {
-								$element
-									.addClass(validClass)
-									.removeClass(errorClass);
-							}
-
-							$parent.removeClass("user-registration-has-error");
-						},
-						submitHandler: function (form) {
-							// Return `true` for `Change Password` form to allow submission
-							if ($(form).hasClass("edit-password")) {
-								return true;
-							}
-
-							return false;
-						},
-					});
-				});
-			},
-			validate_field: function (e) {
-				// Validator messages.
-				$.extend($.validator.messages, {
-					required: user_registration_params.message_required_fields,
-					url: user_registration_params.message_url_fields,
-					email: user_registration_params.message_email_fields,
-					number: user_registration_params.message_number_fields,
-					confirmpassword:
-						user_registration_params.message_confirm_password_fields,
-				});
-
-				var $this = $(this),
-					$parent = $this.closest(".form-row"),
-					validated = true,
-					validate_required = $parent.is(".validate-required"),
-					validate_email = $parent.is(".validate-email"),
-					event_type = e.type;
-
-				if ("input" === event_type) {
-					$parent.removeClass(
-						"user-registration-invalid user-registration-invalid-required-field user-registration-invalid-email user-registration-validated"
-					);
-				}
-
-				if ("validate" === event_type || "change" === event_type) {
-					if (validate_required) {
-						if (
-							"checkbox" === $this.attr("type") &&
-							!$this.is(":checked")
-						) {
-							$parent
-								.removeClass("user-registration-validated")
-								.addClass(
-									"user-registration-invalid user-registration-invalid-required-field"
-								);
-							validated = false;
-						} else if ($this.val() === "") {
-							$parent
-								.removeClass("user-registration-validated")
-								.addClass(
-									"user-registration-invalid user-registration-invalid-required-field"
-								);
-							validated = false;
-						}
-					}
-
-					if (validate_email) {
-						if ($this.val()) {
-							/* https://stackoverflow.com/questions/2855865/jquery-validate-e-mail-address-regex */
-							var pattern = new RegExp(
-								/^((([a-z]|\d|[!#\$%&'\*\+\-\/=\?\^_`{\|}~]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])+(\.([a-z]|\d|[!#\$%&'\*\+\-\/=\?\^_`{\|}~]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])+)*)|((\x22)((((\x20|\x09)*(\x0d\x0a))?(\x20|\x09)+)?(([\x01-\x08\x0b\x0c\x0e-\x1f\x7f]|\x21|[\x23-\x5b]|[\x5d-\x7e]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(\\([\x01-\x09\x0b\x0c\x0d-\x7f]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]))))*(((\x20|\x09)*(\x0d\x0a))?(\x20|\x09)+)?(\x22)))@((([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))\.)+(([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))\.?$/i
-							);
-
-							if (!pattern.test($this.val())) {
-								$parent
-									.removeClass("user-registration-validated")
-									.addClass(
-										"user-registration-invalid user-registration-invalid-email"
-									);
-								validated = false;
-							}
-						}
-					}
-
-					if (validated) {
-						$parent
-							.removeClass(
-								"user-registration-invalid user-registration-invalid-required-field user-registration-invalid-email"
-							)
-							.addClass("user-registration-validated");
-					}
-				}
-			},
-		};
-
-		user_registration.init();
-
 		var ursL10n = user_registration_params.ursL10n;
 
 		$.fn.ur_form_submission = function () {
@@ -357,12 +36,14 @@
 								);
 
 								if (single_field.length < 2) {
-									var single_data = this_instance.get_fieldwise_data(
-										$(this)
-									);
-									var invite_code = document.querySelector(
-										".field-invite_code"
-									);
+									var single_data =
+										this_instance.get_fieldwise_data(
+											$(this)
+										);
+									var invite_code =
+										document.querySelector(
+											".field-invite_code"
+										);
 
 									if (
 										"invite_code" === single_data.field_name
@@ -418,14 +99,16 @@
 											switch (field_type) {
 												case "checkbox":
 												case "radio":
-													this_field_value = this_field.prop(
-														"checked"
-													)
-														? this_field.val()
-														: "";
+													this_field_value =
+														this_field.prop(
+															"checked"
+														)
+															? this_field.val()
+															: "";
 													break;
 												default:
-													this_field_value = this_field.val();
+													this_field_value =
+														this_field.val();
 											}
 											break;
 										case "select":
@@ -442,9 +125,8 @@
 								});
 
 								if (field_type == "checkbox") {
-									var field_value_json = JSON.stringify(
-										field_value
-									);
+									var field_value_json =
+										JSON.stringify(field_value);
 								} else if (field_type == "radio") {
 									var field_value_json = field_value[0];
 								} else {
@@ -453,10 +135,8 @@
 
 								var single_form_field_name =
 									multi_value_field[multi_start];
-								single_form_field_name = single_form_field_name.replace(
-									"[]",
-									""
-								);
+								single_form_field_name =
+									single_form_field_name.replace("[]", "");
 
 								var field_data = {
 									value: field_value_json,
@@ -468,9 +148,7 @@
 								form_data.push(field_data);
 							}
 
-							$(
-								document
-							).trigger(
+							$(document).trigger(
 								"user_registration_frontend_form_data_filter",
 								[form_data]
 							);
@@ -547,9 +225,7 @@
 							default:
 						}
 
-						$(
-							document
-						).trigger(
+						$(document).trigger(
 							"user_registration_frontend_form_data_render",
 							[field, formwise_data]
 						);
@@ -573,17 +249,15 @@
 							field.attr("name") !== ""
 						) {
 							formwise_data.field_name = field.attr("name");
-							formwise_data.field_name = formwise_data.field_name.replace(
-								"[]",
-								""
-							);
+							formwise_data.field_name =
+								formwise_data.field_name.replace("[]", "");
 						} else {
 							formwise_data.field_name = "";
 						}
 						if (
 							$.inArray(
 								formwise_data.field_name,
-								$.trim(required_fields)
+								required_fields.join(",").trim()
 							) >= 0
 						) {
 							available_field.push(formwise_data.field_name);
@@ -596,7 +270,7 @@
 						$submit_node,
 						position
 					) {
-						$submit_node.find(".ur-message").remove();
+						$submit_node.closest(".user-registration").find(".ur-message").remove();
 
 						// Check if the form is edit-profile form.
 						if (
@@ -608,9 +282,14 @@
 								'<div class="user-registration-' + type + '"/>'
 							);
 							wrapper.append(message);
-							wrapper.insertBefore(
-								".user-registration-MyAccount-navigation"
-							);
+							var my_account_selector = $(".user-registration").find(".user-registration-MyAccount-navigation");
+							if ( my_account_selector.length ) {
+								wrapper.insertBefore(
+									".user-registration-MyAccount-navigation"
+								);
+							} else {
+								wrapper.insertBefore(".ur-frontend-form");
+							}
 						} else {
 							var wrapper = $(
 								'<div class="ur-message user-registration-' +
@@ -728,12 +407,9 @@
 									$.extend($.validator.messages, {
 										required:
 											user_registration_params.message_required_fields,
-										url:
-											user_registration_params.message_url_fields,
-										email:
-											user_registration_params.message_email_fields,
-										number:
-											user_registration_params.message_number_fields,
+										url: user_registration_params.message_url_fields,
+										email: user_registration_params.message_email_fields,
+										number: user_registration_params.message_number_fields,
 										confirmpassword:
 											user_registration_params.message_confirm_password_fields,
 									});
@@ -781,7 +457,7 @@
 													.attr("aria-invalid", true);
 												$this
 													.find("#user_pass")
-													.focus();
+													.trigger("focus");
 											}
 
 											return false;
@@ -816,9 +492,8 @@
 									}
 
 									// Remove word added by form filler in file upload field during submission
-									var file_upload = $this.find(
-										".urfu-file-input"
-									);
+									var file_upload =
+										$this.find(".urfu-file-input");
 
 									form.missing_attachment_handler(
 										file_upload
@@ -826,8 +501,9 @@
 
 									var exist_detail = $this
 										.find(".uraf-profile-picture-upload")
-										.find(".user-registration-error")
-										.length;
+										.find(
+											".user-registration-error"
+										).length;
 
 									if (1 === exist_detail) {
 										var profile = $this
@@ -927,8 +603,7 @@
 									}
 
 									var data = {
-										action:
-											"user_registration_user_form_submit",
+										action: "user_registration_user_form_submit",
 										security:
 											user_registration_params.user_registration_form_data_save,
 										form_data: form_data,
@@ -937,9 +612,7 @@
 										ur_frontend_form_nonce: form_nonce,
 									};
 
-									$(
-										document
-									).trigger(
+									$(document).trigger(
 										"user_registration_frontend_before_form_submit",
 										[data, $this]
 									);
@@ -950,7 +623,9 @@
 									) {
 										if (
 											"1" ===
-											ur_google_recaptcha_code.is_captcha_enable
+											$registration_form
+												.find("form.register")
+												.data("captcha-enabled")
 										) {
 											var captchaResponse = $this
 												.find(
@@ -1002,228 +677,250 @@
 										type: "POST",
 										async: true,
 										complete: function (ajax_response) {
-											$this
-												.find(".ur-submit-button")
-												.find("span")
-												.removeClass(
-													"ur-front-spinner"
-												);
-											var redirect_url = $this
-												.find(
-													'input[name="ur-redirect-url"]'
-												)
-												.val();
+											var ajaxFlag = [];
+											ajaxFlag["status"] = false;
+											$(document).trigger(
+												"user_registration_frontend_before_ajax_complete_success_message",
+												[ajax_response, ajaxFlag]
+											);
+											if (!ajaxFlag["status"]) {
+												$this
+													.find(".ur-submit-button")
+													.find("span")
+													.removeClass(
+														"ur-front-spinner"
+													);
+												var redirect_url = $this
+													.find(
+														'input[name="ur-redirect-url"]'
+													)
+													.val();
 
-											var message = $('<ul class=""/>');
-											var type = "error";
+												var message =
+													$('<ul class=""/>');
+												var type = "error";
 
-											try {
-												var response = $.parseJSON(
-													ajax_response.responseText
-												);
-
-												if (
-													typeof response.success !==
-														"undefined" &&
-													response.success === true &&
-													typeof response.data
-														.paypal_redirect !==
-														"undefined"
-												) {
-													window.location =
-														response.data.paypal_redirect;
-												}
-
-												if (
-													typeof response.success !==
-														"undefined" &&
-													response.success === true
-												) {
-													type = "message";
-												}
-
-												if (type === "message") {
-													$this
-														.find(
-															".user-registration-password-hint"
-														)
-														.remove();
-													$this
-														.find(
-															".user-registration-password-strength"
-														)
-														.remove();
+												try {
+													var response = JSON.parse(
+														ajax_response.responseText
+													);
 
 													if (
-														response.data
-															.form_login_option ==
-														"admin_approval"
-													) {
-														message.append(
-															"<li>" +
-																ursL10n.user_under_approval +
-																"</li>"
-														);
-													} else if (
-														response.data
-															.form_login_option ==
-														"email_confirmation"
-													) {
-														message.append(
-															"<li>" +
-																ursL10n.user_email_pending +
-																"</li>"
-														);
-													} else if (
-														response.data
-															.form_login_option ==
-														"payment"
-													) {
-														message.append(
-															"<li>" +
-																response.data
-																	.message +
-																"</li>"
-														);
-													} else {
-														message.append(
-															"<li>" +
-																(typeof response
-																	.data
-																	.message ===
-																	"undefined")
-																? ursL10n.user_successfully_saved
-																: response.data
-																		.message +
-																		"</li>"
-														);
-													}
-
-													if (
-														"undefined" !==
+														typeof response.success !==
+															"undefined" &&
+														response.success ===
+															true &&
 														typeof response.data
-															.auto_password_generation_success_message
+															.paypal_redirect !==
+															"undefined"
 													) {
-														message.append(
-															"<li>" +
-																response.data
-																	.auto_password_generation_success_message +
-																"</li>"
-														);
+														window.location =
+															response.data.paypal_redirect;
 													}
 
-													$this[0].reset();
-													jQuery(
-														"#billing_country"
-													).trigger("change");
-													jQuery(
-														"#shipping_country"
-													).trigger("change");
-
 													if (
-														"undefined" !==
-															typeof redirect_url &&
-														redirect_url !== ""
+														typeof response.success !==
+															"undefined" &&
+														response.success ===
+															true
 													) {
-														window.setTimeout(
-															function () {
-																window.location = redirect_url;
-															},
-															1000
-														);
-													} else {
+														type = "message";
+													}
+
+													if (type === "message") {
+														$this
+															.find(
+																".user-registration-password-hint"
+															)
+															.remove();
+														$this
+															.find(
+																".user-registration-password-strength"
+															)
+															.remove();
+
+														if (
+															response.data
+																.form_login_option ==
+															"admin_approval"
+														) {
+															message.append(
+																"<li>" +
+																	ursL10n.user_under_approval +
+																	"</li>"
+															);
+														} else if (
+															response.data
+																.form_login_option ==
+															"email_confirmation"
+														) {
+															message.append(
+																"<li>" +
+																	ursL10n.user_email_pending +
+																	"</li>"
+															);
+														} else if (
+															response.data
+																.form_login_option ==
+															"payment"
+														) {
+															message.append(
+																"<li>" +
+																	response
+																		.data
+																		.message +
+																	"</li>"
+															);
+														} else {
+															message.append(
+																"<li>" +
+																	(typeof response
+																		.data
+																		.message ===
+																		"undefined")
+																	? ursL10n.user_successfully_saved
+																	: response
+																			.data
+																			.message +
+																			"</li>"
+															);
+														}
+
+														if (
+															"undefined" !==
+															typeof response.data
+																.auto_password_generation_success_message
+														) {
+															message.append(
+																"<li>" +
+																	response
+																		.data
+																		.auto_password_generation_success_message +
+																	"</li>"
+															);
+														}
+
+														$this[0].reset();
+														jQuery(
+															"#billing_country"
+														).trigger("change");
+														jQuery(
+															"#shipping_country"
+														).trigger("change");
+
+														if (
+															"undefined" !==
+																typeof redirect_url &&
+															redirect_url !== ""
+														) {
+															window.setTimeout(
+																function () {
+																	window.location =
+																		redirect_url;
+																},
+																1000
+															);
+														} else {
+															if (
+																typeof response
+																	.data
+																	.auto_login !==
+																	"undefined" &&
+																response.data
+																	.auto_login
+															) {
+																location.reload();
+															}
+														}
+													} else if (
+														type === "error"
+													) {
 														if (
 															typeof response.data
-																.auto_login !==
-																"undefined" &&
-															response.data
-																.auto_login
+																.message ===
+															"object"
 														) {
-															location.reload();
+															$.each(
+																response.data
+																	.message,
+																function (
+																	index,
+																	value
+																) {
+																	message.append(
+																		"<li>" +
+																			value +
+																			"</li>"
+																	);
+																}
+															);
+														} else {
+															message.append(
+																"<li>" +
+																	response
+																		.data
+																		.message +
+																	"</li>"
+															);
 														}
 													}
-												} else if (type === "error") {
-													if (
-														typeof response.data
-															.message ===
-														"object"
-													) {
-														$.each(
-															response.data
-																.message,
-															function (
-																index,
-																value
-															) {
-																message.append(
-																	"<li>" +
-																		value +
-																		"</li>"
-																);
-															}
-														);
-													} else {
-														message.append(
-															"<li>" +
-																response.data
-																	.message +
-																"</li>"
-														);
-													}
+												} catch (e) {
+													message.append(
+														"<li>" +
+															e.message +
+															"</li>"
+													);
 												}
-											} catch (e) {
-												message.append(
-													"<li>" + e.message + "</li>"
-												);
-											}
 
-											var success_message_position = $.parseJSON(
-												ajax_response.responseText
-											).data.success_message_positon;
+												var success_message_position =
+													JSON.parse(
+														ajax_response.responseText
+													).data
+														.success_message_positon;
 
-											form.show_message(
-												message,
-												type,
-												$this,
-												success_message_position
-											);
-
-											// Check the position set by the admin and scroll to the message postion accordingly.
-											if (
-												"1" === success_message_position
-											) {
-												// Scroll to the bottom on ajax submission complete.
-												$(window).scrollTop(
-													$this
-														.find(
-															".ur-button-container"
-														)
-														.offset().top
-												);
-											} else {
-												// Scroll to the top on ajax submission complete.
-												$(window).scrollTop(
-													$this
-														.closest(
-															".ur-frontend-form"
-														)
-														.offset().top
-												);
-											}
-
-											$(
-												document
-											).trigger(
-												"user_registration_frontend_after_ajax_complete",
-												[
-													ajax_response.responseText,
+												form.show_message(
+													message,
 													type,
 													$this,
-												]
-											);
-											$this
-												.find(".ur-submit-button")
-												.prop("disabled", false);
+													success_message_position
+												);
+
+												// Check the position set by the admin and scroll to the message postion accordingly.
+												if (
+													"1" ===
+													success_message_position
+												) {
+													// Scroll to the bottom on ajax submission complete.
+													$(window).scrollTop(
+														$this
+															.find(
+																".ur-button-container"
+															)
+															.offset().top
+													);
+												} else {
+													// Scroll to the top on ajax submission complete.
+													$(window).scrollTop(
+														$this
+															.closest(
+																".ur-frontend-form"
+															)
+															.offset().top
+													);
+												}
+
+												$(document).trigger(
+													"user_registration_frontend_after_ajax_complete",
+													[
+														ajax_response.responseText,
+														type,
+														$this,
+													]
+												);
+												$this
+													.find(".ur-submit-button")
+													.prop("disabled", false);
+											}
 										},
 									});
 								});
@@ -1244,12 +941,9 @@
 								$.extend($.validator.messages, {
 									required:
 										user_registration_params.message_required_fields,
-									url:
-										user_registration_params.message_url_fields,
-									email:
-										user_registration_params.message_email_fields,
-									number:
-										user_registration_params.message_number_fields,
+									url: user_registration_params.message_url_fields,
+									email: user_registration_params.message_email_fields,
+									number: user_registration_params.message_number_fields,
 								});
 
 								var $el = $this.find(".ur-smart-phone-field");
@@ -1324,9 +1018,8 @@
 									.prop("disabled", true);
 
 								// Remove word added by form filler in file upload field during submission
-								var file_upload = $this.find(
-									".urfu-file-input"
-								);
+								var file_upload =
+									$this.find(".urfu-file-input");
 
 								form.missing_attachment_handler(file_upload);
 
@@ -1337,17 +1030,14 @@
 									form_data = form.get_form_data();
 
 									// Handle profile picture
-									var profile_picture_url = $(
-										"#profile_pic_url"
-									).val();
+									var profile_picture_url =
+										$("#profile_pic_url").val();
 
-									if (profile_picture_url) {
-										form_data.push({
-											value: profile_picture_url,
-											field_name:
-												"user_registration_profile_pic_url",
-										});
-									}
+									form_data.push({
+										value: profile_picture_url,
+										field_name:
+											"user_registration_profile_pic_url",
+									});
 
 									form_data = JSON.stringify(form_data);
 								} catch (ex) {
@@ -1355,8 +1045,7 @@
 								}
 
 								var data = {
-									action:
-										"user_registration_update_profile_details",
+									action: "user_registration_update_profile_details",
 									security:
 										user_registration_params.user_registration_profile_details_save,
 									form_data: form_data,
@@ -1389,7 +1078,7 @@
 										var type = "error";
 
 										try {
-											var response = $.parseJSON(
+											var response = JSON.parse(
 												ajax_response.responseText
 											);
 
@@ -1444,7 +1133,7 @@
 										// Scroll yo the top on ajax submission complete.
 										$(window).scrollTop(
 											$(
-												".user-registration-MyAccount-navigation"
+												".user-registration"
 											).position()
 										);
 									},
@@ -1565,9 +1254,11 @@
 								typeof wp.passwordStrength
 									.userInputDisallowedList
 							) {
-								disallowedListArray = wp.passwordStrength.userInputDisallowedList();
+								disallowedListArray =
+									wp.passwordStrength.userInputDisallowedList();
 							} else {
-								disallowedListArray = wp.passwordStrength.userInputBlacklist();
+								disallowedListArray =
+									wp.passwordStrength.userInputBlacklist();
 							}
 
 							disallowedListArray.push(
@@ -1670,41 +1361,48 @@
 
 var google_recaptcha_user_registration;
 var onloadURCallback = function () {
-	jQuery(".ur-frontend-form").each(function (i) {
-		$this = jQuery(this);
-		var form_id = $this.attr("id");
-		var node_recaptcha_register = $this.find(
-			"form.register #ur-recaptcha-node #node_recaptcha_register"
-		).length;
+	jQuery(".ur-frontend-form")
+		.find("form.register")
+		.each(function (i) {
+			$this = jQuery(this);
+			var form_id = $this.closest(".ur-frontend-form").attr("id");
 
-		if (node_recaptcha_register !== 0) {
-			$this
-				.find("form.register #ur-recaptcha-node .g-recaptcha")
-				.attr("id", "node_recaptcha_register_" + form_id);
-			google_recaptcha_user_registration = grecaptcha.render(
-				"node_recaptcha_register_" + form_id,
-				{
-					sitekey: ur_google_recaptcha_code.site_key,
-					theme: "light",
-					style:
-						"transform:scale(0.77);-webkit-transform:scale(0.77);transform-origin:0 0;-webkit-transform-origin:0 0;",
-				}
-			);
-		}
+			var node_recaptcha_register = $this.find(
+				"#ur-recaptcha-node #node_recaptcha_register"
+			).length;
 
-		var node_recaptcha_login = $this.find(
-			"form.login .ur-form-row .ur-form-grid #ur-recaptcha-node #node_recaptcha_login"
-		).length;
+			if (node_recaptcha_register !== 0) {
+				$this
+					.find("#ur-recaptcha-node .g-recaptcha")
+					.attr("id", "node_recaptcha_register_" + form_id);
+				google_recaptcha_user_registration = grecaptcha.render(
+					"node_recaptcha_register_" + form_id,
+					{
+						sitekey: ur_google_recaptcha_code.site_key,
+						theme: "light",
+						style: "transform:scale(0.77);-webkit-transform:scale(0.77);transform-origin:0 0;-webkit-transform-origin:0 0;",
+					}
+				);
+			}
+		});
 
-		if (node_recaptcha_login !== 0) {
-			grecaptcha.render("node_recaptcha_login", {
-				sitekey: ur_google_recaptcha_code.site_key,
-				theme: "light",
-				style:
-					"transform:scale(0.77);-webkit-transform:scale(0.77);transform-origin:0 0;-webkit-transform-origin:0 0;",
-			});
-		}
-	});
+	jQuery(".ur-frontend-form")
+		.find("form.login")
+		.each(function (i) {
+			$this = jQuery(this);
+			var ur_recaptcha_node = $this.find("#ur-recaptcha-node");
+
+			if (ur_recaptcha_node.length !== 0) {
+				grecaptcha.render(
+					ur_recaptcha_node.find(".g-recaptcha").attr("id"),
+					{
+						sitekey: ur_google_recaptcha_code.site_key,
+						theme: "light",
+						style: "transform:scale(0.77);-webkit-transform:scale(0.77);transform-origin:0 0;-webkit-transform-origin:0 0;",
+					}
+				);
+			}
+		});
 };
 
 function request_recaptcha_token() {

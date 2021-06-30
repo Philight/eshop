@@ -7,15 +7,15 @@
  * @package   Iks Menu
  * @author    IksStudio
  * @license   GPL-3.0
- * @link      http://iks-menu.ru
+ * @link      https://iks-menu.ru
  * @copyright 2019 IksStudio
  *
  * @wordpress-plugin
  * Plugin Name:       Iks Menu
  * Description:       Super Customizable Accordion Menu. Was made with attention to details.
- * Version:           1.8.8
+ * Version:           1.9.0
  * Author:            IksStudio
- * Author URI:        http://iks-menu.ru
+ * Author URI:        https://iks-menu.ru
  * Text Domain:       iksm
  * License:           GPL-3.0
  * License URI:       https://www.gnu.org/licenses/gpl-3.0.txt
@@ -103,8 +103,8 @@ if ( function_exists( 'iks_menu_fs' ) ) {
             'iksm',
             '4.4',
             [
-            'prod' => 'http://iks-menu.ru/skins/',
-            'dev'  => 'http://iks-menu.ru/skins-dev/',
+            'prod' => 'https://iks-menu.ru/skins/',
+            'dev'  => 'https://iks-menu.ru/skins-dev/',
         ],
             [ "menu" ],
             new SettingsStore()

@@ -298,7 +298,7 @@ jQuery(document).on("click", ".berocket_aapf_widget_content_show", function(e) {
             <br />
             <label>
                 <input class="braapf_show_last_to_infinity" type="checkbox" name="<?php echo $post_name.'[show_last_to_infinity]'; ?>" <?php if ( ! empty($instance['show_last_to_infinity']) ) echo 'checked'; ?> value="1" />
-                <?php _e('Replace the last range value with an infinity symbol', 'BeRocket_AJAX_domain') ?>
+                <?php _e('Replace the last range value with the infinity symbol', 'BeRocket_AJAX_domain') ?>
             </label>
             <br />
             <label class="braapf_to_infinity_text"<?php if ( empty($instance['show_last_to_infinity']) ) echo 'style="display:none;"'; ?>>

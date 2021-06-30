@@ -267,6 +267,11 @@ if ( ! class_exists( 'UR_Admin_Menus', false ) ) :
 							'label' => 'Single Item',
 							'icon'  => 'ur-icon ur-icon-file-dollar',
 						),
+						array(
+							'id'    => 'user_registration_stripe_gateway',
+							'label' => 'Stripe Gateway',
+							'icon'  => 'ur-icon ur-icon-credit-card',
+						),
 					),
 				),
 			);
@@ -562,7 +567,7 @@ if ( ! class_exists( 'UR_Admin_Menus', false ) ) :
 		 * Add menu items.
 		 */
 		public function admin_menu() {
-			$registration_page = add_menu_page( __( 'User Registration', 'user-registration' ), __( 'User Registration', 'user-registration' ), 'manage_user_registration', 'user-registration', array( $this, 'registration_page' ), $this->get_icon_svg(), '55.8' );
+			$registration_page = add_menu_page( __( 'User Registration' ), __( 'User Registration' ), 'manage_user_registration', 'user-registration', array( $this, 'registration_page' ), $this->get_icon_svg(), '55.8' );
 
 			add_action( 'load-' . $registration_page, array( $this, 'registration_page_init' ) );
 		}
@@ -675,7 +680,7 @@ if ( ! class_exists( 'UR_Admin_Menus', false ) ) :
 			$registration_table_list->prepare_items();
 			?>
 			<div class="wrap">
-				<h1 class="wp-heading-inline"><?php esc_html_e( 'User Registration', 'user-registration' ); ?></h1>
+				<h1 class="wp-heading-inline"><?php esc_html_e( 'User Registration' ); ?></h1>
 				<a href="<?php echo esc_url( admin_url( 'admin.php?page=add-new-registration' ) ); ?>" class="page-title-action"><?php esc_html_e( 'Add New', 'user-registration' ); ?></a>
 				<hr class="wp-header-end">
 				<form id="registration-list" method="post">
@@ -926,6 +931,9 @@ if ( ! class_exists( 'UR_Admin_Menus', false ) ) :
 					foreach ( $grid_lists as $single_field ) {
 
 						if ( isset( $single_field->field_key ) ) {
+							// Hook for fields backward compatibility.
+							apply_filters( 'user_registration_form_builder_field_before', $single_field );
+
 							$admin_field = $this->get_admin_field( $single_field );
 							echo '<div class="ur-selected-item">';
 							echo '<div class="ur-action-buttons"><span title="Clone" class="dashicons dashicons-admin-page ur-clone"></span><span title="Trash" class="dashicons dashicons-trash ur-trash"></span></div>';

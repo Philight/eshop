@@ -47,6 +47,7 @@ class BeRocket_aapf_filtering_conditions {
         $this->post_name = $this->AAPF_single_filter->post_name;
         add_action('ajax_filters_framework_construct', array($this, 'init_conditions'));
         add_filter('BeRocket_AAPF_widget_old_display_conditions', array($this, 'check_conditions'), 10, 4);
+        add_filter('BeRocket_AAPF_widget_additional_classes', array($this, 'additional_class'), 10, 3);
         $this->AAPF_single_filter->add_meta_box('filtering_conditions', __( 'Nested Filters (BETA)', 'BeRocket_AJAX_domain' ), array($this, 'conditions'));
     }
     public function init_conditions() {
@@ -63,6 +64,12 @@ class BeRocket_aapf_filtering_conditions {
         $options = $this->AAPF_single_filter->get_option( $instance['filter_id'] );
         $show = empty($options['data2']) || $this->conditions->check($options['data2'], $this->hook_name);
         return $show;
+    }
+    function additional_class($additional_class, $filter_id, $filter_data) {
+        if( ! empty($filter_data['data2']) ) {
+            $additional_class[] = 'bapf_partload';
+        }
+        return $additional_class;
     }
 }
 new BeRocket_aapf_filtering_conditions();

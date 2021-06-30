@@ -2791,26 +2791,20 @@
 
       $this.on({
         mouseenter: function () {
-
           $tooltip = $('<div class="spf-tooltip"></div>').html($this.find('.spf-help-text').html()).appendTo('body');
-          offset_left = (SP_WCS.vars.is_rtl) ? ($this.offset().left + 24) : ($this.offset().left - $tooltip.outerWidth());
+          offset_left = (SP_WCS.vars.is_rtl) ? ($this.offset().left - $tooltip.outerWidth()) : ($this.offset().left + 24);
 
           $tooltip.css({
             top: $this.offset().top - (($tooltip.outerHeight() / 2) - 14),
             left: offset_left,
           });
-
         },
         mouseleave: function () {
-
           if ($tooltip !== undefined) {
             $tooltip.remove();
           }
-
         }
-
       });
-
     });
   };
 
@@ -3057,6 +3051,62 @@
     $('.widget').spf_widgets();
 
   });
-
-
+  $("select option:contains((Pro))").attr('disabled', true).css('opacity', '0.8');
+  $("label:contains((Pro))").css({ 'pointer-events': 'none' }).css('opacity', '0.8');
+  $('#spf-section-sp_wcsp_shortcode_banner_options_1 .wcsp-scode-wrap .wcsp-scode-content .selectable').click(function (e) {
+    e.preventDefault();
+    wcsp_copyToClipboard($(this));
+    wcsp_SelectText($(this));
+    $(this).focus().select();
+    jQuery(".wcsp-after-copy-text").animate({
+      opacity: 1,
+      top: 36
+    }, 300);
+    setTimeout(function () {
+      jQuery(".wcsp-after-copy-text").animate({
+        opacity: 0,
+      }, 200);
+      jQuery(".wcsp-after-copy-text").animate({
+        top: 0
+      }, 0);
+    }, 2000);
+  });
+  // $("._wcsp_output input[type='text']").click(function () {
+  //   $(this).select();
+  // });
+  $('.post-type-sp_wcslider .column-shortcode input').click(function (e) {
+    e.preventDefault();
+    /* Get the text field */
+    var copyText = $(this);
+    /* Select the text field */
+    copyText.select();
+    document.execCommand("copy");
+    jQuery(".wcsp-after-copy-text").animate({
+      opacity: 1,
+      top: 36
+    }, 300);
+    setTimeout(function () {
+      jQuery(".wcsp-after-copy-text").animate({
+        opacity: 0,
+      }, 200);
+      jQuery(".wcsp-after-copy-text").animate({
+        top: 0
+      }, 0);
+    }, 2000);
+  });
+  function wcsp_copyToClipboard(element) {
+    var $temp = $("<input>");
+    $("body").append($temp);
+    $temp.val($(element).text()).select();
+    document.execCommand("copy");
+    $temp.remove();
+  }
+  function wcsp_SelectText(element) {
+    var r = document.createRange();
+    var w = element.get(0);
+    r.selectNodeContents(w);
+    var sel = window.getSelection();
+    sel.removeAllRanges();
+    sel.addRange(r);
+  }
 })(jQuery, window, document);

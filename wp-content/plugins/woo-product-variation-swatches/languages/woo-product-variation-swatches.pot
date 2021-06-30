@@ -1,4 +1,4 @@
-# Copyright (C) 2020 WooCommerce Variation Swatches
+# Copyright (C) 2021 WooCommerce Variation Swatches
 # This file is distributed under the same license as the WooCommerce Variation Swatches package.
 msgid ""
 msgstr ""
@@ -57,40 +57,40 @@ msgstr ""
 msgid "WooCommerce Variation Swatches"
 msgstr ""
 
-#: ../app/Controllers/ScriptLoader.php:72, ../app/Helpers/Options.php:41
-msgid "Choose an Image"
-msgstr ""
-
-#: ../app/Controllers/ScriptLoader.php:73
-msgid "Use Image"
-msgstr ""
-
-#: ../app/Controllers/ScriptLoader.php:74
-msgid "Add Media"
-msgstr ""
-
-#: ../app/Controllers/ScriptLoader.php:80
+#: ../app/Controllers/ScriptLoader.php:66
 msgid "Clear"
 msgstr ""
 
-#: ../app/Controllers/ScriptLoader.php:81
+#: ../app/Controllers/ScriptLoader.php:67
 msgid "Default"
 msgstr ""
 
-#: ../app/Controllers/ScriptLoader.php:82
+#: ../app/Controllers/ScriptLoader.php:68
 msgid "Select Color"
 msgstr ""
 
-#: ../app/Controllers/ScriptLoader.php:83
+#: ../app/Controllers/ScriptLoader.php:69
 msgid "Clear color"
 msgstr ""
 
-#: ../app/Controllers/ScriptLoader.php:84
+#: ../app/Controllers/ScriptLoader.php:70
 msgid "Select default color"
 msgstr ""
 
-#: ../app/Controllers/ScriptLoader.php:85
+#: ../app/Controllers/ScriptLoader.php:71
 msgid "Color value"
+msgstr ""
+
+#: ../app/Controllers/ScriptLoader.php:81, ../app/Helpers/Options.php:41
+msgid "Choose an Image"
+msgstr ""
+
+#: ../app/Controllers/ScriptLoader.php:82
+msgid "Use Image"
+msgstr ""
+
+#: ../app/Controllers/ScriptLoader.php:83
+msgid "Add Media"
 msgstr ""
 
 #: ../app/Controllers/SettingsAPI.php:39, ../app/Controllers/SettingsAPI.php:104

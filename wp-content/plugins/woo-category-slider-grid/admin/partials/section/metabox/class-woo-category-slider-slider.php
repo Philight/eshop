@@ -35,12 +35,13 @@ class SP_WCS_Slider {
 				'title'  => __( 'Slider Controls', 'woo-category-slider' ),
 				'icon'   => 'fa fa-sliders',
 				'fields' => array(
+
 					array(
-						'id'         => 'wcsp_auto_play',
-						'type'       => 'switcher',
-						'title'      => __( 'AutoPlay', 'woo-category-slider' ),
-						'subtitle'   => __( 'On/Off auto play.', 'woo-category-slider' ),
-						'default'    => true,
+						'id'       => 'wcsp_auto_play',
+						'type'     => 'switcher',
+						'title'    => __( 'AutoPlay', 'woo-category-slider' ),
+						'subtitle' => __( 'On/Off auto play.', 'woo-category-slider' ),
+						'default'  => true,
 					),
 					array(
 						'id'              => 'wcsp_auto_play_speed',
@@ -82,12 +83,12 @@ class SP_WCS_Slider {
 						),
 					),
 					array(
-						'id'       => 'wcsp_pause_on_hover',
-						'type'     => 'switcher',
-						'title'    => __( 'Pause on Hover', 'woo-category-slider' ),
-						'subtitle' => __( 'On/Off slider pause on hover.', 'woo-category-slider' ),
-						'default'  => true,
-						'dependency'      => array(
+						'id'         => 'wcsp_pause_on_hover',
+						'type'       => 'switcher',
+						'title'      => __( 'Pause on Hover', 'woo-category-slider' ),
+						'subtitle'   => __( 'On/Off slider pause on hover.', 'woo-category-slider' ),
+						'default'    => true,
+						'dependency' => array(
 							'wcsp_auto_play',
 							'==',
 							'true',
@@ -101,9 +102,26 @@ class SP_WCS_Slider {
 						'default'  => true,
 					),
 					array(
+						'id'         => 'wcsp_slider_row',
+						'type'       => 'column',
+						'class'      => 'pro_only_field',
+						'attributes' => array( 'disabled' => 'disabled' ),
+						'title'      => __( 'Row', 'woo-category-slider' ),
+						'subtitle'   => __( 'Set slider row(s) in different devices.', 'woo-category-slider' ),
+						'min'        => '1',
+						'max'        => '12',
+						'default'    => array(
+							'large_desktop' => '1',
+							'desktop'       => '1',
+							'laptop'        => '1',
+							'tablet'        => '1',
+							'mobile'        => '1',
+						),
+					),
+					array(
 						'id'       => 'wcsp_slide_to_scroll',
 						'type'     => 'column',
-						'title'    => __( 'Slide to Scroll', 'woo-category-slider' ),
+						'title'    => __( 'Slide To Scroll', 'woo-category-slider' ),
 						'subtitle' => __( 'Set slide to scroll in different devices.', 'woo-category-slider' ),
 						'min'      => '1',
 						'default'  => array(
@@ -117,20 +135,20 @@ class SP_WCS_Slider {
 
 					// Navigation.
 					array(
-						'type'       => 'subheading',
-						'content'    => __( 'Navigation', 'woo-category-slider' ),
+						'type'    => 'subheading',
+						'content' => __( 'Navigation', 'woo-category-slider' ),
 					),
 					array(
-						'id'         => 'wcsp_navigation',
-						'type'       => 'button_set',
-						'title'      => __( 'Navigation', 'woo-category-slider' ),
-						'subtitle'   => __( 'Show/Hide slider navigation.', 'woo-category-slider' ),
-						'options'    => array(
+						'id'       => 'wcsp_navigation',
+						'type'     => 'button_set',
+						'title'    => __( 'Navigation', 'woo-category-slider' ),
+						'subtitle' => __( 'Show/Hide slider navigation.', 'woo-category-slider' ),
+						'options'  => array(
 							'show'        => __( 'Show', 'woo-category-slider' ),
 							'hide'        => __( 'Hide', 'woo-category-slider' ),
 							'hide_mobile' => __( 'Hide on Mobile', 'woo-category-slider' ),
 						),
-						'default'    => 'hide_mobile',
+						'default'  => 'hide_mobile',
 					),
 					array(
 						'id'         => 'wcsp_nav_colors',
@@ -138,15 +156,15 @@ class SP_WCS_Slider {
 						'title'      => __( 'Navigation Color', 'woo-category-slider' ),
 						'subtitle'   => __( 'Set color for the slider navigation.', 'woo-category-slider' ),
 						'options'    => array(
-							'color' => __( 'Color', 'woo-category-slider' ),
-							'hover_color' => __( 'Hover Color', 'woo-category-slider' ),
-							'background' => __( 'Background', 'woo-category-slider' ),
+							'color'            => __( 'Color', 'woo-category-slider' ),
+							'hover_color'      => __( 'Hover Color', 'woo-category-slider' ),
+							'background'       => __( 'Background', 'woo-category-slider' ),
 							'hover_background' => __( 'Hover Background', 'woo-category-slider' ),
 						),
 						'default'    => array(
-							'color' => '#aaaaaa',
-							'hover_color' => '#ffffff',
-							'background' => 'transparent',
+							'color'            => '#aaaaaa',
+							'hover_color'      => '#ffffff',
+							'background'       => 'transparent',
 							'hover_background' => '#cc2b5e',
 						),
 						'dependency' => array(
@@ -177,20 +195,20 @@ class SP_WCS_Slider {
 
 					// Pagination.
 					array(
-						'type'       => 'subheading',
-						'content'    => __( 'Pagination', 'woo-category-slider' ),
+						'type'    => 'subheading',
+						'content' => __( 'Pagination', 'woo-category-slider' ),
 					),
 					array(
-						'id'         => 'wcsp_pagination',
-						'type'       => 'button_set',
-						'title'      => __( 'Pagination', 'woo-category-slider' ),
-						'subtitle'   => __( 'Show/Hide slider pagination.', 'woo-category-slider' ),
-						'options'    => array(
+						'id'       => 'wcsp_pagination',
+						'type'     => 'button_set',
+						'title'    => __( 'Pagination', 'woo-category-slider' ),
+						'subtitle' => __( 'Show/Hide slider pagination.', 'woo-category-slider' ),
+						'options'  => array(
 							'show'        => __( 'Show', 'woo-category-slider' ),
 							'hide'        => __( 'Hide', 'woo-category-slider' ),
 							'hide_mobile' => __( 'Hide on Mobile', 'woo-category-slider' ),
 						),
-						'default'    => 'hide_mobile',
+						'default'  => 'hide_mobile',
 					),
 					array(
 						'id'         => 'wcsp_pagination_colors',
@@ -214,22 +232,36 @@ class SP_WCS_Slider {
 
 					// Misc.
 					array(
-						'type'       => 'subheading',
-						'content'    => __( 'Miscellaneous', 'woo-category-slider' ),
+						'type'    => 'subheading',
+						'content' => __( 'Miscellaneous', 'woo-category-slider' ),
 					),
 					array(
-						'id'         => 'wcsp_touch_swipe',
-						'type'       => 'switcher',
-						'title'      => __( 'Touch Swipe', 'woo-category-slider' ),
-						'subtitle'   => __( 'On/Off touch swipe.', 'woo-category-slider' ),
-						'default'    => true,
+						'id'       => 'wcsp_touch_swipe',
+						'type'     => 'switcher',
+						'title'    => __( 'Touch Swipe', 'woo-category-slider' ),
+						'subtitle' => __( 'On/Off touch swipe.', 'woo-category-slider' ),
+						'default'  => true,
 					),
 					array(
-						'id'         => 'wcsp_auto_height',
-						'type'       => 'switcher',
-						'title'      => __( 'Auto Height', 'woo-category-slider' ),
-						'subtitle'   => __( 'On/Off auto height.', 'woo-category-slider' ),
-						'default'    => true,
+						'id'       => 'wcsp_slider_mouse_wheel',
+						'type'     => 'switcher',
+						'title'    => __( 'Mousewheel Control', 'woo-category-slider' ),
+						'subtitle' => __( 'On/Off mousewheel control.', 'woo-category-slider' ),
+						'default'  => false,
+					),
+					array(
+						'id'       => 'wcsp_slider_mouse_draggable',
+						'type'     => 'switcher',
+						'title'    => __( 'Mouse Draggable', 'woo-category-slider' ),
+						'subtitle' => __( 'On/Off mouse draggable.', 'woo-category-slider' ),
+						'default'  => false,
+					),
+					array(
+						'id'       => 'wcsp_auto_height',
+						'type'     => 'switcher',
+						'title'    => __( 'Auto Height', 'woo-category-slider' ),
+						'subtitle' => __( 'On/Off auto height.', 'woo-category-slider' ),
+						'default'  => true,
 					),
 				),
 			)

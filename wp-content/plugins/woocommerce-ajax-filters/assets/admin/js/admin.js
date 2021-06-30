@@ -773,6 +773,16 @@ var berocket_admin_filter_types_by_attr = {
         berocket_change_seo_friendly_urls();
         berocket_change_seo_meta_title();
         berocket_change_use_links_filters();
+        $(document).on('click', '.bapf_incompatibility_fixes_header', function() {
+            $(this).find('.fa').removeClass('fa-chevron-down').removeClass('fa-chevron-up');
+            if( $('.bapf_incompatibility_fixes_hide').length ) {
+                $('.bapf_incompatibility_fixes_hide').removeClass('bapf_incompatibility_fixes_hide');
+                $(this).find('.fa').addClass('fa-chevron-up');
+            } else {
+                $('.bapf_incompatibility_fixes').addClass('bapf_incompatibility_fixes_hide');
+                $(this).find('.fa').addClass('fa-chevron-down');
+            }
+        });
     })
 })(jQuery);
 function berocket_change_seo_friendly_urls() {
@@ -922,7 +932,8 @@ function berocket_semple_creation_group_return($this, data) {
             jQuery(this).parents('li').first().remove();
         });
         jQuery('#post').on('submit', function(e) {
-            if( jQuery('.berocket_add_filter_to_group').length && jQuery('.berocket_filter_added_list input[name="br_filters_group[filters][]"]').length == 0 ) {
+            var copy_val = $('[name="berocket_copy_from_custom_post"]').val();
+            if( ! copy_val && jQuery('.berocket_add_filter_to_group').length && jQuery('.berocket_filter_added_list input[name="br_filters_group[filters][]"]').length == 0 ) {
                 e.preventDefault();
                 jQuery(document).trigger('braapf_group_required_filters');
             }

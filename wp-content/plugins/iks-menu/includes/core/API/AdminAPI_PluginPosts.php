@@ -74,7 +74,7 @@ class AdminAPI_PluginPosts extends AdminAPI_Base {
 				"callback"     => [ $this, "duplicate_plugin_post" ],
 			],
 			[
-				"methods"      => WP_REST_Server::DELETABLE,
+				"methods"      => WP_REST_Server::CREATABLE, // Fixes no-support for DELETE method for some users
 				"sub_endpoint" => "remove",
 				"callback"     => [ $this, "remove_plugin_post" ],
 			],

@@ -140,6 +140,15 @@ if ( ! class_exists( 'UR_Settings_General' ) ) :
 						'default'  => 'no',
 					),
 					array(
+						'title'    => __( 'Disable profile picture', 'user-registration' ),
+						'desc'     => __( 'Check to disable profile picture in edit profile page.', 'user-registration' ),
+						'id'       => 'user_registration_disable_profile_picture',
+						'type'     => 'checkbox',
+						'desc_tip' => true,
+						'css'      => 'min-width: 350px;',
+						'default'  => 'no',
+					),
+					array(
 						'title'    => __( 'Disable logout confirmation', 'user-registration' ),
 						'desc'     => __( 'Check to disable logout confirmation.', 'user-registration' ),
 						'id'       => 'user_registration_disable_logout_confirmation',
@@ -284,7 +293,15 @@ if ( ! class_exists( 'UR_Settings_General' ) ) :
 						'css'      => 'min-width: 350px;',
 						'default'  => __( 'This field is required.', 'user-registration' ),
 					),
-
+						array(
+						'title'    => __( 'Special Character Validation in Username', 'user-registration' ),
+						'desc'     => __( 'Enter the error message in form submission on username', 'user-registration' ),
+						'id'       => 'user_registration_form_submission_error_message_disallow_username_character',
+						'type'     => 'text',
+						'desc_tip' => true,
+						'css'      => 'min-width: 350px;',
+						'default'  => __( 'Please enter the valid username', 'user-registration' ),
+					),
 					array(
 						'title'    => __( 'Email', 'user-registration' ),
 						'desc'     => __( 'Enter the error message in form submission on Email.', 'user-registration' ),
@@ -388,7 +405,15 @@ if ( ! class_exists( 'UR_Settings_General' ) ) :
 							'rounded_edge' => __( 'Rounded Edge', 'user-registration' ),
 						),
 					),
-
+					array(
+						'title'    => __( 'Enable Ajax Login', 'user-registration' ),
+						'desc'     => __( 'This option lets you to enable the ajax form submission', 'user-registration' ),
+						'id'       => 'ur_login_ajax_submission',
+						'type'     => 'checkbox',
+						'desc_tip' => __( 'Check to field to enable the ajax form submission.', 'user-registration' ),
+						'css'      => 'min-width: 350px;',
+						'default'  => 'no',
+					),
 					array(
 						'title'    => __( 'Enable remember me', 'user-registration' ),
 						'desc'     => __( 'Enable', 'user-registration' ),

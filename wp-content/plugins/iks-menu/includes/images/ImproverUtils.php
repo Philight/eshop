@@ -6,7 +6,7 @@
  * @package   Iks Menu
  * @author    IksStudio
  * @license   GPL-3.0
- * @link      http://iks-menu.ru
+ * @link      https://iks-menu.ru
  * @copyright 2019 IksStudio
  * @since     1.5.0
  */

@@ -204,6 +204,11 @@ class UR_Frontend_Scripts {
 				'deps'    => array( 'jquery', 'ur-jquery-validate', 'ur-inputmask' ),
 				'version' => UR_VERSION,
 			),
+			'ur-form-validator'          => array(
+				'src'     => self::get_asset_url( 'assets/js/frontend/user-registration-form-validator' . $suffix . '.js' ),
+				'deps'    => array( 'jquery', 'user-registration' ),
+				'version' => UR_VERSION,
+			),
 			'ur-lost-password'           => array(
 				'src'     => self::get_asset_url( 'assets/js/frontend/lost-password' . $suffix . '.js' ),
 				'deps'    => array( 'jquery', 'user-registration' ),
@@ -227,6 +232,11 @@ class UR_Frontend_Scripts {
 			'ur-my-account'              => array(
 				'src'     => self::get_asset_url( 'assets/js/frontend/my-account' . $suffix . '.js' ),
 				'deps'    => array( 'jquery', 'user-registration' ),
+				'version' => UR_VERSION,
+			),
+			'ur-login'              => array(
+				'src'     => self::get_asset_url( 'assets/js/frontend/ur-login' . $suffix . '.js' ),
+				'deps'    => array( 'jquery'),
 				'version' => UR_VERSION,
 			),
 			'jquery-tiptip'              => array(
@@ -321,7 +331,6 @@ class UR_Frontend_Scripts {
 	 * @param  string $handle
 	 */
 	private static function localize_script( $handle ) {
-
 		if ( ! in_array( $handle, self::$wp_localize_scripts ) && wp_script_is( $handle ) && ( $data = self::get_script_data( $handle ) ) ) {
 			$name                        = str_replace( '-', '_', $handle ) . '_params';
 			self::$wp_localize_scripts[] = $handle;
@@ -339,7 +348,6 @@ class UR_Frontend_Scripts {
 	 * @return array|bool
 	 */
 	private static function get_script_data( $handle ) {
-
 		switch ( $handle ) {
 			case 'user-registration':
 				return array(
@@ -357,6 +365,7 @@ class UR_Frontend_Scripts {
 					'message_number_fields'            => get_option( 'user_registration_form_submission_error_message_number', __( 'Please enter a valid number.', 'user-registration' ) ),
 					'message_confirm_password_fields'  => get_option( 'user_registration_form_submission_error_message_confirm_password', __( 'Password and confirm password not matched.', 'user-registration' ) ),
 					'message_validate_phone_number'    => get_option( 'user_registration_form_submission_error_message_phone_number', __( 'Please enter a valid phone number.', 'user-registration' ) ),
+					'message_username_character_fields'   => get_option( 'user_registration_form_submission_error_message_disallow_username_character', __( 'Please enter a valid username.', 'user-registration' ) ),
 					'message_confirm_email_fields'     => get_option( 'user_registration_form_submission_error_message_confirm_email', __( 'Email and confirm email not matched.', 'user-registration' ) ),
 					'message_confirm_number_field_max'     => __( 'Please enter a value less than or equal to %qty%.', 'user-registration' ),
 					'message_confirm_number_field_min'     => __( 'Please enter a value greater than or equal to %qty%.', 'user-registration' ),
@@ -388,6 +397,13 @@ class UR_Frontend_Scripts {
 					'i18n_password_hint'  => apply_filters( 'user_registration_strong_password_message', __( 'Hint: To make password stronger, use upper and lower case letters, numbers, and symbols like ! " ? $ % ^ & ).', 'user-registration' ) ),
 				);
 				break;
+				case 'ur-login':
+					return array(
+							'ajax_url'                         => admin_url( 'admin-ajax.php' ),
+							'ur_login_form_save_nonce' 		   => wp_create_nonce( 'ur_login_form_save_nonce' ),
+							'ajax_submission_on_ur_login'  	   => get_option('ur_login_ajax_submission', 'no' ),
+					);
+					break;
 		}
 
 		return false;

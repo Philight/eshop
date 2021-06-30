@@ -116,6 +116,12 @@ class BeRocket_AAPF_Widget {
             $this->id = $args['widget_id'];
             $this->number = $args['widget_id'];
         }
+        if( empty($instance['widget_type']) ) {
+            if( BeRocket_AAPF::$user_can_manage ) {
+                echo '<div>', __('Filter do not have <strong>Widget type</strong>', 'BeRocket_AJAX_domain'), '</div>';
+            }
+            return false;
+        }
         if( empty($this->number) || $this->number == -1 ) {
             global $berocket_aapf_shortcode_id;
             if( empty($berocket_aapf_shortcode_id) ) {
@@ -260,6 +266,11 @@ class BeRocket_AAPF_Widget {
                 }
                 $instance['type'] = $instance['new_template'] = $set_query_var_title['new_template'] = $template;
             }
+        } else {
+            if( BeRocket_AAPF::$user_can_manage ) {
+                echo '<div>', __('Filter do not have <strong>Style</strong>', 'BeRocket_AJAX_domain'), '</div>';
+            }
+            return false;
         }
 
         if( BeRocket_AAPF::$debug_mode ) {
@@ -284,6 +295,7 @@ class BeRocket_AAPF_Widget {
             $wp_query      = $br_wc_query;
             $wp_the_query  = $br_wc_query;
             if( class_exists('WC_Query') &&  method_exists('WC_Query', 'product_query') && method_exists('WC_Query', 'get_main_query') ) {
+                $wp_query = apply_filters('braapf_wp_query_widget_start', $wp_query, $old_query, $br_options);
                 wc()->query->product_query($wp_query);
             }
         }
@@ -617,6 +629,7 @@ class BeRocket_AAPF_Widget {
                 $wp_query = $old_query;
             }
             if( ! empty($wc_query) && is_a($wc_query, 'WP_Query') && class_exists('WC_Query') &&  method_exists('WC_Query', 'product_query') && method_exists('WC_Query', 'get_main_query') ) {
+                $wc_query = apply_filters('braapf_wp_query_widget_end', $wc_query, $old_query);
                 wc()->query->product_query($wc_query);
             }
             wc()->query->remove_ordering_args();

@@ -7,7 +7,7 @@
  * @package   Iks Menu
  * @author    IksStudio
  * @license   GPL-3.0
- * @link      http://iks-menu.ru
+ * @link      https://iks-menu.ru
  * @copyright 2019 IksStudio
  */
 namespace IksStudio\IKSM\render;
@@ -315,9 +315,15 @@ class MenuRenderer
         if ( $display ) {
             $icon = $this->get_setting_value( "toggle_icon" );
             $is_class = true;
+            
             if ( $is_class ) {
-                $icon = "<i class='{$icon}'></i>";
+                $icon_tag = $this->settings_manager->get_value( StylesSettingsGenerator::generate_setting_key( "toggle", "main", "icon_tag" ) );
+                if ( empty($icon_tag) ) {
+                    $icon_tag = "i";
+                }
+                $icon = "<{$icon_tag} class='{$icon}'></{$icon_tag}>";
             }
+            
             ?>
             <div class="<?php 
             echo  RenderUtils::inner_class( "iksm-term", "toggle" ) ;
@@ -377,11 +383,12 @@ class MenuRenderer
     
     private function get_link_attr( $term, $has_children, $level )
     {
-        $link = $term["link"];
-        $target = ( $term["target"] ? $term["target"] : "_self" );
         $tabindex = "-1";
         // Disable for link, enable for container
-        return "href='{$link}' target='{$target}' tabindex='{$tabindex}'";
+        $common_attrs = "tabindex='{$tabindex}'";
+        $link = $term["link"];
+        $target = ( $term["target"] ? $term["target"] : "_self" );
+        return "href='{$link}' target='{$target}' {$common_attrs}";
     }
     
     /* Helpers */

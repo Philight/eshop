@@ -1,6 +1,6 @@
 <?php extract($berocket_query_var_color); ?>
 <div class="br_accordion">
-    <h3><?php if( $type == 'color' ) { _e('Color selection', 'BeRocket_AJAX_domain'); } elseif( $type == 'image' ) { _e('Image selection', 'BeRocket_AJAX_domain'); } ?></h3>
+    <h3><?php if( $type == 'color' ) { _e('Selection of color', 'BeRocket_AJAX_domain'); } elseif( $type == 'image' ) { _e('Selection of Image', 'BeRocket_AJAX_domain'); } ?></h3>
     <div>
 <?php if ( is_array(berocket_isset($terms)) ) { 
     if( $type == 'color' ) {?>

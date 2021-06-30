@@ -230,8 +230,14 @@
   $(document).on('wc_variation_form', '.variations_form', function () {
     $(this).rtWpvsVariationSwatchesForm();
   }); // Support for Jetpack's Infinite Scroll,
+  // quick-view-displayed   : WooCommerce QuickPopUp Support
 
-  $(document.body).on('post-load', function () {
+  $(document.body).on('post-load quick-view-displayed', function () {
+    $('.variations_form').each(function () {
+      $(this).wc_variation_form();
+    });
+  });
+  $(document.body).on('post-load quick-view-displayed', function () {
     $('.variations_form').each(function () {
       $(this).wc_variation_form();
     });

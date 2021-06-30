@@ -13,6 +13,7 @@ class BeRocket_aapf_add_classes_filters {
         $element['attributes']['class']['term_tax'] = 'bapf_tax_'.$term->taxonomy;
         $element['attributes']['class']['term_slug'] = 'bapf_term_'.$term->slug;
         $element['attributes']['class']['term_id'] = 'bapf_term_'.$term->term_id;
+        $element['attributes']['class']['term_count'] = 'bapf_count_'.$term->count;
         $element['attributes']['class']['term_parent'] = 'bapf_parent_'.(property_exists($term, 'parent') ? $term->parent : '0');
         return $element;
     }

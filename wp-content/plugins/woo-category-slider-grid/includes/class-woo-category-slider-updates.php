@@ -31,9 +31,9 @@ class Woo_Category_Slider_Updates {
 	 *
 	 * @var array
 	 */
-	private static $updates = [
+	private static $updates = array(
 		'1.2.1' => 'updates/update-1.2.1.php',
-	];
+	);
 
 	/**
 	 * Binding all events
@@ -55,8 +55,8 @@ class Woo_Category_Slider_Updates {
 	 */
 	public function is_needs_update() {
 		$installed_version = get_option( 'woo_category_slider_version' );
-		$first_version = get_option( 'woo_category_slider_first_version' );
-		$activation_date = get_option( 'woo_category_slider_activation_date' );
+		$first_version     = get_option( 'woo_category_slider_first_version' );
+		$activation_date   = get_option( 'woo_category_slider_activation_date' );
 
 		if ( false === $installed_version ) {
 			update_option( 'woo_category_slider_version', SP_WCS_VERSION );

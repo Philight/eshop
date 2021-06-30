@@ -257,15 +257,17 @@ class BeRocket_AAPF_faster_attribute_recount {
                     }
                     $md5_exist[] = md5(json_encode($value));
                 }
-                if( array_key_exists('relation', $value) ) {
-                    $value = self::remove_all_berocket_tax_query($value, $taxonomy, true);
-                    if( $value === FALSE ) {
+                if( is_array($value) ) {
+                    if( array_key_exists('relation', $value) ) {
+                        $value = self::remove_all_berocket_tax_query($value, $taxonomy, true);
+                        if( $value === FALSE ) {
+                            unset($tax_query[$key]);
+                        } else {
+                            $tax_query[$key] = $value;
+                        }
+                    } elseif( ! empty($value['is_berocket']) && isset($value['taxonomy']) && ($taxonomy === FALSE || $taxonomy == $value['taxonomy']) ) {
                         unset($tax_query[$key]);
-                    } else {
-                        $tax_query[$key] = $value;
                     }
-                } elseif( ! empty($value['is_berocket']) && isset($value['taxonomy']) && ($taxonomy === FALSE || $taxonomy == $value['taxonomy']) ) {
-                    unset($tax_query[$key]);
                 }
             }
             if( count($tax_query) == 1 && isset($tax_query['relation']) ) {
@@ -299,17 +301,20 @@ class BeRocket_AAPF_faster_attribute_recount {
         global $wpdb;
         extract($taxonomy_data);
         if( $taxonomy == '_stock_status' ) {
-            $outofstock = wc_get_product_visibility_term_ids();
-            if( empty($outofstock['outofstock']) ) {
-                $outofstock = get_term_by( 'slug', 'outofstock', 'product_visibility' );
-                $outofstock = $outofstock->term_taxonomy_id;
-            } else {
-                $outofstock = $outofstock['outofstock'];
+            $join_query = apply_filters('berocket_aapf_recount_stock_status_query', '', $query, $taxonomy_data, $terms);
+            if( empty($join_query) ) {
+                $outofstock = wc_get_product_visibility_term_ids();
+                if( empty($outofstock['outofstock']) ) {
+                    $outofstock = get_term_by( 'slug', 'outofstock', 'product_visibility' );
+                    $outofstock = $outofstock->term_taxonomy_id;
+                } else {
+                    $outofstock = $outofstock['outofstock'];
+                }
+                $join_query = "INNER JOIN (SELECT {$wpdb->posts}.ID as object_id, IF({$wpdb->term_relationships}.term_taxonomy_id = {$outofstock}, 2, 1) as term_taxonomy_id, 0 as term_order FROM {$wpdb->posts}
+                LEFT JOIN {$wpdb->term_relationships} ON {$wpdb->posts}.ID = {$wpdb->term_relationships}.object_id AND {$wpdb->term_relationships}.term_taxonomy_id = {$outofstock}
+                WHERE {$wpdb->posts}.post_type = 'product') as term_relationships
+                ON {$wpdb->posts}.ID = term_relationships.object_id";
             }
-            $join_query = "INNER JOIN (SELECT {$wpdb->posts}.ID as object_id, IF({$wpdb->term_relationships}.term_taxonomy_id = {$outofstock}, 2, 1) as term_taxonomy_id, 0 as term_order FROM {$wpdb->posts}
-            LEFT JOIN {$wpdb->term_relationships} ON {$wpdb->posts}.ID = {$wpdb->term_relationships}.object_id AND {$wpdb->term_relationships}.term_taxonomy_id = {$outofstock}
-            WHERE {$wpdb->posts}.post_type = 'product') as term_relationships
-            ON {$wpdb->posts}.ID = term_relationships.object_id";
             $query['join']['term_relationships'] = $join_query;
         }
         return $query;

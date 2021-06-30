@@ -85,10 +85,18 @@ if ( ! class_exists( 'BeRocket_updater' ) ) {
 
         public static function error_log() {
             if ( self::$debug_mode ) {
+                $plugins_list = self::$plugin_info;
+                if( is_array($plugins_list) && count($plugins_list) > 0 ) {
+                    foreach($plugins_list as &$plugin) {
+                        if( ! empty($plugin['key']) ) {
+                            $plugin['key'] = self::hide_key($plugin['key']);
+                        }
+                    }
+                }
                 self::$error_log                          = apply_filters( 'BeRocket_updater_error_log', self::$error_log );
                 self::$error_log[ 'real_memory_usage' ]   = memory_get_peak_usage( true );
                 self::$error_log[ 'script_memory_usage' ] = memory_get_peak_usage( false );
-                self::$error_log[ 'plugins' ]             = self::$plugin_info;
+                self::$error_log[ 'plugins' ]             = $plugins_list;
                 self::$error_log[ 'memory_limit' ]        = ini_get( 'memory_limit' );
                 self::$error_log[ 'WP_DEBUG' ]            = 'WP_DEBUG:' . ( defined( 'WP_DEBUG' ) ? ( WP_DEBUG ? 'true' : 'false' ) : 'false' ) . '; WP_DEBUG_DISPLAY:' . ( defined( 'WP_DEBUG_DISPLAY' ) ? ( WP_DEBUG_DISPLAY ? 'true' : 'false' ) : 'false' );
                 $error_log = unserialize(preg_replace('/R:\d+/', 's:18:"RECURSION DETECTED"', serialize(self::$error_log)));
@@ -291,6 +299,18 @@ if ( ! class_exists( 'BeRocket_updater' ) ) {
                 $fast  = ! empty($_POST[ 'fast' ]);
                 $site_url = get_site_url();
                 $plugins  = self::$plugin_info;
+                if( strpos($key, '**') !== false ) {
+                    if ($id == 0 ) {
+                        $key = self::$key;
+                    } elseif( is_array($plugins) && count($plugins) > 0 ) {
+                        foreach($plugins as $plugin_info) {
+                            if($plugin_info['id'] == $id) {
+                                $key = $plugin_info['key'];
+                            }
+                        }
+                    }
+                }
+                
 
                 if ( is_array( $plugins ) ) {
                     $plugins = array_keys( $plugins );
@@ -340,7 +360,6 @@ if ( ! class_exists( 'BeRocket_updater' ) ) {
 
                                     if ( isset( $out[ 'versions' ][ $id ] ) && version_compare( $current_plugin[ 'version' ], $out[ 'versions' ][ $id ], '<' ) ) {
                                         $upgrade_button        = '<a href="' . wp_nonce_url( self_admin_url( 'update.php?action=upgrade-plugin&plugin=' ) . $current_plugin[ 'plugin' ], 'upgrade-plugin_' . $current_plugin[ 'plugin' ] ) . '" class="button tiny-button">Upgrade plugin</a>';
-                                        $out[ 'plugin_table' ] = '<p>' . $upgrade_button . '</p>' . $out[ 'plugin_table' ];
                                         $out[ 'upgrade' ][]    = array( 'id' => $id, 'upgrade' => $upgrade_button );
                                     }
                                 }
@@ -404,9 +423,6 @@ if ( ! class_exists( 'BeRocket_updater' ) ) {
                             if (data.key_exist == 1) {
                                 if (show_correct) {
                                     html = '<h3>' + data.status + '</h3>';
-                                    html += '<p><b>UserName: </b>' + data.username + '</p>';
-                                    html += '<p><b>E-Mail: </b>' + data.email + '</p>';
-                                    html += data.plugin_table;
                                     jQuery('.berocket_test_result').html(html);
                                     data.upgrade.forEach(function (el, i, arr) {
                                         jQuery('.berocket_product_key_' + el.id + '_status').html(el.upgrade);
@@ -473,10 +489,11 @@ if ( ! class_exists( 'BeRocket_updater' ) ) {
             register_setting( 'BeRocket_account_option_settings', 'BeRocket_account_option', array('sanitize_callback' => array(__CLASS__, 'reset_update_plugin_data')) );
         }
 
-        public static function reset_update_plugin_data($data) {
+        public static function reset_update_plugin_data($options) {
+            $options = self::restore_keys($options);
             self::update_check_set('');
             delete_site_transient( 'update_plugins' );
-            return $data;
+            return $options;
         }
 
         public static function account_form() {
@@ -499,7 +516,8 @@ if ( ! class_exists( 'BeRocket_updater' ) ) {
                 <form method="post" action="edit.php?page=berocket_account" class="account_key_send br_framework_settings">
                     <?php
                     if ( isset( $_POST[ 'BeRocket_account_option' ] ) ) {
-                        $option = berocket_sanitize_array( $_POST[ 'BeRocket_account_option' ] );
+                        $previous_options = get_site_option( 'BeRocket_account_option' );
+                        $option = berocket_sanitize_array( $_POST[ 'BeRocket_account_option' ], array('BeRocket_account_option'), $previous_options );
                         update_site_option( 'BeRocket_account_option', $option );
                         self::update_check_set('');
                         delete_site_transient( 'update_plugins' );
@@ -534,7 +552,7 @@ if ( ! class_exists( 'BeRocket_updater' ) ) {
                         <td><h3><?php _e('Account key', 'BeRocket_domain'); ?></h3></td>
                         <td><input type="text" id="berocket_account_key" name="BeRocket_account_option[account_key]"
                                    size="50"
-                                   value="<?php echo( empty( $options[ 'account_key' ] ) ? '' : $options[ 'account_key' ] ) ?>">
+                                   value="<?php echo( empty( $options[ 'account_key' ] ) ? '' : self::hide_key($options[ 'account_key' ]) ) ?>">
                         </td>
                         <td><input class="berocket_test_account button tiny-button" type="button" value="Test"></td>
                         <td class="berocket_product_key_0_status"></td>
@@ -549,7 +567,7 @@ if ( ! class_exists( 'BeRocket_updater' ) ) {
                             echo $plugin[ 'slug' ];
                         }
                         echo '</h4></td>';
-                        echo '<td><input class="berocket_test_account_product_key" id="berocket_product_key_', $plugin[ 'id' ], '" size="50" name="BeRocket_account_option[plugin_key][', $plugin[ 'id' ], ']" type="text" value="', ( empty( $options[ 'plugin_key' ][ $plugin[ 'id' ] ] ) ? '' : $options[ 'plugin_key' ][ $plugin[ 'id' ] ] ), '"></td>';
+                        echo '<td><input class="berocket_test_account_product_key" id="berocket_product_key_', $plugin[ 'id' ], '" size="50" name="BeRocket_account_option[plugin_key][', $plugin[ 'id' ], ']" type="text" value="', ( empty( $options[ 'plugin_key' ][ $plugin[ 'id' ] ] ) ? '' : self::hide_key($options[ 'plugin_key' ][ $plugin[ 'id' ] ]) ), '"></td>';
                         echo '<td><input class="berocket_test_account_product save_checked button tiny-button" data-id="', $plugin[ 'id' ], '" data-product="#berocket_product_key_', $plugin[ 'id' ], '" type="button" value="Test"></td>';
                         echo '<td class="berocket_product_key_status berocket_product_key_', $plugin[ 'id' ], '_status"></td>';
                         echo '</tr>';
@@ -813,6 +831,7 @@ if ( ! class_exists( 'BeRocket_updater' ) ) {
                 require_once( ABSPATH . '/wp-admin/includes/plugin.php' );
             }
 
+            $options = self::restore_keys($options);
             if ( is_multisite() && is_plugin_active_for_network( plugin_basename( __FILE__ ) ) ) {
                 update_site_option( 'BeRocket_account_option', $options );
             } else {
@@ -899,6 +918,31 @@ if ( ! class_exists( 'BeRocket_updater' ) ) {
                 }
             </script>
             <?php
+        }
+        public static function hide_key($key) {
+            if( ! empty($key) ) {
+                $part = (int)(strlen($key) / 3);
+                $replace = strlen($key) - $part;
+                $key = substr($key, $replace);
+                for($i = 0; $i < $replace; $i++) {
+                    $key = '*'.$key;
+                }
+            }
+            return $key;
+        }
+        public static function restore_keys($options) {
+            $options_old = self::get_options();
+            if( ! empty($options['account_key']) && strpos($options['account_key'], '**') !== false && ! empty($options_old['account_key']) ) {
+                $options['account_key'] = $options_old['account_key'];
+            }
+            if( ! empty($options['plugin_key']) && is_array($options['plugin_key']) ) {
+                foreach($options['plugin_key'] as $plugin_id => $plugin_key) {
+                    if( ! empty($plugin_key) && strpos($plugin_key, '**') !== false && ! empty($options_old['plugin_key']) && ! empty($options_old['plugin_key'][$plugin_id]) ) {
+                        $options['plugin_key'][$plugin_id] = $options_old['plugin_key'][$plugin_id];
+                    }
+                }
+            }
+            return $options;
         }
     }
 

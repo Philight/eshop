@@ -680,15 +680,20 @@ class BeRocket_AAPF_Widget_functions {
 
         if( br_woocommerce_version_check('3.6') ) {
             $query[ 'select' ] = "SELECT MIN(cast(FLOOR(wc_product_meta_lookup.min_price) as decimal)) as min_price,
+                              MIN(wc_product_meta_lookup.min_price) as min_float,
+                              MAX(wc_product_meta_lookup.max_price) as max_float,
                               MAX(cast(CEIL(wc_product_meta_lookup.max_price) as decimal)) as max_price ";
             $query[ 'from' ]   = "FROM {$wpdb->posts}";
             $query[ 'join' ]   = " INNER JOIN {$wpdb->wc_product_meta_lookup} as wc_product_meta_lookup ON $wpdb->posts.ID = wc_product_meta_lookup.product_id ";
         } else {
             $query[ 'select' ] = "SELECT MIN(cast(FLOOR(wp_price_check.meta_value) as decimal)) as min_price,
+                              MIN(cast(wp_price_check.meta_value as decimal(20,4))) as min_float,
+                              MAX(cast(wp_price_check.meta_value as decimal(20,4))) as max_float,
                               MAX(cast(CEIL(wp_price_check.meta_value) as decimal)) as max_price ";
             $query[ 'from' ]   = "FROM {$wpdb->postmeta} as wp_price_check";
             $query[ 'join' ]   = "INNER JOIN {$wpdb->posts} ON ({$wpdb->posts}.ID = wp_price_check.post_id)";
         }
+
         if( braapf_filters_must_be_recounted() ) {
             $query = br_filters_query( $query, 'price', $product_cat );
         } elseif( braapf_filters_must_be_recounted('first') && ! empty($br_wc_query) ) {
@@ -744,13 +749,17 @@ class BeRocket_AAPF_Widget_functions {
             $query[ 'where' ] .= "$wpdb->posts.ID IN(" . implode( ',', $post__in ) . ")";
         }
 
-
         $query_string = implode( ' ', $query );
 
         $query_string = $wpdb->get_row( $query_string );
 
         $price_range = false;
-        if ( isset( $query_string->min_price ) && isset( $query_string->max_price ) && $query_string->min_price != $query_string->max_price ) {
+        if ( isset( $query_string->min_price ) && isset( $query_string->max_price ) && $query_string->min_price != $query_string->max_price 
+            && ( 
+                   ( $query_string->min_price < ($query_string->max_price - 1) ) 
+                || ( $query_string->min_price == $query_string->min_float && $query_string->max_price == $query_string->max_float ) 
+            )
+        ) {
             $price_range = array(
                 floor(apply_filters('berocket_price_filter_widget_min_amount', apply_filters('berocket_price_slider_widget_min_amount', apply_filters( 'woocommerce_price_filter_widget_min_amount', $query_string->min_price )), $query_string->min_price)),
                 ceil(apply_filters('berocket_price_filter_widget_max_amount', apply_filters('berocket_price_slider_widget_max_amount', apply_filters( 'woocommerce_price_filter_widget_max_amount', $query_string->max_price )), $query_string->max_price))

@@ -4,9 +4,9 @@ if( ! class_exists('BeRocket_AAPF_compat_WCPBC') ) {
     class BeRocket_AAPF_compat_WCPBC {
         private static $_zone = null;
         function __construct() {
-            //add_filter("berocket_price_filter_widget_min_amount", array(__CLASS__, 'to_current_rate'), 10, 2);
-            //add_filter("berocket_price_filter_widget_max_amount", array(__CLASS__, 'to_current_rate'), 10, 2);
-            add_filter("berocket_price_filter_meta_key", array(__CLASS__, 'price_filter_meta_key'), 10, 2);
+            add_filter("berocket_price_filter_widget_min_amount", array(__CLASS__, 'to_current_rate'), 10, 2);
+            add_filter("berocket_price_filter_widget_max_amount", array(__CLASS__, 'to_current_rate'), 10, 2);
+            //add_filter("berocket_price_filter_meta_key", array(__CLASS__, 'price_filter_meta_key'), 10, 2);
         }
         static function to_current_rate($amount, $untoched_amount = FALSE) {
             $_zone = WCPBC_Pricing_Zones::get_zone();

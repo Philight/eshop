@@ -115,7 +115,7 @@ class Hooks
      */
     static function available_variation($variation, $product, $variationObj) {
 
-        if (rtwpvs()->get_option('disable_out_of_stock')) {
+        if (!is_admin() && rtwpvs()->get_option('disable_out_of_stock')) {
             return $variationObj->is_in_stock() ? $variation : false;
         }
 

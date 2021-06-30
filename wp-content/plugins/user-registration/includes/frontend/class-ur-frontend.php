@@ -101,15 +101,21 @@ class UR_Frontend {
 
 		if ( ! empty( $login_page ) ) {
 			$matched = preg_match( '/\[user_registration_my_account(\s\S+){0,3}\]|\[user_registration_login(\s\S+){0,3}\]/', $login_page->post_content );
+			if(1 > absint( $matched )) {
+				$matched = preg_match( '/\[woocommerce_my_account(\s\S+){0,3}\]/', $login_page->post_content );
+			}
 			$page_id = $login_page->ID;
 		} elseif ( ! empty( $myaccount_page ) ) {
 			$matched = preg_match( '/\[user_registration_my_account(\s\S+){0,3}\]|\[user_registration_login(\s\S+){0,3}\]/', $myaccount_page->post_content );
+			if(1 > absint( $matched )) {
+				$matched = preg_match( '/\[woocommerce_my_account(\s\S+){0,3}\]/', $myaccount_page->post_content );
+			}
 			$page_id = $myaccount_page->ID;
 		}
 
 		if ( ! ( defined( 'UR_DISABLE_PREVENT_CORE_LOGIN' ) && true === UR_DISABLE_PREVENT_CORE_LOGIN ) && 'yes' === get_option( 'user_registration_login_options_prevent_core_login', 'no' ) && 1 <= absint( $matched ) ) {
 			if ( 'register' === $action || 'login' === $action ) {
-				$myaccount_page = get_permalink( $page_id );
+				$myaccount_page = apply_filters( 'user_registration_myaccount_redirect_url', get_permalink( $page_id ), $page_id );
 				wp_safe_redirect( $myaccount_page );
 				exit;
 			}

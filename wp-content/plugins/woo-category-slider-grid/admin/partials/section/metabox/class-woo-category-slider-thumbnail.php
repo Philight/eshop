@@ -92,27 +92,39 @@ class SP_WCS_Thumbnail {
 							'true|custom',
 						),
 					),
+
 					array(
-						'id'         => 'wcsp_cat_thumbnail_shape',
-						'type'       => 'radiof',
-						'title'      => __( 'Shape', 'woo-category-slider' ),
-						'subtitle'   => __( 'Choose a shape for thumbnail.', 'woo-category-slider' ),
-						'options'    => array(
+						'id'          => 'wcsp_cat_thumbnail_shape',
+
+						'class'       => 'wcsp_cat_content_position thumbnail_shape',
+						'type'        => 'image_select',
+						'option_name' => true,
+						'title'       => __( 'Shape', 'woo-category-slider-pro' ),
+						'subtitle'    => __( 'Choose a shape for thumbnail.', 'woo-category-slider' ),
+						'desc'   => __( 'To unlock more thumbnail shapes and settings, <a href="https://shapedplugin.com/plugin/woocommerce-category-slider-pro/?ref=115" target="_blank"><b>Upgrade To Pro!</b></a>', 'woo-category-slider' ),
+						'options'     => array(
 							'square'  => array(
-								'text'     => __( 'Square', 'woo-category-slider' ),
-								'pro_only' => false,
+								'image'       => SP_WCS_URL . 'admin/img/square.svg',
+								'option_name' => __( 'Square', 'woo-category-slider' ),
 							),
 							'rounded' => array(
-								'text'     => __( 'Rounded (Pro)', 'woo-category-slider' ),
-								'pro_only' => true,
+								'image'       => SP_WCS_URL . 'admin/img/round.svg',
+								'option_name' => __( 'Rounded', 'woo-category-slider' ),
+								'pro_only'    => true,
 							),
 							'circle'  => array(
-								'text'     => __( 'Circle (Pro)', 'woo-category-slider' ),
-								'pro_only' => true,
+								'image'       => SP_WCS_URL . 'admin/img/circle.svg',
+								'option_name' => __( 'Circle', 'woo-category-slider' ),
+								'pro_only'    => true,
+							),
+							'custom'  => array(
+								'image'       => SP_WCS_URL . 'admin/img/custom-border-radius.svg',
+								'option_name' => __( 'Custom', 'woo-category-slider' ),
+								'pro_only'    => true,
 							),
 						),
-						'default'    => 'square',
-						'dependency' => array(
+						'default'     => 'square',
+						'dependency'  => array(
 							'wcsp_thumbnail',
 							'==',
 							'true',
@@ -121,12 +133,17 @@ class SP_WCS_Thumbnail {
 					array(
 						'id'         => 'wcsp_cat_border_box_shadow',
 						'type'       => 'checkboxf',
-						'title'      => __( 'Border', 'woo-category-slider' ),
-						'subtitle'   => __( 'Border on/off.', 'woo-category-slider' ),
+						'title'      => __( 'Border and Box-shadow', 'woo-category-slider' ),
+						'subtitle'   => __( 'Check to enable border and box-shadow for thumbnail.', 'woo-category-slider' ),
+
 						'options'    => array(
-							'border' => array(
+							'border'     => array(
 								'text'     => __( 'Border', 'woo-category-slider' ),
 								'pro_only' => false,
+							),
+							'box_shadow' => array(
+								'text'     => __( 'Box-shadow (Pro)', 'woo-category-slider' ),
+								'pro_only' => true,
 							),
 						),
 						'default'    => 'border',
@@ -178,6 +195,32 @@ class SP_WCS_Thumbnail {
 						),
 					),
 
+					array(
+						'id'       => 'wcsp_cat_zoom',
+						'type'     => 'select',
+						'title'    => __( 'Zoom', 'woo-category-slider-pro' ),
+						'subtitle' => __( 'Set a zoom effect for thumbnail.', 'woo-category-slider-pro' ),
+						'options'  => array(
+							'none'     => __( 'None', 'woo-category-slider-pro' ),
+							'zoom-in'  => __( 'Zoom In (Pro)', 'woo-category-slider-pro' ),
+							'zoom-out' => __( 'Zoom Out (Pro)', 'woo-category-slider-pro' ),
+						),
+						'default'  => 'none',
+					),
+
+					array(
+						'id'       => 'wcsp_cat_grayscale',
+						'type'     => 'select',
+						'title'    => __( 'Image Mode', 'woo-category-slider-pro' ),
+						'subtitle' => __( 'Set a mode for category thumbnail or image.', 'woo-category-slider-pro' ),
+						'options'  => array(
+							'none'            => __( 'Normal', 'woo-category-slider-pro' ),
+							'norman-on-hover' => __( 'Grayscale and normal on hover (Pro)', 'woo-category-slider-pro' ),
+							'on-hover'        => __( 'Grayscale on Hover (Pro)', 'woo-category-slider-pro' ),
+							'always'          => __( 'Always grayscale (Pro)', 'woo-category-slider-pro' ),
+						),
+						'default'  => 'none',
+					),
 				), // End of fields array.
 			)
 		); // Thumbnail settings section end.

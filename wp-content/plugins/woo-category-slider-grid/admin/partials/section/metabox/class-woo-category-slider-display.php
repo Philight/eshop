@@ -24,7 +24,7 @@ class SP_WCS_Display {
 	/**
 	 * Display section.
 	 *
-	 * @param [type] $prefix
+	 * @param string $prefix Section prefix.
 	 * @return void
 	 */
 	public static function section( $prefix ) {
@@ -100,33 +100,34 @@ class SP_WCS_Display {
 					),
 					array(
 						'id'          => 'wcsp_cat_content_position',
+						'class'       => 'wcsp_cat_content_position',
 						'type'        => 'image_select',
 						'title'       => __( 'Category Content Position', 'woo-category-slider' ),
 						'subtitle'    => __( 'Select a position for the category content.', 'woo-category-slider' ),
-						'class'       => 'wcsp_cat_content_position',
+						'desc'        => __( 'To unlock more amazing category Content Positions and Settings, <a href="https://shapedplugin.com/plugin/woocommerce-category-slider-pro/?ref=115" target="_blank"><b>Upgrade To Pro!</b></a>', 'woo-category-slider' ),
 						'option_name' => true,
 						'options'     => array(
 							'thumb-above-cont-below' => array(
-								'image'       => SP_WCS_URL . 'admin/img/below-content.jpg',
+								'image'       => SP_WCS_URL . 'admin/img/below-c.svg',
 								'option_name' => __( 'Below Content', 'woo-category-slider' ),
 							),
 							'cont-above-thumb-below' => array(
-								'image'       => SP_WCS_URL . 'admin/img/above-content.jpg',
+								'image'       => SP_WCS_URL . 'admin/img/above-c.svg',
 								'option_name' => __( 'Above Content', 'woo-category-slider' ),
 								'pro_only'    => true,
 							),
 							'left-thumb-right-cont'  => array(
-								'image'       => SP_WCS_URL . 'admin/img/right-content.jpg',
+								'image'       => SP_WCS_URL . 'admin/img/right-c.svg',
 								'option_name' => __( 'Right Content', 'woo-category-slider' ),
 								'pro_only'    => true,
 							),
 							'left-cont-right-thumb'  => array(
-								'image'       => SP_WCS_URL . 'admin/img/left-content.jpg',
+								'image'       => SP_WCS_URL . 'admin/img/left-c.svg',
 								'option_name' => __( 'Left Content', 'woo-category-slider' ),
 								'pro_only'    => true,
 							),
 							'cont-over-thumb'        => array(
-								'image'       => SP_WCS_URL . 'admin/img/overlay-content.jpg',
+								'image'       => SP_WCS_URL . 'admin/img/overlay-c.svg',
 								'option_name' => __( 'Overlay Content', 'woo-category-slider' ),
 								'pro_only'    => true,
 							),
@@ -200,6 +201,17 @@ class SP_WCS_Display {
 					array(
 						'type'    => 'subheading',
 						'content' => __( 'Category Content', 'woo-category-slider' ),
+					),
+					array(
+						'id'         => 'wcsp_cat_icon',
+						'class'      => 'pro_only_field',
+						'type'       => 'switcher',
+						'title'      => __( 'Category Icon', 'woo-category-slider' ),
+						'subtitle'   => __( 'Show/Hide category icon.', 'woo-category-slider' ),
+						'text_on'    => __( 'Show', 'woo-category-slider' ),
+						'text_off'   => __( 'Hide', 'woo-category-slider' ),
+						'text_width' => 80,
+						'default'    => false,
 					),
 					array(
 						'id'         => 'wcsp_cat_name',
@@ -322,6 +334,19 @@ class SP_WCS_Display {
 						),
 					),
 					array(
+						'id'         => 'wcsp_cat_custom_text',
+						'class'      => 'pro_only_field',
+						'attributes' => array( 'disabled' => 'disabled' ),
+						'type'       => 'switcher',
+						'title'      => __( 'Custom Text', 'woo-category-slider-pro' ),
+						'subtitle'   => __( 'Show/Hide custom text.', 'woo-category-slider-pro' ),
+						'text_on'    => __( 'Show', 'woo-category-slider-pro' ),
+						'text_off'   => __( 'Hide', 'woo-category-slider-pro' ),
+						'text_width' => 80,
+						'default'    => false,
+
+					),
+					array(
 						'id'         => 'wcsp_cat_description',
 						'type'       => 'switcher',
 						'title'      => __( 'Description', 'woo-category-slider' ),
@@ -366,6 +391,10 @@ class SP_WCS_Display {
 							'==',
 							'true',
 						),
+					),
+					array(
+						'type'    => 'subheading',
+						'content' => __( 'Shop Now Button', 'woo-category-slider' ),
 					),
 					array(
 						'id'         => 'wcsp_cat_shop_now_button',
