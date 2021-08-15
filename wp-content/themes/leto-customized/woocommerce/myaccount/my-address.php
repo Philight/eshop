@@ -58,11 +58,11 @@ if (in_array('wholesale_customer', $user_roles)) {	?>
 	<h3>Shipping address</h3>
 	<div class="address-card shipping">
 		<address>
-			<span class="shipping_address_line_1"><?php echo $user_data['shipping_address_line_1'];?></span>
+			<span class="shipping_address_line_1"><?php echo $user_data['shipping_address_line_1'].',';?></span>
 			<?php  
 				if ( $user_data['shipping_address_line_2'] ) { ?>
 					<span class="shipping_address_line_2">
-					<?php echo ', '.$user_data['shipping_address_line_2']; ?>
+					<?php echo $user_data['shipping_address_line_2']; ?>
 					</span>
 			<?php } ?>
 			<br>
@@ -92,11 +92,11 @@ if (in_array('wholesale_customer', $user_roles)) {	?>
 	<h3>Billing address</h3>
 	<div class="address-card billing">
 		<address>
-			<span class="billing_address_line_1"><?php echo $user_data['billing_address_line_1']; ?></span>
+			<span class="billing_address_line_1"><?php echo $user_data['billing_address_line_1'].','; ?></span>
 			<?php  
 				if ( $user_data['billing_address_line_2'] ) { ?>
 					<span class="billing_address_line_2">
-					<?php echo ', '.$user_data['billing_address_line_2']; ?>
+					<?php echo $user_data['billing_address_line_2']; ?>
 					</span>
 			<?php } ?>
 			<br>

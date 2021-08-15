@@ -1,13 +1,14 @@
 <?php
-	include_once( get_stylesheet_directory() .'/inc/custom-main-navigation.php');
+	include_once( get_stylesheet_directory() .'/custom/custom-main-navigation.php');
 	include_once( get_stylesheet_directory() .'/inc/ajax-add-to-cart-extended.php');
 	include_once( get_stylesheet_directory() .'/custom/custom-sidecart-variations-form.php');
-	include_once( get_stylesheet_directory() .'/inc/custom-ajax-update-cart.php');
+	include_once( get_stylesheet_directory() .'/custom/custom-ajax-update-cart.php');
 	include_once( get_stylesheet_directory() .'/custom/custom-quantity-buttons.php');
 	include_once( get_stylesheet_directory() .'/custom/woocommerce-ajax-filters-styles.php');
 	include_once( get_stylesheet_directory() .'/custom/custom-page-links.php');
 	include_once( get_stylesheet_directory() .'/custom/custom-ajax-save-registration-form.php');
 	include_once( get_stylesheet_directory() .'/custom/custom-ajax-update-myaccount-data.php');
+	include_once( get_stylesheet_directory() .'/custom/custom-ajax-process-login.php');
 ;
 
 
@@ -110,6 +111,14 @@
 			wp_enqueue_script( 'wc-add-to-cart-variation' );
 		}
 
+		if (is_checkout()) {
+			wp_enqueue_script( 'checkoutPage.js', get_stylesheet_directory_uri().'/js/checkoutPage.js', array( 'jquery' ), filemtime(get_stylesheet_directory().'/js/checkoutPage.js'), true );	
+			
+			$ajax_vars = array( 
+				'ajax_url' => admin_url( 'admin-ajax.php' ),
+			);
+			wp_localize_script( 'checkoutPage.js', 'custom_checkout_params', $ajax_vars );
+		}
 
 	}
 
@@ -184,7 +193,7 @@
 					break;
 			}
 
-		    //echo do_shortcode('[woocatslider id="92"]');
+		    echo do_shortcode('[woocatslider id="92"]');
 
 		    $prefix = '
 		    <div class="berocket_single_filter_widget " style="">
@@ -196,8 +205,8 @@
       				<div class="bapf_body filters-body" style="display: none;">
       		';
 
-      		$all_filters = do_shortcode('[br_filters_group group_id=101]');
-      		$apply_filter = do_shortcode('[br_filter_single filter_id=108]');
+      		$all_filters = do_shortcode('[br_filters_group group_id=115]');
+      		$apply_filter = do_shortcode('[br_filter_single filter_id=102]');
       		$search = array('bapf_sfilter', 'bapf_body');
       		$replace = array('bapf_sfilter filter-apply-container', 'bapf_body filter-apply-body');
 			$apply_filter = str_replace($search, $replace, $apply_filter);
@@ -205,6 +214,13 @@
 
 		    $filters_wrapper = $prefix.$all_filters.$apply_filter.$suffix;
 		    echo $filters_wrapper;
+/*
+		    echo do_shortcode('[br_filter_single filter_id=106]');
+		    echo do_shortcode('[br_filter_single filter_id=105]');
+		    echo do_shortcode('[br_filter_single filter_id=100]');
+		    echo do_shortcode('[br_filter_single filter_id=98]');
+*/
+
 		    
 		    echo do_shortcode('[br_filter_single filter_id=104]');
 		    echo do_shortcode('[br_filter_single filter_id=103]');
@@ -338,5 +354,43 @@ function custom_add_edit_roles() {
 	//$theUser->add_role( 'gold_customer' );
 }
 
+add_action( 'init', 'custom_add_data_to_db' );
+function custom_add_data_to_db(){
+	$user_meta_data = [];
+	$user_id = 1;
+
+	$user_meta_data['full_name'] = 'Lai Nhat Tuan Truong';
+	$user_meta_data['phone_code'] = '+421';
+	$user_meta_data['phone_number'] = '948040524';
+	$user_meta_data['company'] = 'Capickovo';
+	$user_meta_data['date_of_birth'] = '20.01.1995';
+	$user_meta_data['gender'] = 'male';
+
+	$user_meta_data['shipping_address_line_1'] = 'Mierova 70';
+	$user_meta_data['shipping_address_line_2'] = 'Apt 63';
+	$user_meta_data['shipping_city'] = 'Bratislava';
+	$user_meta_data['shipping_state_region_province'] = 'Bratislavsky kraj';
+	$user_meta_data['shipping_country'] = 'Slovakia';
+	$user_meta_data['shipping_postal_code'] = '82105';
+
+	$user_meta_data['billing_address_line_1'] = 'Mierova 70';
+	$user_meta_data['billing_address_line_2'] = 'Apt 63';
+	$user_meta_data['billing_city'] = 'Bratislava';
+	$user_meta_data['billing_state_region_province'] = 'Bratislavsky kraj';
+	$user_meta_data['billing_country'] = 'Slovakia';
+	$user_meta_data['billing_postal_code'] = '82105';
 	
+	foreach ($user_meta_data as $meta_key => $meta_value) {
+		if ( add_user_meta($user_id, $meta_key, $meta_value) == false ) {
+			$errorObj = new WP_Error( 'Error: add_user_meta()', __("Internal Error: add_user_meta"));
+			wp_send_json_error($errorObj);
+		}
+		error_log('adding meta to db');
+		error_log('key: '.$meta_key.'--- value: '.$meta_value);
+	}
+
+	wp_redirect( wc_get_page_permalink( 'myaccount' ) );
+	exit();
+}
+
 ?>

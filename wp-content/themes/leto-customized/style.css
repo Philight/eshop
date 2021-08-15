@@ -232,9 +232,9 @@ Breakpoints:
 
 .bapf_clr_woborder.bapf_sfilter .bapf_clr_span {
 	border-radius: 100%;
+	margin: 0;
 	width: 100%;
 	height: 100%;
-	margin: 0;
 }
 
 .bapf_sfilter.brchecked_default input:checked+label .color-wrapper {
@@ -1606,6 +1606,321 @@ input.invalid {
 	vertical-align: middle; 
 	margin-bottom: 0;
 	width: auto;
+}
+
+/* Woocommerce checkout page */
+.woocommerce-checkout.checkout .already-registered {
+	background-color: #f6f6f6;
+	padding: 20px;
+	width: 420px;
+	font-size: 16px;
+}
+
+.woocommerce-checkout.checkout .already-registered i {
+	padding-right: 30px;
+	font-size: 16px;
+}
+
+.woocommerce-checkout.checkout .already-registered a:hover {
+	color:  red;
+}
+
+.woocommerce-checkout.checkout .black-bkg {
+	display: none;
+	position: fixed;
+  background-color: rgba(0,0,0,0.5);
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 999;
+}
+
+.woocommerce-checkout.checkout .login-modal{
+	display: none;
+	position: fixed;
+	background-color: #FFF;
+  width: 400px;
+  height: 410px;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  padding: 40px;
+  z-index: 999;
+  /*margin-top: -200px;
+  margin-left:  -200px;*/
+}
+
+.woocommerce-checkout.checkout .login-modal h2 {
+	margin: 0;
+	margin-bottom: 30px;
+	text-align: center;
+}
+
+.woocommerce-checkout.checkout .login-modal .login-rememberme-wrapper {
+	display: flex;
+}
+
+.woocommerce-checkout.checkout .login-modal .woocommerce-form-login__rememberme,
+.woocommerce-checkout.checkout .login-modal .lost_password {
+	display: table;
+	margin: 0;
+	height: 60px;
+}
+
+.woocommerce-checkout.checkout .login-modal .woocommerce-form-login__rememberme span,
+.woocommerce-checkout.checkout .login-modal .lost_password a{
+  white-space: nowrap;
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.woocommerce-checkout.checkout .login-modal button {
+	color: #FFF;
+	background-color: #000;
+	display: block;
+	margin: 0 auto;
+}
+
+.woocommerce-checkout.checkout label{
+	width: 100%;
+}
+
+.woocommerce-checkout.checkout input, .woocommerce-checkout.checkout select{
+	width: 100%;
+}
+
+.woocommerce-checkout.checkout select {
+	padding-left: 19px;
+}
+
+.woocommerce-checkout.checkout abbr{
+	color: red;
+}
+
+.woocommerce-checkout.checkout .shipping-details,
+.woocommerce-checkout.checkout .register-optional {
+	margin-top: 48px;
+}
+
+.woocommerce-checkout.checkout .billing-title {
+	padding-top: 48px;
+}
+
+.woocommerce-checkout.checkout .phone-number-field {
+  display: flex;
+  position: relative;
+  flex-wrap: wrap;
+}
+
+.woocommerce-checkout.checkout .phone-number-field span{
+	width: 100%;
+}
+
+.woocommerce-checkout.checkout .phone-number-field .country-code-wrapper{
+	border: 1px solid rgb(227,227,227);
+  display: flex;
+  align-items: center;
+}
+
+.woocommerce-checkout.checkout .phone-number-field .country-code-wrapper #PhoneCode{
+  text-align: right;
+  border: none;
+  padding: 5px 6px;
+  width: 56px;
+  height: 53px;
+}
+
+.woocommerce-checkout.checkout .phone-number-field .country-code-wrapper i{
+	font-size: 24px;
+}
+
+.woocommerce-checkout.checkout .phone-number-field #PhoneNumber {
+	flex: 1;
+	margin-left: 10px;
+}
+
+.woocommerce-checkout.checkout .phone-number-field .country-code-dropdown {
+	top: 90px;
+	list-style-type: none;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  background-color: #FFF;
+}
+
+.woocommerce-checkout.checkout .phone-number-field .country-code-dropdown.collapsed {
+  height: 0px;
+  overflow-y: hidden;
+  transition: all 0.15s ease-out;
+}
+
+.woocommerce-checkout.checkout .phone-number-field .country-code-dropdown.open {
+	height: 200px;
+	overflow-y: scroll;
+	transition: all 0.25s ease-in;
+}
+
+.woocommerce-checkout.checkout .phone-number-field .country-code-dropdown .country-code-item {
+	vertical-align: middle;
+}
+
+.woocommerce-checkout.checkout .phone-number-field .country-code-dropdown .country-flag {
+	width: 20px; 
+	height: 15px; 
+	background-size: cover;
+	display: inline-block;
+
+	vertical-align: middle;
+}
+.woocommerce-checkout.checkout .phone-number-field .country-code-dropdown .country-name {
+	display: inline-block; 
+	vertical-align: middle; 
+	margin-bottom: 0;
+	width: auto;
+}
+
+.woocommerce-checkout.checkout .shipping-option,
+.woocommerce-checkout.checkout .register-option{
+	width: auto;
+  display: flex;
+  align-items: center;
+  font-size: 12px;
+  margin-left: 24px;
+  text-align: right;
+}
+
+.woocommerce-checkout.checkout .shipping-details .shipping-title,
+.woocommerce-checkout.checkout .register-optional .register-optional-title{
+	display: flex;
+	justify-content: space-between;
+}
+
+
+.woocommerce-checkout.checkout .switch_box{
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	max-width: 66px;
+	min-width: 66px;
+	height: 30px;
+	margin: 0px 10px;
+	-webkit-box-pack: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+	-webkit-box-flex: 1;
+	    -ms-flex: 1;
+	        flex: 1;
+
+}
+
+
+.woocommerce-checkout.checkout .input_wrapper{
+  width: 66px;
+  height: 30px;
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.woocommerce-checkout.checkout .input_wrapper input[type="checkbox"]{
+  width: 66px;
+  height: 30px;
+  cursor: pointer;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  background: #000; /*#315e7f;*/
+  border-radius: 2px;
+  position: relative;
+  outline: 0;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+  margin: 0;
+}
+
+.woocommerce-checkout.checkout .input_wrapper input[type="checkbox"]:after{
+  position: absolute;
+  content: "";
+  top: 3px;
+  left: 3px;
+  width: 28px;
+  height: 24px;
+  background: #dfeaec;
+  z-index: 2;
+  border-radius: 2px;
+  -webkit-transition: all .35s;
+  transition: all .35s;
+}
+
+.woocommerce-checkout.checkout .input_wrapper svg{
+  position: absolute;
+  top: 50%;
+  -webkit-transform-origin: 50% 50%;
+          transform-origin: 50% 50%;
+  fill: #fff;
+  -webkit-transition: all .35s;
+  transition: all .35s;
+  z-index: 1;
+}
+
+.woocommerce-checkout.checkout .input_wrapper .is_checked{
+  width: 18px;
+  left: 14%;
+  -webkit-transform: translateX(190%) translateY(-40%) scale(0);
+          transform: translateX(190%) translateY(-40%) scale(0);
+}
+
+.woocommerce-checkout.checkout .input_wrapper .is_unchecked{
+  width: 15px;
+  right: 14%;
+  -webkit-transform: translateX(0) translateY(-45%) scale(1);
+          transform: translateX(0) translateY(-45%) scale(1);
+}
+
+/* Checked State */
+.woocommerce-checkout.checkout .input_wrapper input[type="checkbox"]:checked{
+  background: #23da87;
+}
+
+.woocommerce-checkout.checkout .input_wrapper input[type="checkbox"]:checked:after{
+  left: calc(100% - 31px);
+}
+
+.woocommerce-checkout.checkout .input_wrapper input[type="checkbox"]:checked + .is_checked{
+  -webkit-transform: translateX(0) translateY(-45%) scale(1);
+          transform: translateX(0) translateY(-45%) scale(1);
+}
+
+.woocommerce-checkout.checkout .input_wrapper input[type="checkbox"]:checked ~ .is_unchecked{
+  -webkit-transform: translateX(-190%) translateY(-30%) scale(0);
+          transform: translateX(-190%) translateY(-30%) scale(0);
+}
+
+.woocommerce-checkout.checkout .shipping-address-line-1-field,
+.woocommerce-checkout.checkout .shipping-address-line-2-field,
+.woocommerce-checkout.checkout .shipping-city-field,
+.woocommerce-checkout.checkout .shipping-state-region-province-field,
+.woocommerce-checkout.checkout .shipping-country-field,
+.woocommerce-checkout.checkout .shipping-postal-code-field,
+.woocommerce-checkout.checkout .user-name-field,
+.woocommerce-checkout.checkout .display-name-field,
+.woocommerce-checkout.checkout .password-field,
+.woocommerce-checkout.checkout .confirm-password-field {
+	display: none;
+}
+
+
+
+.woocommerce-checkout.checkout .register-optional .password-wrapper i{
+	font-size: 32px;
+  position: absolute;
+  transform: 0;
+  right: 32px;
 }
 
 /* jQuery UI Datepicker */
